@@ -1,0 +1,9 @@
+C言語によるC言語のためのエディタ
+
+*　インストール方法
+source ./install
+
+${HOME} にceditというフォルダができる
+その中のceditが実行ファイル（Windowsではcedit.exe）
+
+環境によってはgtk-2.0やgtksourceview-2.0あたりが必要かも
