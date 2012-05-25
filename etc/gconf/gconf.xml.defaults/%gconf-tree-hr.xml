@@ -1,0 +1,241 @@
+<?xml version="1.0"?>
+<gconf>
+        <dir name="schemas">
+                <dir name="apps">
+                        <dir name="gedit-2">
+                                <dir name="plugins">
+                                        <entry name="active-plugins">
+                                                <local_schema short_desc="Aktivni dodaci">
+                                                        <longdesc>Lista aktivnih dodataka. Sadrži &apos;Lokaciju&apos; aktivnih dodataka. Pogledaj .gedit-plugin datoteku da dobiješ &apos;Lokaciju&apos; datog dodatka.</longdesc>
+                                                </local_schema>
+                                        </entry>
+                                </dir>
+                                <dir name="preferences">
+                                        <dir name="syntax_highlighting">
+                                                <entry name="enable">
+                                                        <local_schema short_desc="Uključi isticanje sintakse">
+                                                                <longdesc>Treba li gedit omogućiti isticanje sintakse.</longdesc>
+                                                        </local_schema>
+                                                </entry>
+                                        </dir>
+                                        <dir name="encodings">
+                                                <entry name="shown_in_menu">
+                                                        <local_schema short_desc="Kodni rasporedi prikazani u izborniku">
+                                                        </local_schema>
+                                                </entry>
+                                                <entry name="auto_detected">
+                                                        <local_schema>
+                                                        </local_schema>
+                                                </entry>
+                                        </dir>
+                                        <dir name="print">
+                                                <dir name="fonts">
+                                                        <entry name="print_font_numbers_pango">
+                                                                <local_schema short_desc="Font broja linije prilikom ispisa">
+                                                                        <longdesc>Određuje font koji se koristi za ispis brojeva linija. Ovo ima efekta samo ako opcija &quot;Ispisuj brojeve linija&quot; nije postavljena na 0.</longdesc>
+                                                                </local_schema>
+                                                        </entry>
+                                                        <entry name="print_font_header_pango">
+                                                                <local_schema short_desc="Font zaglavlja prilikom ispisa">
+                                                                        <longdesc>Određuje font koji se koristi za ispis zaglavlja stranice. Ovo ima efekta samo ako je uključena opcija &quot;Ispisuj zaglavlje&quot;.</longdesc>
+                                                                </local_schema>
+                                                        </entry>
+                                                        <entry name="print_font_body_pango">
+                                                                <local_schema short_desc="Font tijela teksta pri ispisu">
+                                                                        <longdesc>Određuje font koji se koristi za tijelo dokumenta prilikom ispisa.</longdesc>
+                                                                </local_schema>
+                                                        </entry>
+                                                </dir>
+                                                <dir name="page">
+                                                        <entry name="print_line_numbers">
+                                                                <local_schema short_desc="Ispis brojeva linija">
+                                                                        <longdesc>Ukoliko je ova vrijednost 0 prilikom ispisa dokumenta neće biti umetnuti brojevi linija. U suprotnom, ispisivati će se broj linije na svakih toliko linija.</longdesc>
+                                                                </local_schema>
+                                                        </entry>
+                                                        <entry name="print_wrap_mode">
+                                                                <local_schema short_desc="Ispisivanje načina sažimanja linija">
+                                                                        <longdesc>Određuje način sažimanja dugih linija prilikom ispisa. Koristiti &quot;GTK_WRAP_NONE&quot; za isključivanje sažimanja, &quot;GTK_WRAP_WORD&quot; za sažimanje na krajevima riječi, i &quot;GTK_WRAP_CHAR&quot; za sažimanje između znakova. Obratite pažnju da su vrijednosti osjetljive na velika ili mala slova, pa vodite računa da moraju biti iste kao što su ovdje navedene.</longdesc>
+                                                                </local_schema>
+                                                        </entry>
+                                                        <entry name="print_header">
+                                                                <local_schema short_desc="Zaglavlje ispisa">
+                                                                        <longdesc>Treba li gedit uključiti zaglavlje dokumenta prilikom ispisa.</longdesc>
+                                                                </local_schema>
+                                                        </entry>
+                                                        <entry name="print_syntax_highlighting">
+                                                                <local_schema short_desc="Ispisivanje isticanja sintakse">
+                                                                        <longdesc>Treba li gedit isticati sintaksu prilikom ispisa dokumenata.</longdesc>
+                                                                </local_schema>
+                                                        </entry>
+                                                </dir>
+                                        </dir>
+                                        <dir name="ui">
+                                                <dir name="recents">
+                                                        <entry name="max_recents">
+                                                                <local_schema short_desc="Maksimalan broj prikazanih nedavno otvorenih datoteka">
+                                                                        <longdesc>Određuje maksimalni broj nedavno otvorenih datoteka koje se prikazuju u podizborniku &quot;Nedavno otvorene datoteke&quot;.</longdesc>
+                                                                </local_schema>
+                                                        </entry>
+                                                </dir>
+                                                <dir name="bottom_panel">
+                                                        <entry name="bottom_panel_visible">
+                                                                <local_schema short_desc="Donja traka je vidljiva">
+                                                                        <longdesc>Treba li donja ploča u dnu prozora za uređivanje biti prikazana</longdesc>
+                                                                </local_schema>
+                                                        </entry>
+                                                </dir>
+                                                <dir name="side_pane">
+                                                        <entry name="side_pane_visible">
+                                                                <local_schema short_desc="Bočna ploča je vidljiva">
+                                                                </local_schema>
+                                                        </entry>
+                                                </dir>
+                                                <dir name="statusbar">
+                                                        <entry name="statusbar_visible">
+                                                                <local_schema short_desc="Statusna traka je vidljiva">
+                                                                        <longdesc>Treba li statusna traka u dnu prozora za uređivanje biti vidljiva.</longdesc>
+                                                                </local_schema>
+                                                        </entry>
+                                                </dir>
+                                                <dir name="toolbar">
+                                                        <entry name="toolbar_buttons_style">
+                                                                <local_schema short_desc="Stil gumba na alatnoj traci">
+                                                                        <longdesc>Stil gumba na traci sa alatima. Moguće vrijednosti su &quot;GEDIT_TOOLBAR_SYSTEM&quot; za predefinirani sustavski stil, &quot;GEDIT_TOOLBAR_ICONS&quot; za prikaz samo sličica, &quot;GEDIT_TOOLBAR_ICONS_AND_TEXT&quot; za prikaz i sličica i teksta, i &quot;GEDIT_TOOLBAR_ICONS_BOTH_HORIZ&quot; za prikaz naglašenog teksta pored sličica. Obratite pažnju da su vrijednosti osjetljive na velika i mala slova, pa se uvjerite da ih koristite kao što su ovdje navedene.</longdesc>
+                                                                </local_schema>
+                                                        </entry>
+                                                        <entry name="toolbar_visible">
+                                                                <local_schema short_desc="Alatna traka je vidljiva">
+                                                                        <longdesc>Treba li alatna traka biti vidljiva u prozorim za uređivanje.</longdesc>
+                                                                </local_schema>
+                                                        </entry>
+                                                </dir>
+                                        </dir>
+                                        <dir name="editor">
+                                                <dir name="search_highlighting">
+                                                        <entry name="enable">
+                                                                <local_schema short_desc="Omogući označavanje pretraga">
+                                                                        <longdesc>Treba li gedit označiti sva pojavljivanja teksta koji se pretražuje</longdesc>
+                                                                </local_schema>
+                                                        </entry>
+                                                </dir>
+                                                <dir name="cursor_position">
+                                                        <entry name="restore_cursor_position">
+                                                                <local_schema short_desc="Vrati prijašnju poziciju kursora">
+                                                                        <longdesc>Treba li gedit postaviti kursor na prijašnju poziciju prilikom učitavanja datoteke.</longdesc>
+                                                                </local_schema>
+                                                        </entry>
+                                                </dir>
+                                                <dir name="right_margin">
+                                                        <entry name="right_margin_position">
+                                                                <local_schema short_desc="Položaj desne margine">
+                                                                        <longdesc>Određuje položaj desne margine.</longdesc>
+                                                                </local_schema>
+                                                        </entry>
+                                                        <entry name="display_right_margin">
+                                                                <local_schema short_desc="Prikaži desnu marginu">
+                                                                        <longdesc>Treba li gedit prikazivati desnu marginu u prostoru za izmjenu teksta.</longdesc>
+                                                                </local_schema>
+                                                        </entry>
+                                                </dir>
+                                                <dir name="bracket_matching">
+                                                        <entry name="bracket_matching">
+                                                                <local_schema short_desc="Označi odgovarajuću uglatu zagradu">
+                                                                </local_schema>
+                                                        </entry>
+                                                </dir>
+                                                <dir name="current_line">
+                                                        <entry name="highlight_current_line">
+                                                                <local_schema short_desc="Označi trenutnu liniju">
+                                                                        <longdesc>Treba li gedit isticati trenutnu liniju.</longdesc>
+                                                                </local_schema>
+                                                        </entry>
+                                                </dir>
+                                                <dir name="line_numbers">
+                                                        <entry name="display_line_numbers">
+                                                                <local_schema short_desc="Prikaži brojeve linija">
+                                                                        <longdesc>Treba li gedit prikazivati brojeve linija u prostoru za izmjenu teksta.</longdesc>
+                                                                </local_schema>
+                                                        </entry>
+                                                </dir>
+                                                <dir name="auto_indent">
+                                                        <entry name="auto_indent">
+                                                                <local_schema short_desc="Automatsko uvlačenje">
+                                                                        <longdesc>Treba li gedit omogućiti automatsko poravnanje.</longdesc>
+                                                                </local_schema>
+                                                        </entry>
+                                                </dir>
+                                                <dir name="tabs">
+                                                        <entry name="insert_spaces">
+                                                                <local_schema short_desc="Umetni razmake">
+                                                                        <longdesc>Treba li gedit umetnuti razmake umjesto tabova.</longdesc>
+                                                                </local_schema>
+                                                        </entry>
+                                                        <entry name="tabs_size">
+                                                                <local_schema short_desc="Veličina tabulatora">
+                                                                        <longdesc>Određuje broj razmaka koji se prikazuju umjesto tab znakova.</longdesc>
+                                                                </local_schema>
+                                                        </entry>
+                                                </dir>
+                                                <dir name="wrap_mode">
+                                                        <entry name="wrap_mode">
+                                                                <local_schema short_desc="Način sažimanja linija">
+                                                                        <longdesc>Određuje način sažimanja dugih linija u prostoru za uređivanje. Koristiti &quot;GTK_WRAP_NONE&quot; za isključivanje sažimanja, &quot;GTK_WRAP_WORD&quot; za sažimanje na krajevima riječi, i &quot;GTK_WRAP_CHAR&quot; za sažimanje između znakova. Obratite pažnju da su vrijednosti osjetljive na velika ili mala slova, pa vodite  računa da moraju biti iste kao što su ovdje navedene.</longdesc>
+                                                                </local_schema>
+                                                        </entry>
+                                                </dir>
+                                                <dir name="undo">
+                                                        <entry name="max_undo_actions">
+                                                                <local_schema>
+                                                                        <longdesc>Maksimalan broj akcija koje će gedit moći poništiti ili vratiti. Koristi &quot;-1&quot; za neograničen broj akcija.</longdesc>
+                                                                </local_schema>
+                                                        </entry>
+                                                        <entry name="undo_actions_limit">
+                                                                <local_schema>
+                                                                        <longdesc>Maksimalan broj akcija koje će gedit moći poništiti ili vratiti. Koristi &quot;-1&quot; za neograničen broj akcija. Prevaziđeno od verzije 2.12.0</longdesc>
+                                                                </local_schema>
+                                                        </entry>
+                                                </dir>
+                                                <dir name="save">
+                                                        <entry name="writable_vfs_schemes">
+                                                                <local_schema short_desc="VFS-sheme se mogu zapisivati">
+                                                                        <longdesc>Lista VFS shema koje gedit podržava u write modu. Shema &apos;datoteka&apos; uobičajeno omogućava pisanje.</longdesc>
+                                                                </local_schema>
+                                                        </entry>
+                                                        <entry name="auto_save_interval">
+                                                                <local_schema short_desc="Interval automatskog spremanja">
+                                                                        <longdesc>Broj minuta nakon kojih će gedit automatski spremiti izmjenjenu datoteku. Ovo će imati efekta samo ukoliko je opcija &quot;Automatsko spremanje&quot; uključena.</longdesc>
+                                                                </local_schema>
+                                                        </entry>
+                                                        <entry name="auto_save">
+                                                                <local_schema short_desc="Automatsko spremanje">
+                                                                        <longdesc>Treba li gedit automatski spremati promijenjene datoteke nakone datog vremenskog razdoblja. Možete postaviti vremenski interval pomoću opcije &quot;Interval automatskog snimanja&quot;.</longdesc>
+                                                                </local_schema>
+                                                        </entry>
+                                                        <entry name="backup_copy_extension">
+                                                                <local_schema short_desc="Nastavak sigurnosne kopije">
+                                                                        <longdesc>Nastavak ili sufiks koji će biti korišten u imenu sigurnosne kopije datoteke. Ovo će imati efekta samo ako je opcija &quot;Izrađuj sigurnosne kopije&quot; uključena.</longdesc>
+                                                                </local_schema>
+                                                        </entry>
+                                                        <entry name="create_backup_copy">
+                                                                <local_schema short_desc="Čini sigurnosne kopije">
+                                                                        <longdesc>Treba li gedit raditi sigurnosne kopije datoteka koje sprema. Možete postaviti nastavak datoteka sigurnosnih kopija s postavkom &quot;Nastavak sigurnosne kopije&quot;.</longdesc>
+                                                                </local_schema>
+                                                        </entry>
+                                                </dir>
+                                                <dir name="font">
+                                                        <entry name="editor_font">
+                                                                <local_schema short_desc="Font uređivača">
+                                                                        <longdesc>Odabrano pismo koje će biti korišteno u prostoru za uređivanje teksta. Nema učinka ako je postavka &quot;Koristi uobičajeno pismo&quot; uključena.</longdesc>
+                                                                </local_schema>
+                                                        </entry>
+                                                        <entry name="use_default_font">
+                                                                <local_schema short_desc="Koristi predefinirani font">
+                                                                </local_schema>
+                                                        </entry>
+                                                </dir>
+                                        </dir>
+                                </dir>
+                        </dir>
+                </dir>
+        </dir>
+</gconf>

@@ -1,0 +1,189 @@
+<?xml version="1.0"?>
+<gconf>
+        <dir name="schemas">
+                <dir name="apps">
+                        <dir name="gedit-2">
+                                <dir name="plugins">
+                                        <entry name="active-plugins">
+                                                <local_schema short_desc="Enlugelladoù oberiant">
+                                                        <longdesc>Roll an enlugelladoù en implij. Ennañ e kaver &quot;Chomlec&apos;h&quot; an enlugelladoù en implij. Sellit er restr .gedit-plugin evit kaout &quot;Chomlec&apos;h&quot; un enlugellad resis.</longdesc>
+                                                </local_schema>
+                                        </entry>
+                                </dir>
+                                <dir name="preferences">
+                                        <dir name="syntax_highlighting">
+                                                <entry name="enable">
+                                                        <local_schema short_desc="Gweredekaat sklerijennañ ar c&apos;hevreadur">
+                                                        </local_schema>
+                                                </entry>
+                                        </dir>
+                                        <dir name="encodings">
+                                                <entry name="shown_in_menu">
+                                                        <local_schema short_desc="Embonegoù Diskouezet el lañser">
+                                                        </local_schema>
+                                                </entry>
+                                                <entry name="auto_detected">
+                                                        <local_schema>
+                                                        </local_schema>
+                                                </entry>
+                                        </dir>
+                                        <dir name="print">
+                                                <dir name="fonts">
+                                                        <entry name="print_font_numbers_pango">
+                                                                <local_schema short_desc="Nodrezh an niveroù linennoù evit ar moullañ">
+                                                                </local_schema>
+                                                        </entry>
+                                                        <entry name="print_font_header_pango">
+                                                                <local_schema short_desc="Nodrezh ar talbenn evit ar moullañ">
+                                                                </local_schema>
+                                                        </entry>
+                                                        <entry name="print_font_body_pango">
+                                                                <local_schema short_desc="Nodrezh korf an testenn evit ar moullañ">
+                                                                </local_schema>
+                                                        </entry>
+                                                </dir>
+                                                <dir name="page">
+                                                        <entry name="print_line_numbers">
+                                                                <local_schema short_desc="Moullañ an niveroù linennoù">
+                                                                </local_schema>
+                                                        </entry>
+                                                        <entry name="print_header">
+                                                                <local_schema short_desc="Moullañ an talbenn">
+                                                                </local_schema>
+                                                        </entry>
+                                                        <entry name="print_syntax_highlighting">
+                                                                <local_schema short_desc="Moullañ sklerijennañ ar c&apos;hevreadur">
+                                                                </local_schema>
+                                                        </entry>
+                                                </dir>
+                                        </dir>
+                                        <dir name="ui">
+                                                <dir name="recents">
+                                                        <entry name="max_recents">
+                                                                <local_schema short_desc="Niver brasañ a restroù nevez-implijet">
+                                                                </local_schema>
+                                                        </entry>
+                                                </dir>
+                                                <dir name="bottom_panel">
+                                                        <entry name="bottom_panel_visible">
+                                                                <local_schema short_desc="Panel an traoñ a zo hewel">
+                                                                </local_schema>
+                                                        </entry>
+                                                </dir>
+                                                <dir name="side_pane">
+                                                        <entry name="side_pane_visible">
+                                                                <local_schema short_desc="Hewel eo ar banell du">
+                                                                </local_schema>
+                                                        </entry>
+                                                </dir>
+                                                <dir name="statusbar">
+                                                        <entry name="statusbar_visible">
+                                                                <local_schema short_desc="Hewel eo ar varrenn-stad">
+                                                                </local_schema>
+                                                        </entry>
+                                                </dir>
+                                                <dir name="toolbar">
+                                                        <entry name="toolbar_buttons_style">
+                                                                <local_schema short_desc="Neuz afelloù ar varrenn-ostilhoù">
+                                                                </local_schema>
+                                                        </entry>
+                                                        <entry name="toolbar_visible">
+                                                                <local_schema short_desc="Hewel eo ar varrenn-ostilhoù">
+                                                                </local_schema>
+                                                        </entry>
+                                                </dir>
+                                        </dir>
+                                        <dir name="editor">
+                                                <dir name="search_highlighting">
+                                                        <entry name="enable">
+                                                                <local_schema short_desc="Gweredekaat sklerijennañ ar c&apos;hlask">
+                                                                </local_schema>
+                                                        </entry>
+                                                </dir>
+                                                <dir name="right_margin">
+                                                        <entry name="right_margin_position">
+                                                                <local_schema short_desc="Lec&apos;hiadur ar varz zehou">
+                                                                        <longdesc>Evit dibab lec&apos;hiadur ar varzhenn dehou.</longdesc>
+                                                                </local_schema>
+                                                        </entry>
+                                                        <entry name="display_right_margin">
+                                                                <local_schema short_desc="Diskouez ar varz zehou">
+                                                                </local_schema>
+                                                        </entry>
+                                                </dir>
+                                                <dir name="current_line">
+                                                        <entry name="highlight_current_line">
+                                                                <local_schema short_desc="Goulaouiñ al linenn-red">
+                                                                </local_schema>
+                                                        </entry>
+                                                </dir>
+                                                <dir name="line_numbers">
+                                                        <entry name="display_line_numbers">
+                                                                <local_schema short_desc="Niverenniñ al linennoù">
+                                                                </local_schema>
+                                                        </entry>
+                                                </dir>
+                                                <dir name="auto_indent">
+                                                        <entry name="auto_indent">
+                                                                <local_schema short_desc="Emgefoskañ">
+                                                                </local_schema>
+                                                        </entry>
+                                                </dir>
+                                                <dir name="tabs">
+                                                        <entry name="insert_spaces">
+                                                                <local_schema short_desc="Enlakaat esaouennoù">
+                                                                </local_schema>
+                                                        </entry>
+                                                        <entry name="tabs_size">
+                                                                <local_schema short_desc="Ment an ivinell">
+                                                                </local_schema>
+                                                        </entry>
+                                                </dir>
+                                                <dir name="wrap_mode">
+                                                        <entry name="wrap_mode">
+                                                                <local_schema short_desc="Mod troc&apos;hañ al linennoù">
+                                                                </local_schema>
+                                                        </entry>
+                                                </dir>
+                                                <dir name="undo">
+                                                        <entry name="max_undo_actions">
+                                                                <local_schema short_desc="Niver brasañ a oberoù da nullañ">
+                                                                </local_schema>
+                                                        </entry>
+                                                </dir>
+                                                <dir name="save">
+                                                        <entry name="auto_save_interval">
+                                                                <local_schema short_desc="Koulzad emenrollañ">
+                                                                </local_schema>
+                                                        </entry>
+                                                        <entry name="auto_save">
+                                                                <local_schema short_desc="Emenrollañ">
+                                                                </local_schema>
+                                                        </entry>
+                                                        <entry name="backup_copy_extension">
+                                                                <local_schema short_desc="Askouezh an eilskouerenn-wareziñ">
+                                                                        <longdesc>Askouezh pe lostger da implij evit anvioù ar restroù-gwareziñ. Efedus e vo an dra-mañ hepken m&apos;ho peus dibabet &quot;Krouiñ Eilskouerennoù-gwareziñ&quot; .</longdesc>
+                                                                </local_schema>
+                                                        </entry>
+                                                        <entry name="create_backup_copy">
+                                                                <local_schema short_desc="Krouiñ eilskouerennoù-gwareziñ">
+                                                                </local_schema>
+                                                        </entry>
+                                                </dir>
+                                                <dir name="font">
+                                                        <entry name="editor_font">
+                                                                <local_schema short_desc="Nodrezh an embanner">
+                                                                        <longdesc>Un arouzennaoueg personelaet hag a vo implijet evit an takad-skrivañ. Ne vo ket efedus an dra-mañ m&apos;eo bet dibabet &quot;Implij an nodrezh dre-ziouer&quot;</longdesc>
+                                                                </local_schema>
+                                                        </entry>
+                                                        <entry name="use_default_font">
+                                                                <local_schema short_desc="Implij an nodrezh dre-ziouer">
+                                                                </local_schema>
+                                                        </entry>
+                                                </dir>
+                                        </dir>
+                                </dir>
+                        </dir>
+                </dir>
+        </dir>
+</gconf>

@@ -1,0 +1,290 @@
+<?xml version="1.0"?>
+<gconf>
+        <dir name="schemas">
+                <dir name="apps">
+                        <dir name="gedit-2">
+                                <dir name="plugins">
+                                        <entry name="active-plugins">
+                                                <local_schema short_desc="Aktivaj kromaĵoj">
+                                                        <longdesc>Listo de aktivaj kromaĵoj. Ĝi enhavas la &quot;Lokon&quot; de aktivaj kromaĵoj. Vidu la dosieron .gedit-plugin por trovi la &quot;Lokon&quot; de specifa kromaĵo.</longdesc>
+                                                </local_schema>
+                                        </entry>
+                                        <dir name="filebrowser">
+                                                <entry name="filter_pattern">
+                                                        <local_schema short_desc="Dosierfoliumila filtra ŝablono">
+                                                                <longdesc>La filtra ŝablono per kiu la dosierfoliumilo filtras. Ĉi tiu filtro funkcias supre de la filtra _reĝimo.</longdesc>
+                                                        </local_schema>
+                                                </entry>
+                                                <entry name="filter_mode">
+                                                        <local_schema short_desc="Dosierfoliumila filtra reĝimo">
+                                                                <longdesc>Ĉi tiu valoro determinas kiaj dosieroj estos filtrataj el la dosierfoliumilo. Validaj valoroj estas: none (filtru nenion), hidden (filtru kaŝitajn dosierojn), binary (filtru binarajn dosierojn) kaj hidden_and_binary (filtru ambaŭ kaŝitajn kaj binarajn dosierojn).</longdesc>
+                                                        </local_schema>
+                                                </entry>
+                                                <entry name="open_at_first_doc">
+                                                        <local_schema short_desc="Agordi lokon al unua dokumento">
+                                                                <longdesc>Se VERA la dosierfoliumila kromaĵo vidigos la dosierujon de la unua malfermita dokumento supozante ke la dosierfoliumilo ankoraŭ ne estis uzata. (Do ĉi tio ĝenerale aplikas al la malfermado de dokumento de la komandlinio aŭ la malfermado de ĝi per naŭtilo k.t.p.)</longdesc>
+                                                        </local_schema>
+                                                </entry>
+                                                <dir name="on_load">
+                                                        <entry name="enable_remote">
+                                                                <local_schema short_desc="Ŝalti restarigon de foraj lokoj">
+                                                                        <longdesc>Agordas ĉu ŝalti restarigon de foraj lokoj.</longdesc>
+                                                                </local_schema>
+                                                        </entry>
+                                                        <entry name="virtual_root">
+                                                                <local_schema short_desc="Dosierfoliumila virtuala baza dosierujo">
+                                                                        <longdesc>La dosierfoliumila virtuala baza dosierujo uzata por ŝargi la dosierfoliumilan kromaĵon kiam onload/tree_view estas VERA. La virtuala bazo ĉiam estu sube de la efektiva bazo.</longdesc>
+                                                                </local_schema>
+                                                        </entry>
+                                                        <entry name="root">
+                                                                <local_schema short_desc="Dosierfoliumila baza dosierujo">
+                                                                        <longdesc>La dosierfoliumila baza dosierujo uzata por ŝargi la dosierfoliumilan kromaĵon kaj onload/tree_view estas VERA.</longdesc>
+                                                                </local_schema>
+                                                        </entry>
+                                                        <entry name="tree_view">
+                                                                <local_schema short_desc="Malfermi per arba rigardo">
+                                                                        <longdesc>Malfermi la arban rigardon kiam la dosierfoliumila kromaĵo estas ŝargata anstataŭ ol la legosignan rigardon</longdesc>
+                                                                </local_schema>
+                                                        </entry>
+                                                </dir>
+                                        </dir>
+                                </dir>
+                                <dir name="preferences">
+                                        <dir name="syntax_highlighting">
+                                                <entry name="enable">
+                                                        <local_schema short_desc="Ŝalti sintaksan emfazon">
+                                                                <longdesc>Ĉu gedit ŝaltu sintaksan emfazon.</longdesc>
+                                                        </local_schema>
+                                                </entry>
+                                        </dir>
+                                        <dir name="encodings">
+                                                <entry name="shown_in_menu">
+                                                        <local_schema short_desc="Kodoj montritaj en menuo">
+                                                        </local_schema>
+                                                </entry>
+                                                <entry name="auto_detected">
+                                                        <local_schema>
+                                                        </local_schema>
+                                                </entry>
+                                        </dir>
+                                        <dir name="print">
+                                                <dir name="fonts">
+                                                        <entry name="print_font_numbers_pango">
+                                                                <local_schema short_desc="Tiparo de lininumeroj dum presado">
+                                                                </local_schema>
+                                                        </entry>
+                                                        <entry name="print_font_header_pango">
+                                                                <local_schema short_desc="Paĝokapa tiparo por presado">
+                                                                </local_schema>
+                                                        </entry>
+                                                        <entry name="print_font_body_pango">
+                                                                <local_schema short_desc="Korpa tiparo por presi">
+                                                                </local_schema>
+                                                        </entry>
+                                                </dir>
+                                                <dir name="page">
+                                                        <entry name="print_line_numbers">
+                                                                <local_schema short_desc="Presi Lininumerojn">
+                                                                        <longdesc>Se ĉi tiu valoro estas 0, neniu linia numero estos enmetita dum presado de dokumento. Se ne, gedit presos liniajn numerojn ĉiu kelkaj linioj.</longdesc>
+                                                                </local_schema>
+                                                        </entry>
+                                                        <entry name="print_wrap_mode">
+                                                                <local_schema short_desc="Ĉirkaŭflua reĝimo de presa linio">
+                                                                        <longdesc>Specifas kiel ĉirkaŭfluigi longajn liniojn por presado. Uzu &quot;GTK_WRAP_NONE&quot; por neĉirkaŭfluigi, &quot;GTK_WRAP_WORD&quot; por ĉirkaŭfluigi ĉe vortlimoj, kaj &quot;GTK_WRAP_CHAR&quot; por ĉirkaŭfluigi ĉe unuopaj signolimoj. Notu ke la valoroj estas usklecodistingaj, do certigu ke ili aspektas precize kiel menciitaj ĉi tie.</longdesc>
+                                                                </local_schema>
+                                                        </entry>
+                                                        <entry name="print_header">
+                                                                <local_schema short_desc="Presi paĝokapon">
+                                                                        <longdesc>Ĉu gedit enmetu dokumentan paĝokapon kiam presante dokumentojn.</longdesc>
+                                                                </local_schema>
+                                                        </entry>
+                                                        <entry name="print_syntax_highlighting">
+                                                                <local_schema short_desc="Presi sintaksan emfazon">
+                                                                        <longdesc>Ĉu gedit presu sintaksan emfazon kiam presante dokumentojn.</longdesc>
+                                                                </local_schema>
+                                                        </entry>
+                                                </dir>
+                                        </dir>
+                                        <dir name="ui">
+                                                <dir name="recents">
+                                                        <entry name="max_recents">
+                                                                <local_schema short_desc="Maksimumaj lastaj dosieroj">
+                                                                        <longdesc>Specifas la maksimuman nombron da laste malfermitaj dosieroj, vidigu en la submenuo &quot;Lastaj dosieroj&quot;.</longdesc>
+                                                                </local_schema>
+                                                        </entry>
+                                                </dir>
+                                                <dir name="bottom_panel">
+                                                        <entry name="bottom_panel_visible">
+                                                                <local_schema short_desc="Malsupra panelo estas videbla">
+                                                                        <longdesc>Ĉu la malsupra panelo ĉe la malsupro de redaktaj fenestroj estu videbla.</longdesc>
+                                                                </local_schema>
+                                                        </entry>
+                                                </dir>
+                                                <dir name="side_pane">
+                                                        <entry name="side_pane_visible">
+                                                                <local_schema short_desc="Flanka panelo videbla">
+                                                                </local_schema>
+                                                        </entry>
+                                                </dir>
+                                                <dir name="statusbar">
+                                                        <entry name="statusbar_visible">
+                                                                <local_schema short_desc="Stata breto videbla">
+                                                                        <longdesc>Ĉu la stata breto ĉe la malsupro de redaktaj fenestroj estu videbla.</longdesc>
+                                                                </local_schema>
+                                                        </entry>
+                                                </dir>
+                                                <dir name="toolbar">
+                                                        <entry name="toolbar_buttons_style">
+                                                                <local_schema short_desc="Stilo de butonoj en ilobreto">
+                                                                        <longdesc>Stilo por la ilbretaj butonoj. Eblaj valoroj estas &quot;GEDIT_TOOLBAR_SYSTEM&quot; por uzi la sisteman defaŭltan stilon, &quot;GEDIT_TOOLBAR_ICONS&quot; por vidigi nur bildsimbolojn, &quot;GEDIT_TOOLBAR_ICONS_AND_TEXT&quot; por vidigi kaj bildsimbolojn kaj tekston, kaj &quot;GEDIT_TOOLBAR_ICONS_BOTH_HORIZ&quot; por vidigi tekston laŭ prioritato apud bildsimboloj. Notu ke la valoroj estas usklecodistingaj, do certigu ke ili aspektas precize kiel menciitaj ĉi tie.</longdesc>
+                                                                </local_schema>
+                                                        </entry>
+                                                        <entry name="toolbar_visible">
+                                                                <local_schema short_desc="Ilobreto videbla">
+                                                                        <longdesc>Ĉu la ilbreto estu videbla en redaktaj fenestroj.</longdesc>
+                                                                </local_schema>
+                                                        </entry>
+                                                </dir>
+                                        </dir>
+                                        <dir name="editor">
+                                                <dir name="search_highlighting">
+                                                        <entry name="enable">
+                                                                <local_schema short_desc="Ŝalti serĉan emfazon">
+                                                                        <longdesc>Ĉu gedit emfazu ĉiujn okazojn de la serĉata teksto.</longdesc>
+                                                                </local_schema>
+                                                        </entry>
+                                                </dir>
+                                                <dir name="cursor_position">
+                                                        <entry name="restore_cursor_position">
+                                                                <local_schema short_desc="Restaŭri antaŭan pozicion de la kursoro">
+                                                                        <longdesc>Ĉu gedit metu la kursoron en la antaŭan lokon kiam ŝargante dosieron.</longdesc>
+                                                                </local_schema>
+                                                        </entry>
+                                                </dir>
+                                                <dir name="smart_home_end">
+                                                        <entry name="smart_home_end">
+                                                                <local_schema short_desc="Inteligenta Hejmen/Finen">
+                                                                        <longdesc>Specifas kiel la kursoro moviĝas kiam la HEJMEN- kaj FINEN-klavoj premiĝas. Uzi &quot;DISABLED&quot; (malŝaltita) por moviĝi ĉiam al la komenco/fino de la linio, &quot;AFTER&quot; (post) por moviĝi al la komenco/fino de la linio la unuan fojon la klavoj estas premitaj kaj al al komenco/fino de la teksto malatentante spacetojn la duan fojon, &quot;BEFORE&quot; (antaŭ)  por moviĝi al la komenco/fino de la teksto antaŭ moviĝi  al la komenco/fino de la linio, kaj &quot;ALWAYS&quot; (ĉiam) por moviĝi ĉiam al la komenco/fino de la teksto anstataŭ al la komenco/fino de la linio.</longdesc>
+                                                                </local_schema>
+                                                        </entry>
+                                                </dir>
+                                                <dir name="right_margin">
+                                                        <entry name="right_margin_position">
+                                                                <local_schema short_desc="Pozicio de dekstra marĝeno">
+                                                                        <longdesc>Specifas la lokon de la desktra marĝeno.</longdesc>
+                                                                </local_schema>
+                                                        </entry>
+                                                        <entry name="display_right_margin">
+                                                                <local_schema short_desc="Vidigi dekstran marĝenon">
+                                                                        <longdesc>Ĉu gedit vidigu la dekstran marĝenon en la redakta areo.</longdesc>
+                                                                </local_schema>
+                                                        </entry>
+                                                </dir>
+                                                <dir name="bracket_matching">
+                                                        <entry name="bracket_matching">
+                                                                <local_schema short_desc="Emfazi kongruan krampon">
+                                                                </local_schema>
+                                                        </entry>
+                                                </dir>
+                                                <dir name="current_line">
+                                                        <entry name="highlight_current_line">
+                                                                <local_schema short_desc="Emfazi aktualan linion">
+                                                                        <longdesc>Ĉu gedit emfazu la aktualan linion.</longdesc>
+                                                                </local_schema>
+                                                        </entry>
+                                                </dir>
+                                                <dir name="line_numbers">
+                                                        <entry name="display_line_numbers">
+                                                                <local_schema short_desc="Vidigi lininumerojn">
+                                                                        <longdesc>Ĉu gedit vidigu lininumerojn en la redakta areo.</longdesc>
+                                                                </local_schema>
+                                                        </entry>
+                                                </dir>
+                                                <dir name="auto_indent">
+                                                        <entry name="auto_indent">
+                                                                <local_schema short_desc="Aŭtomate krommarĝeni">
+                                                                        <longdesc>Ĉu gedit ŝaltu aŭtomatan krommarĝenon.</longdesc>
+                                                                </local_schema>
+                                                        </entry>
+                                                </dir>
+                                                <dir name="tabs">
+                                                        <entry name="insert_spaces">
+                                                                <local_schema short_desc="Enmeti spacetojn">
+                                                                        <longdesc>Ĉu gedit enmetu spacetojn anstataŭ tabojn.</longdesc>
+                                                                </local_schema>
+                                                        </entry>
+                                                        <entry name="tabs_size">
+                                                                <local_schema short_desc="Grando de tabo">
+                                                                        <longdesc>Specifas la nombron da spacetoj vidigotaj anstataŭ Tabaj signoj.</longdesc>
+                                                                </local_schema>
+                                                        </entry>
+                                                </dir>
+                                                <dir name="wrap_mode">
+                                                        <entry name="wrap_mode">
+                                                                <local_schema short_desc="Reĝimo por linia ĉirkaŭfluo">
+                                                                        <longdesc>Specifas kiel fluigi longajn liniojn en la redakta areo. Uzu je &quot;GTK_WRAP_NONE&quot; por ne fluigi, &quot;GTK_WRAP_WORD&quot; por fluigi ĉe vortfinoj, kaj &quot;GTK_WRAP_CHAR&quot; por fluigi ĉe signofinoj. Notu ke la valoroj estas usklecodistingaj, do certigu ke ili aspektas precize kiel mencitaj ĉi tie.</longdesc>
+                                                                </local_schema>
+                                                        </entry>
+                                                </dir>
+                                                <dir name="undo">
+                                                        <entry name="max_undo_actions">
+                                                                <local_schema>
+                                                                        <longdesc>Maksimuma nombro da agoj malfareblaj aŭ refareblaj de gedit. Uzu &quot;-1&quot; por senlima nombro de agoj.</longdesc>
+                                                                </local_schema>
+                                                        </entry>
+                                                        <entry name="undo_actions_limit">
+                                                                <local_schema short_desc="Limo de malfaroj (NEUZINDA)">
+                                                                        <longdesc>Maksimuma nombro da agoj malfareblaj aŭ refareblaj de gedit. Uzu &quot;-1&quot; por senlima nombro de agoj. Evitinda de post 2.12.0</longdesc>
+                                                                </local_schema>
+                                                        </entry>
+                                                </dir>
+                                                <dir name="save">
+                                                        <entry name="writable_vfs_schemes">
+                                                                <local_schema short_desc="Skribeblaj VFS-skemoj">
+                                                                        <longdesc>Listo de VFS skemoj, kiujn subtenas gedit en skriba reĝimo. La skemo &apos;dosiero&apos; estas defaŭlte skribebla.</longdesc>
+                                                                </local_schema>
+                                                        </entry>
+                                                        <entry name="auto_save_interval">
+                                                                <local_schema short_desc="Aŭtomata konserva intervalo">
+                                                                        <longdesc>Nombro da minutoj post kiuj gedit aŭtomate konservos modifitajn dosierojn. Ĉi tio nur efektiviĝos se la atributo &quot;Aŭtomate Konservi&quot; estas ŝaltita.</longdesc>
+                                                                </local_schema>
+                                                        </entry>
+                                                        <entry name="auto_save">
+                                                                <local_schema short_desc="Aŭtomate Konservi">
+                                                                        <longdesc>Ĉu gedit aŭtomate konservu modifitajn dosierojn post intertempo. Vi povas agordi la intertempon per la atributo &quot;Aŭtomata konserva intervalo&quot;.</longdesc>
+                                                                </local_schema>
+                                                        </entry>
+                                                        <entry name="backup_copy_extension">
+                                                                <local_schema short_desc="Restaŭrkopia sufikso">
+                                                                        <longdesc>Sufikso uzota por restaŭrkopiaj dosiernomoj. Nur efektiviĝos se la atributo &quot;Krei restaŭrkopion&quot; estas ŝaltita.</longdesc>
+                                                                </local_schema>
+                                                        </entry>
+                                                        <entry name="create_backup_copy">
+                                                                <local_schema short_desc="Krei restaŭrkopion">
+                                                                        <longdesc>Ĉu gedit kreu restaŭrkopiojn por la dosieroj konservitaj de ĝi. Vi povas agordi la dosiersufikson per la atributo &quot;Dosiersufikso de restaŭrkopio&quot;.</longdesc>
+                                                                </local_schema>
+                                                        </entry>
+                                                </dir>
+                                                <dir name="colors">
+                                                        <entry name="scheme">
+                                                                <local_schema short_desc="Stila Skemo">
+                                                                </local_schema>
+                                                        </entry>
+                                                </dir>
+                                                <dir name="font">
+                                                        <entry name="editor_font">
+                                                                <local_schema short_desc="Redakta tiparo">
+                                                                </local_schema>
+                                                        </entry>
+                                                        <entry name="use_default_font">
+                                                                <local_schema short_desc="Uzi defaŭltan tiparon">
+                                                                        <longdesc>Ĉu uzi la sisteman defaŭltan fikslarĝan tiparon por redakti tekston anstataŭ de tiparo specifa por gedit. Se ĉi tiu agordaĵo estas malŝaltita, tiam la tiparo nomita en la agordo &quot;Redaktila tiparo&quot; estos uzata anstataŭ la sistema tiparo.</longdesc>
+                                                                </local_schema>
+                                                        </entry>
+                                                </dir>
+                                        </dir>
+                                </dir>
+                        </dir>
+                </dir>
+        </dir>
+</gconf>

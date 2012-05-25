@@ -1,0 +1,312 @@
+<?xml version="1.0"?>
+<gconf>
+        <dir name="schemas">
+                <dir name="apps">
+                        <dir name="gedit-2">
+                                <dir name="plugins">
+                                        <entry name="active-plugins">
+                                                <local_schema short_desc="Actieve plug-ins">
+                                                        <longdesc>Lijst van actieve plug-ins. Deze bevat de ‘Locatie’ van de actieve plug-ins. Zie het .gedit-plug-inbestand voor informatie over de ‘Locatie’ van een bepaalde plug-in.</longdesc>
+                                                </local_schema>
+                                        </entry>
+                                        <dir name="checkupdate">
+                                                <entry name="ignore_version">
+                                                        <local_schema short_desc="Te negeren versie totdat de volgende versie is uitgegeven">
+                                                        </local_schema>
+                                                </entry>
+                                        </dir>
+                                        <dir name="drawspaces">
+                                                <entry name="draw_spaces">
+                                                        <local_schema short_desc="Spaties tonen">
+                                                        </local_schema>
+                                                </entry>
+                                        </dir>
+                                        <dir name="showtabbar">
+                                                <entry name="tabbar_visible">
+                                                        <local_schema short_desc="Tabbalk zichtbaar">
+                                                                <longdesc>Weergeven tabbalk in bewerkingsvensters.</longdesc>
+                                                        </local_schema>
+                                                </entry>
+                                        </dir>
+                                        <dir name="filebrowser">
+                                                <entry name="filter_pattern">
+                                                        <local_schema short_desc="Filterpatroon voor de bestandsverkenner">
+                                                                <longdesc>Het filterpatroon waarmee de bestandsverkenner bestanden filtert. Dit filter werkt bovenop de filter_modus.</longdesc>
+                                                        </local_schema>
+                                                </entry>
+                                                <entry name="filter_mode">
+                                                        <local_schema short_desc="Bestandsverkenner-filtermodus">
+                                                                <longdesc>Deze waarde bepaalt welke bestanden door de bestandsverkenner gefilterd worden. Geldige waarden zijn: &apos;none&apos; (geen filter), &apos;hidden&apos; (verborgen bestanden filteren), &apos;binary&apos; (binaire bestanden filteren) en &apos;hidden_and_binary&apos; (zowel verborgen als binaire bestanden filteren).</longdesc>
+                                                        </local_schema>
+                                                </entry>
+                                                <entry name="open_at_first_doc">
+                                                        <local_schema short_desc="Locatie van eerste document instellen">
+                                                                <longdesc>Indien ingeschakeld zal de bestandsverkennerplug-in de locatie van het eerst geopend document weergeven; dit werkt alleen als de bestandsverkenner nog niet eerder gebruikt werd. (Dit is meestal van toepassing als een document via de opdrachtregel of via Nautilus e.d. geopend wordt.)</longdesc>
+                                                        </local_schema>
+                                                </entry>
+                                                <dir name="on_load">
+                                                        <entry name="enable_remote">
+                                                                <local_schema short_desc="Herstellen van locaties op afstand gebruiken">
+                                                                        <longdesc>Indien ingeschakeld zullen locaties op afstand, indien mogelijk, hersteld worden.</longdesc>
+                                                                </local_schema>
+                                                        </entry>
+                                                        <entry name="virtual_root">
+                                                                <local_schema short_desc="Virtuele beginmap van de bestandsverkenner">
+                                                                        <longdesc>De virtuele beginmap van de bestandsverkenner die gebruikt wordt bij het opstarten van de bestandsverkennerplug-in en wanneer onload/tree_view aangevinkt is. De virtuele beginmap moet altijd een submap van de eigenlijke beginmap zijn.</longdesc>
+                                                                </local_schema>
+                                                        </entry>
+                                                        <entry name="root">
+                                                                <local_schema short_desc="Beginmap van de bestandsverkenner">
+                                                                        <longdesc>De beginmap van de bestandsverkenner die gebruikt wordt bij het opstarten van de bestandsverkennerplug-in en wanneer onload/tree_view aangevinkt is.</longdesc>
+                                                                </local_schema>
+                                                        </entry>
+                                                        <entry name="tree_view">
+                                                                <local_schema short_desc="Openen met boomweergave">
+                                                                        <longdesc>Open de boomweergave wanneer de bestandsverkennerplug-in wordt opgestart in plaats van de bladwijzersweergave</longdesc>
+                                                                </local_schema>
+                                                        </entry>
+                                                </dir>
+                                        </dir>
+                                </dir>
+                                <dir name="preferences">
+                                        <dir name="syntax_highlighting">
+                                                <entry name="enable">
+                                                        <local_schema short_desc="Syntaxismarkering inschakelen">
+                                                                <longdesc>Syntaxismarkering inschakelen.</longdesc>
+                                                        </local_schema>
+                                                </entry>
+                                        </dir>
+                                        <dir name="encodings">
+                                                <entry name="shown_in_menu">
+                                                        <local_schema short_desc="Tekensets getoond in menu">
+                                                        </local_schema>
+                                                </entry>
+                                                <entry name="auto_detected">
+                                                        <local_schema short_desc="Automatisch herkende tekensets">
+                                                        </local_schema>
+                                                </entry>
+                                        </dir>
+                                        <dir name="print">
+                                                <dir name="fonts">
+                                                        <entry name="print_font_numbers_pango">
+                                                                <local_schema short_desc="Lettertype voor regelnummers bij afdrukken">
+                                                                </local_schema>
+                                                        </entry>
+                                                        <entry name="print_font_header_pango">
+                                                                <local_schema short_desc="Afdruklettertype voor kop">
+                                                                </local_schema>
+                                                        </entry>
+                                                        <entry name="print_font_body_pango">
+                                                                <local_schema short_desc="Afdruklettertype voor inhoud">
+                                                                </local_schema>
+                                                        </entry>
+                                                </dir>
+                                                <dir name="page">
+                                                        <entry name="print_line_numbers">
+                                                                <local_schema short_desc="Regelnummers afdrukken">
+                                                                        <longdesc>Als deze waarde 0 is, zullen er geen regelnummers worden afgedrukt. Anders zal gedit, om de zoveel regels, het regelnummer afdrukken.</longdesc>
+                                                                </local_schema>
+                                                        </entry>
+                                                        <entry name="print_wrap_mode">
+                                                                <local_schema short_desc="Regels afbreken bij afdrukken">
+                                                                        <longdesc>Geeft aan hoe lange regels worden afgebroken bij het afdrukken. Gebruik ‘GTK_WRAP_NONE’ om niet af te breken, ‘GTK_WRAP_WORD’ om op woorden af te breken, en ‘GTK_WRAP_CHAR’ om op letters af te breken. Let op dat de waarden hoofdlettergevoelig zijn. Zorg er dus voor dat ze exact zo zijn als hier weergegeven.</longdesc>
+                                                                </local_schema>
+                                                        </entry>
+                                                        <entry name="print_header">
+                                                                <local_schema short_desc="Paginakoppen afdrukken">
+                                                                        <longdesc>Documentkoppen toevoegen bij het afdrukken van documenten.</longdesc>
+                                                                </local_schema>
+                                                        </entry>
+                                                        <entry name="print_syntax_highlighting">
+                                                                <local_schema short_desc="Syntaxismarkering afdrukken">
+                                                                        <longdesc>Syntaxismarkering gebruiken bij het afdrukken van documenten.</longdesc>
+                                                                </local_schema>
+                                                        </entry>
+                                                </dir>
+                                        </dir>
+                                        <dir name="ui">
+                                                <dir name="recents">
+                                                        <entry name="max_recents">
+                                                                <local_schema short_desc="Maximum aantal recente bestanden">
+                                                                        <longdesc>Het maximum aantal recent geopende bestanden dat wordt weergegeven in het deelmenu ‘Recente bestanden’.</longdesc>
+                                                                </local_schema>
+                                                        </entry>
+                                                </dir>
+                                                <dir name="bottom_panel">
+                                                        <entry name="bottom_panel_visible">
+                                                                <local_schema short_desc="Onderpaneel is zichtbaar">
+                                                                        <longdesc>Bepaalt of het onderpaneel onderaan het bewerkingsvenster zichtbaar moet zijn.</longdesc>
+                                                                </local_schema>
+                                                        </entry>
+                                                </dir>
+                                                <dir name="side_pane">
+                                                        <entry name="side_pane_visible">
+                                                                <local_schema short_desc="Zijpaneel is zichtbaar">
+                                                                        <longdesc>Bepaalt of het zijpaneel, dat zich links bevindt van het bewerkingsvenster, zichtbaar moet zijn.</longdesc>
+                                                                </local_schema>
+                                                        </entry>
+                                                </dir>
+                                                <dir name="statusbar">
+                                                        <entry name="statusbar_visible">
+                                                                <local_schema short_desc="Statusbalk is zichtbaar">
+                                                                        <longdesc>Bepaalt of de statusbalk onderaan het editorvenster zichtbaar moet zijn.</longdesc>
+                                                                </local_schema>
+                                                        </entry>
+                                                </dir>
+                                                <dir name="toolbar">
+                                                        <entry name="toolbar_buttons_style">
+                                                                <local_schema short_desc="Werkbalk-knoppenstijl">
+                                                                        <longdesc>Stijl voor de werkbalkknoppen. Mogelijke waarden zijn ‘GEDIT_TOOLBAR_SYSTEM’ om de standaardstijl te gebruiken van het systeem, ‘GEDIT_TOOLBAR_ICONS’ om alleen pictogrammen weer te geven, ‘GEDIT_TOOLBAR_ICONS_AND_TEXT’ om zowel pictogrammen als tekst weer te geven, en ‘GEDIT_TOOLBAR_ICONS_BOTH_HORIZ’ om prioriteitstekst naast pictogrammen weer te geven. Let op dat de waarden hoofdlettergevoelig zijn. Zorg er dus voor dat ze precies zo verschijnen zoals ze hier worden genoemd. </longdesc>
+                                                                </local_schema>
+                                                        </entry>
+                                                        <entry name="toolbar_visible">
+                                                                <local_schema short_desc="Werkbalk is zichtbaar">
+                                                                        <longdesc>Zichtbaarheid van werkbalk in editorvensters.</longdesc>
+                                                                </local_schema>
+                                                        </entry>
+                                                </dir>
+                                        </dir>
+                                        <dir name="editor">
+                                                <dir name="search_highlighting">
+                                                        <entry name="enable">
+                                                                <local_schema short_desc="Zoektermmarkering inschakelen">
+                                                                        <longdesc>Syntaxismarkering van alle zoekresultaten met de gezochte tekst inschakelen.</longdesc>
+                                                                </local_schema>
+                                                        </entry>
+                                                </dir>
+                                                <dir name="cursor_position">
+                                                        <entry name="restore_cursor_position">
+                                                                <local_schema short_desc="Vorige cursorpositie herstellen">
+                                                                        <longdesc>Herstellen van de vorige cursorpositie wanneer een bestand wordt geladen.</longdesc>
+                                                                </local_schema>
+                                                        </entry>
+                                                </dir>
+                                                <dir name="smart_home_end">
+                                                        <entry name="smart_home_end">
+                                                                <local_schema short_desc="Slimme Home/End-toetsen">
+                                                                        <longdesc>Geeft aan hoe de cursor beweegt wanneer de HOME- en END-toetsen ingedrukt worden. Gebruik ‘DISABLED’ om altijd naar het begin/eind van een regel te springen, ‘AFTER’ om de eerste keer dat de toetsen worden ingedrukt naar het begin/eind van de regel te springen en de tweede keer naar het begin/eind van de tekst, daarbij witruimte negerend. Gebruik ‘BEFORE’ om naar het begin/eind van de tekst te springen vóór het springen naar het begin/eind van de regel en ‘ALWAYS’ om altijd naar het begin/eind van de tekst te springen in plaats van het begin/eind van de regel.</longdesc>
+                                                                </local_schema>
+                                                        </entry>
+                                                </dir>
+                                                <dir name="right_margin">
+                                                        <entry name="right_margin_position">
+                                                                <local_schema short_desc="Positie van rechterkantlijn">
+                                                                        <longdesc>De positie van de rechterkantlijn.</longdesc>
+                                                                </local_schema>
+                                                        </entry>
+                                                        <entry name="display_right_margin">
+                                                                <local_schema short_desc="Rechterkantlijn weergeven">
+                                                                        <longdesc>Weergeven rechterkantlijn in het bewerkingsgedeelte.</longdesc>
+                                                                </local_schema>
+                                                        </entry>
+                                                </dir>
+                                                <dir name="bracket_matching">
+                                                        <entry name="bracket_matching">
+                                                                <local_schema short_desc="Overeenkomstig haakje markeren">
+                                                                        <longdesc>Bepaalt of gedit het haakje dat overeenkomt met het geselecteerde haakje moet markeren.</longdesc>
+                                                                </local_schema>
+                                                        </entry>
+                                                </dir>
+                                                <dir name="current_line">
+                                                        <entry name="highlight_current_line">
+                                                                <local_schema short_desc="Huidige regel markeren">
+                                                                        <longdesc>Markering van de huidige regel inschakelen.</longdesc>
+                                                                </local_schema>
+                                                        </entry>
+                                                </dir>
+                                                <dir name="line_numbers">
+                                                        <entry name="display_line_numbers">
+                                                                <local_schema short_desc="Regelnummers weergeven">
+                                                                        <longdesc>Weergeven regelnummers in het bewerkingsgedeelte.</longdesc>
+                                                                </local_schema>
+                                                        </entry>
+                                                </dir>
+                                                <dir name="auto_indent">
+                                                        <entry name="auto_indent">
+                                                                <local_schema short_desc="Automatisch inspringen">
+                                                                        <longdesc>Automatisch inspringen inschakelen.</longdesc>
+                                                                </local_schema>
+                                                        </entry>
+                                                </dir>
+                                                <dir name="tabs">
+                                                        <entry name="insert_spaces">
+                                                                <local_schema short_desc="Spaties invoegen">
+                                                                        <longdesc>Spaties in plaats van tabs invoegen.</longdesc>
+                                                                </local_schema>
+                                                        </entry>
+                                                        <entry name="tabs_size">
+                                                                <local_schema short_desc="Tabgrootte">
+                                                                        <longdesc>Het aantal spaties dat weergegeven moet worden in plaats van een Tab-teken.</longdesc>
+                                                                </local_schema>
+                                                        </entry>
+                                                </dir>
+                                                <dir name="wrap_mode">
+                                                        <entry name="wrap_mode">
+                                                                <local_schema short_desc="Regelafbrekingsmodus">
+                                                                        <longdesc>Geeft aan hoe lange regels worden afgebroken tijdens het bewerken. Gebruik ‘GTK_WRAP_NONE’ om niet af te breken, ‘GTK_WRAP_WORD’ om op woorden af te breken, en ‘GTK_WRAP_CHAR’ om op letters af te breken. Let op dat de waarden hoofdlettergevoelig zijn. Zorg er dus voor dat ze exact zo zijn als hier weergegeven.</longdesc>
+                                                                </local_schema>
+                                                        </entry>
+                                                </dir>
+                                                <dir name="undo">
+                                                        <entry name="max_undo_actions">
+                                                                <local_schema short_desc="Maximum aantal acties dat ongedaan gemaakt kan worden">
+                                                                        <longdesc>Maximum aantal acties dat gedit ongedaan kan maken of opnieuw kan doen. Gebruik ‘-1’ voor een ongelimiteerd aantal acties.</longdesc>
+                                                                </local_schema>
+                                                        </entry>
+                                                        <entry name="undo_actions_limit">
+                                                                <local_schema short_desc="Limiet op het aantal &apos;Ongedaan maken&apos;-acties (WORDT AFGERADEN)">
+                                                                        <longdesc>Maximum aantal acties dat gedit ongedaan kan maken of opnieuw kan doen. Gebruik ‘-1’ voor een ongelimiteerd aantal acties. Wordt afgeraden sinds 2.12.0</longdesc>
+                                                                </local_schema>
+                                                        </entry>
+                                                </dir>
+                                                <dir name="save">
+                                                        <entry name="writable_vfs_schemes">
+                                                                <local_schema short_desc="Beschrijfbare VFS-schema&apos;s">
+                                                                        <longdesc>Lijst van VFS-schema&apos;s die gedit ondersteunt in schrijfmodus. Het ‘file’-schema is standaard beschrijfbaar.</longdesc>
+                                                                </local_schema>
+                                                        </entry>
+                                                        <entry name="auto_save_interval">
+                                                                <local_schema short_desc="Interval voor automatisch opslaan">
+                                                                        <longdesc>Aantal minuten waarna gedit gewijzigde bestanden automatisch opslaat. Dit heeft alleen effect wanneer de optie ‘Automatisch opslaan’ ingeschakeld is.</longdesc>
+                                                                </local_schema>
+                                                        </entry>
+                                                        <entry name="auto_save">
+                                                                <local_schema short_desc="Automatisch opslaan">
+                                                                        <longdesc>Bepaalt of gedit gewijzigde bestanden automatisch moet opslaan na een bepaalde tijd. U kunt deze tijdsinterval instellen met de de optie ‘Interval voor automatisch opslaan’.</longdesc>
+                                                                </local_schema>
+                                                        </entry>
+                                                        <entry name="backup_copy_extension">
+                                                                <local_schema short_desc="Achtervoegsel voor reservekopie">
+                                                                        <longdesc>Achtervoegsel voor reservekopieën. Dit heeft alleen effect bij gebruik van de optie ‘Reservekopieën maken’.</longdesc>
+                                                                </local_schema>
+                                                        </entry>
+                                                        <entry name="create_backup_copy">
+                                                                <local_schema short_desc="Reservekopieën maken">
+                                                                        <longdesc>Reservekopieën maken bij het opslaan van bestanden. Het achtervoegsel van reservekopieën kunt U instellen met de optie ‘Achtervoegsel voor reservekopie’.</longdesc>
+                                                                </local_schema>
+                                                        </entry>
+                                                </dir>
+                                                <dir name="colors">
+                                                        <entry name="scheme">
+                                                                <local_schema short_desc="Stijlschema">
+                                                                        <longdesc>Het ID van een GtkSourceView-stijlschema dat gebruikt wordt om de tekst te kleuren.</longdesc>
+                                                                </local_schema>
+                                                        </entry>
+                                                </dir>
+                                                <dir name="font">
+                                                        <entry name="editor_font">
+                                                                <local_schema short_desc="Editorlettertype">
+                                                                </local_schema>
+                                                        </entry>
+                                                        <entry name="use_default_font">
+                                                                <local_schema short_desc="Standaardlettertype gebruiken">
+                                                                        <longdesc>Of het standaard vaste breedte-systeemlettertype gebruikt dient te worden bij het bewerken van tekst in plaats van een lettertype specifiek voor gedit. Als deze optie uitgeschakeld is, zal het lettertype worden gebruikt dat wordt aangegeven in de optie ‘Editor-lettertype’, in plaats van het systeemlettertype.</longdesc>
+                                                                </local_schema>
+                                                        </entry>
+                                                </dir>
+                                        </dir>
+                                </dir>
+                        </dir>
+                </dir>
+        </dir>
+</gconf>

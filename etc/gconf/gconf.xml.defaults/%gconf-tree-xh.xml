@@ -1,0 +1,197 @@
+<?xml version="1.0"?>
+<gconf>
+        <dir name="schemas">
+                <dir name="apps">
+                        <dir name="gedit-2">
+                                <dir name="plugins">
+                                        <entry name="active-plugins">
+                                                <local_schema short_desc="Ingeniso ezisebenzayo">
+                                                        <longdesc>Uluhlu lwezingeniso asebenzayo. Lune &quot;Indawo&quot; lwamangeniso asebenzayo. Jonga ifayili ye .gedit-plugin kuze ufumane i &quot;Indawo&quot; yongeniso olunikiweyo.</longdesc>
+                                                </local_schema>
+                                        </entry>
+                                </dir>
+                                <dir name="preferences">
+                                        <dir name="syntax_highlighting">
+                                                <entry name="enable">
+                                                        <local_schema short_desc="Iqaqambisa ulwakhiwo lwe-Syntax">
+                                                                <longdesc>Nokuba i-gedit kufuneka ikwazi ukwenza uqaqambiso lwe-syntax.</longdesc>
+                                                        </local_schema>
+                                                </entry>
+                                        </dir>
+                                        <dir name="encodings">
+                                                <entry name="shown_in_menu">
+                                                        <local_schema short_desc="Unxulumaniso oluboniswee kwimenyu">
+                                                        </local_schema>
+                                                </entry>
+                                                <entry name="auto_detected">
+                                                        <local_schema short_desc="Izifumanela Ngokwayo Unxulumano">
+                                                        </local_schema>
+                                                </entry>
+                                        </dir>
+                                        <dir name="print">
+                                                <dir name="fonts">
+                                                        <entry name="print_font_numbers_pango">
+                                                                <local_schema short_desc="Inani Lomgca Wefonti Elungiselelwa Ushicilelo">
+                                                                        <longdesc>Ichaza ifonti emayisetyenziswe kumanani emigca xa kushicilelwa. Oku kusebenza kuphela ukuba ngaba indlela yoku &quot;Shicilela Umgca Wamanani&quot; ayingo-zero.</longdesc>
+                                                                </local_schema>
+                                                        </entry>
+                                                        <entry name="print_font_header_pango">
+                                                                <local_schema short_desc="Isihloko Sefonti Elungiselelwa Ushicilelo">
+                                                                        <longdesc>Chaza ifonti emayisetyenziwe kuza kwenzela iphepha lokubhalwe ngasentla xa ushicilela uxwebhu. Oku kuzakwenzeka kuphela ukuba ngaba i &quot;Shicilela Okubhalwee Emantla Ephepha&quot; ivulelwee ukuba isebenze.</longdesc>
+                                                                </local_schema>
+                                                        </entry>
+                                                        <entry name="print_font_body_pango">
+                                                                <local_schema short_desc="Okuqulathwe yiFonti kulungiselelwa Ushicilelo">
+                                                                        <longdesc>Ichaza ifonti emayisetyenziswe kokuqulathwe kuxwebhu xa kushicilelwa amaxwebhu.</longdesc>
+                                                                </local_schema>
+                                                        </entry>
+                                                </dir>
+                                                <dir name="page">
+                                                        <entry name="print_line_numbers">
+                                                                <local_schema short_desc="Shicilela Umgca Wamanani">
+                                                                        <longdesc>Ukuba eli xabiso ngu 0. ngoko akukho manani aza kufakwa xa kushicilelwa uxwebhu. Kungenjalo, i-gedit iza kushicilela amanani emigca onke amanani anjalo emigca.</longdesc>
+                                                                </local_schema>
+                                                        </entry>
+                                                        <entry name="print_wrap_mode">
+                                                                <local_schema short_desc="Ishicilela Umgca Wenkqubo Yoqhubekeko-magama">
+                                                                        <longdesc>Ichaza ngendlela yoqhubekeko-magama anemigca emide xa kulungiselelwa ushicilelo. Sebenzisa &quot;GTK_WRAP_NONE&quot; ukwenzela kungabikho uqhubekeko-magama. &quot;GTK_WRAP_WORD&quot; ukwenzela uqhubekeko-magama kwimida yegama, ne &quot;GTK_WRAP_CHAR&quot; kwimida .Qaphela ukuba amaxabiso a case-sensitive, qinisekisa Avela ngqo ngolu hlobo abekwe ngayo apha.</longdesc>
+                                                                </local_schema>
+                                                        </entry>
+                                                        <entry name="print_header">
+                                                                <local_schema short_desc="Shicilela Okubhalwee Ngasentla">
+                                                                        <longdesc>Nokuba i-gedit kufuneka iquke uxwebhu lwephepha lokubhalwe ngasentla xa kushicilelwa amaxwebhu.</longdesc>
+                                                                </local_schema>
+                                                        </entry>
+                                                        <entry name="print_syntax_highlighting">
+                                                                <local_schema short_desc="Shicilela Uqaqambiso Lolwakhiwo-zivakalisi">
+                                                                        <longdesc>Nokuba i-gedit kufuneka ishicilele uqaqambiso lwe-Syntax xa kushicilelwa amaxwebhu.</longdesc>
+                                                                </local_schema>
+                                                        </entry>
+                                                </dir>
+                                        </dir>
+                                        <dir name="ui">
+                                                <dir name="recents">
+                                                        <entry name="max_recents">
+                                                                <local_schema short_desc="Ubukhulu Beefayili Zamvanje">
+                                                                        <longdesc>Ichaza ubukhulu benani lwefayili ezisandula ukuvulwa neziza kubonwa kwimenyu engaphakathi kwenye &quot;Iifayili Zamvanje&quot;.</longdesc>
+                                                                </local_schema>
+                                                        </entry>
+                                                </dir>
+                                                <dir name="statusbar">
+                                                        <entry name="statusbar_visible">
+                                                                <local_schema short_desc="Uyabonakala umgca obonakalisa ubume bokuqhubekayo">
+                                                                        <longdesc>Nokuba umgca obonakalisa ubume bokuqhubekayo emazantsi eefestile zokuhlela kufuneka ubonakale.</longdesc>
+                                                                </local_schema>
+                                                        </entry>
+                                                </dir>
+                                                <dir name="toolbar">
+                                                        <entry name="toolbar_buttons_style">
+                                                                <local_schema short_desc="Uhlobo Lwamaqhosha e-Toolbar">
+                                                                        <longdesc>Uhlobo lwamaqhosha e-toolbar. Amaxabiso anokwenzeka &quot;GEDIT_TOOLBAR_SYSTEM&quot; engasetyenziswa kuhlobo olubekiweyo lwenkqubo. &quot;GEDIT_TOOLBAR_ICONS&quot; ukubonisa imifanekiso engumqondiso kuphela. &quot;GEDIT_TOOLBAR_ICONS_AND_TEXT&quot; ukubonisa zombini imifanekiso engumqondiso nemibhalo, ne &quot;GEDIT_TOOLBAR_ICONS_BOTH_HORIZ&quot; ukubonisa ngokubaluleka imibhalo ecakwe mifanekiso engumqondiso. Qaphela ukuba amaxabiso a case-sensitive, qinisekisa ukuba avela ngolu hlobo kuthethwe ngalo apha.</longdesc>
+                                                                </local_schema>
+                                                        </entry>
+                                                        <entry name="toolbar_visible">
+                                                                <local_schema short_desc="I-Toolbar Iyabonakala">
+                                                                        <longdesc>Nokuba i-toolbar kufuneka ibonakale kwiifestile zokuhlela.</longdesc>
+                                                                </local_schema>
+                                                        </entry>
+                                                </dir>
+                                        </dir>
+                                        <dir name="editor">
+                                                <dir name="right_margin">
+                                                        <entry name="right_margin_position">
+                                                                <local_schema short_desc="Indawo Yomgca wephepha Esekunene">
+                                                                        <longdesc>Ichaza indawo yomgca wasekunene.</longdesc>
+                                                                </local_schema>
+                                                        </entry>
+                                                        <entry name="display_right_margin">
+                                                                <local_schema short_desc="Bonisa Umgca Wephepha Wasekunene">
+                                                                        <longdesc>Nokuba i-gedit kufuneka ikwazi ukubonisa umgca wasekunene kwindawo yokuhlela.</longdesc>
+                                                                </local_schema>
+                                                        </entry>
+                                                </dir>
+                                                <dir name="bracket_matching">
+                                                        <entry name="bracket_matching">
+                                                                <local_schema short_desc="Qaqambisa Izibiyeli Zokungqamanisa">
+                                                                </local_schema>
+                                                        </entry>
+                                                </dir>
+                                                <dir name="current_line">
+                                                        <entry name="highlight_current_line">
+                                                                <local_schema short_desc="Qaqambisa Umgca Okuwo">
+                                                                        <longdesc>Nokuba i-gedit kufuneka iqaqambise umgca okuwo.</longdesc>
+                                                                </local_schema>
+                                                        </entry>
+                                                </dir>
+                                                <dir name="line_numbers">
+                                                        <entry name="display_line_numbers">
+                                                                <local_schema short_desc="Bonisa Umgca Wamanani">
+                                                                        <longdesc>Nokuba i-gedit kufuneka ikwazi ukubonisa amanani omgca kwindawo yokuhlela.</longdesc>
+                                                                </local_schema>
+                                                        </entry>
+                                                </dir>
+                                                <dir name="auto_indent">
+                                                        <entry name="auto_indent">
+                                                                <local_schema short_desc="Iziqalela ngokwayo nganeno">
+                                                                        <longdesc>Nokuba i-gedit kufuneka ikwazi ukuziqalela nganeno ngokwayo.</longdesc>
+                                                                </local_schema>
+                                                        </entry>
+                                                </dir>
+                                                <dir name="tabs">
+                                                        <entry name="insert_spaces">
+                                                                <local_schema short_desc="Faka izithuba">
+                                                                        <longdesc>Nokuba i-gedit kufuneka ifake izithuba endaweni yee-tabs.</longdesc>
+                                                                </local_schema>
+                                                        </entry>
+                                                        <entry name="tabs_size">
+                                                                <local_schema short_desc="Ubungakanani be-Tab">
+                                                                        <longdesc>Chaza inani lezithuba emazibonakaliswe endaweni yeempawu ze-Tab.</longdesc>
+                                                                </local_schema>
+                                                        </entry>
+                                                </dir>
+                                                <dir name="wrap_mode">
+                                                        <entry name="wrap_mode">
+                                                                <local_schema short_desc="Indlela Yomgca Yoqhubekeko-magama">
+                                                                        <longdesc>Ichaza ngendlela yoqhubekeko-magama anemigca emide kwindawo yokuhlela. Sebenzisa &quot;GTK_WRAP_NONE&quot; ukwenzela kungabikho uqhubekeko-magama. &quot;GTK_WRAP_WORD&quot; ukwenzela uqhubekeko-magama kwimida yegama, ne &quot;GTK_WRAP_CHAR&quot; kwimida. Qaphela ukuba amaxabiso a case-sensitive, qinisekisa zivela nqo ngolu hlobo abekwe ngayo apha.</longdesc>
+                                                                </local_schema>
+                                                        </entry>
+                                                </dir>
+                                                <dir name="save">
+                                                        <entry name="auto_save_interval">
+                                                                <local_schema short_desc="Izigcinela Ngokwayo ixesha lekhefu">
+                                                                        <longdesc>Inani lemizuzu emva kokuba i-gedit izigcinele ngokwayo iifayili ezilungisiweyo. Oku kwenzeka kuphela xa ngaba i &quot;Izigcinela Ngokwayo&quot; ivuliwe.</longdesc>
+                                                                </local_schema>
+                                                        </entry>
+                                                        <entry name="auto_save">
+                                                                <local_schema short_desc="Izigcinela Ngokwayo">
+                                                                        <longdesc>Nokuba i-gedit kufuneka izigcinele ngokwayo iifayili ezilungisiweyo emva kwexesha lekhefu. Ungamisela ixesha lekhefu ngohlobolwe &quot;Izigcinela Ngokwayo Ixesha Lekhefu&quot;.</longdesc>
+                                                                </local_schema>
+                                                        </entry>
+                                                        <entry name="backup_copy_extension">
+                                                                <local_schema short_desc="Isongezo Sekopi Yokhuseleko">
+                                                                        <longdesc>Ulwandiso okanye isimamva esisetyeziswa kumagama okhuseleko lwefayili. Oku kuza kusebenza kuphela xa i &quot;Yenza Iikopi Zokhuselo&quot; zicinyiwe.</longdesc>
+                                                                </local_schema>
+                                                        </entry>
+                                                        <entry name="create_backup_copy">
+                                                                <local_schema short_desc="Yenza Iikopi Zokhuselo">
+                                                                        <longdesc>Nokuba i-gedit kufuneka idale iikopi zokhuselo ukwenzela iifayili ezigcinayo. Ungamisela ifayili yokhuselo eyongeziweyo nge &quot;Isongezo Sekopi Yokhuseleko&quot;.</longdesc>
+                                                                </local_schema>
+                                                        </entry>
+                                                </dir>
+                                                <dir name="font">
+                                                        <entry name="editor_font">
+                                                                <local_schema short_desc="Umhleli Wefonti">
+                                                                        <longdesc>Ifonti yakho eza kusetyenziswa kwindawo yokuhlela. Le nto izokwenzeka ukuba ukhetho &quot;Sebenzisa Umiselo Lwefonti&quot; lucinyiwe.</longdesc>
+                                                                </local_schema>
+                                                        </entry>
+                                                        <entry name="use_default_font">
+                                                                <local_schema short_desc="Sebenzisa Umiselo Lwefonti">
+                                                                </local_schema>
+                                                        </entry>
+                                                </dir>
+                                        </dir>
+                                </dir>
+                        </dir>
+                </dir>
+        </dir>
+</gconf>

@@ -1,0 +1,340 @@
+<?xml version="1.0"?>
+<gconf>
+        <dir name="schemas">
+                <dir name="apps">
+                        <dir name="gedit-2">
+                                <dir name="plugins">
+                                        <entry name="active-plugins">
+                                                <local_schema short_desc="Aktywne wtyczki">
+                                                        <longdesc>Lista aktywnych wtyczek. Zawiera &quot;Położenie&quot; aktywnej wtyczki. Proszę zobaczyć plik .gedit-plugins w celu otrzymania &quot;Położenia&quot; danej wtyczki.</longdesc>
+                                                </local_schema>
+                                        </entry>
+                                        <dir name="checkupdate">
+                                                <entry name="ignore_version">
+                                                        <local_schema short_desc="Wersja do pominięcia, dopóki nie zostanie wydana następna">
+                                                        </local_schema>
+                                                </entry>
+                                        </dir>
+                                        <dir name="drawspaces">
+                                                <entry name="draw_trailing">
+                                                        <local_schema short_desc="Wyświetlanie spacji na końcach wierszy">
+                                                        </local_schema>
+                                                </entry>
+                                                <entry name="draw_text">
+                                                        <local_schema short_desc="Wyświetlanie spacji w tekście">
+                                                        </local_schema>
+                                                </entry>
+                                                <entry name="draw_leading">
+                                                        <local_schema short_desc="Wyświetlanie spacji wiodących">
+                                                        </local_schema>
+                                                </entry>
+                                                <entry name="draw_nbsp">
+                                                        <local_schema short_desc="Wyświetlanie nieprzerywalnych spacji">
+                                                        </local_schema>
+                                                </entry>
+                                                <entry name="draw_newline">
+                                                        <local_schema short_desc="Wyświetlanie nowych wierszy">
+                                                        </local_schema>
+                                                </entry>
+                                                <entry name="draw_spaces">
+                                                        <local_schema short_desc="Wyświetlanie spacji">
+                                                        </local_schema>
+                                                </entry>
+                                                <entry name="draw_tabs">
+                                                        <local_schema short_desc="Wyświetlanie tabulacji">
+                                                        </local_schema>
+                                                </entry>
+                                                <entry name="enable">
+                                                        <local_schema short_desc="Wyświetlanie spacji">
+                                                        </local_schema>
+                                                </entry>
+                                        </dir>
+                                        <dir name="showtabbar">
+                                                <entry name="tabbar_visible">
+                                                        <local_schema short_desc="Pasek kart jest widoczny">
+                                                                <longdesc>Określa, czy pasek kart ma być widoczny w oknach.</longdesc>
+                                                        </local_schema>
+                                                </entry>
+                                        </dir>
+                                        <dir name="filebrowser">
+                                                <entry name="filter_pattern">
+                                                        <local_schema short_desc="Wzór filtra plików">
+                                                                <longdesc>Wzorzec filtra przeglądarki plików. Filtr ten działa w oparciu o &quot;filter_mode&quot;.</longdesc>
+                                                        </local_schema>
+                                                </entry>
+                                                <entry name="filter_mode">
+                                                        <local_schema short_desc="Tryb filtrowania plików">
+                                                                <longdesc>Wartość ta określa, które pliki nie będą widoczne w przeglądarce plików. Prawidłowe wartości to: &quot;none&quot; (wszystkie pliki widoczne), &quot;hidden&quot; (wyklucza pliki ukryte), &quot;binary&quot; (wyklucza pliki wykonywalne) oraz &quot;hidden_and_binary&quot; (wyklucza zarówno pliki ukryte, jak i wykonywalne).</longdesc>
+                                                        </local_schema>
+                                                </entry>
+                                                <entry name="open_at_first_doc">
+                                                        <local_schema short_desc="Ustawienie położenia na pierwszy dokument">
+                                                                <longdesc>Wartość &quot;true&quot; powoduje wyświetlenie katalogu pierwszego otwartego dokumentu w przeglądarce plików, jeśli nie była jeszcze używana (z tego powodu opcja ta dotyczy ogólnie przypadków, w których dokumenty zostały otwarte z wiersza poleceń lub z menedżera plików, np. programu Nautilus).</longdesc>
+                                                        </local_schema>
+                                                </entry>
+                                                <dir name="on_load">
+                                                        <entry name="enable_remote">
+                                                                <local_schema short_desc="Włącza możliwość przywracania zdalnych położeń">
+                                                                        <longdesc>Przełącza możliwość przywracania zdalnych położeń.</longdesc>
+                                                                </local_schema>
+                                                        </entry>
+                                                        <entry name="virtual_root">
+                                                                <local_schema short_desc="Wirtualny katalog główny przeglądarki plików">
+                                                                        <longdesc>Wirtualny katalog główny, w którym rozpocznie przeglądarka plików, jeśli &quot;onload/tree_view&quot; ma wartość &quot;true&quot;. Wirtualny katalog główny musi zawsze być katalogiem podrzędnym faktycznego katalogu głównego.</longdesc>
+                                                                </local_schema>
+                                                        </entry>
+                                                        <entry name="root">
+                                                                <local_schema short_desc="Katalog główny przeglądarki plików">
+                                                                        <longdesc>Katalog główny, w którym rozpocznie przeglądarka plików, jeśli &quot;onload/tree_view&quot; ma wartość &quot;true&quot;.</longdesc>
+                                                                </local_schema>
+                                                        </entry>
+                                                        <entry name="tree_view">
+                                                                <local_schema short_desc="Rozpocznij z widokiem drzewa plików">
+                                                                        <longdesc>Otwiera przeglądarkę plików z aktywnym widokiem drzewa plików zamiast widoku zakładek</longdesc>
+                                                                </local_schema>
+                                                        </entry>
+                                                </dir>
+                                        </dir>
+                                </dir>
+                                <dir name="preferences">
+                                        <dir name="syntax_highlighting">
+                                                <entry name="enable">
+                                                        <local_schema short_desc="Włączone wyróżnianie elementów składni">
+                                                                <longdesc>Określa, czy program gedit powinien mieć włączoną funkcję wyróżniania elementów składni.</longdesc>
+                                                        </local_schema>
+                                                </entry>
+                                        </dir>
+                                        <dir name="encodings">
+                                                <entry name="shown_in_menu">
+                                                        <local_schema short_desc="Kodowania wyświetlane w menu">
+                                                        </local_schema>
+                                                </entry>
+                                                <entry name="auto_detected">
+                                                        <local_schema short_desc="Automatyczne rozpoznawanie kodowania">
+                                                        </local_schema>
+                                                </entry>
+                                        </dir>
+                                        <dir name="print">
+                                                <dir name="fonts">
+                                                        <entry name="print_font_numbers_pango">
+                                                                <local_schema short_desc="Czcionka numerów wierszy na wydruku">
+                                                                </local_schema>
+                                                        </entry>
+                                                        <entry name="print_font_header_pango">
+                                                                <local_schema short_desc="Czcionka nagłówka na wydruku">
+                                                                </local_schema>
+                                                        </entry>
+                                                        <entry name="print_font_body_pango">
+                                                                <local_schema short_desc="Czcionka treści na wydruku">
+                                                                </local_schema>
+                                                        </entry>
+                                                </dir>
+                                                <dir name="page">
+                                                        <entry name="print_line_numbers">
+                                                                <local_schema short_desc="Drukowanie numerów wierszy">
+                                                                        <longdesc>Przy ustawieniu wartości na 0, podczas drukowania dokumentu nie będą wstawiane numery wierszy. W przeciwnym wypadku numery wierszy będą drukowane co tyle wierszy, ile wynosi podana wartość.</longdesc>
+                                                                </local_schema>
+                                                        </entry>
+                                                        <entry name="print_wrap_mode">
+                                                                <local_schema short_desc="Tryb zawijania wierszy na wydruku">
+                                                                        <longdesc>Określa sposób zawijania długich wierszy podczas drukowania. Wartość &quot;GTK_WRAP_NONE&quot; powoduje brak zawijania, &quot;GTK_WRAP_WORD&quot; - zawijanie wierszy na granicach słów, zaś &quot;GTK_WRAP_CHAR&quot; - na granicach pojedynczych znaków. Należy pamiętać o tym, że podczas odczytywania wartości rozpoznawane są małe i wielkie litery, więc powinny być one wprowadzone dokładnie w podanej postaci.</longdesc>
+                                                                </local_schema>
+                                                        </entry>
+                                                        <entry name="print_header">
+                                                                <local_schema short_desc="Drukowanie nagłówków">
+                                                                        <longdesc>Określa, czy program gedit powinien dołączać nagłówek dokumentu podczas drukowania.</longdesc>
+                                                                </local_schema>
+                                                        </entry>
+                                                        <entry name="print_syntax_highlighting">
+                                                                <local_schema short_desc="Drukowanie wyróżniania elementów składni">
+                                                                        <longdesc>Określa, czy program gedit powinien wyróżniać elementy składni dokumentu podczas drukowania.</longdesc>
+                                                                </local_schema>
+                                                        </entry>
+                                                </dir>
+                                        </dir>
+                                        <dir name="ui">
+                                                <dir name="recents">
+                                                        <entry name="max_recents">
+                                                                <local_schema short_desc="Maksymalna liczba ostatnich plików">
+                                                                        <longdesc>Określa maksymalną liczbę otwieranych ostatnio plików, wyświetlanych w menu &quot;Ostatnie pliki&quot;.</longdesc>
+                                                                </local_schema>
+                                                        </entry>
+                                                </dir>
+                                                <dir name="bottom_panel">
+                                                        <entry name="bottom_panel_visible">
+                                                                <local_schema short_desc="Wyświetlanie panelu dolnego">
+                                                                        <longdesc>Określa, czy w dolnej części okna redagowania tekstu powinien być wyświetlany panel dolny.</longdesc>
+                                                                </local_schema>
+                                                        </entry>
+                                                </dir>
+                                                <dir name="side_pane">
+                                                        <entry name="side_pane_visible">
+                                                                <local_schema short_desc="Wyświetlanie panelu bocznego">
+                                                                        <longdesc>Określa, czy po lewej stronie okna redagowania tekstu powinien być wyświetlany pasek boczny.</longdesc>
+                                                                </local_schema>
+                                                        </entry>
+                                                </dir>
+                                                <dir name="statusbar">
+                                                        <entry name="statusbar_visible">
+                                                                <local_schema short_desc="Wyświetlanie paska stanu">
+                                                                        <longdesc>Określa, czy w dolnej części okien redagowania tekstu powinien być wyświetlany pasek stanu.</longdesc>
+                                                                </local_schema>
+                                                        </entry>
+                                                </dir>
+                                                <dir name="toolbar">
+                                                        <entry name="toolbar_buttons_style">
+                                                                <local_schema short_desc="Styl przycisków na pasku narzędziowym">
+                                                                        <longdesc>Ustawienie określa styl przycisków na pasku narzędziowym. Dopuszczalnymi wartościami są: &quot;GEDIT_TOOLBAR_SYSTEM&quot;, powodująca użycie domyślnego stylu w systemie, &quot;GEDIT_TOOLBAR_ICONS&quot;, powodująca wyświetlanie wyłącznie ikon, &quot;GEDIT_TOOLBAR_ICONS_AND_TEXT&quot;, która oznacza wyświetlanie ikon wraz z tekstem oraz &quot;GEDIT_TOOLBAR_ICONS_BOTH_HORIZ&quot;, po użyciu której obok ikon wyświetlane są najważniejsze napisy. Należy pamiętać, że podczas odczytywania wartości rozpoznawane są małe i wielkie litery, więc powinny być one wprowadzone dokładnie w podanej postaci.</longdesc>
+                                                                </local_schema>
+                                                        </entry>
+                                                        <entry name="toolbar_visible">
+                                                                <local_schema short_desc="Wyświetlanie paska narzędziowego">
+                                                                        <longdesc>Określa, czy w oknach redagowania tekstu powinien być wyświetlany pasek narzędziowy.</longdesc>
+                                                                </local_schema>
+                                                        </entry>
+                                                </dir>
+                                        </dir>
+                                        <dir name="editor">
+                                                <dir name="search_highlighting">
+                                                        <entry name="enable">
+                                                                <local_schema short_desc="Włączone wyróżnianie wyników wyszukiwania">
+                                                                        <longdesc>Określa, czy program gedit powinien wyróżniać wszystkie wystąpienia wyszukiwanego tekstu.</longdesc>
+                                                                </local_schema>
+                                                        </entry>
+                                                </dir>
+                                                <dir name="cursor_position">
+                                                        <entry name="restore_cursor_position">
+                                                                <local_schema short_desc="Przywróć ostatnią pozycję kursora">
+                                                                        <longdesc>Określa, czy program gedit powinien przywracać ostatnią pozycję kursora po wczytanie pliku.</longdesc>
+                                                                </local_schema>
+                                                        </entry>
+                                                </dir>
+                                                <dir name="smart_home_end">
+                                                        <entry name="smart_home_end">
+                                                                <local_schema short_desc="Inteligentne Home i End">
+                                                                        <longdesc>Określa zachowanie się kursora po naciśnięciu klawiszy Home i End. Wartość &quot;DISABLED&quot; powoduje, że kursor zawsze wraca na początek/koniec wiersza, &quot;AFTER&quot; - kursor wraca na początek/koniec wiersza po pierwszym naciśnięciu klawisza i na początek/koniec tekstu (białe znaki ignorowane) po drugim naciśnięciu klawisza. Wartość &quot;BEFORE&quot; powoduje, że kursor przenosi się na początek/koniec tekstu przed przejściem na początek/koniec linii. &quot;ALWAYS&quot; -  kursor przenosi się zawsze na początek/koniec tekstu zamiast na początek/koniec wiersza.</longdesc>
+                                                                </local_schema>
+                                                        </entry>
+                                                </dir>
+                                                <dir name="right_margin">
+                                                        <entry name="right_margin_position">
+                                                                <local_schema short_desc="Pozycja prawego marginesu">
+                                                                        <longdesc>Określa pozycję prawego marginesu.</longdesc>
+                                                                </local_schema>
+                                                        </entry>
+                                                        <entry name="display_right_margin">
+                                                                <local_schema short_desc="Wyświetlanie prawego marginesu">
+                                                                        <longdesc>Określa, czy program gedit powinien wyświetlać prawy margines w obszarze redagowania.</longdesc>
+                                                                </local_schema>
+                                                        </entry>
+                                                </dir>
+                                                <dir name="bracket_matching">
+                                                        <entry name="bracket_matching">
+                                                                <local_schema short_desc="Wyróżnianie pasujących nawiasów">
+                                                                        <longdesc>Określa, czy program gedit powinien wyróżniać nawias pasujący do zaznaczonego.</longdesc>
+                                                                </local_schema>
+                                                        </entry>
+                                                </dir>
+                                                <dir name="current_line">
+                                                        <entry name="highlight_current_line">
+                                                                <local_schema short_desc="Wyróżnianie bieżącej linii">
+                                                                        <longdesc>Określa, czy program gedit powinien wyróżniać bieżącą linię.</longdesc>
+                                                                </local_schema>
+                                                        </entry>
+                                                </dir>
+                                                <dir name="line_numbers">
+                                                        <entry name="display_line_numbers">
+                                                                <local_schema short_desc="Wyświetlanie numerów wierszy">
+                                                                        <longdesc>Określa, czy program gedit powinien wyświetlać numery wierszy w obszarze redagowania.</longdesc>
+                                                                </local_schema>
+                                                        </entry>
+                                                </dir>
+                                                <dir name="auto_indent">
+                                                        <entry name="auto_indent">
+                                                                <local_schema short_desc="Automatyczne wcięcia">
+                                                                        <longdesc>Określa, czy program gedit powinien automatycznie tworzyć wcięcia.</longdesc>
+                                                                </local_schema>
+                                                        </entry>
+                                                </dir>
+                                                <dir name="tabs">
+                                                        <entry name="insert_spaces">
+                                                                <local_schema short_desc="Wstawianie spacji">
+                                                                        <longdesc>Określa, czy program gedit powinien wstawiać spacje zamiast znaków tabulacji.</longdesc>
+                                                                </local_schema>
+                                                        </entry>
+                                                        <entry name="tabs_size">
+                                                                <local_schema short_desc="Rozmiar tabulacji">
+                                                                        <longdesc>Określa liczbę spacji, używanych podczas wyświetlania w zastępstwie znaku tabulacji.</longdesc>
+                                                                </local_schema>
+                                                        </entry>
+                                                </dir>
+                                                <dir name="wrap_mode">
+                                                        <entry name="wrap_mode">
+                                                                <local_schema short_desc="Tryb zawijania wierszy">
+                                                                        <longdesc>Określa sposób zawijania długich wierszy w obszarze redagowania tekstu. Wartość &quot;GTK_WRAP_NONE&quot; powoduje brak zawijania, &quot;GTK_WRAP_WORD&quot; - zawijanie wierszy na granicach słów, zaś &quot;GTK_WRAP_CHAR&quot; - na granicach pojedynczych znaków. Należy pamiętać o tym, że podczas odczytywania wartości rozpoznawane są małe i wielkie litery, więc powinny być one wprowadzone dokładnie w podanej postaci.</longdesc>
+                                                                </local_schema>
+                                                        </entry>
+                                                </dir>
+                                                <dir name="undo">
+                                                        <entry name="max_undo_actions">
+                                                                <local_schema short_desc="Liczba możliwych cofnięć">
+                                                                        <longdesc>Maksymalna liczba działań, których cofnięcie lub ponowienie będzie możliwe. &quot;-1&quot; oznacza liczbę nieskończoną.</longdesc>
+                                                                </local_schema>
+                                                        </entry>
+                                                        <entry name="undo_actions_limit">
+                                                                <local_schema short_desc="Liczba możliwych cofnięć działań (PRZESTARZAŁE)">
+                                                                        <longdesc>Maksymalna liczba działań, których cofnięcie lub ponowienie będzie możliwe. &quot;-1&quot; oznacza liczbę nieskończoną. Przestarzałe od wersji 2.12.0.</longdesc>
+                                                                </local_schema>
+                                                        </entry>
+                                                </dir>
+                                                <dir name="save">
+                                                        <entry name="writable_vfs_schemes">
+                                                                <local_schema short_desc="Edytowalne schematy VFS">
+                                                                        <longdesc>Lista schematów VFS obsługiwanych przez program gedit w trybie edycji. Schemat &quot;plik&quot; jest domyślnie edytowalny.</longdesc>
+                                                                </local_schema>
+                                                        </entry>
+                                                        <entry name="auto_save_interval">
+                                                                <local_schema short_desc="Okres między automatycznymi zapisami">
+                                                                        <longdesc>Liczba minut, po której program gedit automatycznie zapisuje zmodyfikowane pliki. Opcja jest brana pod uwagę tylko, jeśli aktywna jest opcja &quot;Automatyczny zapis&quot;.</longdesc>
+                                                                </local_schema>
+                                                        </entry>
+                                                        <entry name="auto_save">
+                                                                <local_schema short_desc="Automatyczny zapis">
+                                                                        <longdesc>Określa, czy program gedit powinien automatycznie zapisywać zmodyfikowane pliki po pewnym okresie czasu. Ustawienie tego czasu jest możliwe podczas użycia opcji &quot;Okres pomiędzy automatycznymi zapisami&quot;.</longdesc>
+                                                                </local_schema>
+                                                        </entry>
+                                                        <entry name="backup_copy_extension">
+                                                                <local_schema short_desc="Rozszerzenie kopii zapasowej">
+                                                                        <longdesc>Rozszerzenie lub przyrostek używany przy tworzeniu nazw dla plików zapasowych. Opcja jest brana pod uwagę tylko, jeśli aktywna jest opcja &quot;Tworzenie kopii zapasowych&quot;.</longdesc>
+                                                                </local_schema>
+                                                        </entry>
+                                                        <entry name="create_backup_copy">
+                                                                <local_schema short_desc="Tworzenie kopii zapasowych">
+                                                                        <longdesc>Określa, czy program gedit powinien podczas zapisywania plików tworzyć kopie zapasowe. Rozszerzenie nazw plików zapasowych można ustawić korzystając z opcji &quot;Rozszerzenie kopii zapasowej&quot;.</longdesc>
+                                                                </local_schema>
+                                                        </entry>
+                                                </dir>
+                                                <dir name="colors">
+                                                        <entry name="scheme">
+                                                                <local_schema short_desc="Schemat stylu">
+                                                                        <longdesc>Identyfikator schematu stylu GtkSourceView używanego do kolorowania tekstu.</longdesc>
+                                                                </local_schema>
+                                                        </entry>
+                                                </dir>
+                                                <dir name="font">
+                                                        <entry name="editor_font">
+                                                                <local_schema short_desc="Czcionka edytora">
+                                                                </local_schema>
+                                                        </entry>
+                                                        <entry name="use_default_font">
+                                                                <local_schema short_desc="Używanie domyślnej czcionki">
+                                                                        <longdesc>Określa, czy w obszarze redagowania tekstu powinna być używana domyślna czcionka systemowa. Jeśli opcja jest wyłączona, wówczas używana jest czcionka określona w ustawieniu &quot;Czcionka w edytorze&quot;.</longdesc>
+                                                                </local_schema>
+                                                        </entry>
+                                                </dir>
+                                        </dir>
+                                </dir>
+                        </dir>
+                </dir>
+        </dir>
+</gconf>

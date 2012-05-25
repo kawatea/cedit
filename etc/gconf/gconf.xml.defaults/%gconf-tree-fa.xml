@@ -1,0 +1,209 @@
+<?xml version="1.0"?>
+<gconf>
+        <dir name="schemas">
+                <dir name="apps">
+                        <dir name="gedit-2">
+                                <dir name="plugins">
+                                        <entry name="active-plugins">
+                                                <local_schema short_desc="فعال کردن متصل شونده">
+                                                        <longdesc>فهرست متصل شونده‌های فعال. حاوی «مکان» متصل شونده‌های فعال است. برای به دست آوردن «مکان» یک متصل شونده‌ی به‌خصوص، پرونده‌ی «gedit-plugin.» را ببینید.</longdesc>
+                                                </local_schema>
+                                        </entry>
+                                </dir>
+                                <dir name="preferences">
+                                        <dir name="syntax_highlighting">
+                                                <entry name="enable">
+                                                        <local_schema short_desc="به کار انداختن پررنگ‌سازی نحوی">
+                                                                <longdesc>این که آیا gedit پررنگ‌سازی نحوی را به کار بیاندازد یا نه.</longdesc>
+                                                        </local_schema>
+                                                </entry>
+                                        </dir>
+                                        <dir name="encodings">
+                                                <entry name="shown_in_menu">
+                                                        <local_schema short_desc="کدگذاری‌های نشان داده شده در منو">
+                                                        </local_schema>
+                                                </entry>
+                                                <entry name="auto_detected">
+                                                        <local_schema short_desc="کدگذاری‌های به طور خودکار تشخیص داده شده">
+                                                        </local_schema>
+                                                </entry>
+                                        </dir>
+                                        <dir name="print">
+                                                <dir name="fonts">
+                                                        <entry name="print_font_numbers_pango">
+                                                                <local_schema short_desc="قلم شماره‌ی سطرها برای چاپ">
+                                                                        <longdesc>قلم مورد استفاده برای شماره‌ی سطرها هنگام چاپ را مشخص می‌کند. تنها در صورتی تأثیر دارد که گزینه‌ی «چاپ شماره‌ی سطرها» ناصفر باشد.</longdesc>
+                                                                </local_schema>
+                                                        </entry>
+                                                        <entry name="print_font_header_pango">
+                                                                <local_schema short_desc="قلم سرصفحه برای چاپ">
+                                                                        <longdesc>قلم مورد استفاده برای سرصفحه‌ها هنگام چاپ نوشتار را مشخص می‌کند. تنها در صورتی کار ‌می‌کند که گزینه‌ی «چاپ سرصفحه» روشن باشد.</longdesc>
+                                                                </local_schema>
+                                                        </entry>
+                                                        <entry name="print_font_body_pango">
+                                                                <local_schema short_desc="قلم بدنه برای چاپ">
+                                                                        <longdesc>قلم مورد استفاده برای بدنه‌ی نوشتار را هنگام چاپ نوشتارها مشخص می‌کند.</longdesc>
+                                                                </local_schema>
+                                                        </entry>
+                                                </dir>
+                                                <dir name="page">
+                                                        <entry name="print_line_numbers">
+                                                                <local_schema short_desc="چاپ شماره‌ی سطرها">
+                                                                        <longdesc>اگر این مقدار ۰ باشد هنگام چاپ نوشتار، شماره سطرها درج نمی‌شود. در غیر این صورت، gedit هر این تعداد سطر، شماره‌ی سطرها را چاپ می‌کند.</longdesc>
+                                                                </local_schema>
+                                                        </entry>
+                                                        <entry name="print_wrap_mode">
+                                                                <local_schema short_desc="حالت پیچش سطری هنگام چاپ">
+                                                                        <longdesc>چگونگی پیچش سطرهای طولانی را برای چاپ مشخص می‌کند. برای نپیچاندن از ‏«GTK_WRAP_NONE»، برای پیچش در محدوده‌ی کلمات از «GTK_WRAP_WORD»، و برای پیچش در محدوده‌ی تک‌تک نویسه‌ها از «GTK_WRAP_CHAR» استفاده کنید. توجه کنید که مقادیر به کوچک و بزرگی حروف حساس هستند، پس مراقب باشید که دقیقاً به شکلی که اینجا آمده‌اند وارد شوند.</longdesc>
+                                                                </local_schema>
+                                                        </entry>
+                                                        <entry name="print_header">
+                                                                <local_schema short_desc="چاپ سرصفحه">
+                                                                        <longdesc>این که آیا gedit هنگام چاپ نوشتارها سرصفحه هم چاپ بکند یا نه.</longdesc>
+                                                                </local_schema>
+                                                        </entry>
+                                                        <entry name="print_syntax_highlighting">
+                                                                <local_schema short_desc="چاپ پررنگ‌سازی نحوی">
+                                                                        <longdesc>این که آیا gedit هنگام چاپ نوشتار پررنگ‌سازی نحوی را هم چاپ کند یا نه.</longdesc>
+                                                                </local_schema>
+                                                        </entry>
+                                                </dir>
+                                        </dir>
+                                        <dir name="ui">
+                                                <dir name="recents">
+                                                        <entry name="max_recents">
+                                                                <local_schema short_desc="حداکثر تعداد پرونده‌های اخیر">
+                                                                        <longdesc>حداکثر تعداد پرونده‌هایی را که اخیراً باز شده‌اند و در زیرمنوی «پرونده‌های اخیر» نمایش داده می‌شوند، مشخص می‌کند.</longdesc>
+                                                                </local_schema>
+                                                        </entry>
+                                                </dir>
+                                                <dir name="statusbar">
+                                                        <entry name="statusbar_visible">
+                                                                <local_schema short_desc="نوار وضعیت مرئی است">
+                                                                        <longdesc>این که آیا نوار وضعیت در پایین پنجره‌های ویرایش مرئی باشد یا نه.</longdesc>
+                                                                </local_schema>
+                                                        </entry>
+                                                </dir>
+                                                <dir name="toolbar">
+                                                        <entry name="toolbar_buttons_style">
+                                                                <local_schema short_desc="سبک دکمه‌های نوار ابزار">
+                                                                        <longdesc>سبک دکمه‌های نوار ابزار. مقادیر ممکن عبارتند از «GEDIT_TOOLBAR_SYSTEM» برای استفاده از سبک پیش‌فرض سیستم، «GEDIT_TOOLBAR_ICONS» برای نمایش فقط شمایل‌ها، ‏«GEDIT_TOOLBAR_ICONS_AND_TEXT» برای نمایش شمایل‌ها و متن، و ‏«GEDIT_TOOLBAR_ICONS_BOTH_HORIZ» برای نمایش متن دارای اولویت در کنار شمایل‌ها. به یاد داشته باشید که مقادیر به کوچک و بزرگی حروف حساس هستند، پس مراقب باشید که دقیقاً به شکلی که اینجا آمده‌اند وارد شوند.</longdesc>
+                                                                </local_schema>
+                                                        </entry>
+                                                        <entry name="toolbar_visible">
+                                                                <local_schema short_desc="نوار ابزار مرئی است">
+                                                                        <longdesc>این که آیا نوار ابزار در پنجره‌های ویرایش مرئی باشد یا نه.</longdesc>
+                                                                </local_schema>
+                                                        </entry>
+                                                </dir>
+                                        </dir>
+                                        <dir name="editor">
+                                                <dir name="right_margin">
+                                                        <entry name="right_margin_position">
+                                                                <local_schema short_desc="موقعیت حاشیه‌ی راست">
+                                                                        <longdesc>موقعیت حاشیه‌ی راست را مشخص می کند.</longdesc>
+                                                                </local_schema>
+                                                        </entry>
+                                                        <entry name="display_right_margin">
+                                                                <local_schema short_desc="نمایش حاشیه‌ی راست">
+                                                                        <longdesc>این که آیا  gedit حاشیه‌ی راست را در محوطه‌ی ویرایش نشان بدهد یا نه.</longdesc>
+                                                                </local_schema>
+                                                        </entry>
+                                                </dir>
+                                                <dir name="bracket_matching">
+                                                        <entry name="bracket_matching">
+                                                                <local_schema short_desc="پررنگ سازی قلاب متناظر">
+                                                                </local_schema>
+                                                        </entry>
+                                                </dir>
+                                                <dir name="current_line">
+                                                        <entry name="highlight_current_line">
+                                                                <local_schema short_desc="پررنگ سازی سطر فعلی">
+                                                                        <longdesc>این که آیا gedit سطر فعلی را پررنگ بکند یا نه.</longdesc>
+                                                                </local_schema>
+                                                        </entry>
+                                                </dir>
+                                                <dir name="line_numbers">
+                                                        <entry name="display_line_numbers">
+                                                                <local_schema short_desc="نمایش شماره‌ی سطرها">
+                                                                        <longdesc>این که آیا  gedit شماره‌ی سطرها را در محوطه‌ی ویرایش نشان بدهد یا نه.</longdesc>
+                                                                </local_schema>
+                                                        </entry>
+                                                </dir>
+                                                <dir name="auto_indent">
+                                                        <entry name="auto_indent">
+                                                                <local_schema short_desc="تورفتگی خودکار">
+                                                                        <longdesc>این که آیا gedit تورفتگی خودکار را به کار بیاندازد یا نه.</longdesc>
+                                                                </local_schema>
+                                                        </entry>
+                                                </dir>
+                                                <dir name="tabs">
+                                                        <entry name="insert_spaces">
+                                                                <local_schema short_desc="درج فاصله">
+                                                                        <longdesc>این که آیا gedit به جای نویسه‌ی جهش از فاصله استفاده بکند یا نه.</longdesc>
+                                                                </local_schema>
+                                                        </entry>
+                                                        <entry name="tabs_size">
+                                                                <local_schema short_desc="اندازه‌ی جدول‌بندی">
+                                                                        <longdesc>تعداد فاصله‌هایی که باید به جای نویسه‌ی جهش نمایش داده شود را مشخص می‌کند.</longdesc>
+                                                                </local_schema>
+                                                        </entry>
+                                                </dir>
+                                                <dir name="wrap_mode">
+                                                        <entry name="wrap_mode">
+                                                                <local_schema short_desc="حالت پیچش سطری">
+                                                                        <longdesc>چگونگی پیچش سطرهای طولانی را در محوطه‌ی ویرایش مشخص می‌کند. برای نپیچاندن از ‏«GTK_WRAP_NONE»، برای پیچش در محدوده‌ی کلمات از «GTK_WRAP_WORD»، و برای پیچش در محدوده‌ی تک‌تک نویسه‌ها از «GTK_WRAP_CHAR» استفاده کنید. توجه کنید که مقادیر به کوچک و بزرگی حروف حساس هستند، پس مراقب باشید که دقیقاً به شکلی که اینجا آمده‌اند وارد شوند.</longdesc>
+                                                                </local_schema>
+                                                        </entry>
+                                                </dir>
+                                                <dir name="undo">
+                                                        <entry name="max_undo_actions">
+                                                                <local_schema>
+                                                                        <longdesc>حداکثر تعداد کنش‌هایی که gedit قادر خواهد بود برگرداند یا دوباره انجام دهد. برای تعداد نامحدود کنش‌ها از «‎-۱» استفاده کنید.</longdesc>
+                                                                </local_schema>
+                                                        </entry>
+                                                        <entry name="undo_actions_limit">
+                                                                <local_schema short_desc="تعداد کنش‌های قابل برگرداندن (منسوخ شده)">
+                                                                        <longdesc>حداکثر تعداد کنش‌هایی که gedit قادر خواهد بود برگرداند یا دوباره انجام دهد.  برای تعداد نامحدود کنش‌ها از «‎-۱» استفاده کنید. از نسخه‌ی 2.12.0 به بعد منسوخ شده است</longdesc>
+                                                                </local_schema>
+                                                        </entry>
+                                                </dir>
+                                                <dir name="save">
+                                                        <entry name="auto_save_interval">
+                                                                <local_schema short_desc="فواصل ذخیره‌سازی خودکار">
+                                                                        <longdesc>تعداد دقایقی که gedit پس از آن به طور خودکار پرونده‌های تغییر یافته را ذخیره خواهد کرد. تنها در صورتی کار می‌کند که گزینه‌ی «ذخیره‌سازی خودکار» روشن باشد.</longdesc>
+                                                                </local_schema>
+                                                        </entry>
+                                                        <entry name="auto_save">
+                                                                <local_schema short_desc="ذخیره‌سازی خودکار">
+                                                                        <longdesc>این که آیا پرونده‌های تغییر داده شده پس از گذشت یک فاصله‌ی زمانی به طور خودکار ذخیره بشوند یا نه. این فاصله‌ی زمانی را می‌توان با گزینه‌ی «فواصل ذخیره‌سازی خودکار» تنظیم کرد.</longdesc>
+                                                                </local_schema>
+                                                        </entry>
+                                                        <entry name="backup_copy_extension">
+                                                                <local_schema short_desc="پسوند نسخه‌ی پشتیبان">
+                                                                        <longdesc>پسوند مورد استفاده برای نام پرونده‌های پشتیبان. تنها در صورتی کار می‌کند که گزینه‌ی «ایجاد نسخه‌های پشتیبان» روشن باشد.</longdesc>
+                                                                </local_schema>
+                                                        </entry>
+                                                        <entry name="create_backup_copy">
+                                                                <local_schema short_desc="ایجاد نسخه‌های پشتیبان">
+                                                                        <longdesc>این که آیا gedit برای پرونده‌هایی که ذخیره می‌کند نسخه‌ی پشتیبان ایجاد بکند یا نه. می‌توان پسوند پرونده‌ی پشتیبان را با گزینه‌ی «پسوند نسخه‌ی پشتیبان» تنظیم کرد.</longdesc>
+                                                                </local_schema>
+                                                        </entry>
+                                                </dir>
+                                                <dir name="font">
+                                                        <entry name="editor_font">
+                                                                <local_schema short_desc="قلم ویرایشگر">
+                                                                        <longdesc>قلم سفارشی‌ای که در محوطه‌ی ویرایش مورد استفاده قرار خواهد گرفت. تنهادر صورتی کار می‌کند که گزینه‌ی «Use Default Font» خاموش باشد.</longdesc>
+                                                                </local_schema>
+                                                        </entry>
+                                                        <entry name="use_default_font">
+                                                                <local_schema short_desc="استفاده از قلم پیش‌فرض">
+                                                                </local_schema>
+                                                        </entry>
+                                                </dir>
+                                        </dir>
+                                </dir>
+                        </dir>
+                </dir>
+        </dir>
+</gconf>

@@ -1,0 +1,127 @@
+<?xml version="1.0"?>
+<gconf>
+        <dir name="schemas">
+                <dir name="apps">
+                        <dir name="gedit-2">
+                                <dir name="plugins">
+                                        <entry name="active-plugins">
+                                                <local_schema short_desc="Tchôke-divins en alaedje">
+                                                </local_schema>
+                                        </entry>
+                                </dir>
+                                <dir name="preferences">
+                                        <dir name="encodings">
+                                                <entry name="shown_in_menu">
+                                                        <local_schema short_desc="Ecôdaedjes mostrés e menu">
+                                                        </local_schema>
+                                                </entry>
+                                                <entry name="auto_detected">
+                                                        <local_schema short_desc="Ecôdaedjes detectés otomaticmint">
+                                                        </local_schema>
+                                                </entry>
+                                        </dir>
+                                        <dir name="print">
+                                                <dir name="fonts">
+                                                        <entry name="print_font_numbers_pango">
+                                                                <local_schema>
+                                                                </local_schema>
+                                                        </entry>
+                                                        <entry name="print_font_header_pango">
+                                                                <local_schema short_desc="Fonte po l&apos; imprimaedje des tiestires">
+                                                                </local_schema>
+                                                        </entry>
+                                                </dir>
+                                                <dir name="page">
+                                                        <entry name="print_line_numbers">
+                                                                <local_schema short_desc="Imprimer les limeros des royes">
+                                                                        <longdesc>Ci cisse valixhance chal est metowe a zero (0), adon nou limero d&apos; roye ni srè metou å moumint d&apos; l&apos; imprimaedje. Si l&apos; valixhance est diferinne di zero, gedit metrè l&apos; limero del roye totes les dnêyès royes. (eg: si l&apos; valixhance est «15», les limeros d&apos; roye sront håynés totes les cwénze royes).</longdesc>
+                                                                </local_schema>
+                                                        </entry>
+                                                        <entry name="print_wrap_mode">
+                                                                <local_schema short_desc="Môde di côpaedje des royes po l&apos; imprimaedje">
+                                                                </local_schema>
+                                                        </entry>
+                                                        <entry name="print_header">
+                                                                <local_schema short_desc="Imprimer les tiestires">
+                                                                </local_schema>
+                                                        </entry>
+                                                </dir>
+                                        </dir>
+                                        <dir name="ui">
+                                                <dir name="recents">
+                                                        <entry name="max_recents">
+                                                                <local_schema short_desc="Dierins fitchîs macsimom">
+                                                                </local_schema>
+                                                        </entry>
+                                                </dir>
+                                                <dir name="toolbar">
+                                                        <entry name="toolbar_buttons_style">
+                                                                <local_schema short_desc="Stîle des botons delk bår di botons">
+                                                                </local_schema>
+                                                        </entry>
+                                                        <entry name="toolbar_visible">
+                                                                <local_schema short_desc="Bår ås usteyes veyåve">
+                                                                </local_schema>
+                                                        </entry>
+                                                </dir>
+                                        </dir>
+                                        <dir name="editor">
+                                                <dir name="line_numbers">
+                                                        <entry name="display_line_numbers">
+                                                                <local_schema short_desc="Håyner les limeros di roye">
+                                                                </local_schema>
+                                                        </entry>
+                                                </dir>
+                                                <dir name="tabs">
+                                                        <entry name="insert_spaces">
+                                                                <local_schema short_desc="Sititchî des espåces">
+                                                                </local_schema>
+                                                        </entry>
+                                                        <entry name="tabs_size">
+                                                                <local_schema short_desc="Grandeu des linwetes">
+                                                                </local_schema>
+                                                        </entry>
+                                                </dir>
+                                                <dir name="wrap_mode">
+                                                        <entry name="wrap_mode">
+                                                                <local_schema short_desc="Môde côpaedje di royes">
+                                                                </local_schema>
+                                                        </entry>
+                                                </dir>
+                                                <dir name="save">
+                                                        <entry name="auto_save_interval">
+                                                                <local_schema short_desc="Tins inte deus schapaedjes otomatikes">
+                                                                        <longdesc>Nombe di munutes po ki gedit schape otomaticmint les documints k&apos; ont stî candjîs. Çoula n&apos; prindrè efet ki si l&apos; tchuze «Schaper otomaticmint» a stî clitcheye.</longdesc>
+                                                                </local_schema>
+                                                        </entry>
+                                                        <entry name="auto_save">
+                                                                <local_schema short_desc="Schaper otomaticmint">
+                                                                </local_schema>
+                                                        </entry>
+                                                        <entry name="backup_copy_extension">
+                                                                <local_schema short_desc="Cawete po les fitchîs copeyes di såvrité">
+                                                                        <longdesc>Li cawete a radjouter åzès no d&apos; fitchî cwand ene copeye di såvrité est fwaite. Çoula n&apos; prindrè efet ki si l&apos; tchuze «Fé des copeyes di såvrité» est clitcheye.</longdesc>
+                                                                </local_schema>
+                                                        </entry>
+                                                        <entry name="create_backup_copy">
+                                                                <local_schema short_desc="Fé des copeyes di såvrité">
+                                                                </local_schema>
+                                                        </entry>
+                                                </dir>
+                                                <dir name="font">
+                                                        <entry name="editor_font">
+                                                                <local_schema short_desc="Fonte po l&apos; aspougneu">
+                                                                        <longdesc>Ene fonte da vosse ki srè eployeye pol zône d&apos; aspougnaedje. Çoula n&apos; prindrè efet ki si l&apos; tchuze «Eployî li prémetowe fonte» est disclitcheye.</longdesc>
+                                                                </local_schema>
+                                                        </entry>
+                                                        <entry name="use_default_font">
+                                                                <local_schema short_desc="Eployî li prémetowe fonte">
+                                                                </local_schema>
+                                                        </entry>
+                                                </dir>
+                                        </dir>
+                                </dir>
+                        </dir>
+                </dir>
+        </dir>
+</gconf>

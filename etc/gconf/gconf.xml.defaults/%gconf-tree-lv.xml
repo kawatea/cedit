@@ -1,0 +1,312 @@
+<?xml version="1.0"?>
+<gconf>
+        <dir name="schemas">
+                <dir name="apps">
+                        <dir name="gedit-2">
+                                <dir name="plugins">
+                                        <entry name="active-plugins">
+                                                <local_schema short_desc="Aktīvie spraudņi">
+                                                        <longdesc>Aktīvo spraudņu saraksts. Tas satur aktīvo spraudņu &quot;Atrašanās vietu&quot;. Skatiet .gedit-plugin failu, lai uzzinātu spraudņa &quot;Atrašanās vietu&quot;.</longdesc>
+                                                </local_schema>
+                                        </entry>
+                                        <dir name="checkupdate">
+                                                <entry name="ignore_version">
+                                                        <local_schema short_desc="Versija, kuru ignorēt līdz nākamās versijas izlaišanai">
+                                                        </local_schema>
+                                                </entry>
+                                        </dir>
+                                        <dir name="drawspaces">
+                                                <entry name="draw_spaces">
+                                                        <local_schema short_desc="Rādīt atstarpes">
+                                                        </local_schema>
+                                                </entry>
+                                        </dir>
+                                        <dir name="showtabbar">
+                                                <entry name="tabbar_visible">
+                                                        <local_schema short_desc="Cilņu josla ir redzama">
+                                                                <longdesc>Vai cilņu joslai būtu jābūt redzamai rediģēšanas logos.</longdesc>
+                                                        </local_schema>
+                                                </entry>
+                                        </dir>
+                                        <dir name="filebrowser">
+                                                <entry name="filter_pattern">
+                                                        <local_schema short_desc="Failu pārlūka filtrēšanas šablons">
+                                                                <longdesc>Filtrēšanas šablons, ko izmantot failu pārlūkā. Šis filtrs darbojas pāri filter_mode.</longdesc>
+                                                        </local_schema>
+                                                </entry>
+                                                <entry name="filter_mode">
+                                                        <local_schema short_desc="Failu pārlūka filtrēšanas režīms">
+                                                                <longdesc>Šī vērtība nosaka kādi faili tiks atlasīti failu pārlūkā. Pieļaujamās vērtības: none (nefiltrē neko), hidden (filtrē slēptos failus), binary (filtrē bināros failus), and hidden_and_binary (filtrē gan slēptos gan bināros failus).</longdesc>
+                                                        </local_schema>
+                                                </entry>
+                                                <entry name="open_at_first_doc">
+                                                        <local_schema short_desc="Iestatīt pirmā dokumenta atrašanās vietu">
+                                                                <longdesc>Ja PATIESS, failu pārlūka spraudnis pārlūkos pirmā atvērtā dokumenta mapi, ja līdz tam failu pārlūks vēl nebūs ticis izmantots. (Tādējādi šis principā attiecas uz failu atvēršanu no komandrindas vai Nautilus).</longdesc>
+                                                        </local_schema>
+                                                </entry>
+                                                <dir name="on_load">
+                                                        <entry name="enable_remote">
+                                                                <local_schema short_desc="Aktivizēt attālināto atrašanās vietu atjaunošanu">
+                                                                        <longdesc>Iestata vai vajadzētu atjaunot attālinātās atrašanās vietas.</longdesc>
+                                                                </local_schema>
+                                                        </entry>
+                                                        <entry name="virtual_root">
+                                                                <local_schema short_desc="Failu pārlūka virtuālā saknes direktorija">
+                                                                        <longdesc>Failu pārlūka virtuālā saknes direktorija, kas tiks izmantota ielādējot failu pārluka spraudni, ja onload/tree_view ir TRUE. Virtuālajai saknes direktorijai vinmēr jābūt zem īstās.</longdesc>
+                                                                </local_schema>
+                                                        </entry>
+                                                        <entry name="root">
+                                                                <local_schema short_desc="Failu pārlūka saknes direktorija">
+                                                                        <longdesc>Failu pārlūka saknes direktorija, kas tiks izmantota ielādējot failu pārluka spraudni, ja onload/tree_view ir TRUE.</longdesc>
+                                                                </local_schema>
+                                                        </entry>
+                                                        <entry name="tree_view">
+                                                                <local_schema short_desc="Atvērt koka skatā">
+                                                                        <longdesc>Ielādējot failu pārlūka spraudni atvērt koka skatu nevis grāmatzīmju skatu</longdesc>
+                                                                </local_schema>
+                                                        </entry>
+                                                </dir>
+                                        </dir>
+                                </dir>
+                                <dir name="preferences">
+                                        <dir name="syntax_highlighting">
+                                                <entry name="enable">
+                                                        <local_schema short_desc="Aktivizēt sintakses iekrāsošanu">
+                                                                <longdesc>Vai gedit būtu jāaktivizē sintakses iekrāsošana.</longdesc>
+                                                        </local_schema>
+                                                </entry>
+                                        </dir>
+                                        <dir name="encodings">
+                                                <entry name="shown_in_menu">
+                                                        <local_schema short_desc="Izvēlnē redzamie kodējumi">
+                                                        </local_schema>
+                                                </entry>
+                                                <entry name="auto_detected">
+                                                        <local_schema short_desc="Automātiski atrastie kodējumi">
+                                                        </local_schema>
+                                                </entry>
+                                        </dir>
+                                        <dir name="print">
+                                                <dir name="fonts">
+                                                        <entry name="print_font_numbers_pango">
+                                                                <local_schema short_desc="Rindas numuru fonts drukāšanai">
+                                                                </local_schema>
+                                                        </entry>
+                                                        <entry name="print_font_header_pango">
+                                                                <local_schema short_desc="Galvas fonti drukāšanai">
+                                                                </local_schema>
+                                                        </entry>
+                                                        <entry name="print_font_body_pango">
+                                                                <local_schema short_desc="Rumpja fonts drukāšanai">
+                                                                </local_schema>
+                                                        </entry>
+                                                </dir>
+                                                <dir name="page">
+                                                        <entry name="print_line_numbers">
+                                                                <local_schema short_desc="Drukāt rindu numurus">
+                                                                        <longdesc>Ja vērtība ir 0, tad rindu numuri netiks iekļauti, drukājot dokumentu. Citādi, gedit drukās rindu numurus katras tik rindas.</longdesc>
+                                                                </local_schema>
+                                                        </entry>
+                                                        <entry name="print_wrap_mode">
+                                                                <local_schema short_desc="Drukāšanas Rindu Aplaušanas Režīms">
+                                                                        <longdesc>Nosaka, kā aplauzt garas rindas drukājot. Lietojiet &quot;GTK_WRAP_NONE&quot; neaplaušanai, &quot;GTK_WRAP_WORD&quot; aplaušanai vārdu robežās, un &quot;GTK_WRAP_CHAR&quot; aplaušanai atsevišķu rakstzīmju robežās. Atceries, ka vērtības ir reģistrjūtīgas, tāpēc pārliecinies, ka tās parādās tieši tāpat kā šeit.</longdesc>
+                                                                </local_schema>
+                                                        </entry>
+                                                        <entry name="print_header">
+                                                                <local_schema short_desc="Drukāt galvu">
+                                                                        <longdesc>Vai gedit būtu jāiekļauj dokumenta galva drukājot dokumentu.</longdesc>
+                                                                </local_schema>
+                                                        </entry>
+                                                        <entry name="print_syntax_highlighting">
+                                                                <local_schema short_desc="Drukāt iekrāsoto sintaksi">
+                                                                        <longdesc>Vai drukājot dokumentus gedit būtu jārāda teksta sintakses iekrāsojumi.</longdesc>
+                                                                </local_schema>
+                                                        </entry>
+                                                </dir>
+                                        </dir>
+                                        <dir name="ui">
+                                                <dir name="recents">
+                                                        <entry name="max_recents">
+                                                                <local_schema short_desc="Maksimums Neseno Failu">
+                                                                        <longdesc>Nosaka maksimālo nesen atvērto failu skaitu, ko rādīt &quot;Nesenie Faili&quot; apakšizvēlnē.</longdesc>
+                                                                </local_schema>
+                                                        </entry>
+                                                </dir>
+                                                <dir name="bottom_panel">
+                                                        <entry name="bottom_panel_visible">
+                                                                <local_schema short_desc="Apakšējais panelis ir redzams">
+                                                                        <longdesc>Vai apakšējajam panelim rediģēšanas loga apakšā būtu jābūt redzamam.</longdesc>
+                                                                </local_schema>
+                                                        </entry>
+                                                </dir>
+                                                <dir name="side_pane">
+                                                        <entry name="side_pane_visible">
+                                                                <local_schema short_desc="Sānu panelis ir redzams">
+                                                                        <longdesc>Vai panelim rediģēšanas loga kreisajā malā būtu jābūt redzamam.</longdesc>
+                                                                </local_schema>
+                                                        </entry>
+                                                </dir>
+                                                <dir name="statusbar">
+                                                        <entry name="statusbar_visible">
+                                                                <local_schema short_desc="Statusa josla ir redzama">
+                                                                        <longdesc>Vai statusa joslai rediģēšanas logu apakšā būtu jābūt redzamai.</longdesc>
+                                                                </local_schema>
+                                                        </entry>
+                                                </dir>
+                                                <dir name="toolbar">
+                                                        <entry name="toolbar_buttons_style">
+                                                                <local_schema short_desc="Rīkjoslas pogu stils">
+                                                                        <longdesc>Rīkjoslas pogu stils. Iespējamās vērtības ir &quot;GEDIT_TOOLBAR_SYSTEM&quot;, lai lietotu sistēmas noklusēto stilu, &quot;GEDIT_TOOLBAR_ICONS&quot;, lai parādītu tikai ikonas, un &quot;GEDIT_TOOLBAR_ICONS_AND_TEXT&quot;, lai parādītu gan ikonas, gan tekstu, un &quot;GEDIT_TOOLBAR_ICONS_BOTH_HORIZ&quot;, lai parādītu prioritātes tekstu pie ikonām. Atceries, ka vērtības ir reģistrjūtīgas, tāpēc pārliecinies, ka tās parādās tāpat, kā šeit.</longdesc>
+                                                                </local_schema>
+                                                        </entry>
+                                                        <entry name="toolbar_visible">
+                                                                <local_schema short_desc="Rīkjosla ir redzama">
+                                                                        <longdesc>Vai rīkjoslai rediģēšanas logos būtu jābūt redzamai.</longdesc>
+                                                                </local_schema>
+                                                        </entry>
+                                                </dir>
+                                        </dir>
+                                        <dir name="editor">
+                                                <dir name="search_highlighting">
+                                                        <entry name="enable">
+                                                                <local_schema short_desc="Aktivizēt meklēšanas iekrāsošanu">
+                                                                        <longdesc>Vai gedit gūtu jāiekrāso visi atrastie meklējamā teksta fragmenti.</longdesc>
+                                                                </local_schema>
+                                                        </entry>
+                                                </dir>
+                                                <dir name="cursor_position">
+                                                        <entry name="restore_cursor_position">
+                                                                <local_schema short_desc="Atjaunot iepriekšējo kursora pozīciju">
+                                                                        <longdesc>Vai gedit būtu jāatjauno iepriekšējā kursora pozīcija atkārtoti ielādējot kādu failu.</longdesc>
+                                                                </local_schema>
+                                                        </entry>
+                                                </dir>
+                                                <dir name="smart_home_end">
+                                                        <entry name="smart_home_end">
+                                                                <local_schema short_desc="Gudrais Home End">
+                                                                        <longdesc>Nosaka, kā pārvietosies kursors nospiežot HOME un END pogas. Izmantojiet &quot;DISABLED&quot;, lai vienmēr pārvietotos uz rindiņas sākumu/beigām; &quot;AFTER&quot;, lai pārvietotos uz rindiņas sākumu pirmo reizi, kad tiek nospiesta poga un uz teksta sākumu, ignorējot tukšos simbolus, kad poga tiek nospiesta otro reizi; &quot;BEFORE&quot;, lai vispirms pārietu uz teksta sākumu un tikai pēc tam uz rindiņas sākumu. Izmantojiet &quot;ALWAYS&quot;, lai vienmēr pārietu uz teksta sākumu/beigām, nevis rindiņas sākumu/beigām.</longdesc>
+                                                                </local_schema>
+                                                        </entry>
+                                                </dir>
+                                                <dir name="right_margin">
+                                                        <entry name="right_margin_position">
+                                                                <local_schema short_desc="Labās malas pozīcija">
+                                                                        <longdesc>Norāda labās malas atrašanās vietu.</longdesc>
+                                                                </local_schema>
+                                                        </entry>
+                                                        <entry name="display_right_margin">
+                                                                <local_schema short_desc="Rādīt labo malu">
+                                                                        <longdesc>Vai gedit rediģēšanas laukā būtu jārāda labā mala.</longdesc>
+                                                                </local_schema>
+                                                        </entry>
+                                                </dir>
+                                                <dir name="bracket_matching">
+                                                        <entry name="bracket_matching">
+                                                                <local_schema short_desc="Izcelt atbilstošo iekavu">
+                                                                        <longdesc>Vai gedit būtu jāizceļ izvēlētais iekavu pāris.</longdesc>
+                                                                </local_schema>
+                                                        </entry>
+                                                </dir>
+                                                <dir name="current_line">
+                                                        <entry name="highlight_current_line">
+                                                                <local_schema short_desc="Iekrāsot aktīvo rindu">
+                                                                        <longdesc>Vai gedit būtu jāizceļ tekošā rindiņa.</longdesc>
+                                                                </local_schema>
+                                                        </entry>
+                                                </dir>
+                                                <dir name="line_numbers">
+                                                        <entry name="display_line_numbers">
+                                                                <local_schema short_desc="Rādīt rindu numurus">
+                                                                        <longdesc>Vai gedit rediģēšanas laukā būtu jārāda rindu numuri.</longdesc>
+                                                                </local_schema>
+                                                        </entry>
+                                                </dir>
+                                                <dir name="auto_indent">
+                                                        <entry name="auto_indent">
+                                                                <local_schema short_desc="Automātiska atkāpe">
+                                                                        <longdesc>Vai gedit vajadzētu ieslēgt automātisko atkāpi.</longdesc>
+                                                                </local_schema>
+                                                        </entry>
+                                                </dir>
+                                                <dir name="tabs">
+                                                        <entry name="insert_spaces">
+                                                                <local_schema short_desc="Ievietot atstarpes">
+                                                                        <longdesc>Vai gedit būtu jāievieto atstarpes tabulāciju vietā.</longdesc>
+                                                                </local_schema>
+                                                        </entry>
+                                                        <entry name="tabs_size">
+                                                                <local_schema short_desc="Tabulācijas izmērs">
+                                                                        <longdesc>Nosaka atstarpju skaitu, kuru rādīt tabulācijas rakstzīmju vietā.</longdesc>
+                                                                </local_schema>
+                                                        </entry>
+                                                </dir>
+                                                <dir name="wrap_mode">
+                                                        <entry name="wrap_mode">
+                                                                <local_schema short_desc="Rindu pārneses režīms">
+                                                                        <longdesc>Nosaka, kā aplauzt garas rindas rediģēšanas laukā. Lietojiet &quot;GTK_WRAP_NONE&quot; neaplaušanai, &quot;GTK_WRAP_WORD&quot; aplaušanai vārdu robežās, un &quot;GTK_WRAP_CHAR&quot; aplaušanai atsevišķu rakstzīmju robežās. Atceries, ka vērtības ir reģistrjūtīgas, tāpēc pārliecinies, ka tās parādās tieši tāpat kā šeit.</longdesc>
+                                                                </local_schema>
+                                                        </entry>
+                                                </dir>
+                                                <dir name="undo">
+                                                        <entry name="max_undo_actions">
+                                                                <local_schema short_desc="Maksimālais &quot;Atsaukt&quot; darbību skaits">
+                                                                        <longdesc>Maksimums darbību, ko gedit var atsaukt vai atcelt atsaukšanu. Lietojiet &quot;-1&quot; neierobežotam darbību skaitam.</longdesc>
+                                                                </local_schema>
+                                                        </entry>
+                                                        <entry name="undo_actions_limit">
+                                                                <local_schema short_desc="Atsaucamo darbību limits">
+                                                                        <longdesc>Maksimālais skaits darbību, ko gedit varēs atsaukt vai atcelt atsaukšanu. Lietojiet &quot;-1&quot; neierobežotam darbību skaitam. Novecojis kopš 2.12.0</longdesc>
+                                                                </local_schema>
+                                                        </entry>
+                                                </dir>
+                                                <dir name="save">
+                                                        <entry name="writable_vfs_schemes">
+                                                                <local_schema short_desc="Rediģējamās VFS shēmas">
+                                                                        <longdesc>VFS shēmu saraksts, kuras gedit atbalsta rakstīšanas režīmā. Shēma &apos;fails&apos; pēc noklusējuma ir rakstāma.</longdesc>
+                                                                </local_schema>
+                                                        </entry>
+                                                        <entry name="auto_save_interval">
+                                                                <local_schema short_desc="Automātiskās saglabāšanas intervāls">
+                                                                        <longdesc>Minūšu skaits, pēc kurām gedit automātiski saglabās izmainītos failus. Šī funkcija strādās tikai tad, ja iespēja &quot;Automātiski saglabāt&quot; būs ieslēgta.</longdesc>
+                                                                </local_schema>
+                                                        </entry>
+                                                        <entry name="auto_save">
+                                                                <local_schema short_desc="Automātiski saglabāt">
+                                                                        <longdesc>Vai gedit automātiski jāsaglabā izmainītos failus pēc laika intervāla. Jūs varat iestatīt šo laika intervālu ar &quot;Automātiskās saglabāšanas intervāls&quot; iespēju.</longdesc>
+                                                                </local_schema>
+                                                        </entry>
+                                                        <entry name="backup_copy_extension">
+                                                                <local_schema short_desc="Rezerves kopijas paplašinājums">
+                                                                        <longdesc>Paplašinājums vai piedēklis, ko izmantot rezerves failu nosaukumos. Šī iespēja darbosies tikai tad, ja būs ieslēgta opcija &quot;Izveidot Rezerves Kopijas&quot;.</longdesc>
+                                                                </local_schema>
+                                                        </entry>
+                                                        <entry name="create_backup_copy">
+                                                                <local_schema short_desc="Izveidot rezerves kopijas">
+                                                                        <longdesc>Vai gedit vajadzētu izveidot rezerves kopijas failiem, kurus tas saglabā. Jūs varat iestādīt rezerves faila paplašinājumu ar &quot;Rezerves kopijas paplašinājums&quot; iespēju.</longdesc>
+                                                                </local_schema>
+                                                        </entry>
+                                                </dir>
+                                                <dir name="colors">
+                                                        <entry name="scheme">
+                                                                <local_schema short_desc="Stili">
+                                                                        <longdesc>GtkSourceView stila shēmas ID, kas tiks izmantota teksta krāsošanai.</longdesc>
+                                                                </local_schema>
+                                                        </entry>
+                                                </dir>
+                                                <dir name="font">
+                                                        <entry name="editor_font">
+                                                                <local_schema short_desc="Redaktora fonts">
+                                                                </local_schema>
+                                                        </entry>
+                                                        <entry name="use_default_font">
+                                                                <local_schema short_desc="Lietot noklusēto fontu">
+                                                                        <longdesc>Vai teksta rediģēšanai lietot sistēmas noklusēto fiksēta platuma fontu nevis gedit specifisko fontu. Ja šī iespēja ir izslēgta, tad opcijā &quot;Redaktora fonts&quot; norādītais fonts tiks lietots sistēmas fonta vietā.</longdesc>
+                                                                </local_schema>
+                                                        </entry>
+                                                </dir>
+                                        </dir>
+                                </dir>
+                        </dir>
+                </dir>
+        </dir>
+</gconf>

@@ -1,0 +1,28 @@
+#!/bin/sh
+
+dir="${HOME}/cedit"
+path="${HOME}/cedit/bin"
+
+if [ "${OS}" == "Windows_NT" ] ; then
+cp src/cedit.exe bin/
+else
+cp src/cedit bin/
+fi
+
+if [ "${PWD}" != "${dir}" ] ; then
+rm -rf ${dir}
+mkdir ${dir}
+cp -r * ${dir}
+fi
+
+if [ ! `echo ${PATH} | grep -e ${path}` ] ; then
+echo 'export PATH=${PATH}:'"${path}" >> ${HOME}/.bashrc
+. ${HOME}/.bashrc
+fi
+
+if [ "${OS}" == "Windows_NT" ] ; then
+if [! `alias | grep -e cedit` ] ; then
+echo "alias cedit='cedit.exe'" >> ${HOME}/.bashrc
+. ${HOME}/.bashrc
+fi
+fi

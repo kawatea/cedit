@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<style-scheme id="mystyle" _name="Mystyle" version="1.0">
+  <author>kawatea</author>
+  <_description>Mystyle color scheme</_description>
+
+  <!-- Palette -->
+  <color name="blue"       value="#5F9EA0"/>
+  <color name="magenta"    value="#FF00FF"/>
+  <color name="violet"     value="#EE82EE"/>
+  <color name="cyan"       value="#00CED1"/>
+  <color name="green"      value="#228B22"/>
+  <color name="bordeaux"   value="#A52A2A"/>
+  <color name="red"        value="#8B0000"/>
+  <color name="yellow"     value="#FFFF00"/>
+  <color name="purple"     value="#A020F0"/>
+  <color name="brown"      value="#BC8F8F"/>
+
+  <!-- Bracket Matching -->
+  <style name="bracket-match"               background="#cyan"/>
+  <style name="bracket-mismatch"            foreground="#white" background="#purple"/>
+
+  <!-- Search Matching -->
+  <style name="search-match"                background="yellow"/>  
+  
+  <!-- Comments -->
+  <style name="def:comment"                 foreground="red"/>
+  <style name="def:shebang"                 foreground="red"/>
+  <style name="def:doc-comment-element"     italic="true"/>
+
+  <!-- Strings -->
+  <style name="def:string"                  foreground="brown"/>
+  <style name="def:character"               foreground="brown"/>
+  <style name="def:special-char"            background="#white"/>
+
+  <!-- Constants -->
+  <style name="def:constant"                foreground="cyan"/>
+  <style name="def:special-constant"        foreground="blue"/>
+
+  <!-- Identifiers -->
+  <style name="def:identifier"              foreground="cyan"/>
+
+  <!-- Statements -->
+  <style name="def:statement"               foreground="bordeaux"/>
+
+  <!-- Types -->
+  <style name="def:type"                    foreground="green"/>
+
+  <!-- Keywords -->
+  <style name="def:keyword"                 foreground="purple"/>
+
+  <!-- Numbers -->
+  <style name="def:floating-point"          background="#white"/>
+  <style name="def:decimal"                 background="#white"/>
+  <style name="def:base-n-integer"          background="#white"/>
+
+  <!-- Others -->
+  <style name="def:preprocessor"            foreground="violet"/>
+  <style name="def:error"                   background="red"/>
+  <style name="def:note"                    foreground="blue" background="yellow"/>
+  <style name="def:underlined"              italic="true" underline="true"/>
+
+  <!-- Language specific styles -->
+  <style name="diff:added-line"             foreground="#008B8B"/>
+  <style name="diff:removed-line"           foreground="#6A5ACD"/>
+  <style name="diff:changed-line"           use-style="def:preprocessor"/>
+  <style name="diff:special-case"           use-style="def:constant"/>
+  <style name="diff:location"               use-style="def:statement"/>
+  <style name="diff:diff-file"              use-style="def:type"/>
+
+  <style name="xml:tags"                    foreground="cyan"/>
+  <style name="xml:attribute-name"          foreground="violet"/>
+  <style name="xml:namespace"               foreground="green"/>
+
+  <style name="js:object"                   foreground="#2E8B57"/>
+  <style name="js:constructors"             foreground="#008B8B"/>
+
+  <style name="latex:display-math"          foreground="#6A5ACD"/>
+  <style name="latex:command"               foreground="#2E8B57"/>
+  <style name="latex:include"               use-style="def:preprocessor"/>
+
+  <style name="sh:variable1"                foreground="#6A5ACD"/>
+  <style name="sh:variable2"                foreground="#008B8B"/>
+
+  <!-- legacy styles for old lang files -->
+  <style name="Others"                      foreground="#2E8B57"/>
+  <style name="Others 2"                    foreground="#008B8B"/>
+  <style name="Others 3"                    foreground="#6A5ACD"/>
+
+</style-scheme>

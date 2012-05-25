@@ -1,0 +1,304 @@
+<?xml version="1.0"?>
+<gconf>
+        <dir name="schemas">
+                <dir name="apps">
+                        <dir name="gedit-2">
+                                <dir name="plugins">
+                                        <entry name="active-plugins">
+                                                <local_schema short_desc="啟用外掛程式">
+                                                        <longdesc>可用的外掛程式的清單。這包括可用的外掛程式的「位置」。參閱 .gedit-plugin 檔來取得特定的外掛程式的「位置」。</longdesc>
+                                                </local_schema>
+                                        </entry>
+                                        <dir name="checkupdate">
+                                                <entry name="ignore_version">
+                                                        <local_schema short_desc="在下個版本推出前要忽略的版本">
+                                                        </local_schema>
+                                                </entry>
+                                        </dir>
+                                        <dir name="filebrowser">
+                                                <entry name="filter_pattern">
+                                                        <local_schema short_desc="檔案瀏覽器過濾器樣式">
+                                                                <longdesc>過濾器樣式用於檔案瀏覽器過濾檔案。此過濾器會在 filter_mode 上使用。</longdesc>
+                                                        </local_schema>
+                                                </entry>
+                                                <entry name="filter_mode">
+                                                        <local_schema short_desc="檔案瀏覽器過濾器模式">
+                                                                <longdesc>本數值決定哪些檔案在檔案瀏覽器中會被過濾。有效的數值為“none”（不過濾），“hidden”（只過濾隱藏檔），“binary”（只過濾二位元檔），“hidden_and_binary”（過濾隱藏檔及二位元檔）。</longdesc>
+                                                        </local_schema>
+                                                </entry>
+                                                <entry name="open_at_first_doc">
+                                                        <local_schema short_desc="設定第一個文件的位置">
+                                                                <longdesc>如設定為 TRUE，當從未使用過檔案瀏覽器時，則檔案瀏覽器外掛程式會顯示第一個開啟的檔案所在的目錄。（這通常會用於在命令列或 Nautilus 等程式中開啟文件時）</longdesc>
+                                                        </local_schema>
+                                                </entry>
+                                                <dir name="on_load">
+                                                        <entry name="enable_remote">
+                                                                <local_schema short_desc="啟用遠端位置回復">
+                                                                        <longdesc>設定是否啟用遠端位置回復</longdesc>
+                                                                </local_schema>
+                                                        </entry>
+                                                        <entry name="virtual_root">
+                                                                <local_schema short_desc="檔案瀏覽器虛擬根資料夾">
+                                                                        <longdesc>檔案瀏覽器虛擬根資料夾是用於載入檔案瀏覽器外掛程式及 onload/tree_view 設定為‘TRUE’時。虛擬根資料夾必須是處於真正的根資料夾之下。</longdesc>
+                                                                </local_schema>
+                                                        </entry>
+                                                        <entry name="root">
+                                                                <local_schema short_desc="檔案瀏覽器根資料夾">
+                                                                        <longdesc>檔案瀏覽器根資料夾是用於載入檔案瀏覽器外掛程式及 onload/tree_view 設定為‘TRUE’時。</longdesc>
+                                                                </local_schema>
+                                                        </entry>
+                                                        <entry name="tree_view">
+                                                                <local_schema short_desc="以樹狀顯示模式開啟">
+                                                                        <longdesc>載入檔案瀏覽器外掛程式時，是否開啟樹狀顯示模式取代書籤顯示模式</longdesc>
+                                                                </local_schema>
+                                                        </entry>
+                                                </dir>
+                                        </dir>
+                                </dir>
+                                <dir name="preferences">
+                                        <dir name="syntax_highlighting">
+                                                <entry name="enable">
+                                                        <local_schema short_desc="啟用語法色彩標示">
+                                                                <longdesc>gedit 應否啟用語法色彩顯示的功能。</longdesc>
+                                                        </local_schema>
+                                                </entry>
+                                        </dir>
+                                        <dir name="encodings">
+                                                <entry name="shown_in_menu">
+                                                        <local_schema short_desc="選單中顯示的編碼">
+                                                        </local_schema>
+                                                </entry>
+                                                <entry name="auto_detected">
+                                                        <local_schema short_desc="自動偵測編碼">
+                                                        </local_schema>
+                                                </entry>
+                                        </dir>
+                                        <dir name="print">
+                                                <dir name="fonts">
+                                                        <entry name="print_font_numbers_pango">
+                                                                <local_schema short_desc="打印行號時使用的字型">
+                                                                </local_schema>
+                                                        </entry>
+                                                        <entry name="print_font_header_pango">
+                                                                <local_schema short_desc="打印時使用的頁首字型">
+                                                                </local_schema>
+                                                        </entry>
+                                                        <entry name="print_font_body_pango">
+                                                                <local_schema short_desc="打印時使用的內文字型">
+                                                                </local_schema>
+                                                        </entry>
+                                                </dir>
+                                                <dir name="page">
+                                                        <entry name="print_line_numbers">
+                                                                <local_schema short_desc="打印行號">
+                                                                        <longdesc>如果數值是 0，當打印文件時不會打印行號。否則，gedit 會每隔指定的行數打印行號。</longdesc>
+                                                                </local_schema>
+                                                        </entry>
+                                                        <entry name="print_wrap_mode">
+                                                                <local_schema short_desc="打印換行模式">
+                                                                        <longdesc>指定打印時如何換行。使用“GTK_WRAP_NONE”代表不會換行，“GTK_WRAP_WORD”代表在字詞間換行，及“GTK_WRAP_CHAR”代表在個別字符間換行。請注意，設定值是會分辨大小寫的，所以請確保設定值和上面所列出的完全一致。</longdesc>
+                                                                </local_schema>
+                                                        </entry>
+                                                        <entry name="print_header">
+                                                                <local_schema short_desc="打印頁首">
+                                                                        <longdesc>gedit 應否在打印文件時加上頁首。</longdesc>
+                                                                </local_schema>
+                                                        </entry>
+                                                        <entry name="print_syntax_highlighting">
+                                                                <local_schema short_desc="打印時顯示語法色彩">
+                                                                        <longdesc>gedit 應否在打印文件時加上語法色彩處理。</longdesc>
+                                                                </local_schema>
+                                                        </entry>
+                                                </dir>
+                                        </dir>
+                                        <dir name="ui">
+                                                <dir name="recents">
+                                                        <entry name="max_recents">
+                                                                <local_schema short_desc="最近開啟檔案數目的上限">
+                                                                        <longdesc>指定在「最近使用的檔案」副選單中，可以顯示多少個最近開啟的檔案。</longdesc>
+                                                                </local_schema>
+                                                        </entry>
+                                                </dir>
+                                                <dir name="bottom_panel">
+                                                        <entry name="bottom_panel_visible">
+                                                                <local_schema short_desc="顯示底部面板">
+                                                                        <longdesc>編輯視窗是否顯示底部面板。</longdesc>
+                                                                </local_schema>
+                                                        </entry>
+                                                </dir>
+                                                <dir name="side_pane">
+                                                        <entry name="side_pane_visible">
+                                                                <local_schema short_desc="顯示側面窗格">
+                                                                        <longdesc>編輯視窗左側是否應顯示側面窗格。</longdesc>
+                                                                </local_schema>
+                                                        </entry>
+                                                </dir>
+                                                <dir name="statusbar">
+                                                        <entry name="statusbar_visible">
+                                                                <local_schema short_desc="顯示狀態列">
+                                                                        <longdesc>編輯視窗的底部應否顯示狀態列。</longdesc>
+                                                                </local_schema>
+                                                        </entry>
+                                                </dir>
+                                                <dir name="toolbar">
+                                                        <entry name="toolbar_buttons_style">
+                                                                <local_schema short_desc="工具列按鈕樣式">
+                                                                        <longdesc>工具列按鈕的樣式。可接受的值為：
+“GEDIT_TOOLBAR_SYSTEM”表示使用系統預設的樣式，
+“GEDIT_TOOLBAR_ICONS”表示只顯示圖示，
+“GEDIT_TOOLBAR_ICONS_AND_TEXT”表示同時顯示圖示及文字，及
+“GEDIT_TOOLBAR_ICONS_BOTH_HORIZ”表示一部份的圖示旁邊會加上文字。
+請注意，設定值是會分辨大小寫的，所以請確保設定值和上面所列出的完全一致。</longdesc>
+                                                                </local_schema>
+                                                        </entry>
+                                                        <entry name="toolbar_visible">
+                                                                <local_schema short_desc="顯示工具列">
+                                                                        <longdesc>編輯視窗應否顯示工具列。</longdesc>
+                                                                </local_schema>
+                                                        </entry>
+                                                </dir>
+                                        </dir>
+                                        <dir name="editor">
+                                                <dir name="search_highlighting">
+                                                        <entry name="enable">
+                                                                <local_schema short_desc="啟用搜尋標示功能">
+                                                                        <longdesc>gedit 應否在搜尋後替匹配的字串加上標示。</longdesc>
+                                                                </local_schema>
+                                                        </entry>
+                                                </dir>
+                                                <dir name="cursor_position">
+                                                        <entry name="restore_cursor_position">
+                                                                <local_schema short_desc="回復先前的游標位置">
+                                                                        <longdesc>gedit 載入檔案後應否回到先前的游標位置。</longdesc>
+                                                                </local_schema>
+                                                        </entry>
+                                                </dir>
+                                                <dir name="smart_home_end">
+                                                        <entry name="smart_home_end">
+                                                                <local_schema short_desc="智慧式 Home End">
+                                                                        <longdesc>指定按下 HOME 與 END 鍵時游標要如何移動。使用「停用」游標會移至行的開始/結束處。使用「之後」游標會在第一次按下按鍵時移至行的開始/結束處，第二次按下按鍵時移至行的開始/結束處且略過空白字符。使用「之前」游標會在移至行的開始/結束前先移到文字的開始/結束處。使用「永遠」游標會以移至文字的開始/結束處代替移至行的開始/結束處。</longdesc>
+                                                                </local_schema>
+                                                        </entry>
+                                                </dir>
+                                                <dir name="right_margin">
+                                                        <entry name="right_margin_position">
+                                                                <local_schema short_desc="右邊邊界位置">
+                                                                        <longdesc>指定右邊邊界位置。</longdesc>
+                                                                </local_schema>
+                                                        </entry>
+                                                        <entry name="display_right_margin">
+                                                                <local_schema short_desc="顯示右邊邊界">
+                                                                        <longdesc>gedit 應否在編輯區域中顯示右邊邊界。</longdesc>
+                                                                </local_schema>
+                                                        </entry>
+                                                </dir>
+                                                <dir name="bracket_matching">
+                                                        <entry name="bracket_matching">
+                                                                <local_schema short_desc="標示對稱的括號">
+                                                                        <longdesc>gedit 是否應以色彩顯示與目前選取的成對的弧號。</longdesc>
+                                                                </local_schema>
+                                                        </entry>
+                                                </dir>
+                                                <dir name="current_line">
+                                                        <entry name="highlight_current_line">
+                                                                <local_schema short_desc="標示目前的行">
+                                                                        <longdesc>gedit 應否在當前的行上啟用色彩顯示功能。</longdesc>
+                                                                </local_schema>
+                                                        </entry>
+                                                </dir>
+                                                <dir name="line_numbers">
+                                                        <entry name="display_line_numbers">
+                                                                <local_schema short_desc="顯示行號">
+                                                                        <longdesc>gedit 應否在編輯區域中顯示行號。</longdesc>
+                                                                </local_schema>
+                                                        </entry>
+                                                </dir>
+                                                <dir name="auto_indent">
+                                                        <entry name="auto_indent">
+                                                                <local_schema short_desc="自動縮排">
+                                                                        <longdesc>gedit 是否應啟用自動縮排的功能。</longdesc>
+                                                                </local_schema>
+                                                        </entry>
+                                                </dir>
+                                                <dir name="tabs">
+                                                        <entry name="insert_spaces">
+                                                                <local_schema short_desc="插入空格">
+                                                                        <longdesc>gedit 應否使用空格來代替 Tab 字符。</longdesc>
+                                                                </local_schema>
+                                                        </entry>
+                                                        <entry name="tabs_size">
+                                                                <local_schema short_desc="Tab 字符闊度">
+                                                                        <longdesc>指定顯示 Tab 字符時會以多少個空格代替。</longdesc>
+                                                                </local_schema>
+                                                        </entry>
+                                                </dir>
+                                                <dir name="wrap_mode">
+                                                        <entry name="wrap_mode">
+                                                                <local_schema short_desc="換行模式">
+                                                                        <longdesc>指定編輯區域如何換行。使用“GTK_WRAP_NONE”代表不會換行，“GTK_WRAP_WORD”代表在字詞間換行，及“GTK_WRAP_CHAR”代表在個別字符間換行。請注意，設定值是會分辨大小寫的，所以請確保設定值和上面所列出的完全一致。</longdesc>
+                                                                </local_schema>
+                                                        </entry>
+                                                </dir>
+                                                <dir name="undo">
+                                                        <entry name="max_undo_actions">
+                                                                <local_schema short_desc="復原動作次數上限">
+                                                                        <longdesc>gedit 中復原或取消復原次數的上限。設為“-1”則為無限次。</longdesc>
+                                                                </local_schema>
+                                                        </entry>
+                                                        <entry name="undo_actions_limit">
+                                                                <local_schema short_desc="復原次數限制（不建議再使用）">
+                                                                        <longdesc>gedit 中復原或取消復原的次數上限。設為“-1”則為無限次。自 2.12.0 起已不建議再使用</longdesc>
+                                                                </local_schema>
+                                                        </entry>
+                                                </dir>
+                                                <dir name="save">
+                                                        <entry name="writable_vfs_schemes">
+                                                                <local_schema short_desc="可寫入 VFS schemes">
+                                                                        <longdesc>gedit 支援寫入模式的 VFS scheme 清單。預設 ‘file’ scheme 是可寫入的。</longdesc>
+                                                                </local_schema>
+                                                        </entry>
+                                                        <entry name="auto_save_interval">
+                                                                <local_schema short_desc="自動儲存周期">
+                                                                        <longdesc>gedit 會在幾分鐘後自動儲存修改過的檔案。本選項只有在「自動儲存」選項開啟後才會生效。</longdesc>
+                                                                </local_schema>
+                                                        </entry>
+                                                        <entry name="auto_save">
+                                                                <local_schema short_desc="自動儲存">
+                                                                        <longdesc>gedit 是否應每隔某段時間自動儲存修改過的檔案。你可以在「自動儲存相隔時間」選項中指定時間。</longdesc>
+                                                                </local_schema>
+                                                        </entry>
+                                                        <entry name="backup_copy_extension">
+                                                                <local_schema short_desc="備份檔延伸檔名">
+                                                                        <longdesc>備份檔案名稱的延伸檔名或後置字串。本選項只有在「製作備份」選項開啟後才會生效。</longdesc>
+                                                                </local_schema>
+                                                        </entry>
+                                                        <entry name="create_backup_copy">
+                                                                <local_schema short_desc="製作備份">
+                                                                        <longdesc>gedit 應否在儲存檔案時製作備份。你可以在「備份檔延伸檔名」中指定備份檔的延伸檔名。</longdesc>
+                                                                </local_schema>
+                                                        </entry>
+                                                </dir>
+                                                <dir name="colors">
+                                                        <entry name="scheme">
+                                                                <local_schema short_desc="樣式架構">
+                                                                        <longdesc>用於文字顏色的 GtkSourceView 樣式架構 ID。</longdesc>
+                                                                </local_schema>
+                                                        </entry>
+                                                </dir>
+                                                <dir name="font">
+                                                        <entry name="editor_font">
+                                                                <local_schema short_desc="編輯器字型">
+                                                                </local_schema>
+                                                        </entry>
+                                                        <entry name="use_default_font">
+                                                                <local_schema short_desc="使用預設字型">
+                                                                        <longdesc>gedit 是否使用系統預設的固定闊度字型作為編輯文字使用，而不用 gedit 指定的字型。如果關閉本選項，則會使用「編輯器字型」選項中的字型，而不用系統字型。</longdesc>
+                                                                </local_schema>
+                                                        </entry>
+                                                </dir>
+                                        </dir>
+                                </dir>
+                        </dir>
+                </dir>
+        </dir>
+</gconf>

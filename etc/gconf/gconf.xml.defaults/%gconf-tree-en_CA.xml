@@ -1,0 +1,248 @@
+<?xml version="1.0"?>
+<gconf>
+        <dir name="schemas">
+                <dir name="apps">
+                        <dir name="gedit-2">
+                                <dir name="plugins">
+                                        <entry name="active-plugins">
+                                                <local_schema short_desc="Active plugins">
+                                                        <longdesc>List of active plugins. It contains the &quot;Location&quot; of the active plugins. See the .gedit-plugin file for obtaining the &quot;Location&quot; of a given plugin.</longdesc>
+                                                </local_schema>
+                                        </entry>
+                                        <dir name="showtabbar">
+                                                <entry name="tabbar_visible">
+                                                        <local_schema short_desc="Tabbar is Visible">
+                                                                <longdesc>Whether the tabbar should be visible in editing windows.</longdesc>
+                                                        </local_schema>
+                                                </entry>
+                                        </dir>
+                                </dir>
+                                <dir name="preferences">
+                                        <dir name="syntax_highlighting">
+                                                <entry name="enable">
+                                                        <local_schema short_desc="Enable Syntax Highlighting">
+                                                                <longdesc>Whether gedit should enable syntax highlighting.</longdesc>
+                                                        </local_schema>
+                                                </entry>
+                                        </dir>
+                                        <dir name="encodings">
+                                                <entry name="shown_in_menu">
+                                                        <local_schema short_desc="Encodings shown in menu">
+                                                        </local_schema>
+                                                </entry>
+                                                <entry name="auto_detected">
+                                                        <local_schema short_desc="Auto Detected Encodings">
+                                                        </local_schema>
+                                                </entry>
+                                        </dir>
+                                        <dir name="print">
+                                                <dir name="fonts">
+                                                        <entry name="print_font_numbers_pango">
+                                                                <local_schema short_desc="Line Number Font for Printing">
+                                                                        <longdesc>Specifies the font to use for line numbers when printing. This will only take effect if the &quot;Print Line Numbers&quot; option is non-zero.</longdesc>
+                                                                </local_schema>
+                                                        </entry>
+                                                        <entry name="print_font_header_pango">
+                                                                <local_schema short_desc="Header Font for Printing">
+                                                                        <longdesc>Specifies the font to use for page headers when printing a document. This will only take effect if the &quot;Print Header&quot; option is turned on.</longdesc>
+                                                                </local_schema>
+                                                        </entry>
+                                                        <entry name="print_font_body_pango">
+                                                                <local_schema short_desc="Body Font for Printing">
+                                                                        <longdesc>Specifies the font to use for a document&apos;s body when printing documents.</longdesc>
+                                                                </local_schema>
+                                                        </entry>
+                                                </dir>
+                                                <dir name="page">
+                                                        <entry name="print_line_numbers">
+                                                                <local_schema short_desc="Print Line Numbers">
+                                                                        <longdesc>If this value is 0, then no line numbers will be inserted when printing a document. Otherwise, gedit will print line numbers every such number of lines.</longdesc>
+                                                                </local_schema>
+                                                        </entry>
+                                                        <entry name="print_wrap_mode">
+                                                                <local_schema short_desc="Printing Line Wrapping Mode">
+                                                                        <longdesc>Specifies how to wrap long lines for printing. Use &quot;GTK_WRAP_NONE&quot; for no wrapping, &quot;GTK_WRAP_WORD&quot; for wrapping at word boundaries, and &quot;GTK_WRAP_CHAR&quot; for wrapping at individual character boundaries. Note that the values are case-sensitive, so make sure they appear exactly as mentioned here.</longdesc>
+                                                                </local_schema>
+                                                        </entry>
+                                                        <entry name="print_header">
+                                                                <local_schema short_desc="Print Header">
+                                                                        <longdesc>Whether gedit should include a document header when printing documents.</longdesc>
+                                                                </local_schema>
+                                                        </entry>
+                                                        <entry name="print_syntax_highlighting">
+                                                                <local_schema short_desc="Print Syntax Highlighting">
+                                                                        <longdesc>Whether gedit should print syntax highlighting when printing documents.</longdesc>
+                                                                </local_schema>
+                                                        </entry>
+                                                </dir>
+                                        </dir>
+                                        <dir name="ui">
+                                                <dir name="recents">
+                                                        <entry name="max_recents">
+                                                                <local_schema short_desc="Maximum Recent Files">
+                                                                        <longdesc>Specifies the maximum number of recently opened files that will be displayed in the &quot;Recent Files&quot; submenu.</longdesc>
+                                                                </local_schema>
+                                                        </entry>
+                                                </dir>
+                                                <dir name="bottom_panel">
+                                                        <entry name="bottom_panel_visible">
+                                                                <local_schema short_desc="Bottom Panel is Visible">
+                                                                        <longdesc>Whether the panel at the bottom of editing windows should be visible.</longdesc>
+                                                                </local_schema>
+                                                        </entry>
+                                                </dir>
+                                                <dir name="side_pane">
+                                                        <entry name="side_pane_visible">
+                                                                <local_schema short_desc="Side Pane is Visible">
+                                                                </local_schema>
+                                                        </entry>
+                                                </dir>
+                                                <dir name="statusbar">
+                                                        <entry name="statusbar_visible">
+                                                                <local_schema short_desc="Status Bar is Visible">
+                                                                        <longdesc>Whether the status bar at the bottom of editing windows should be visible.</longdesc>
+                                                                </local_schema>
+                                                        </entry>
+                                                </dir>
+                                                <dir name="toolbar">
+                                                        <entry name="toolbar_buttons_style">
+                                                                <local_schema short_desc="Toolbar Buttons Style">
+                                                                        <longdesc>Style for the toolbar buttons. Possible values are &quot;GEDIT_TOOLBAR_SYSTEM&quot; to use the system&apos;s default style, &quot;GEDIT_TOOLBAR_ICONS&quot; to display icons only, &quot;GEDIT_TOOLBAR_ICONS_AND_TEXT&quot; to display both icons and text, and &quot;GEDIT_TOOLBAR_ICONS_BOTH_HORIZ&quot; to display prioritized text beside icons. Note that the values are case-sensitive, so make sure they appear exactly as mentioned here.</longdesc>
+                                                                </local_schema>
+                                                        </entry>
+                                                        <entry name="toolbar_visible">
+                                                                <local_schema short_desc="Toolbar is Visible">
+                                                                        <longdesc>Whether the toolbar should be visible in editing windows.</longdesc>
+                                                                </local_schema>
+                                                        </entry>
+                                                </dir>
+                                        </dir>
+                                        <dir name="editor">
+                                                <dir name="search_highlighting">
+                                                        <entry name="enable">
+                                                                <local_schema short_desc="Enable Search Highlighting">
+                                                                        <longdesc>Whether gedit should highlight all the occurrences of the searched text.</longdesc>
+                                                                </local_schema>
+                                                        </entry>
+                                                </dir>
+                                                <dir name="cursor_position">
+                                                        <entry name="restore_cursor_position">
+                                                                <local_schema short_desc="Restore Previous Cursor Position">
+                                                                        <longdesc>Whether gedit should restore the previous cursor position when a file is loaded.</longdesc>
+                                                                </local_schema>
+                                                        </entry>
+                                                </dir>
+                                                <dir name="right_margin">
+                                                        <entry name="right_margin_position">
+                                                                <local_schema short_desc="Right Margin Position">
+                                                                        <longdesc>Specifies the position of the right margin.</longdesc>
+                                                                </local_schema>
+                                                        </entry>
+                                                        <entry name="display_right_margin">
+                                                                <local_schema short_desc="Display Right Margin">
+                                                                        <longdesc>Whether gedit should display the right margin in the editing area.</longdesc>
+                                                                </local_schema>
+                                                        </entry>
+                                                </dir>
+                                                <dir name="bracket_matching">
+                                                        <entry name="bracket_matching">
+                                                                <local_schema short_desc="Highlight Matching Bracket">
+                                                                </local_schema>
+                                                        </entry>
+                                                </dir>
+                                                <dir name="current_line">
+                                                        <entry name="highlight_current_line">
+                                                                <local_schema short_desc="Highlight Current Line">
+                                                                        <longdesc>Whether gedit should highlight the current line.</longdesc>
+                                                                </local_schema>
+                                                        </entry>
+                                                </dir>
+                                                <dir name="line_numbers">
+                                                        <entry name="display_line_numbers">
+                                                                <local_schema short_desc="Display Line Numbers">
+                                                                        <longdesc>Whether gedit should display line numbers in the editing area.</longdesc>
+                                                                </local_schema>
+                                                        </entry>
+                                                </dir>
+                                                <dir name="auto_indent">
+                                                        <entry name="auto_indent">
+                                                                <local_schema short_desc="Auto indent">
+                                                                        <longdesc>Whether gedit should enable auto indentation.</longdesc>
+                                                                </local_schema>
+                                                        </entry>
+                                                </dir>
+                                                <dir name="tabs">
+                                                        <entry name="insert_spaces">
+                                                                <local_schema short_desc="Insert spaces">
+                                                                        <longdesc>Whether gedit should insert spaces instead of tabs.</longdesc>
+                                                                </local_schema>
+                                                        </entry>
+                                                        <entry name="tabs_size">
+                                                                <local_schema short_desc="Tab Size">
+                                                                        <longdesc>Specifies the number of spaces that should be displayed instead of Tab characters.</longdesc>
+                                                                </local_schema>
+                                                        </entry>
+                                                </dir>
+                                                <dir name="wrap_mode">
+                                                        <entry name="wrap_mode">
+                                                                <local_schema short_desc="Line Wrapping Mode">
+                                                                        <longdesc>Specifies how to wrap long lines in the editing area. Use &quot;GTK_WRAP_NONE&quot; for no wrapping, &quot;GTK_WRAP_WORD&quot; for wrapping at word boundaries, and &quot;GTK_WRAP_CHAR&quot; for wrapping at individual character boundaries. Note that the values are case-sensitive, so make sure they appear exactly as mentioned here.</longdesc>
+                                                                </local_schema>
+                                                        </entry>
+                                                </dir>
+                                                <dir name="undo">
+                                                        <entry name="max_undo_actions">
+                                                                <local_schema>
+                                                                        <longdesc>Maximum number of actions that gedit will be able to undo or redo. Use &quot;-1&quot; for unlimited number of actions.</longdesc>
+                                                                </local_schema>
+                                                        </entry>
+                                                        <entry name="undo_actions_limit">
+                                                                <local_schema short_desc="Undo Actions Limit (DEPRECATED)">
+                                                                        <longdesc>Maximum number of actions that gedit will be able to undo or redo. Use &quot;-1&quot; for unlimited number of actions. Deprecated since 2.12.0</longdesc>
+                                                                </local_schema>
+                                                        </entry>
+                                                </dir>
+                                                <dir name="save">
+                                                        <entry name="writable_vfs_schemes">
+                                                                <local_schema short_desc="Writable VFS schemes">
+                                                                        <longdesc>List of VFS schemes gedit supports in write mode. The &apos;file&apos; scheme is writable by default.</longdesc>
+                                                                </local_schema>
+                                                        </entry>
+                                                        <entry name="auto_save_interval">
+                                                                <local_schema short_desc="Auto Save Interval">
+                                                                        <longdesc>Number of minutes after which gedit will automatically save modified files. This will only take effect if the &quot;Auto Save&quot; option is turned on.</longdesc>
+                                                                </local_schema>
+                                                        </entry>
+                                                        <entry name="auto_save">
+                                                                <local_schema short_desc="Auto Save">
+                                                                        <longdesc>Whether gedit should automatically save modified files after a time interval. You can set the time interval with the &quot;Auto Save Interval&quot; option.</longdesc>
+                                                                </local_schema>
+                                                        </entry>
+                                                        <entry name="backup_copy_extension">
+                                                                <local_schema short_desc="Backup Copy Extension">
+                                                                        <longdesc>Extension or suffix to use for backup file names. This will only take effect if the &quot;Create Backup Copies&quot; option is turned on.</longdesc>
+                                                                </local_schema>
+                                                        </entry>
+                                                        <entry name="create_backup_copy">
+                                                                <local_schema short_desc="Create Backup Copies">
+                                                                        <longdesc>Whether gedit should create backup copies for the files it saves. You can set the backup file extension with the &quot;Backup Copy Extension&quot; option.</longdesc>
+                                                                </local_schema>
+                                                        </entry>
+                                                </dir>
+                                                <dir name="font">
+                                                        <entry name="editor_font">
+                                                                <local_schema short_desc="Editor Font">
+                                                                        <longdesc>A custom font that will be used for the editing area. This will only take effect if the &quot;Use Default Font&quot; option is turned off.</longdesc>
+                                                                </local_schema>
+                                                        </entry>
+                                                        <entry name="use_default_font">
+                                                                <local_schema short_desc="Use Default Font">
+                                                                </local_schema>
+                                                        </entry>
+                                                </dir>
+                                        </dir>
+                                </dir>
+                        </dir>
+                </dir>
+        </dir>
+</gconf>

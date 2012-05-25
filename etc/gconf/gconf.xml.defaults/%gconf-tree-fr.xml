@@ -1,0 +1,340 @@
+<?xml version="1.0"?>
+<gconf>
+        <dir name="schemas">
+                <dir name="apps">
+                        <dir name="gedit-2">
+                                <dir name="plugins">
+                                        <entry name="active-plugins">
+                                                <local_schema short_desc="Greffons actifs">
+                                                        <longdesc>Liste des greffons actifs. Il contient l&apos;« emplacement » des greffons actifs. Consultez le fichier .gedit-plugin pour obtenir l&apos;« emplacement » (Location) d&apos;un greffon donné.</longdesc>
+                                                </local_schema>
+                                        </entry>
+                                        <dir name="checkupdate">
+                                                <entry name="ignore_version">
+                                                        <local_schema short_desc="Version à ignorer jusqu&apos;à ce que la prochaine version soit publiée">
+                                                        </local_schema>
+                                                </entry>
+                                        </dir>
+                                        <dir name="drawspaces">
+                                                <entry name="draw_trailing">
+                                                        <local_schema short_desc="Indiquer les espaces de fin">
+                                                        </local_schema>
+                                                </entry>
+                                                <entry name="draw_text">
+                                                        <local_schema short_desc="Indique les espaces dans le texte">
+                                                        </local_schema>
+                                                </entry>
+                                                <entry name="draw_leading">
+                                                        <local_schema short_desc="Indiquer les espaces de début">
+                                                        </local_schema>
+                                                </entry>
+                                                <entry name="draw_nbsp">
+                                                        <local_schema short_desc="Indiquer les espaces insécables">
+                                                        </local_schema>
+                                                </entry>
+                                                <entry name="draw_newline">
+                                                        <local_schema short_desc="Indiquer les sauts de ligne">
+                                                        </local_schema>
+                                                </entry>
+                                                <entry name="draw_spaces">
+                                                        <local_schema short_desc="Indicateur d&apos;espaces">
+                                                        </local_schema>
+                                                </entry>
+                                                <entry name="draw_tabs">
+                                                        <local_schema short_desc="Indiquer les tabulations">
+                                                        </local_schema>
+                                                </entry>
+                                                <entry name="enable">
+                                                        <local_schema short_desc="Afficher les espaces">
+                                                        </local_schema>
+                                                </entry>
+                                        </dir>
+                                        <dir name="showtabbar">
+                                                <entry name="tabbar_visible">
+                                                        <local_schema short_desc="Barre d&apos;onglets visible">
+                                                                <longdesc>Indique si la barre d&apos;onglets doit être visible dans les fenêtres d&apos;édition.</longdesc>
+                                                        </local_schema>
+                                                </entry>
+                                        </dir>
+                                        <dir name="filebrowser">
+                                                <entry name="filter_pattern">
+                                                        <local_schema short_desc="Motif de filtre du gestionnaire de fichiers">
+                                                                <longdesc>Le motif du filtre à appliquer au gestionnaire de fichiers. Le fonctionnement de ce filtre est basé sur le mode filtre (filter_mode).</longdesc>
+                                                        </local_schema>
+                                                </entry>
+                                                <entry name="filter_mode">
+                                                        <local_schema short_desc="Mode de filtre du gestionnaire de fichiers">
+                                                                <longdesc>Cette valeur détermine quels fichiers du gestionnaire de fichiers seront filtrés. Les valeurs possibles sont : « none » (ne filtre rien), « hidden » (filtre les fichiers cachés), « binary » (filtre les fichiers binaires) et « hidden_and_binary » (filtre à la fois les fichiers cachés et binaires).</longdesc>
+                                                        </local_schema>
+                                                </entry>
+                                                <entry name="open_at_first_doc">
+                                                        <local_schema short_desc="Définit l&apos;emplacement au premier document">
+                                                                <longdesc>Si VRAI, le greffon du gestionnaire de fichiers affichera le répertoire du premier document ouvert dès lors que le gestionnaire de fichiers n&apos;a pas encore été utilisé. Ceci s&apos;applique généralement à l&apos;ouverture d&apos;un document à partir de la ligne de commande ou à partir de Nautilus, etc.</longdesc>
+                                                        </local_schema>
+                                                </entry>
+                                                <dir name="on_load">
+                                                        <entry name="enable_remote">
+                                                                <local_schema short_desc="Activer la restauration des emplacement distants">
+                                                                        <longdesc>Définit s&apos;il faut activer la restauration des emplacements distants.</longdesc>
+                                                                </local_schema>
+                                                        </entry>
+                                                        <entry name="virtual_root">
+                                                                <local_schema short_desc="Répertoire racine virtuel du gestionnaire de fichiers">
+                                                                        <longdesc>Le répertoire racine virtuel du gestionnaire de fichiers à utiliser lors du lancement du greffon lorsque la vue arborescente au lancement (onload/tree_view) est VRAI. Le répertoire racine virtuel doit toujours être au-dessous de la racine actuelle.</longdesc>
+                                                                </local_schema>
+                                                        </entry>
+                                                        <entry name="root">
+                                                                <local_schema short_desc="Répertoire racine du gestionnaire de fichiers">
+                                                                        <longdesc>Le répertoire racine du gestionnaire de fichiers à utiliser lors du lancement du greffon lorsque la vue arborescente au lancement (onload/tree_view) est VRAI.</longdesc>
+                                                                </local_schema>
+                                                        </entry>
+                                                        <entry name="tree_view">
+                                                                <local_schema short_desc="Ouvrir avec la vue arborescente">
+                                                                        <longdesc>Ouvre la vue arborescente quand le greffon du gestionnaire de fichiers est chargé à la place de la vue des signets</longdesc>
+                                                                </local_schema>
+                                                        </entry>
+                                                </dir>
+                                        </dir>
+                                </dir>
+                                <dir name="preferences">
+                                        <dir name="syntax_highlighting">
+                                                <entry name="enable">
+                                                        <local_schema short_desc="Activer la coloration syntaxique">
+                                                                <longdesc>Indique si gedit doit activer la coloration syntaxique.</longdesc>
+                                                        </local_schema>
+                                                </entry>
+                                        </dir>
+                                        <dir name="encodings">
+                                                <entry name="shown_in_menu">
+                                                        <local_schema short_desc="Codages affichés dans le menu">
+                                                        </local_schema>
+                                                </entry>
+                                                <entry name="auto_detected">
+                                                        <local_schema short_desc="Codages détectés automatiquement">
+                                                        </local_schema>
+                                                </entry>
+                                        </dir>
+                                        <dir name="print">
+                                                <dir name="fonts">
+                                                        <entry name="print_font_numbers_pango">
+                                                                <local_schema short_desc="Police pour l&apos;impression des numéros de ligne">
+                                                                </local_schema>
+                                                        </entry>
+                                                        <entry name="print_font_header_pango">
+                                                                <local_schema short_desc="Police pour l&apos;impression de l&apos;en-tête">
+                                                                </local_schema>
+                                                        </entry>
+                                                        <entry name="print_font_body_pango">
+                                                                <local_schema short_desc="Police pour l&apos;impression du corps de texte">
+                                                                </local_schema>
+                                                        </entry>
+                                                </dir>
+                                                <dir name="page">
+                                                        <entry name="print_line_numbers">
+                                                                <local_schema short_desc="Imprimer les numéros de ligne">
+                                                                        <longdesc>Si cette valeur est 0, alors aucun numéro de ligne ne sera inséré lors de l&apos;impression d&apos;un document. Sinon, gedit affichera un numéro de ligne toutes les x lignes.</longdesc>
+                                                                </local_schema>
+                                                        </entry>
+                                                        <entry name="print_wrap_mode">
+                                                                <local_schema short_desc="Imprimer avec le mode de retour à la ligne">
+                                                                        <longdesc>Indique comment exécuter un retour de ligne sur les longues lignes en vue de l&apos;impression. Utilisez « GTK_WRAP_NONE » pour ne pas avoir de retour de ligne, « GTK_WRAP_WORD » pour avoir un retour de ligne à la fin d&apos;un mot et « GTK_WRAP_CHAR » pour avoir un retour de ligne au milieu d&apos;un mot. Notez que ces valeurs sont sensibles à la casse, faites en sorte qu&apos;elles apparaissent exactement comme mentionnées ici.</longdesc>
+                                                                </local_schema>
+                                                        </entry>
+                                                        <entry name="print_header">
+                                                                <local_schema short_desc="Imprimer l&apos;en-tête">
+                                                                        <longdesc>Indique si gedit doit inclure un en-tête de document lors de l&apos;impression des documents.</longdesc>
+                                                                </local_schema>
+                                                        </entry>
+                                                        <entry name="print_syntax_highlighting">
+                                                                <local_schema short_desc="Imprimer la coloration syntaxique">
+                                                                        <longdesc>Indique si gedit doit imprimer la coloration syntaxique lors de l&apos;impression des documents.</longdesc>
+                                                                </local_schema>
+                                                        </entry>
+                                                </dir>
+                                        </dir>
+                                        <dir name="ui">
+                                                <dir name="recents">
+                                                        <entry name="max_recents">
+                                                                <local_schema short_desc="Nombre maximum de fichiers récents">
+                                                                        <longdesc>Indique le nombre maximum de fichiers récemment ouverts qui seront affichés dans le sous-menu « Fichiers récents ».</longdesc>
+                                                                </local_schema>
+                                                        </entry>
+                                                </dir>
+                                                <dir name="bottom_panel">
+                                                        <entry name="bottom_panel_visible">
+                                                                <local_schema short_desc="Le panneau inférieur est visible">
+                                                                        <longdesc>Indique si le panneau inférieur au bas de la fenêtre d&apos;édition doit être visible.</longdesc>
+                                                                </local_schema>
+                                                        </entry>
+                                                </dir>
+                                                <dir name="side_pane">
+                                                        <entry name="side_pane_visible">
+                                                                <local_schema short_desc="Le panneau latéral est visible">
+                                                                        <longdesc>Indique si le panneau latéral à gauche des fenêtres d&apos;édition doit être visible.</longdesc>
+                                                                </local_schema>
+                                                        </entry>
+                                                </dir>
+                                                <dir name="statusbar">
+                                                        <entry name="statusbar_visible">
+                                                                <local_schema short_desc="Barre d&apos;état visible">
+                                                                        <longdesc>Indique si la barre d&apos;état au bas des fenêtres d&apos;édition doit être visible.</longdesc>
+                                                                </local_schema>
+                                                        </entry>
+                                                </dir>
+                                                <dir name="toolbar">
+                                                        <entry name="toolbar_buttons_style">
+                                                                <local_schema short_desc="Style des boutons de la barre d&apos;outils">
+                                                                        <longdesc>Style pour les boutons de la barre d&apos;outils. Les valeurs possibles sont « GEDIT_TOOLBAR_SYSTEM » pour utiliser le style par défaut du système, « GEDIT_TOOLBAR_ICONS » pour n&apos;afficher que les icônes et « GEDIT_TOOLBAR_ICONS_AND_TEXT » pour afficher les icônes et le texte. Notez que ces valeurs sont sensibles à la casse, faites en sorte qu&apos;elles apparaissent exactement comme mentionnées ici.</longdesc>
+                                                                </local_schema>
+                                                        </entry>
+                                                        <entry name="toolbar_visible">
+                                                                <local_schema short_desc="Barre d&apos;outils visible">
+                                                                        <longdesc>Indique si la barre d&apos;outils doit être visible dans les fenêtres d&apos;édition.</longdesc>
+                                                                </local_schema>
+                                                        </entry>
+                                                </dir>
+                                        </dir>
+                                        <dir name="editor">
+                                                <dir name="search_highlighting">
+                                                        <entry name="enable">
+                                                                <local_schema short_desc="Activer la coloration de recherche">
+                                                                        <longdesc>Indique si gedit doit surligner toutes les occurrences du texte recherché.</longdesc>
+                                                                </local_schema>
+                                                        </entry>
+                                                </dir>
+                                                <dir name="cursor_position">
+                                                        <entry name="restore_cursor_position">
+                                                                <local_schema short_desc="Restaurer la précédente position du curseur">
+                                                                        <longdesc>Indique si gedit doit restaurer le précédent emplacement du curseur lorsqu&apos;un fichier est chargé.</longdesc>
+                                                                </local_schema>
+                                                        </entry>
+                                                </dir>
+                                                <dir name="smart_home_end">
+                                                        <entry name="smart_home_end">
+                                                                <local_schema short_desc="« Origine » et « Fin » intelligentes">
+                                                                        <longdesc>Indique comment le curseur se déplace quand les touches « Origine » et « Fin » sont appuyées. Utilisez « DISABLED » (désactivé) pour toujours aller au début/fin de la ligne, « AFTER » (après) pour aller au début/fin de la ligne la première fois que les touches sont appuyées et au début/fin du texte en ignorant les espaces, la seconde fois que les touches sont appuyées, « BEFORE » (avant) pour aller au début/fin du texte avant de se déplacer au début/fin de la ligne et « ALWAYS » (toujours) pour toujours aller au début/fin du texte au lieu du début/fin de la ligne.</longdesc>
+                                                                </local_schema>
+                                                        </entry>
+                                                </dir>
+                                                <dir name="right_margin">
+                                                        <entry name="right_margin_position">
+                                                                <local_schema short_desc="Position de la marge de droite">
+                                                                        <longdesc>Indique la position de la marge de droite.</longdesc>
+                                                                </local_schema>
+                                                        </entry>
+                                                        <entry name="display_right_margin">
+                                                                <local_schema short_desc="Afficher la marge de droite">
+                                                                        <longdesc>Indique si gedit doit afficher la marge de droite dans la zone d&apos;édition.</longdesc>
+                                                                </local_schema>
+                                                        </entry>
+                                                </dir>
+                                                <dir name="bracket_matching">
+                                                        <entry name="bracket_matching">
+                                                                <local_schema short_desc="Surligner les parenthèses correspondantes">
+                                                                        <longdesc>Indique si gedit doit surligner la parenthèse correspondante à celle qui est sélectionnée.</longdesc>
+                                                                </local_schema>
+                                                        </entry>
+                                                </dir>
+                                                <dir name="current_line">
+                                                        <entry name="highlight_current_line">
+                                                                <local_schema short_desc="Surligner la ligne actuelle">
+                                                                        <longdesc>Indique si gedit doit surligner la ligne actuelle.</longdesc>
+                                                                </local_schema>
+                                                        </entry>
+                                                </dir>
+                                                <dir name="line_numbers">
+                                                        <entry name="display_line_numbers">
+                                                                <local_schema short_desc="Afficher les numéros de ligne">
+                                                                        <longdesc>Indique si gedit doit afficher les numéros de lignes dans la zone d&apos;édition.</longdesc>
+                                                                </local_schema>
+                                                        </entry>
+                                                </dir>
+                                                <dir name="auto_indent">
+                                                        <entry name="auto_indent">
+                                                                <local_schema short_desc="Indentation automatique">
+                                                                        <longdesc>Indique si gedit doit activer l&apos;indentation automatique.</longdesc>
+                                                                </local_schema>
+                                                        </entry>
+                                                </dir>
+                                                <dir name="tabs">
+                                                        <entry name="insert_spaces">
+                                                                <local_schema short_desc="Insérer des espaces">
+                                                                        <longdesc>Indique si gedit doit insérer des espaces au lieu des tabulations.</longdesc>
+                                                                </local_schema>
+                                                        </entry>
+                                                        <entry name="tabs_size">
+                                                                <local_schema short_desc="Taille de la tabulation">
+                                                                        <longdesc>Indique le nombre d&apos;espaces qui devraient être affichées au lieu des caractères de tabulation.</longdesc>
+                                                                </local_schema>
+                                                        </entry>
+                                                </dir>
+                                                <dir name="wrap_mode">
+                                                        <entry name="wrap_mode">
+                                                                <local_schema short_desc="Mode retour à la ligne">
+                                                                        <longdesc>Indique comment exécuter un retour de ligne sur les longues lignes dans la zone d&apos;édition. Utilisez « GTK_WRAP_NONE » pour ne pas avoir de retour de ligne, « GTK_WRAP_WORD » pour avoir un retour de ligne à la fin d&apos;un mot et « GTK_WRAP_CHAR » pour avoir un retour de ligne au milieu d&apos;un mot. Notez que ces valeurs sont sensibles à la casse, faites en sorte qu&apos;elles apparaissent exactement comme mentionnées ici.</longdesc>
+                                                                </local_schema>
+                                                        </entry>
+                                                </dir>
+                                                <dir name="undo">
+                                                        <entry name="max_undo_actions">
+                                                                <local_schema short_desc="Nombre maximum d&apos;annulations possibles">
+                                                                        <longdesc>Nombre maximum d&apos;actions que gedit sera en mesure d&apos;annuler ou de réintégrer. Indiquez « -1 » si vous ne voulez pas indiquer de limite.</longdesc>
+                                                                </local_schema>
+                                                        </entry>
+                                                        <entry name="undo_actions_limit">
+                                                                <local_schema short_desc="Limite de l&apos;action annuler (DÉCONSEILLÉ)">
+                                                                        <longdesc>Nombre maximum d&apos;actions que gedit sera en mesure d&apos;annuler ou de réintégrer. Indiquez « -1 » si vous ne voulez pas indiquer de limite. Déconseillé depuis 2.12.0</longdesc>
+                                                                </local_schema>
+                                                        </entry>
+                                                </dir>
+                                                <dir name="save">
+                                                        <entry name="writable_vfs_schemes">
+                                                                <local_schema short_desc="Schémas VFS accessibles en écriture">
+                                                                        <longdesc>Liste des schémas VFS que gedit prend en charge en mode écriture. Le schéma « file » est accessible en écriture par défaut.</longdesc>
+                                                                </local_schema>
+                                                        </entry>
+                                                        <entry name="auto_save_interval">
+                                                                <local_schema short_desc="Intervalle pour l&apos;enregistrement automatique">
+                                                                        <longdesc>Nombre de minutes après lesquelles gedit enregistre automatiquement les fichiers modifiés. Cela ne s&apos;applique que si l&apos;option « Enregistrement automatique » est activée.</longdesc>
+                                                                </local_schema>
+                                                        </entry>
+                                                        <entry name="auto_save">
+                                                                <local_schema short_desc="Enregistrement automatique">
+                                                                        <longdesc>Indique si gedit doit activer l&apos;enregistrement automatique des fichiers modifiés après un certain intervalle de temps. Vous pouvez définir l&apos;intervalle de temps avec l&apos;option « Intervalle de l&apos;enregistrement automatique ».</longdesc>
+                                                                </local_schema>
+                                                        </entry>
+                                                        <entry name="backup_copy_extension">
+                                                                <local_schema short_desc="Extension de la copie de sauvegarde">
+                                                                        <longdesc>Extension ou suffixe à utiliser pour les noms des fichiers de sauvegarde. Cela ne s&apos;appliquera que si l&apos;option « Créer des copies de sauvegarde » est activée.</longdesc>
+                                                                </local_schema>
+                                                        </entry>
+                                                        <entry name="create_backup_copy">
+                                                                <local_schema short_desc="Créer des copies de sauvegarde">
+                                                                        <longdesc>Indique si gedit doit activer la création de copies de sauvegarde pour les fichiers que gedit enregistre. Vous pouvez définir l&apos;extension du fichier de sauvegarde avec l&apos;option « Extension de la copie de sauvegarde ».</longdesc>
+                                                                </local_schema>
+                                                        </entry>
+                                                </dir>
+                                                <dir name="colors">
+                                                        <entry name="scheme">
+                                                                <local_schema short_desc="Jeu de styles">
+                                                                        <longdesc>L&apos;identifiant d&apos;un jeu de styles GtkSourceView utilisé pour la coloration syntaxique du texte.</longdesc>
+                                                                </local_schema>
+                                                        </entry>
+                                                </dir>
+                                                <dir name="font">
+                                                        <entry name="editor_font">
+                                                                <local_schema short_desc="Police de l&apos;éditeur">
+                                                                </local_schema>
+                                                        </entry>
+                                                        <entry name="use_default_font">
+                                                                <local_schema short_desc="Utiliser la police par défaut">
+                                                                        <longdesc>Indique s&apos;il faut utiliser la police à chasse fixe par défaut du système pour l&apos;édition de texte au lieu d&apos;une police spécifique à gedit. Si cette option est désactivée, alors la police choisie dans l&apos;option « Police de l&apos;éditeur » sera utilisée au lieu de la police du système.</longdesc>
+                                                                </local_schema>
+                                                        </entry>
+                                                </dir>
+                                        </dir>
+                                </dir>
+                        </dir>
+                </dir>
+        </dir>
+</gconf>

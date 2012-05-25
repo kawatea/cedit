@@ -1,0 +1,299 @@
+<?xml version="1.0"?>
+<gconf>
+        <dir name="schemas">
+                <dir name="apps">
+                        <dir name="gedit-2">
+                                <dir name="plugins">
+                                        <entry name="active-plugins">
+                                                <local_schema short_desc="Активні модулі">
+                                                        <longdesc>Перелік активних модулів. Він містить &quot;Адресу&quot; активного модуля. Див. файл .gedit-plugin для отримання &quot;адреси&quot; даного модуля.</longdesc>
+                                                </local_schema>
+                                        </entry>
+                                        <dir name="checkupdate">
+                                                <entry name="ignore_version">
+                                                        <local_schema short_desc="Версія, яку ігнорувати до випуску  нової версії">
+                                                        </local_schema>
+                                                </entry>
+                                        </dir>
+                                        <dir name="filebrowser">
+                                                <entry name="filter_pattern">
+                                                        <local_schema short_desc="Шаблон фільтру перегляду файлів">
+                                                                <longdesc>Шаблон фільтру перегляду файлів. Фільтр працює на базі filter_mode.</longdesc>
+                                                        </local_schema>
+                                                </entry>
+                                                <entry name="filter_mode">
+                                                        <local_schema short_desc="Режим фільтру перегляду файлів">
+                                                                <longdesc>Значення визначає які файли відфільтровуються при перегляді файлів. Допустимі значення: none (нічого не фільтрується), hidden (фільтруються приховані файли), binary (фільтруються двійкові файли) та hidden_and_binary (фільтруються як приховані так і двійкові файли).</longdesc>
+                                                        </local_schema>
+                                                </entry>
+                                                <entry name="open_at_first_doc">
+                                                        <local_schema short_desc="Встановити адресу на перший документ">
+                                                                <longdesc>При значенні TRUE модуль перегляду файлів буде показувати каталог першого відкритого документу, за умови що перегляд файлів ще не використовувався. (Тобто це звичайно застосовується при відкриванні документу з командного рядка або програмою nautilus, тощо.)</longdesc>
+                                                        </local_schema>
+                                                </entry>
+                                                <dir name="on_load">
+                                                        <entry name="enable_remote">
+                                                                <local_schema short_desc="Увімкнути відновлення для віддалених адрес">
+                                                                        <longdesc>Визначає чи вмикати відновлення віддалених адрес.</longdesc>
+                                                                </local_schema>
+                                                        </entry>
+                                                        <entry name="virtual_root">
+                                                                <local_schema short_desc="Віртуальний кореневий каталог перегляду файлів">
+                                                                        <longdesc>Віртуальний каталог перегляду файлів, що використовується при завантаженні модуля перегляду файлів коли onload/tree_view має значення TRUE. Віртуальний корінь завжди має бути нижче фактичного кореня.</longdesc>
+                                                                </local_schema>
+                                                        </entry>
+                                                        <entry name="root">
+                                                                <local_schema short_desc="Кореневий каталог перегляду файлів">
+                                                                        <longdesc>Кореневий каталог перегляду файлів, що використовується при завантаженні модуля перегляду файлів та onload/tree_view має значення TRUE.</longdesc>
+                                                                </local_schema>
+                                                        </entry>
+                                                        <entry name="tree_view">
+                                                                <local_schema short_desc="Відкрити у перегляді дерева">
+                                                                        <longdesc>При завантаженні модуля перегляду файлів, відкривати перегляд дерева, а не перегляд закладок</longdesc>
+                                                                </local_schema>
+                                                        </entry>
+                                                </dir>
+                                        </dir>
+                                </dir>
+                                <dir name="preferences">
+                                        <dir name="syntax_highlighting">
+                                                <entry name="enable">
+                                                        <local_schema short_desc="Увімкнути виділення синтаксису">
+                                                                <longdesc>Чи вмикати виділення синтаксису.</longdesc>
+                                                        </local_schema>
+                                                </entry>
+                                        </dir>
+                                        <dir name="encodings">
+                                                <entry name="shown_in_menu">
+                                                        <local_schema short_desc="Кодування, що показані в меню">
+                                                        </local_schema>
+                                                </entry>
+                                                <entry name="auto_detected">
+                                                        <local_schema short_desc="Автовизначення кодування">
+                                                        </local_schema>
+                                                </entry>
+                                        </dir>
+                                        <dir name="print">
+                                                <dir name="fonts">
+                                                        <entry name="print_font_numbers_pango">
+                                                                <local_schema short_desc="Шрифт номерів рядків для друку">
+                                                                </local_schema>
+                                                        </entry>
+                                                        <entry name="print_font_header_pango">
+                                                                <local_schema short_desc="Шрифт заголовка для друку">
+                                                                </local_schema>
+                                                        </entry>
+                                                        <entry name="print_font_body_pango">
+                                                                <local_schema short_desc="Основний шрифт для друку">
+                                                                </local_schema>
+                                                        </entry>
+                                                </dir>
+                                                <dir name="page">
+                                                        <entry name="print_line_numbers">
+                                                                <local_schema short_desc="Друкувати номери рядків">
+                                                                        <longdesc>Якщо значення встановлено в 0, номери рядків не буде вставлено, коли друкуватиметься документ. Інакше, номер друкуватимуться біля кожного рядка.</longdesc>
+                                                                </local_schema>
+                                                        </entry>
+                                                        <entry name="print_wrap_mode">
+                                                                <local_schema short_desc="Режим переносу рядків під час друку">
+                                                                        <longdesc>Визначає, як переносити довгі рядки під час друку. Використовуйте &quot;GTK_WRAP_NONE&quot; для вимкнення переносу, &quot;GTK_WRAP_WORD&quot; для переносу на межі слів і &quot;GTK_WRAP_CHAR&quot; для по-символьного переносу. Зауважте, що значення чутливі до регістру і мають з&apos;являтися точно у вказаному вигляді.</longdesc>
+                                                                </local_schema>
+                                                        </entry>
+                                                        <entry name="print_header">
+                                                                <local_schema short_desc="Друкувати заголовки сторінок">
+                                                                        <longdesc>Чи слід друкувати заголовок документа.</longdesc>
+                                                                </local_schema>
+                                                        </entry>
+                                                        <entry name="print_syntax_highlighting">
+                                                                <local_schema short_desc="Друкувати виділення синтаксису">
+                                                                        <longdesc>Чи застосовувати виділення кольором синтаксису при друкуванні документів.</longdesc>
+                                                                </local_schema>
+                                                        </entry>
+                                                </dir>
+                                        </dir>
+                                        <dir name="ui">
+                                                <dir name="recents">
+                                                        <entry name="max_recents">
+                                                                <local_schema short_desc="Максимальна кількість недавніх файлів">
+                                                                        <longdesc>Визначає кількість недавніх використаних файлів, які відображатимуться в підменю &quot;Недавні файли&quot;.</longdesc>
+                                                                </local_schema>
+                                                        </entry>
+                                                </dir>
+                                                <dir name="bottom_panel">
+                                                        <entry name="bottom_panel_visible">
+                                                                <local_schema short_desc="Нижня панель видима">
+                                                                        <longdesc>Чи має відображатись нижня панель, що розташована нижче вікна редагування.</longdesc>
+                                                                </local_schema>
+                                                        </entry>
+                                                </dir>
+                                                <dir name="side_pane">
+                                                        <entry name="side_pane_visible">
+                                                                <local_schema short_desc="Бічна панель видима">
+                                                                        <longdesc>Чи показувати бічну панель, що розташована ліворуч вікна редагування.</longdesc>
+                                                                </local_schema>
+                                                        </entry>
+                                                </dir>
+                                                <dir name="statusbar">
+                                                        <entry name="statusbar_visible">
+                                                                <local_schema short_desc="Панель стану видима">
+                                                                        <longdesc>Чи показувати панель стану у вікнах редагування.</longdesc>
+                                                                </local_schema>
+                                                        </entry>
+                                                </dir>
+                                                <dir name="toolbar">
+                                                        <entry name="toolbar_buttons_style">
+                                                                <local_schema short_desc="Стиль кнопок панелі інструментів">
+                                                                        <longdesc>Визначає стиль для кнопок панелі інструментів. Можливі варіанти: &quot;GEDIT_TOOLBAR_SYSTEM&quot; для використання системних значень, &quot;GEDIT_TOOLBAR_ICONS&quot; для відображення лише значків і &quot;GEDIT_TOOLBAR_ICONS_AND_TEXT&quot; для відображення значків і тексту, &quot;GEDIT_TOOLBAR_ICONS_BOTH_HORIZ&quot; для відображення тексту за значками. Зауважте, що значення чутливі до регістру і мають з&apos;являтися точно у вказаному вигляді.</longdesc>
+                                                                </local_schema>
+                                                        </entry>
+                                                        <entry name="toolbar_visible">
+                                                                <local_schema short_desc="Панель інструментів видима">
+                                                                        <longdesc>Чи показувати панель інструментів у вікнах редагування.</longdesc>
+                                                                </local_schema>
+                                                        </entry>
+                                                </dir>
+                                        </dir>
+                                        <dir name="editor">
+                                                <dir name="search_highlighting">
+                                                        <entry name="enable">
+                                                                <local_schema short_desc="Увімкнути виділення синтаксису">
+                                                                        <longdesc>Чи виділяти кольором всі знайдені збіги при пошуку.</longdesc>
+                                                                </local_schema>
+                                                        </entry>
+                                                </dir>
+                                                <dir name="cursor_position">
+                                                        <entry name="restore_cursor_position">
+                                                                <local_schema short_desc="Відновлювати попередню позицію курсора">
+                                                                        <longdesc>Чи слід відновлювати попередню позицію курсора після завантаження файлу.</longdesc>
+                                                                </local_schema>
+                                                        </entry>
+                                                </dir>
+                                                <dir name="smart_home_end">
+                                                        <entry name="smart_home_end">
+                                                                <local_schema short_desc="Розумні клавіші Home End">
+                                                                        <longdesc>Вказує спосіб переміщення курсору при натисканні клавіш HOME та END. Вкажіть &quot;DISABLED&quot; для простого переміщення до початку та кінця рядка, &quot;AFTER&quot; для переміщення до початку/кінця рядка при першому натисканні та при другому натисканні до початку/кінця тексту, ігноруючи пробільні символи. Якщо вказано &quot;BEFORE&quot; - переміщення до початку/кінця тексту, при повторному натисканні - переміщення до початку/кінця рядка. Якщо вказано &quot;ALWAYS&quot; - курсор завжди переміщується до початку/кінця тексту, на початку/кінця рядка.</longdesc>
+                                                                </local_schema>
+                                                        </entry>
+                                                </dir>
+                                                <dir name="right_margin">
+                                                        <entry name="right_margin_position">
+                                                                <local_schema short_desc="Позиція правого поля">
+                                                                        <longdesc>Вказує позицію правого поля.</longdesc>
+                                                                </local_schema>
+                                                        </entry>
+                                                        <entry name="display_right_margin">
+                                                                <local_schema short_desc="Відображати праву поле">
+                                                                        <longdesc>Чи слід відображати праву межу у області редагування.</longdesc>
+                                                                </local_schema>
+                                                        </entry>
+                                                </dir>
+                                                <dir name="bracket_matching">
+                                                        <entry name="bracket_matching">
+                                                                <local_schema short_desc="Підкреслювати відповідні дужки">
+                                                                        <longdesc>Чи виділяти кольором поточний рядок.</longdesc>
+                                                                </local_schema>
+                                                        </entry>
+                                                </dir>
+                                                <dir name="current_line">
+                                                        <entry name="highlight_current_line">
+                                                                <local_schema short_desc="Підкреслювати поточний рядок">
+                                                                        <longdesc>Чи виділяти кольором поточний рядок.</longdesc>
+                                                                </local_schema>
+                                                        </entry>
+                                                </dir>
+                                                <dir name="line_numbers">
+                                                        <entry name="display_line_numbers">
+                                                                <local_schema short_desc="Відображати номери рядків">
+                                                                        <longdesc>Чи мають відображатися номери рядків у області редагування.</longdesc>
+                                                                </local_schema>
+                                                        </entry>
+                                                </dir>
+                                                <dir name="auto_indent">
+                                                        <entry name="auto_indent">
+                                                                <local_schema short_desc="Автовідступ">
+                                                                        <longdesc>Чи потрібно автоматично розставляти відступ.</longdesc>
+                                                                </local_schema>
+                                                        </entry>
+                                                </dir>
+                                                <dir name="tabs">
+                                                        <entry name="insert_spaces">
+                                                                <local_schema short_desc="Вставляти пропуски">
+                                                                        <longdesc>Чи вставляти пропуски замість знаків табуляції.</longdesc>
+                                                                </local_schema>
+                                                        </entry>
+                                                        <entry name="tabs_size">
+                                                                <local_schema short_desc="Розмір табуляції">
+                                                                        <longdesc>Визначає кількість пропусків, які потрібно відображати замість символу табуляції.</longdesc>
+                                                                </local_schema>
+                                                        </entry>
+                                                </dir>
+                                                <dir name="wrap_mode">
+                                                        <entry name="wrap_mode">
+                                                                <local_schema short_desc="Режим переносу рядків">
+                                                                        <longdesc>Визначає, як переносити довгі рядки в області редагування. Використовуйте &quot;GTK_WRAP_NONE&quot; для вимкнення переносу, &quot;GTK_WRAP_WORD&quot; для переносу на межі слів і &quot;GTK_WRAP_CHAR&quot; для по-символьного переносу. Зауважте, що значення чутливі до регістру і мають з&apos;являтися точно у вказаному вигляді.</longdesc>
+                                                                </local_schema>
+                                                        </entry>
+                                                </dir>
+                                                <dir name="undo">
+                                                        <entry name="max_undo_actions">
+                                                                <local_schema short_desc="Максимальна кількість скасувань дій">
+                                                                        <longdesc>Максимальна кількість дій, які можна скасувати чи повторити. Значення &quot;-1&quot; означає необмежену кількість дій.</longdesc>
+                                                                </local_schema>
+                                                        </entry>
+                                                        <entry name="undo_actions_limit">
+                                                                <local_schema short_desc="Обмеження операцій скасування змін (ЗАСТАРІЛО)">
+                                                                        <longdesc>Максимальна кількість дій, які можна скасувати чи повторити. Значення &quot;-1&quot; означає необмежену кількість дій.</longdesc>
+                                                                </local_schema>
+                                                        </entry>
+                                                </dir>
+                                                <dir name="save">
+                                                        <entry name="writable_vfs_schemes">
+                                                                <local_schema short_desc="Схеми VFS, що підтримують запис">
+                                                                        <longdesc>Список схем VFS, що підтримуються gedit в режимі запису. Схема &quot;file&quot; типово підтримує запис.</longdesc>
+                                                                </local_schema>
+                                                        </entry>
+                                                        <entry name="auto_save_interval">
+                                                                <local_schema short_desc="Інтервал автозбереження">
+                                                                        <longdesc>Інтервал у хвилинах, після якого всі не збережені файли будуть збережені автоматично. Матиме ефект лише тоді, коли параметр &quot;автозбереження&quot; увімкнений.</longdesc>
+                                                                </local_schema>
+                                                        </entry>
+                                                        <entry name="auto_save">
+                                                                <local_schema short_desc="Автозбереження">
+                                                                        <longdesc>Чи потрібно автоматично зберігати змінені файли з певною періодичністю. Інтервал між збереженнями визначається параметром &quot;Інтервал автозбереження&quot;</longdesc>
+                                                                </local_schema>
+                                                        </entry>
+                                                        <entry name="backup_copy_extension">
+                                                                <local_schema short_desc="Розширення резервних копій">
+                                                                        <longdesc>Розширення чи суфікс для файлів резервних копій. Матиме ефект лише тоді, коли параметр &quot;Створювати резервні копії&quot; увімкнений.</longdesc>
+                                                                </local_schema>
+                                                        </entry>
+                                                        <entry name="create_backup_copy">
+                                                                <local_schema short_desc="Створювати резервні копії">
+                                                                        <longdesc>Чи мають створюватися резервні копії для файлів. Ви можете встановити розширення резервних файлів параметром &quot;Розширення резервних копій&quot;.</longdesc>
+                                                                </local_schema>
+                                                        </entry>
+                                                </dir>
+                                                <dir name="colors">
+                                                        <entry name="scheme">
+                                                                <local_schema short_desc="Схеми стилю">
+                                                                        <longdesc>Ідентифікатор схеми стилів GtkSourceView, що використовується для кольору тексту.</longdesc>
+                                                                </local_schema>
+                                                        </entry>
+                                                </dir>
+                                                <dir name="font">
+                                                        <entry name="editor_font">
+                                                                <local_schema short_desc="Шрифт редактора">
+                                                                </local_schema>
+                                                        </entry>
+                                                        <entry name="use_default_font">
+                                                                <local_schema short_desc="Використовувати початковий шрифт">
+                                                                        <longdesc>Чи використовувати системний шрифт для області редагування. Якщо цей параметр вимкнено, то для області редагування буде використовуватися шрифт, визначений в параметрі &quot;Шрифт редактора&quot;.</longdesc>
+                                                                </local_schema>
+                                                        </entry>
+                                                </dir>
+                                        </dir>
+                                </dir>
+                        </dir>
+                </dir>
+        </dir>
+</gconf>

@@ -1,0 +1,290 @@
+<?xml version="1.0"?>
+<gconf>
+        <dir name="schemas">
+                <dir name="apps">
+                        <dir name="gedit-2">
+                                <dir name="plugins">
+                                        <entry name="active-plugins">
+                                                <local_schema short_desc="प्लगइन सक्रिय">
+                                                        <longdesc>सक्रिय प्लगइन की सूची. इसमें सक्रिय प्लगइन का &quot;स्थान&quot; समाहित है. .gedit-plugin फ़ाइल दिये गये प्लगइन के &quot;स्थान&quot; को पाने के लिए देखें.</longdesc>
+                                                </local_schema>
+                                        </entry>
+                                        <dir name="filebrowser">
+                                                <entry name="filter_pattern">
+                                                        <local_schema short_desc="फ़ाइल ब्राउज़र फिल्टर प्रारूप">
+                                                                <longdesc>फिल्टर प्रारूप जिससे फ़ाइल ब्राउज़र को फिल्टर किया जाना है. यह फिल्टर फिल्टर विधि के शीर्ष पर काम करता है (_m).</longdesc>
+                                                        </local_schema>
+                                                </entry>
+                                                <entry name="filter_mode">
+                                                        <local_schema short_desc="फ़ाइल ब्राउज़र फिल्टर विधि">
+                                                                <longdesc>यह मान निर्धारित करता है कि फ़ाइल ब्राउज़र से कौन फ़ाइल फिल्टर किया जाता है. वैध मान हैं: none (filter nothing), hidden (filter hidden files), binary (filter binary files) और hidden_and_binary (filter both hidden and binary files).</longdesc>
+                                                        </local_schema>
+                                                </entry>
+                                                <entry name="open_at_first_doc">
+                                                        <local_schema short_desc="पहले दस्तावेज़ में अवस्थिति सेट करें">
+                                                                <longdesc>अगर सही है तो फ़ाइल ब्राउज़र प्लगइन निर्देशिका के पहले खुले दस्तावेज़ को देखेगा यह मानते हुये कि फ़ाइल ब्राउज़र अबतक प्रयुक्त नहीं हुआ है. (इसलिये यह सामान्यतः कमांड लाइन से एक दस्तावेज़ के खोलने पर लागू होता है या नॉटिलस आदि के साथ इसे खोलने से)</longdesc>
+                                                        </local_schema>
+                                                </entry>
+                                                <dir name="on_load">
+                                                        <entry name="enable_remote">
+                                                                <local_schema short_desc="दूरस्थ स्थान का भंडारण सक्रिय करें">
+                                                                        <longdesc>सेट करें कि क्या दूरस्थ अवस्थिति का पुनर्भंडारण सक्रिय किया जाना है</longdesc>
+                                                                </local_schema>
+                                                        </entry>
+                                                        <entry name="virtual_root">
+                                                                <local_schema short_desc="फ़ाइल ब्राउज़र आभासी रूट निर्देशिका">
+                                                                        <longdesc>फ़ाइल ब्राउज़र आभासी रूट निर्देशिका प्रयोग करने के लिए जब फ़ाइल ब्राउज़र प्लगइन लोड किया जाता है और ऑनलोड/ तरू दृश्य सही है. आभासी रूट को वास्तविक रूट से हमेशा नीचे होना चाहिए (_v).</longdesc>
+                                                                </local_schema>
+                                                        </entry>
+                                                        <entry name="root">
+                                                                <local_schema short_desc="फ़ाइल ब्राउज़र रूट निर्देशिका">
+                                                                        <longdesc>फ़ाइल ब्राउज़र रूट निर्देशिका प्रयोग करने के लिए जब फ़ाइल ब्राउज़र प्लगइन लोड किया जाता है और ऑनलोड/ तरू दृश्य सही है (_v).</longdesc>
+                                                                </local_schema>
+                                                        </entry>
+                                                        <entry name="tree_view">
+                                                                <local_schema short_desc="तरू दृश्य के साथ खोलें">
+                                                                        <longdesc>तरू दृश्य खोलें जब पुस्तचिह्न दृश्य के बजाय फ़ाइल ब्राउज़र प्लगइन लोड किया जाता है</longdesc>
+                                                                </local_schema>
+                                                        </entry>
+                                                </dir>
+                                        </dir>
+                                </dir>
+                                <dir name="preferences">
+                                        <dir name="syntax_highlighting">
+                                                <entry name="enable">
+                                                        <local_schema short_desc="वाक्य रचना आलोकन अक्षम करें">
+                                                                <longdesc>क्या जीएडिट वाक्य रचना आलोकन सक्षम करे.</longdesc>
+                                                        </local_schema>
+                                                </entry>
+                                        </dir>
+                                        <dir name="encodings">
+                                                <entry name="shown_in_menu">
+                                                        <local_schema short_desc="मेन्यू में दिखाया गया एन्कोडिंग">
+                                                        </local_schema>
+                                                </entry>
+                                                <entry name="auto_detected">
+                                                        <local_schema>
+                                                        </local_schema>
+                                                </entry>
+                                        </dir>
+                                        <dir name="print">
+                                                <dir name="fonts">
+                                                        <entry name="print_font_numbers_pango">
+                                                                <local_schema short_desc="छपाई हेतु पंक्ति संख्या फ़ॉन्ट">
+                                                                </local_schema>
+                                                        </entry>
+                                                        <entry name="print_font_header_pango">
+                                                                <local_schema short_desc="छपाई हेतु शीर्षिका फ़ॉन्ट">
+                                                                </local_schema>
+                                                        </entry>
+                                                        <entry name="print_font_body_pango">
+                                                                <local_schema short_desc="छपाई हेतु बॉडी फ़ॉन्ट">
+                                                                </local_schema>
+                                                        </entry>
+                                                </dir>
+                                                <dir name="page">
+                                                        <entry name="print_line_numbers">
+                                                                <local_schema short_desc="पंक्ति क्रमांक छापें">
+                                                                        <longdesc>अगर यह मान 0 है, तो कोई पंक्ति संख्या दस्तावेज़ के छपाई के दौरान नहीं डाली जायेगी. अन्यथा, जीएटिट हर पंक्ति संख्या के लिए पंक्ति संख्या छापेगी.</longdesc>
+                                                                </local_schema>
+                                                        </entry>
+                                                        <entry name="print_wrap_mode">
+                                                                <local_schema short_desc="पंक्ति लपेटन विधि में छाप रहा है">
+                                                                        <longdesc>निर्दिष्ट करें कि कैसे छपाई के लिए लंबी पंक्ति को समाहित करना है. &quot;GTK_WRAP_NONE&quot; का प्रयोग रैपिंग अनुपस्थिति के लिए करें, &quot;GTK_WRAP_WORD&quot; का प्रयोग शब्द सीमा पर रैपिंग के लिए करें, और &quot;GTK_WRAP_CHAR&quot; को निजी वर्ण सीमा के रैपिंग के लिए करें. नोट करें कि मान स्थितियों के प्रति संवेदनशील हैं, इसलिये निश्चित करें कि वे यहाँ बताये तरह से दिखते हैं.</longdesc>
+                                                                </local_schema>
+                                                        </entry>
+                                                        <entry name="print_header">
+                                                                <local_schema short_desc="शीर्षिका छापें">
+                                                                        <longdesc>जब दस्तावेज़ छापा जाए तो जीएडिट को क्या दस्तावेज़ शीर्षिका को शामिल करना चाहिए.</longdesc>
+                                                                </local_schema>
+                                                        </entry>
+                                                        <entry name="print_syntax_highlighting">
+                                                                <local_schema short_desc="वाक्य रचना आलोकन छापें">
+                                                                        <longdesc>जब दस्तावेज़ मुद्रित किया जाए तो जीएडिट क्या वाक्य रचना आलोकन भी छापे.</longdesc>
+                                                                </local_schema>
+                                                        </entry>
+                                                </dir>
+                                        </dir>
+                                        <dir name="ui">
+                                                <dir name="recents">
+                                                        <entry name="max_recents">
+                                                                <local_schema short_desc="हालिया प्रयुक्त फ़ाइलों की अधिकतम संख्या">
+                                                                        <longdesc>हाल में खोले गये फ़ाइल की अधिकतम संख्या बतायें जो कि &quot;नवीन फ़ाइल&quot; उपमेन्यू में दिखाया जायेगा.</longdesc>
+                                                                </local_schema>
+                                                        </entry>
+                                                </dir>
+                                                <dir name="bottom_panel">
+                                                        <entry name="bottom_panel_visible">
+                                                                <local_schema short_desc="तलवर्ती-पट्टी दृष्टिगोचर है">
+                                                                        <longdesc>क्या संपादन विंडो के तल की तलवर्ती पट्टी को दिखाई देना चाहिए.</longdesc>
+                                                                </local_schema>
+                                                        </entry>
+                                                </dir>
+                                                <dir name="side_pane">
+                                                        <entry name="side_pane_visible">
+                                                                <local_schema short_desc="बाजू फलक दृष्टिगोचर है">
+                                                                </local_schema>
+                                                        </entry>
+                                                </dir>
+                                                <dir name="statusbar">
+                                                        <entry name="statusbar_visible">
+                                                                <local_schema short_desc="स्थिति-पट्टी दृष्टिगोचर है">
+                                                                        <longdesc>क्या संपादन विंडोज़ के तल पर स्थिति-पट्टी दिखाई दे.</longdesc>
+                                                                </local_schema>
+                                                        </entry>
+                                                </dir>
+                                                <dir name="toolbar">
+                                                        <entry name="toolbar_buttons_style">
+                                                                <local_schema short_desc="औज़ार-पट्टी बटन शेली">
+                                                                        <longdesc>औज़ारपट्टी बटन के लिए शैली. तंत्र के तयशुदा शेली को प्रयोग करने के लिए संभावित मान &quot;GEDIT_TOOLBAR_SYSTEM&quot; है, सिर्फ प्रतीक दिखाने के लिए &quot;GEDIT_TOOLBAR_ICONS&quot;, प्रतीक व पाठ दोनों के लिए &quot;GEDIT_TOOLBAR_ICONS_AND_TEXT&quot;, और प्रतीक के बगल में वरीयता वाले पाठ के लिए &quot;GEDIT_TOOLBAR_ICONS_BOTH_HORIZ&quot;. नोट करें कि मान स्थितियों के प्रति संवेदनशील हैं, इसलिये निश्चित करें कि वे यहाँ बताये गये की तरह दिखते हैं.</longdesc>
+                                                                </local_schema>
+                                                        </entry>
+                                                        <entry name="toolbar_visible">
+                                                                <local_schema short_desc="औज़ार-पट्टी दृष्टिगोचर है">
+                                                                        <longdesc>क्या संपादन विंडोज़ में औज़ार-पट्टी दिखाई दे.</longdesc>
+                                                                </local_schema>
+                                                        </entry>
+                                                </dir>
+                                        </dir>
+                                        <dir name="editor">
+                                                <dir name="search_highlighting">
+                                                        <entry name="enable">
+                                                                <local_schema short_desc="खोज आलोकन सक्रिय करें">
+                                                                        <longdesc>क्या जीएडिट को खोजे गए पाठ की सारी आवृति आलोकित करनी चाहिए.</longdesc>
+                                                                </local_schema>
+                                                        </entry>
+                                                </dir>
+                                                <dir name="cursor_position">
+                                                        <entry name="restore_cursor_position">
+                                                                <local_schema short_desc="पिछली कर्सर स्थिति फिर बहाल करें">
+                                                                        <longdesc>क्या gedit को पिछली कर्सर स्थिति फिर बनाना चाहिए जब एक फ़ाइल लोड किया जाता है.</longdesc>
+                                                                </local_schema>
+                                                        </entry>
+                                                </dir>
+                                                <dir name="smart_home_end">
+                                                        <entry name="smart_home_end">
+                                                                <local_schema short_desc="स्मार्ट होम अंत">
+                                                                        <longdesc>निर्दिष्ट करता है कि कैसे कर्सर चलता है जब HOME और END कुंजी को दबाया जाता है. &quot;DISABLED&quot; का प्रयोग हमेशा पंक्ति के आरंभ/अंत पर जाने के लिए करें, &quot;AFTER&quot; को पंक्ति के आरंभ/अंत पर जाने के लिए करें जब पहली बार कुंजी दबायी जाती है और पाठ के आरंभ/अंत में खाली स्थान को अनदेखा करने के लिए जब दूसरी बार कुंजी दबायी जाती है, &quot;BEFORE&quot; को पाठ के आरंभ/अंत पर जाने के लिए पंक्ति के आरंभ/अंत पर जाने के पहले और &quot;ALWAYS&quot; को पाठ के आरंभ/अंत पर जाने के लिए बजाय पंक्ति के आरंभ/अंत पर.</longdesc>
+                                                                </local_schema>
+                                                        </entry>
+                                                </dir>
+                                                <dir name="right_margin">
+                                                        <entry name="right_margin_position">
+                                                                <local_schema short_desc="दाहिना हाशिए की स्थिति">
+                                                                        <longdesc>दाहिने हाशिए की स्थिति उल्लेखित करता है</longdesc>
+                                                                </local_schema>
+                                                        </entry>
+                                                        <entry name="display_right_margin">
+                                                                <local_schema short_desc="दाहिना हाशिया दिखाएँ">
+                                                                        <longdesc>क्या जीएडिट संपादन क्षेत्र में दाहिना हाशिया प्रदर्शित करे.</longdesc>
+                                                                </local_schema>
+                                                        </entry>
+                                                </dir>
+                                                <dir name="bracket_matching">
+                                                        <entry name="bracket_matching">
+                                                                <local_schema short_desc="मैचिंग कोष्ठक आलोकित करें">
+                                                                </local_schema>
+                                                        </entry>
+                                                </dir>
+                                                <dir name="current_line">
+                                                        <entry name="highlight_current_line">
+                                                                <local_schema short_desc="मौजूदा पंक्ति आलोकित करें">
+                                                                        <longdesc>क्या जीएडिट मौजूदा पंक्ति को आलोकित करना चाहिए.</longdesc>
+                                                                </local_schema>
+                                                        </entry>
+                                                </dir>
+                                                <dir name="line_numbers">
+                                                        <entry name="display_line_numbers">
+                                                                <local_schema short_desc="पंक्ति क्रमांक प्रदर्शित करें">
+                                                                        <longdesc>क्या जीएडिट संपादन क्षेत्र में पंक्ति क्रमांक प्रदर्शित करे.</longdesc>
+                                                                </local_schema>
+                                                        </entry>
+                                                </dir>
+                                                <dir name="auto_indent">
+                                                        <entry name="auto_indent">
+                                                                <local_schema short_desc="स्वतः हाशिया">
+                                                                        <longdesc>क्या जीएडिट स्वचालित हाशिया छोड़ना सक्षम करे.</longdesc>
+                                                                </local_schema>
+                                                        </entry>
+                                                </dir>
+                                                <dir name="tabs">
+                                                        <entry name="insert_spaces">
+                                                                <local_schema short_desc="खाली स्थान डालें">
+                                                                        <longdesc>क्या जीएडिट टैब्स के बजाए खाली स्थान प्रविष्ट करे.</longdesc>
+                                                                </local_schema>
+                                                        </entry>
+                                                        <entry name="tabs_size">
+                                                                <local_schema short_desc="टैब आकार">
+                                                                        <longdesc>निर्दिष्ट करता है कि टैब वर्ण के बदले खाली जगहों की कितनी संख्या प्रदर्शित की जाए.</longdesc>
+                                                                </local_schema>
+                                                        </entry>
+                                                </dir>
+                                                <dir name="wrap_mode">
+                                                        <entry name="wrap_mode">
+                                                                <local_schema short_desc="पंक्ति लपेटन विधि">
+                                                                        <longdesc>निर्दिष्ट करें कि कैसे संपादन क्षेत्र में लंबी पंक्ति को रैप करना है. &quot;GTK_WRAP_NONE&quot; का प्रयोग रैपिंग अनुपस्थिति के लिए करें, &quot;GTK_WRAP_WORD&quot; का प्रयोग शब्द सीमा पर रैपिंग के लिए करें, और &quot;GTK_WRAP_CHAR&quot; को निजी वर्ण सीमा के रैपिंग के लिए करें. नोट करें कि मान स्थितियों के प्रति संवेदनशील हैं, इसलिये निश्चित करें कि वे यहाँ बताये तरह से दिखते हैं.</longdesc>
+                                                                </local_schema>
+                                                        </entry>
+                                                </dir>
+                                                <dir name="undo">
+                                                        <entry name="max_undo_actions">
+                                                                <local_schema>
+                                                                        <longdesc>जीएडिट द्वारा पहले जैसा या फिर करें क्रिया की अधिकतम संख्या. &quot;-1&quot; का क्रिया की असीमित संख्या के लिए प्रयोग करें.</longdesc>
+                                                                </local_schema>
+                                                        </entry>
+                                                        <entry name="undo_actions_limit">
+                                                                <local_schema short_desc="पहले जैसा क्रिया सीमा (पदावनत)">
+                                                                        <longdesc>जीएडिट द्वारा पहले जैसा या फिर करें क्रिया की अधिकतम संख्या. &quot;-1&quot; का क्रिया की असीमित संख्या के लिए प्रयोग करें. 2.12.0 से पदावनत</longdesc>
+                                                                </local_schema>
+                                                        </entry>
+                                                </dir>
+                                                <dir name="save">
+                                                        <entry name="writable_vfs_schemes">
+                                                                <local_schema short_desc="लिखने योग्य VFS योजना">
+                                                                        <longdesc>VFS योजना की सूची जीएडिट लेखन विधि में समर्थन करती है. &apos;फ़ाइल&apos; योजना तयशुदा रूप से लिखने योग्य है.</longdesc>
+                                                                </local_schema>
+                                                        </entry>
+                                                        <entry name="auto_save_interval">
+                                                                <local_schema short_desc="स्वतः सहेज अंतराल">
+                                                                        <longdesc>मिनटों की संख्या जिसके बाद जीएडिट रूपांतरित फ़ाइल को स्वतः सहेजेगा. यह प्रभावी होगा जब &quot;स्वतः सहेज&quot; विकल्प चालू है.</longdesc>
+                                                                </local_schema>
+                                                        </entry>
+                                                        <entry name="auto_save">
+                                                                <local_schema short_desc="स्वतः सहेज">
+                                                                        <longdesc>क्या जीएडिट को रूपांतरित फ़ाइल को कुछ समयांतराल पर स्वतः सहेजना है. आप समयांतराल को &quot;स्वतः अंतराल सहेजें&quot; विकल्प से सेट कर सकते हैं.</longdesc>
+                                                                </local_schema>
+                                                        </entry>
+                                                        <entry name="backup_copy_extension">
+                                                                <local_schema short_desc="बैकअप नक़ल विस्तार">
+                                                                        <longdesc>बैकअप फ़ाइल नाम के लिए विस्तार या प्रत्यय. यह सिर्फ तभी प्रभावी होगा अगर &quot;बैकअप नक़ल बनाये&quot; विकल्प बंद कर दिया जाता है.</longdesc>
+                                                                </local_schema>
+                                                        </entry>
+                                                        <entry name="create_backup_copy">
+                                                                <local_schema short_desc="बैकअप नक़ल बनाएँ">
+                                                                        <longdesc>क्या जीएडिट को इसके द्वारा सहेजे जाने वाले फ़ाइल का बैकअप नक़ल रखना है. आप बैकअप फ़ाइल विस्तार को &quot;बैकअप नक़ल विस्तार&quot; विकल्प से सेट कर सकते हैं.</longdesc>
+                                                                </local_schema>
+                                                        </entry>
+                                                </dir>
+                                                <dir name="colors">
+                                                        <entry name="scheme">
+                                                                <local_schema short_desc="शैली योजना">
+                                                                </local_schema>
+                                                        </entry>
+                                                </dir>
+                                                <dir name="font">
+                                                        <entry name="editor_font">
+                                                                <local_schema short_desc="संपादक फ़ॉन्ट">
+                                                                </local_schema>
+                                                        </entry>
+                                                        <entry name="use_default_font">
+                                                                <local_schema short_desc="तयशुदा फ़ॉन्ट प्रयोग करें">
+                                                                        <longdesc>क्या तंत्र के तयशुदा फ़ॉन्ट को पाठ संपादन के लिए उपयोग करना है बजाय जीएडिट में दिये गये विशेष फ़ॉन्ट के. अगर यह विकल्प बंद कर दिया जाता है, तब &quot;संपादक फ़ॉन्ट&quot; विकल्प तंत्र फ़ॉन्ट के बजाय प्रयुक्त होगा.</longdesc>
+                                                                </local_schema>
+                                                        </entry>
+                                                </dir>
+                                        </dir>
+                                </dir>
+                        </dir>
+                </dir>
+        </dir>
+</gconf>

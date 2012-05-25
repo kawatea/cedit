@@ -1,0 +1,303 @@
+<?xml version="1.0"?>
+<gconf>
+        <dir name="schemas">
+                <dir name="apps">
+                        <dir name="gedit-2">
+                                <dir name="plugins">
+                                        <entry name="active-plugins">
+                                                <local_schema short_desc="క్రియాశీల ప్లగిన్‌లు">
+                                                        <longdesc>చేతనంగా ఉన్న ప్లగ్ఇన్‌ల జాబితా.ఇది చేతనంగా ఉన్న ప్లగ్ఇన్‌ల &quot;స్థానము&quot; ను కలిగిఉంటుంది. ఇవ్వబడినటువంటి ప్లగ్ఇన్ &quot;స్థానము&quot; ను పొందుటకు .gedit-plugin దస్త్రంను చూడుము.</longdesc>
+                                                </local_schema>
+                                        </entry>
+                                        <dir name="drawspaces">
+                                                <entry name="draw_spaces">
+                                                        <local_schema short_desc="ఖాళీలను గీయుము">
+                                                        </local_schema>
+                                                </entry>
+                                        </dir>
+                                        <dir name="showtabbar">
+                                                <entry name="tabbar_visible">
+                                                        <local_schema short_desc="టాబ్‌పట్టీ కనిపించునది">
+                                                                <longdesc>సరికూర్చుచున్న విండోలనందు టాబ్‌పట్టీ కనిపించునట్లు వుండవలెనా.</longdesc>
+                                                        </local_schema>
+                                                </entry>
+                                        </dir>
+                                        <dir name="filebrowser">
+                                                <entry name="filter_pattern">
+                                                        <local_schema short_desc="దస్త్ర అన్వేషకి వడపోత వరుసక్రమం">
+                                                                <longdesc>దస్త్ర అన్వేషకి తో ఉన్న వడపోత కు వడపోత వరుసక్రమం.ఈ వడపోత వడపోత రీతి పైన పని చేస్తుంది(_m).</longdesc>
+                                                        </local_schema>
+                                                </entry>
+                                                <entry name="filter_mode">
+                                                        <local_schema short_desc="దస్త్ర అన్వేషకి వడపోత రీతి">
+                                                                <longdesc>ఈ విలువ దస్త్ర అన్వేషకి నుండి ఏ దస్త్రాలు వడపోయబడాలో నిర్ణయిస్తుంది.విలువైన విలువలు: none(వడపోత ఏమీలేదు), hidden(దాగిఉన్న వడపోత దస్త్రాలు), binary(బైనరీ వడపోత దస్త్రాలు) మరియు hidden_and_binary (దాగిఉన్న మరియు బైనరీ దస్త్రాలు రెంటినీ వడపోస్తుంది).</longdesc>
+                                                        </local_schema>
+                                                </entry>
+                                                <entry name="open_at_first_doc">
+                                                        <local_schema short_desc="మొదటి పత్రమునకు స్థానము ను అమర్చుము">
+                                                                <longdesc>నిజమైతే దస్త్రఅన్వేషకి ఇంతవరకు ఉపయోగించని మొదటిగా తెరిచిన పత్రము యొక్క సంచయంను దస్త్రఅన్వేషకి ప్లగ్ఇన్ దర్శిస్తుంది. (ఇది సాదారణంగా పత్రమును ఆదేశక్షేత్రం లేదా నాటిలస్మొదలగు వాటినుండి తెరుచుటకు ఆపాదిస్తుంది)</longdesc>
+                                                        </local_schema>
+                                                </entry>
+                                                <dir name="on_load">
+                                                        <entry name="enable_remote">
+                                                                <local_schema short_desc="దూరస్థ స్థానముల యొక్క పునఃనిల్వను చేతనం చేయండి">
+                                                                        <longdesc>దూరస్థ స్థానముల పునఃనిల్వను చేతన పరచాలంటే అమరుస్తుంది.</longdesc>
+                                                                </local_schema>
+                                                        </entry>
+                                                        <entry name="virtual_root">
+                                                                <local_schema short_desc="దస్త్ర అన్వేషకి వర్చ్యువల్ రూట్ సంచయం">
+                                                                        <longdesc>onload/tree_view నిజమై దస్త్ర అన్వేషకి ప్లగ్ఇన్ లోడుఅవుతున్నప్పుడు ఉపయోగించుకొనే దస్త్ర అన్వేషకి రూట్ సంచయం.వర్చ్యువల్ రూట్ ఎప్పుడూ వాస్తవ రూట్ కి క్రింద ఉండాలి.</longdesc>
+                                                                </local_schema>
+                                                        </entry>
+                                                        <entry name="root">
+                                                                <local_schema short_desc="దస్త్ర అన్వేషకి రూట్ సంచయం">
+                                                                        <longdesc>దస్త్ర అన్వేషకి ప్లగ్ఇన్ మరియు ఆన్‌లోడ్/ట్రీ దర్శనం నిజమైనప్పుడు ఉపయోగించుకొను దస్త్ర అన్వేషకి రూట్ సంచయం.</longdesc>
+                                                                </local_schema>
+                                                        </entry>
+                                                        <entry name="tree_view">
+                                                                <local_schema short_desc="ట్రీ దర్శనం తో తెరువుము">
+                                                                        <longdesc>దస్త్ర అన్వేషకి ప్లగ్ఇన్ లు లోడయ్యినప్పుడు బుక్‌మార్క్ దర్శనం ద్వారా కాకుండా ట్రీ దర్శనం తో తెరువుము</longdesc>
+                                                                </local_schema>
+                                                        </entry>
+                                                </dir>
+                                        </dir>
+                                </dir>
+                                <dir name="preferences">
+                                        <dir name="syntax_highlighting">
+                                                <entry name="enable">
+                                                        <local_schema short_desc="పరిచ్ఛేద ఉద్దీపనం క్రియాశీలం చేయు">
+                                                                <longdesc>జీఎడిట్ స్వయంచాలకంగా పరిచ్ఛేద ఉద్దీపనం చేయాలా</longdesc>
+                                                        </local_schema>
+                                                </entry>
+                                        </dir>
+                                        <dir name="encodings">
+                                                <entry name="shown_in_menu">
+                                                        <local_schema short_desc="జాబితాలో చూపిన సంకేతరచనలు">
+                                                        </local_schema>
+                                                </entry>
+                                                <entry name="auto_detected">
+                                                        <local_schema>
+                                                        </local_schema>
+                                                </entry>
+                                        </dir>
+                                        <dir name="print">
+                                                <dir name="fonts">
+                                                        <entry name="print_font_numbers_pango">
+                                                                <local_schema short_desc="ప్రచురించునపుడు వరుస అంకెలకొరకు వాడే అక్షరశైలి">
+                                                                </local_schema>
+                                                        </entry>
+                                                        <entry name="print_font_header_pango">
+                                                                <local_schema short_desc="ప్రచురణకు వాడే పీఠిక అక్షరశైలి">
+                                                                </local_schema>
+                                                        </entry>
+                                                        <entry name="print_font_body_pango">
+                                                                <local_schema short_desc="ప్రచురించుటకు వాడే ముఖ్యభాగపు అక్షరశైలి">
+                                                                </local_schema>
+                                                        </entry>
+                                                </dir>
+                                                <dir name="page">
+                                                        <entry name="print_line_numbers">
+                                                                <local_schema short_desc="లైను సంఖ్యలను ప్రచురించు">
+                                                                        <longdesc>ఒకవేళ ఈ విలువ 0 అయితే, అప్పడు పత్రమును ముద్రిస్తుంటే ఏ లైన్ సంఖ్యలు ప్రవేశపెట్టబడవు. లేకపోతే, gedit లైను సంఖ్యలను ప్రతి లైను కి ముద్రిస్తుంది.</longdesc>
+                                                                </local_schema>
+                                                        </entry>
+                                                        <entry name="print_wrap_mode">
+                                                                <local_schema short_desc="వరుసలకు తగినట్లుగా అమర్చే విధానంలో ప్రచురించు">
+                                                                        <longdesc>ముద్రణనుండి పొడవైన లైనులను ఎలా తగినట్లు అమర్చాలో తెలియజేస్తుంది. పద సరిహద్దులవద్ద తగినట్లు అమర్చుటకు &quot;GTK_WRAP_WORD&quot;, అమర్చుకుండా ఉండుటకు &quot;GTK_WRAP_NONE&quot; ఉపయోగించండి, మరియు &quot;GTK_WRAP_CHAR&quot; ఒక్కొక్క అక్షరం సరిహద్దువద్ద అమర్చుటకు ఉపయోగించండి. ఆవిలువలు చిన్నపెద్ద-అక్షరం తేడాలను కలిగిఉన్నాయని గర్తుంచుకోండి, అదువలన ఇక్కడ సూచించిన విధంగా ఉండునట్లు చూసుకోండి.</longdesc>
+                                                                </local_schema>
+                                                        </entry>
+                                                        <entry name="print_header">
+                                                                <local_schema short_desc="పీఠికను ప్రచురించు">
+                                                                        <longdesc>పత్రములను ప్రచురించునపుడు పత్రము పీఠికనుకూడా జీఎడిట్ ప్రచురించాలా.</longdesc>
+                                                                </local_schema>
+                                                        </entry>
+                                                        <entry name="print_syntax_highlighting">
+                                                                <local_schema short_desc="పరిచ్ఛేద ఉద్దీపనాన్ని ప్రచురించు">
+                                                                        <longdesc>పత్రములను ప్రచురించునపుడు జీఎడిట్ పరిచ్చేద ఉద్దీపనన్నికూడా ప్రచురించాలా.</longdesc>
+                                                                </local_schema>
+                                                        </entry>
+                                                </dir>
+                                        </dir>
+                                        <dir name="ui">
+                                                <dir name="recents">
+                                                        <entry name="max_recents">
+                                                                <local_schema short_desc="గతంలో వాడిన దస్త్రాల సంఖ్య">
+                                                                        <longdesc>&quot;ఇటీవలి దస్త్రాలు&quot; సబ్‌మెనూ లో ప్రదర్శితమవబోవు ఇటీవల తెరిచిన దస్త్రాల గరిష్ఠ సంఖ్యను తెలియజేస్తుంది.</longdesc>
+                                                                </local_schema>
+                                                        </entry>
+                                                </dir>
+                                                <dir name="bottom_panel">
+                                                        <entry name="bottom_panel_visible">
+                                                                <local_schema short_desc="పనిముట్ల పట్టీ ప్రత్యక్షం ">
+                                                                        <longdesc> దిగువ ప్యానెల్ సరిచూస్తున్న గవాక్షములలోన దిగువనే కనిపించాలా.</longdesc>
+                                                                </local_schema>
+                                                        </entry>
+                                                </dir>
+                                                <dir name="side_pane">
+                                                        <entry name="side_pane_visible">
+                                                                <local_schema short_desc="సుస్థితి పట్టీ ప్రత్యక్షం ">
+                                                                </local_schema>
+                                                        </entry>
+                                                </dir>
+                                                <dir name="statusbar">
+                                                        <entry name="statusbar_visible">
+                                                                <local_schema short_desc="సుస్థితి పట్టీ ప్రత్యక్షం">
+                                                                        <longdesc> దిగువ సుస్థితిపట్టీ సరిచూస్తున్న గవాక్షములలోన దిగువనే కనిపించాలా.</longdesc>
+                                                                </local_schema>
+                                                        </entry>
+                                                </dir>
+                                                <dir name="toolbar">
+                                                        <entry name="toolbar_buttons_style">
+                                                                <local_schema short_desc="పనిముట్ల పట్టీ బొత్తాల శైలి">
+                                                                        <longdesc>పనిముట్లపట్టీ బొత్తాల శైలి.సాధ్యమగు విలువలు సిస్టమ్ అప్రమేయశైలిని ఉపయోగించుటకు &quot; GEDIT_TOOLBAR_SYSTEM&quot;, ప్రతిమలను ప్రదర్శించుటకు &quot;GEDIT_TOOLBAR_ICONS&quot;, ప్రతిమలను మరియు టెక్స్టును ప్రదర్శించుటకు &quot;GEDIT_TOOLBAR_ICONS_AND_TEXT&quot;, మరియు ప్రతిమలముందు ప్రతిపాదిత టెక్స్టు వచ్చుటకు &quot;GEDIT_TOOLBAR_ICONS_BOTH_HORIZ&quot;. విలువలు చిన్నపెద్ద-అక్షర తేడాలను కలిగిఉన్నాయని గమనించండి, అందుకని ఇక్కడ సూచించినవిధంగా ఉండునట్లు చూసుకొనండి.</longdesc>
+                                                                </local_schema>
+                                                        </entry>
+                                                        <entry name="toolbar_visible">
+                                                                <local_schema short_desc="పనిముట్ల పట్టీ ప్రత్యక్షం">
+                                                                        <longdesc>సరిచూస్తున్న గవాక్షములలో పనిముట్ల పట్టీ కనిపించాలా.</longdesc>
+                                                                </local_schema>
+                                                        </entry>
+                                                </dir>
+                                        </dir>
+                                        <dir name="editor">
+                                                <dir name="search_highlighting">
+                                                        <entry name="enable">
+                                                                <local_schema short_desc="వెతుకుట ఉద్దీపనం క్రియాశీలీకరించు">
+                                                                        <longdesc>వెతికిన పాఠ్యంయొక్క బహుళ దర్శనాలనంటినీ జీ-ఎడిట్ ఉద్దీపనం చేయాలా</longdesc>
+                                                                </local_schema>
+                                                        </entry>
+                                                </dir>
+                                                <dir name="cursor_position">
+                                                        <entry name="restore_cursor_position">
+                                                                <local_schema short_desc="ములుకు గతంలో ఉన్న స్థానానికి పున:స్థాపించు">
+                                                                        <longdesc>దస్త్రమును తెరిచినపుడు గతంలో ములుకు ఎక్కడ ఉందో అక్కడనే జీఎడిట్ ములుకునుంచాలా.</longdesc>
+                                                                </local_schema>
+                                                        </entry>
+                                                </dir>
+                                                <dir name="smart_home_end">
+                                                        <entry name="smart_home_end">
+                                                                <local_schema short_desc="స్మార్ట్  హోమ్ ఎండ్">
+                                                                        <longdesc>HOME మరియు END కీలు వత్తినప్పుడు కర్సర్ ఎలా కదులుతుందో తెలియజేస్తుంది. ఎల్లప్పుడు లైను మొదటికి/చివరికి కదుపుటకు &quot;DISABLED&quot;, మొదటిసారి కీలను వత్తినప్పుడు లైను మొదటికి/చివరికి కదుపుటకు &quot;AFTER&quot; మరియు రెండోసారి కీలను వత్తివప్పుడు టెక్స్టు మొదటికి/చివరికి ఖాళలను వదిలి కదుపుటకు, లైను మొదటికి/చివరికి కదుపుటకు ముందు టెక్స్టు మొదటికి/చివరికి కదుపుటకు &quot;BEFORE&quot;మరియు లైను మొదటికి/చివరికి కదుపుటకు బదులుగా ఎల్లప్పుడు టెక్స్టు మొదటికి/చివరికి కదుపుటకు &quot;ALWAYS&quot; ను ఉపయోగించండి.</longdesc>
+                                                                </local_schema>
+                                                        </entry>
+                                                </dir>
+                                                <dir name="right_margin">
+                                                        <entry name="right_margin_position">
+                                                                <local_schema short_desc="కుడి అంచుల స్థానము">
+                                                                        <longdesc>కుడి అంచు స్థాన్నాన్ని నిర్దేశిస్తుంది</longdesc>
+                                                                </local_schema>
+                                                        </entry>
+                                                        <entry name="display_right_margin">
+                                                                <local_schema short_desc="కుడి అంచును ప్రదర్శించు">
+                                                                        <longdesc>సరిచూసే ప్రాంతములో కుడి అంచును జీ ఎడిట్ ప్రదర్శించాలా</longdesc>
+                                                                </local_schema>
+                                                        </entry>
+                                                </dir>
+                                                <dir name="bracket_matching">
+                                                        <entry name="bracket_matching">
+                                                                <local_schema short_desc="సరితూగుతున్న బ్రాకెట్‌ను ఉద్దీపనం చేయి">
+                                                                </local_schema>
+                                                        </entry>
+                                                </dir>
+                                                <dir name="current_line">
+                                                        <entry name="highlight_current_line">
+                                                                <local_schema short_desc="ప్రస్తుత వరుసను ఉద్దిపనంచేయి">
+                                                                        <longdesc>ప్రస్తుత వరుసను జీ ఎడిట్ ఉద్దీపనం చేయాలా.</longdesc>
+                                                                </local_schema>
+                                                        </entry>
+                                                </dir>
+                                                <dir name="line_numbers">
+                                                        <entry name="display_line_numbers">
+                                                                <local_schema short_desc="వరుస సంఖ్యలను ప్రదర్శించు">
+                                                                        <longdesc>సరిచూసే ప్రాంతములో వరుస సంఖ్యను జీఎడిట్ ప్రదర్శించాలా</longdesc>
+                                                                </local_schema>
+                                                        </entry>
+                                                </dir>
+                                                <dir name="auto_indent">
+                                                        <entry name="auto_indent">
+                                                                <local_schema short_desc="స్వయంచాలకంగా గంటుపెట్టు">
+                                                                        <longdesc>స్వయంచాలకంగా గంటుపెట్టే సదుపాయాన్ని క్రియాశీలం చేయాలా</longdesc>
+                                                                </local_schema>
+                                                        </entry>
+                                                </dir>
+                                                <dir name="tabs">
+                                                        <entry name="insert_spaces">
+                                                                <local_schema short_desc="ఖాళీలను ప్రవేశపెట్టు">
+                                                                        <longdesc>టాబ్ల బదులు జీఎడిట్ ఖాళీ స్థానాలను జీఎడిట్ ప్రవేశపెట్టాలా.</longdesc>
+                                                                </local_schema>
+                                                        </entry>
+                                                        <entry name="tabs_size">
+                                                                <local_schema short_desc="టాబ్ పరిమాణము">
+                                                                        <longdesc>టాబ్ అక్షరాలకు బదులుగా ప్రదర్శితమవ్వాల్సిన ఖాళీల సంఖ్యను తెలియజేస్తుంది.</longdesc>
+                                                                </local_schema>
+                                                        </entry>
+                                                </dir>
+                                                <dir name="wrap_mode">
+                                                        <entry name="wrap_mode">
+                                                                <local_schema short_desc="వరుసలకు తగినట్లుగా అమర్చే విధానం ">
+                                                                        <longdesc>సరికూర్చు ప్రదేశంలో పొడవైన లైన్లను ఎలా తగినట్లు అమర్చాలో తెలియజేస్తుంది. పద సరిహద్దులవద్ద తగినట్లు అమర్చుటకు &quot;GTK_WRAP_WORD&quot;, అమర్చుకుండా ఉండుటకు &quot;GTK_WRAP_NONE&quot; ఉపయోగించండి, మరియు &quot;GTK_WRAP_CHAR&quot; ఒక్కొక్క అక్షరం సరిహద్దువద్ద అమర్చుటకు ఉపయోగించండి. ఆవిలువలు చిన్నపెద్ద-అక్షరం తేడాలను కలిగిఉన్నాయని గర్తుంచుకోండి, అదువలన ఇక్కడ సూచించిన విధంగా ఉండునట్లు చూసుకోండి.</longdesc>
+                                                                </local_schema>
+                                                        </entry>
+                                                </dir>
+                                                <dir name="undo">
+                                                        <entry name="max_undo_actions">
+                                                                <local_schema>
+                                                                        <longdesc>gedit చేసింది రద్దుచేయుటకు లేదా తిరిగిచేయుటకు గల అత్యదిక ఆవకాశాలసంఖ్య. అనంతంగా చర్యలు కొనసాగించుటకు &quot;-1&quot; ని ఉపయోగించండి.</longdesc>
+                                                                </local_schema>
+                                                        </entry>
+                                                        <entry name="undo_actions_limit">
+                                                                <local_schema short_desc="చేశింది రద్దుచేయుటకు పరిమితి">
+                                                                        <longdesc>gedit చేసింది రద్దుచేయుటకు లేదా తిరిగిచేయుటకు గల అత్యదిక ఆవకాశాలసంఖ్య. అనంతంగా చర్యలు కొనసాగించుటకు &quot;-1&quot; ని ఉపయోగించండి.2.12.0 నుండి నివారించబడింది.</longdesc>
+                                                                </local_schema>
+                                                        </entry>
+                                                </dir>
+                                                <dir name="save">
+                                                        <entry name="writable_vfs_schemes">
+                                                                <local_schema short_desc="రాయగలిగిన VFS పథకాలు">
+                                                                        <longdesc>gedit వ్రాయు రీతి లో మద్దతునిచ్చే VFS పధకాల జాబితా.దస్త్ర పధకం అప్రమేయంగా వ్రాయబడింది.</longdesc>
+                                                                </local_schema>
+                                                        </entry>
+                                                        <entry name="auto_save_interval">
+                                                                <local_schema short_desc="స్వయంచాలకంగా దాచుటకు వ్యవధి">
+                                                                        <longdesc>సవరించబడిన దస్త్రాలను gedit ఎన్ని నిమషముల తర్వాత స్వయంచాలకంగా దాచవలెను. ఇది &quot;స్వయంచాలకంగా దాచు&quot; ఇచ్ఛాపూర్వకం ఆన్ అయితేనే ప్రభావితం అవుతుంది.</longdesc>
+                                                                </local_schema>
+                                                        </entry>
+                                                        <entry name="auto_save">
+                                                                <local_schema short_desc="స్వయంచాలకంగా దాచు">
+                                                                        <longdesc>ఒక సమయ వ్యవధి తర్వాత gedit స్వయంచాలకంగా సవరించిన దస్త్రాలను దాచాలంటే. మీరు సమయవ్యవధిని &quot;స్వయంచాలంకంగా దాచుటకు వ్యవధి&quot; ఇచ్ఛాపూర్వకంతే అమర్చాలి.</longdesc>
+                                                                </local_schema>
+                                                        </entry>
+                                                        <entry name="backup_copy_extension">
+                                                                <local_schema short_desc="భద్రపరచిన నకలు పొడగింపు">
+                                                                        <longdesc>భద్రపరిచిన దస్త్ర నామాల పొడిగింపు లేదా సఫిక్స్ .ఇది &quot; భద్రపరుచుటకు కాపీల నకలు సృష్టించు&quot; ఇచ్చాపూర్వకం ఆన్ లో ఉంటేనే ఇది ప్రభావితం అవుతుంది.</longdesc>
+                                                                </local_schema>
+                                                        </entry>
+                                                        <entry name="create_backup_copy">
+                                                                <local_schema short_desc="భద్రపరుచుటకు కాపీల నకలు సృష్టించు">
+                                                                        <longdesc>gedit దాచే దస్త్రాలకొరకు భద్రపరుచుకాపీలను తీయుటమంచిదైతే.మీరు భద్రపరుచు దస్త్రం పోడిగింపును &quot;భద్రపరుచు నకలు పొడిగింపు&quot; ఇచ్ఛాపూర్వకంతో అమర్చవలెను.</longdesc>
+                                                                </local_schema>
+                                                        </entry>
+                                                </dir>
+                                                <dir name="colors">
+                                                        <entry name="scheme">
+                                                                <local_schema short_desc="శైలి పధకం">
+                                                                </local_schema>
+                                                        </entry>
+                                                </dir>
+                                                <dir name="font">
+                                                        <entry name="editor_font">
+                                                                <local_schema short_desc="సరిచూచేవారి అక్షరశైలి">
+                                                                </local_schema>
+                                                        </entry>
+                                                        <entry name="use_default_font">
+                                                                <local_schema short_desc="అప్రమేయ అక్షరశైలిని వాడు">
+                                                                        <longdesc>gedit ప్రత్యేకించిన అక్షరశైలికి బదులుగా సిస్టమ్ అప్రమేయ నిర్ధేశిత వెడల్పు అక్షరశైలి ని టెక్స్టు సరికూర్చుటకు ఉపయోగించాలనుకుంటే.ఈ ఇచ్ఛాపూర్వకం ఆఫ్ అయితే, సిస్టమ్ అక్షరశైలికి బదులుగా &quot;సరిచూచువారి అక్షరశైలి&quot; లోని అక్షరశైలి ఇచ్ఛాపూర్వకం ఉపయోగించబడుతుంది.</longdesc>
+                                                                </local_schema>
+                                                        </entry>
+                                                </dir>
+                                        </dir>
+                                </dir>
+                        </dir>
+                </dir>
+        </dir>
+</gconf>

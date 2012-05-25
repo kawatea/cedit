@@ -1,0 +1,17 @@
+CC = gcc
+LD = gcc
+CCFLAGS = -O3 -mms-bitfields `pkg-config --cflags gtk+-2.0 gtksourceview-2.0`
+LDFLAGS = `pkg-config --libs gtk+-2.0 gtksourceview-2.0` -Wl,--subsystem,windows
+
+all : cedit
+
+cedit : cedit.o
+	$(LD) -o $@ $^ $(LDFLAGS)
+
+cedit.o : cedit.c
+	$(CC) $(CCFLAGS) -c -o $@ $^
+
+clean :
+	rm -f *.o *.exe
+
+.PHONY : all clean

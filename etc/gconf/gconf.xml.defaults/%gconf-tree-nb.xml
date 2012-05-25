@@ -1,0 +1,305 @@
+<?xml version="1.0"?>
+<gconf>
+        <dir name="schemas">
+                <dir name="apps">
+                        <dir name="gedit-2">
+                                <dir name="plugins">
+                                        <entry name="active-plugins">
+                                                <local_schema short_desc="Aktive tillegg">
+                                                        <longdesc>Liste over aktive tillegg. Denne inneholder «lokasjon» for de aktive tilleggene. Se filen .gedit-plugin for å finne «lokasjon» for et gitt tillegg.</longdesc>
+                                                </local_schema>
+                                        </entry>
+                                        <dir name="checkupdate">
+                                                <entry name="ignore_version">
+                                                        <local_schema short_desc="Versjon som skal overses til neste versjon er gitt ut">
+                                                        </local_schema>
+                                                </entry>
+                                        </dir>
+                                        <dir name="drawspaces">
+                                                <entry name="draw_spaces">
+                                                        <local_schema short_desc="Tegn mellomrom">
+                                                        </local_schema>
+                                                </entry>
+                                        </dir>
+                                        <dir name="filebrowser">
+                                                <entry name="filter_pattern">
+                                                        <local_schema short_desc="Filtermønster for filhåndterer">
+                                                                <longdesc>Filtermønster for å filtrere innhold i filleser. Dette filteret kommer i tillegg til filter_mode.</longdesc>
+                                                        </local_schema>
+                                                </entry>
+                                                <entry name="filter_mode">
+                                                        <local_schema short_desc="Filtermodus for filhåndterer">
+                                                                <longdesc>Denne verdien bestemmer hvilke filer som blir filtrert fra filleseren. Gyldige verdier er non (ikke filtrer), hidden (filtrer skjulte filer), binary (filtrer binærfiler) og hidden_and_binary (filtrer både skjulte filer og binærfiler).</longdesc>
+                                                        </local_schema>
+                                                </entry>
+                                                <entry name="open_at_first_doc">
+                                                        <local_schema short_desc="Sett lokasjonen til første dokument">
+                                                                <longdesc>Hvis denne er satt til TRUE vil fillesertillegget vise katalogen til det første åpnede dokumentet gitt at filleseren ikke har blitt brukt ennå. (Dette er mest relevant når man åpner et dokument fra kommandolinjen eller med nautilus).</longdesc>
+                                                        </local_schema>
+                                                </entry>
+                                                <dir name="on_load">
+                                                        <entry name="enable_remote">
+                                                                <local_schema short_desc="Aktiver gjenoppretting av eksterne lokasjoner">
+                                                                        <longdesc>Bestemmer om gjenoppretting fra eksterne lokasjoner skal aktiveres.</longdesc>
+                                                                </local_schema>
+                                                        </entry>
+                                                        <entry name="virtual_root">
+                                                                <local_schema short_desc="Virtuell rotkatalog for filhåndterer">
+                                                                        <longdesc>Virtuell rotkatalog som brukes når fillesertillegget og onload/tree_view er TRUE. Virtuell rot må alltid være under faktisk rot.</longdesc>
+                                                                </local_schema>
+                                                        </entry>
+                                                        <entry name="root">
+                                                                <local_schema short_desc="Rotkatalog for filhåndterer">
+                                                                        <longdesc>Rotkatalog som brukes når fillesertillegget lastes og onload/tree_view er TRUE.</longdesc>
+                                                                </local_schema>
+                                                        </entry>
+                                                        <entry name="tree_view">
+                                                                <local_schema short_desc="Åpne med trevisning">
+                                                                        <longdesc>Åpne trevisning når filhåndterertillegget lastes i stedet for bokmerkevisning.</longdesc>
+                                                                </local_schema>
+                                                        </entry>
+                                                </dir>
+                                        </dir>
+                                </dir>
+                                <dir name="preferences">
+                                        <dir name="syntax_highlighting">
+                                                <entry name="enable">
+                                                        <local_schema short_desc="Aktiver syntaksutheving">
+                                                                <longdesc>Om gedit skal aktivere automatisk syntaksutheving.</longdesc>
+                                                        </local_schema>
+                                                </entry>
+                                        </dir>
+                                        <dir name="encodings">
+                                                <entry name="shown_in_menu">
+                                                        <local_schema short_desc="Kodinger som vises i menyen">
+                                                        </local_schema>
+                                                </entry>
+                                                <entry name="auto_detected">
+                                                        <local_schema short_desc="Automatisk gjenkjente kodinger">
+                                                        </local_schema>
+                                                </entry>
+                                        </dir>
+                                        <dir name="print">
+                                                <dir name="fonts">
+                                                        <entry name="print_font_numbers_pango">
+                                                                <local_schema short_desc="Skrift for linjenummer ved utskrift">
+                                                                </local_schema>
+                                                        </entry>
+                                                        <entry name="print_font_header_pango">
+                                                                <local_schema short_desc="Skrift for topptekst ved utskrift">
+                                                                </local_schema>
+                                                        </entry>
+                                                        <entry name="print_font_body_pango">
+                                                                <local_schema short_desc="Skrift for kropp ved utskrift">
+                                                                </local_schema>
+                                                        </entry>
+                                                </dir>
+                                                <dir name="page">
+                                                        <entry name="print_line_numbers">
+                                                                <local_schema short_desc="Skriv ut linjenummer">
+                                                                        <longdesc>Hvis verdien er 0 vil ikke linjenummer settes inn ved utskrift av et dokument. Ellers vil gedit skrive ut linjenummer ved verdiens antall linjer.</longdesc>
+                                                                </local_schema>
+                                                        </entry>
+                                                        <entry name="print_wrap_mode">
+                                                                <local_schema short_desc="Linjebrytingsmodus ved utskrift">
+                                                                        <longdesc>Spesifiserer hvordan linjer skal brytes ved utskrift. Bruk «GTK_WRAP_NONE» hvis du ikke ønsker bryting, «GTK_WRAP_WORD» hvis du ønsker bryting ved ordgrenser og GTK_WRAP_CHAR hvis du ønsker bryting på tegnnivå. Merk at det skilles mellom store og små bokstaver.</longdesc>
+                                                                </local_schema>
+                                                        </entry>
+                                                        <entry name="print_header">
+                                                                <local_schema short_desc="Skriv ut topptekst">
+                                                                        <longdesc>Om gedig skal ta med en topptekst ved utskrift av dokumenter.</longdesc>
+                                                                </local_schema>
+                                                        </entry>
+                                                        <entry name="print_syntax_highlighting">
+                                                                <local_schema short_desc="Skriv ut syntaksutheving">
+                                                                        <longdesc>Om gedit skal ta med en syntaksutheving ved utskrift av dokumenter.</longdesc>
+                                                                </local_schema>
+                                                        </entry>
+                                                </dir>
+                                        </dir>
+                                        <dir name="ui">
+                                                <dir name="recents">
+                                                        <entry name="max_recents">
+                                                                <local_schema short_desc="Maksimalt antall nylig åpnede filer">
+                                                                        <longdesc>Spesifiserer maksimalt antall nylig åpnede filer som vil vises i «Nylig åpnede filer» undermenyen.</longdesc>
+                                                                </local_schema>
+                                                        </entry>
+                                                </dir>
+                                                <dir name="bottom_panel">
+                                                        <entry name="bottom_panel_visible">
+                                                                <local_schema short_desc="Bunnpanelet er synlig">
+                                                                        <longdesc>Om panelet nederst i redigeringsvinduet skal være synlig.</longdesc>
+                                                                </local_schema>
+                                                        </entry>
+                                                </dir>
+                                                <dir name="side_pane">
+                                                        <entry name="side_pane_visible">
+                                                                <local_schema short_desc="Sidelinjen er synlig">
+                                                                        <longdesc>Om sidelinjen til venstre i redigeringsvinduet skal være synlig.</longdesc>
+                                                                </local_schema>
+                                                        </entry>
+                                                </dir>
+                                                <dir name="statusbar">
+                                                        <entry name="statusbar_visible">
+                                                                <local_schema short_desc="Statuslinjen er synlig">
+                                                                        <longdesc>Om statuslinjen nederst i redigeringsvinduet skal være synlig.</longdesc>
+                                                                </local_schema>
+                                                        </entry>
+                                                </dir>
+                                                <dir name="toolbar">
+                                                        <entry name="toolbar_buttons_style">
+                                                                <local_schema short_desc="Knappestil for verktøylinje">
+                                                                        <longdesc>Stil for verktøylinjeknapper. Mulige verdier er «GEDIT_TOOLBAR_SYSTEM» for å bruke systemets forvalgte stil, «GEDIT_TOOLBAR_ICONS» for å vise kun ikoner, «GEDIT_TOOLBAR_ICONS_AND_TEXT» for å vise både ikoner og tekst og «GEDIT_TOOLBAR_ICONS_BOTH_HORIZ» for å vise prioritert tekst ved siden av ikoner. Merk at det skilles mellom store og små bokstaver så de må brukes eksakt som de er skrevet her.</longdesc>
+                                                                </local_schema>
+                                                        </entry>
+                                                        <entry name="toolbar_visible">
+                                                                <local_schema short_desc="Verktøylinjen er synlig">
+                                                                        <longdesc>Om verktøylinjen i redigeringsvinduet skal være synlig.</longdesc>
+                                                                </local_schema>
+                                                        </entry>
+                                                </dir>
+                                        </dir>
+                                        <dir name="editor">
+                                                <dir name="search_highlighting">
+                                                        <entry name="enable">
+                                                                <local_schema short_desc="Aktiver utheving ved søk">
+                                                                        <longdesc>Om gedit skal utheve tekst i søket.</longdesc>
+                                                                </local_schema>
+                                                        </entry>
+                                                </dir>
+                                                <dir name="cursor_position">
+                                                        <entry name="restore_cursor_position">
+                                                                <local_schema short_desc="Gjenopprett forrige markørposisjon">
+                                                                        <longdesc>Om gedit skal gjenopprette tidligere markørposisjon når et dokument lastes.</longdesc>
+                                                                </local_schema>
+                                                        </entry>
+                                                </dir>
+                                                <dir name="smart_home_end">
+                                                        <entry name="smart_home_end">
+                                                                <local_schema short_desc="Smart home/end">
+                                                                        <longdesc>Spesifiserer hvordan markøren beveger seg når HOME og END tastene brukes. Bruk «DISABLED» for alltid å gå til start/slutt av linjen, «AFTER» for å gå til start/slutt av linjen første gang tasten brukes og start/slutt av teksten andre gang tasten trykkes, «BEFORE» for å gå til start/slutt av teksten før start/slutt av linjen og «ALWAYS» for alltid å gå til start/slutt av teksten i stedet for start/alutt av linjen.</longdesc>
+                                                                </local_schema>
+                                                        </entry>
+                                                </dir>
+                                                <dir name="right_margin">
+                                                        <entry name="right_margin_position">
+                                                                <local_schema short_desc="Plassering av høyre marg">
+                                                                        <longdesc>Spesifiserer posisjonen for høyre marg.</longdesc>
+                                                                </local_schema>
+                                                        </entry>
+                                                        <entry name="display_right_margin">
+                                                                <local_schema short_desc="Vis høyre marg">
+                                                                        <longdesc>Om gedit skal vise høyre marg i redigeringsområdet.</longdesc>
+                                                                </local_schema>
+                                                        </entry>
+                                                </dir>
+                                                <dir name="bracket_matching">
+                                                        <entry name="bracket_matching">
+                                                                <local_schema short_desc="Uthev tilhørende hakeparantes">
+                                                                        <longdesc>Om gedit skal utheve tilhørende hakeparantes.</longdesc>
+                                                                </local_schema>
+                                                        </entry>
+                                                </dir>
+                                                <dir name="current_line">
+                                                        <entry name="highlight_current_line">
+                                                                <local_schema short_desc="Uthev aktiv linje">
+                                                                        <longdesc>Om gedit skal utheve aktiv linje.</longdesc>
+                                                                </local_schema>
+                                                        </entry>
+                                                </dir>
+                                                <dir name="line_numbers">
+                                                        <entry name="display_line_numbers">
+                                                                <local_schema short_desc="Vis linjenummer">
+                                                                        <longdesc>Om gedit skal vise linjenummer i redigeringsområdet.</longdesc>
+                                                                </local_schema>
+                                                        </entry>
+                                                </dir>
+                                                <dir name="auto_indent">
+                                                        <entry name="auto_indent">
+                                                                <local_schema short_desc="Automatisk innrykk">
+                                                                        <longdesc>Om gedit skal aktivere automatisk innrykk.</longdesc>
+                                                                </local_schema>
+                                                        </entry>
+                                                </dir>
+                                                <dir name="tabs">
+                                                        <entry name="insert_spaces">
+                                                                <local_schema short_desc="Sett inn mellomrom">
+                                                                        <longdesc>Om gedit skal sette inn mellomrom i stedet for tabulator.</longdesc>
+                                                                </local_schema>
+                                                        </entry>
+                                                        <entry name="tabs_size">
+                                                                <local_schema short_desc="Fanestørrelse">
+                                                                        <longdesc>Spesifiserer antall mellomrom som vises i stedet for tabulatorer.</longdesc>
+                                                                </local_schema>
+                                                        </entry>
+                                                </dir>
+                                                <dir name="wrap_mode">
+                                                        <entry name="wrap_mode">
+                                                                <local_schema short_desc="Modus for linjebryting">
+                                                                        <longdesc>Spesifiserer hvordan lange linjer skal brytes i redigeringsområdet. Bruk «GTK_WRAP_NONE» hvis du ikke ønsker bryting, «GTK_WRAP_WORD» hvis du ønsker bryting ved ordgrenser og «GTK_WRAP_CHAR» hvis du ønsker bryting på tegnnivå. Merk at det skilles mellom store og små bokstaver.</longdesc>
+                                                                </local_schema>
+                                                        </entry>
+                                                </dir>
+                                                <dir name="undo">
+                                                        <entry name="max_undo_actions">
+                                                                <local_schema short_desc="Maksimalt antall angrehandlinger">
+                                                                        <longdesc>Maksimalt antall handlinger som gedit vil kunne angre eller gjenopprette. Bruk «-1» for ubegrenset antall handlinger.</longdesc>
+                                                                </local_schema>
+                                                        </entry>
+                                                        <entry name="undo_actions_limit">
+                                                                <local_schema short_desc="Grense for angring av handlinger (UTFASES)">
+                                                                        <longdesc>Maksimalt antall handlinger som gedit vil kunne angre eller gjenopprette. Bruk «-1» for ubegrenset antall handlinger. Fases ut etter 2.12.0</longdesc>
+                                                                </local_schema>
+                                                        </entry>
+                                                </dir>
+                                                <dir name="save">
+                                                        <entry name="writable_vfs_schemes">
+                                                                <local_schema short_desc="Skrivbare VFS-schema">
+                                                                        <longdesc>Liste med VFS-schema gedit støtter i skrivemodus. Type «file» er skrivbart som forvalg.</longdesc>
+                                                                </local_schema>
+                                                        </entry>
+                                                        <entry name="auto_save_interval">
+                                                                <local_schema short_desc="Intervall for automatisk lagring">
+                                                                        <longdesc>Antall minutter før gedit lagrer endrede filer automatisk. Dette vil kun brukes hvis «Automatisk lagring» er slått på.</longdesc>
+                                                                </local_schema>
+                                                        </entry>
+                                                        <entry name="auto_save">
+                                                                <local_schema short_desc="Automatisk lagring">
+                                                                        <longdesc>Om gedit skal lagre endrede filer automatisk etter et tidsintervall. Du kan sette tidsintervallet med alternativet «Intervall for automatisk lagring».</longdesc>
+                                                                </local_schema>
+                                                        </entry>
+                                                        <entry name="backup_copy_extension">
+                                                                <local_schema short_desc="Filtype for sikkerhetskopier">
+                                                                        <longdesc>Filetype eller etternavn som skal brukes for sikkerhetskopier. Denne vil kun brukes hvis «Lag sikkerhetskopier» er slått på.</longdesc>
+                                                                </local_schema>
+                                                        </entry>
+                                                        <entry name="create_backup_copy">
+                                                                <local_schema short_desc="Lag sikkerhetskopier">
+                                                                        <longdesc>Om gedit skal lage sikkerhetskopier for filer som lagres. Du kan sette filtypen for sikkerhetskopiene med alternativet «Filtype for sikkerhetskopier».</longdesc>
+                                                                </local_schema>
+                                                        </entry>
+                                                </dir>
+                                                <dir name="colors">
+                                                        <entry name="scheme">
+                                                                <local_schema short_desc="Stilskjema">
+                                                                        <longdesc>ID for en GtkSourceView stilschema som brukes til å farge teksten.</longdesc>
+                                                                </local_schema>
+                                                        </entry>
+                                                </dir>
+                                                <dir name="font">
+                                                        <entry name="editor_font">
+                                                                <local_schema short_desc="Skrift for redigering">
+                                                                </local_schema>
+                                                        </entry>
+                                                        <entry name="use_default_font">
+                                                                <local_schema short_desc="Bruk forvalgt skrift">
+                                                                        <longdesc>Om systemets forvalgte skrift med fast bredde skal brukes ved redigering av tekst i stedet for en spesifikk skrift for gedit. Hvis dette alternativet er slått av vil skriften som er satt i «Skrift for redigering» brukes i stedet.</longdesc>
+                                                                </local_schema>
+                                                        </entry>
+                                                </dir>
+                                        </dir>
+                                </dir>
+                        </dir>
+                </dir>
+        </dir>
+</gconf>

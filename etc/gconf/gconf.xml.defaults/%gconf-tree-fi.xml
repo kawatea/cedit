@@ -1,0 +1,312 @@
+<?xml version="1.0"?>
+<gconf>
+        <dir name="schemas">
+                <dir name="apps">
+                        <dir name="gedit-2">
+                                <dir name="plugins">
+                                        <entry name="active-plugins">
+                                                <local_schema short_desc="Käytössä olevat liitännäiset">
+                                                        <longdesc>Lista aktiivisista liitännäisistä. Lista sisältää aktiivisen liitännäisen sijainnin. Katso tiedostoa .gedit-plugin, josta voit selvittää kunkin liitännäisen sijainnin kohdasta ”Location”.</longdesc>
+                                                </local_schema>
+                                        </entry>
+                                        <dir name="checkupdate">
+                                                <entry name="ignore_version">
+                                                        <local_schema short_desc="Versio, joka ohitetaan kunnes seuraava versio julkaistaan">
+                                                        </local_schema>
+                                                </entry>
+                                        </dir>
+                                        <dir name="drawspaces">
+                                                <entry name="draw_spaces">
+                                                        <local_schema short_desc="Näytä tyhjeet">
+                                                        </local_schema>
+                                                </entry>
+                                        </dir>
+                                        <dir name="showtabbar">
+                                                <entry name="tabbar_visible">
+                                                        <local_schema short_desc="Välilehtipalkki näytetään">
+                                                                <longdesc>Näytetäänkö välilehtipalkki muokkaimessa.</longdesc>
+                                                        </local_schema>
+                                                </entry>
+                                        </dir>
+                                        <dir name="filebrowser">
+                                                <entry name="filter_pattern">
+                                                        <local_schema short_desc="Tiedostoselaimen suodatinmalli">
+                                                                <longdesc>Tiedostoselaimen listan suodatuksessa käytetty suodatin. Tämä suodatin on käytössä avaimen filter_mode määrittelemällä tavalla.</longdesc>
+                                                        </local_schema>
+                                                </entry>
+                                                <entry name="filter_mode">
+                                                        <local_schema short_desc="Tiedostoselaimen suodatintila">
+                                                                <longdesc>Tämä avain määrittää, mitkä tiedostot suodatetaan tiedostoselaimessa. Kelvolliset arvot ovat: none (ei suodatusta), hidden (suodatetaan piilotiedostot), binary (suodatetaan binääritiedostot) sekä hidden_and_binary (suodatetaan piilo- ja binääritiedostot)</longdesc>
+                                                        </local_schema>
+                                                </entry>
+                                                <entry name="open_at_first_doc">
+                                                        <local_schema short_desc="Aseta sijainti ensimmäiselle asiakirjalle">
+                                                                <longdesc>Jos TOSI niin tiedostoselainliitännäinen näyttää ensin avatun asiakirjan hakemiston jos tiedostoselainta käytetään ensimmäistä kertaa. (Tämä siis käytännössä soveltuu tilanteisiin, joissa asiakirja on on avattu komentoriviltä tai Nautiluksesta jne.)</longdesc>
+                                                        </local_schema>
+                                                </entry>
+                                                <dir name="on_load">
+                                                        <entry name="enable_remote">
+                                                                <local_schema short_desc="Ota käyttöön palautus etäsijainneissa">
+                                                                        <longdesc>Käytetäänkö etäsijaintien palautusta.</longdesc>
+                                                                </local_schema>
+                                                        </entry>
+                                                        <entry name="virtual_root">
+                                                                <local_schema short_desc="Tiedostoselaimen virtuaalinen juurihakemisto">
+                                                                        <longdesc>Tiedostoselaimen virtuaalisena juurikansiona käytettävä kansio, kun liitännäistä ladataan ja avain onload/tree_view on TOSI. Virtuaalisen kansion täytyy aina olla todellisen juurikansion alikansio.</longdesc>
+                                                                </local_schema>
+                                                        </entry>
+                                                        <entry name="root">
+                                                                <local_schema short_desc="Tiedostoselaimen juurihakemisto">
+                                                                        <longdesc>Tiedostoselaimen juurikansiona käytettävä kansio, kun liitännäistä ladataan ja avain onload/tree_view on TOSI.</longdesc>
+                                                                </local_schema>
+                                                        </entry>
+                                                        <entry name="tree_view">
+                                                                <local_schema short_desc="Avaa puunäkymä">
+                                                                        <longdesc>Avaa puunäkymä kirjanmerkkinäkymän sijasta, kun tiedostoselain ladataan</longdesc>
+                                                                </local_schema>
+                                                        </entry>
+                                                </dir>
+                                        </dir>
+                                </dir>
+                                <dir name="preferences">
+                                        <dir name="syntax_highlighting">
+                                                <entry name="enable">
+                                                        <local_schema short_desc="Käytä syntaksiväritystä">
+                                                                <longdesc>Määrittää käyttääkö gedit syntaksiväritystä.</longdesc>
+                                                        </local_schema>
+                                                </entry>
+                                        </dir>
+                                        <dir name="encodings">
+                                                <entry name="shown_in_menu">
+                                                        <local_schema short_desc="Valikossa näytettävät koodaustavat">
+                                                        </local_schema>
+                                                </entry>
+                                                <entry name="auto_detected">
+                                                        <local_schema short_desc="Tunnista merkistö automaattisesti">
+                                                        </local_schema>
+                                                </entry>
+                                        </dir>
+                                        <dir name="print">
+                                                <dir name="fonts">
+                                                        <entry name="print_font_numbers_pango">
+                                                                <local_schema short_desc="Rivinumeroiden tulostuskirjasin">
+                                                                </local_schema>
+                                                        </entry>
+                                                        <entry name="print_font_header_pango">
+                                                                <local_schema short_desc="Otsikkotietojen tulostuskirjasin">
+                                                                </local_schema>
+                                                        </entry>
+                                                        <entry name="print_font_body_pango">
+                                                                <local_schema short_desc="Tekstin tulostuskirjasin">
+                                                                </local_schema>
+                                                        </entry>
+                                                </dir>
+                                                <dir name="page">
+                                                        <entry name="print_line_numbers">
+                                                                <local_schema short_desc="Tulosta rivinumerot">
+                                                                        <longdesc>Jos tämän arvo on 0, rivinumeroita ei näytetä asiakirjoja tulostettaessa.Muutoin gedit tulostaa rivinumeron määrittämäsi riviluvun välein.</longdesc>
+                                                                </local_schema>
+                                                        </entry>
+                                                        <entry name="print_wrap_mode">
+                                                                <local_schema short_desc="Tulostuksen rivitystapa">
+                                                                        <longdesc>Määrittää kuinka pitkät rivit rivitetään tulostusta varten. Käytä arvoa ”GTK_WRAP_NONE” jos et halua rivittää, ”GTK_WRAP_WORD” rivittääksesi sanan vaihtuessa, ja ”GTK_WRAP_CHAR” rivittääksesi yksittäisen merkin kohdalta. Huomaa että kirjainkoko merkitsee arvoissa, joten varmista että kirjoitat arvon täsmälleen kuten tässä on neuvottu.</longdesc>
+                                                                </local_schema>
+                                                        </entry>
+                                                        <entry name="print_header">
+                                                                <local_schema short_desc="Tulosta otsikkotiedot">
+                                                                        <longdesc>Määrittää lisääkö gedit asiakirjojen otsikot tulosteisiin.</longdesc>
+                                                                </local_schema>
+                                                        </entry>
+                                                        <entry name="print_syntax_highlighting">
+                                                                <local_schema short_desc="Tulosta syntaksiväritys">
+                                                                        <longdesc>Määrittää käyttääkö gedit syntaksiväritystä tulostettaessa.</longdesc>
+                                                                </local_schema>
+                                                        </entry>
+                                                </dir>
+                                        </dir>
+                                        <dir name="ui">
+                                                <dir name="recents">
+                                                        <entry name="max_recents">
+                                                                <local_schema short_desc="Viimeisimmät tiedostot -listan enimmäispituus">
+                                                                        <longdesc>Määrittää kohdassa ”Viimeisimmät tiedostot” näytettävien äskettäin avattujen tiedostojen enimmäismäärän.</longdesc>
+                                                                </local_schema>
+                                                        </entry>
+                                                </dir>
+                                                <dir name="bottom_panel">
+                                                        <entry name="bottom_panel_visible">
+                                                                <local_schema short_desc="Alapaneeli näytetään">
+                                                                        <longdesc>Määrittää näytetäänkö muokkausikkunan alalaidassa oleva paneeli.</longdesc>
+                                                                </local_schema>
+                                                        </entry>
+                                                </dir>
+                                                <dir name="side_pane">
+                                                        <entry name="side_pane_visible">
+                                                                <local_schema short_desc="Sivupaneeli näytetään">
+                                                                        <longdesc>Onko sivupaneeli muokkausikkunan vasemmalla puolella näkyvissä.</longdesc>
+                                                                </local_schema>
+                                                        </entry>
+                                                </dir>
+                                                <dir name="statusbar">
+                                                        <entry name="statusbar_visible">
+                                                                <local_schema short_desc="Tilarivi näytetään">
+                                                                        <longdesc>Määrittää näytetäänkö muokkausikkunan alalaidassa tilarivi.</longdesc>
+                                                                </local_schema>
+                                                        </entry>
+                                                </dir>
+                                                <dir name="toolbar">
+                                                        <entry name="toolbar_buttons_style">
+                                                                <local_schema short_desc="Työkalupalkin painiketyyli">
+                                                                        <longdesc>Työkalupalkissa näytettävien painikkeiden tyyli. Mahdollisia arvoja on ”GEDIT_TOOLBAR_SYSTEM” (käyttääksesi järjestelmän oletustyyliä), ”GEDIT_TOOLBAR_ICONS” (näyttääksesi sekä kuvakkeet että tekstin), ja ”GEDIT_TOOLBAR_INCONS_BOTH_HORIZ” (näyttääksesi tekstin tärkeiden kuvakkeiden vieressä). Huomaa että kirjainkoko merkitsee arvoissa, joten varmista että kirjoitat arvon täsmälleen kuten tässä on neuvottu.</longdesc>
+                                                                </local_schema>
+                                                        </entry>
+                                                        <entry name="toolbar_visible">
+                                                                <local_schema short_desc="Työkalupalkki näytetään">
+                                                                        <longdesc>Määrittää näytetäänkö muokkausikkunoissa työkalupalkki.</longdesc>
+                                                                </local_schema>
+                                                        </entry>
+                                                </dir>
+                                        </dir>
+                                        <dir name="editor">
+                                                <dir name="search_highlighting">
+                                                        <entry name="enable">
+                                                                <local_schema short_desc="Käytä hakujen väritystä">
+                                                                        <longdesc>Määrittää korostaako gedit kaikki haetun tekstin osumat asiakirjasta.</longdesc>
+                                                                </local_schema>
+                                                        </entry>
+                                                </dir>
+                                                <dir name="cursor_position">
+                                                        <entry name="restore_cursor_position">
+                                                                <local_schema short_desc="Palaa edelliseen kohdistimen kohtaan">
+                                                                        <longdesc>Määrittää palauttaako gedit edellisen kohdistimen sijainnin avattaessa tiedostoa.</longdesc>
+                                                                </local_schema>
+                                                        </entry>
+                                                </dir>
+                                                <dir name="smart_home_end">
+                                                        <entry name="smart_home_end">
+                                                                <local_schema short_desc="Älykkäät Home/End-näppäimet">
+                                                                        <longdesc>Määrittää, kuinka kohdistin liikkuu, kun Home ja End-näppäimiä painetaan. Arvolla ”DISABLED” siirrytään aina rivin alkuun tai loppuun, arvolla ”AFTER” siirrytään ensikerralla rivin alkuun tai loppuun, ja toisen kerran painettaessa tekstin alkuun tai loppuun, jättäen tyhjä tila huomioimatta toista kertaa painettaessa, arvolla ”BEFORE” siirrytään aina ensin tekstin alkuun tai loppuun ennen rivin alkuun tai loppuun siirtymistä, ja arvolla ”ALWAYS” siirrytään aina tekstin alkuun tai loppuun rivin alun ja lopun sijasta.</longdesc>
+                                                                </local_schema>
+                                                        </entry>
+                                                </dir>
+                                                <dir name="right_margin">
+                                                        <entry name="right_margin_position">
+                                                                <local_schema short_desc="Oikean reunuksen sijainti">
+                                                                        <longdesc>Määrittää oikean reunuksen sijainnin.</longdesc>
+                                                                </local_schema>
+                                                        </entry>
+                                                        <entry name="display_right_margin">
+                                                                <local_schema short_desc="Näytä oikea reunus">
+                                                                        <longdesc>Määrittää näyttääkö gedit oikean reunuksen muokkausalueella.</longdesc>
+                                                                </local_schema>
+                                                        </entry>
+                                                </dir>
+                                                <dir name="bracket_matching">
+                                                        <entry name="bracket_matching">
+                                                                <local_schema short_desc="Korosta vastaava sulku">
+                                                                        <longdesc>Korostaako gedit valittua sulkumerkkiä täsmäävän parin.</longdesc>
+                                                                </local_schema>
+                                                        </entry>
+                                                </dir>
+                                                <dir name="current_line">
+                                                        <entry name="highlight_current_line">
+                                                                <local_schema short_desc="Korosta nykyinen rivi">
+                                                                        <longdesc>Määrittää korostaako gedit nykyistä riviä.</longdesc>
+                                                                </local_schema>
+                                                        </entry>
+                                                </dir>
+                                                <dir name="line_numbers">
+                                                        <entry name="display_line_numbers">
+                                                                <local_schema short_desc="Näytä rivinumerot">
+                                                                        <longdesc>Määrittää näyttääkö gedit rivinumerot muokkausalueella.</longdesc>
+                                                                </local_schema>
+                                                        </entry>
+                                                </dir>
+                                                <dir name="auto_indent">
+                                                        <entry name="auto_indent">
+                                                                <local_schema short_desc="Automaattisisennys">
+                                                                        <longdesc>Tekeekö gedit automaattista sisennystä.</longdesc>
+                                                                </local_schema>
+                                                        </entry>
+                                                </dir>
+                                                <dir name="tabs">
+                                                        <entry name="insert_spaces">
+                                                                <local_schema short_desc="Lisää välilyöntejä">
+                                                                        <longdesc>Määrittää lisääkö gedit sarkaimien sijaan välilyöntejä.</longdesc>
+                                                                </local_schema>
+                                                        </entry>
+                                                        <entry name="tabs_size">
+                                                                <local_schema short_desc="Sarkaimen koko">
+                                                                        <longdesc>Määrittää sarkainmerkkien sijasta lisättävien välilyöntien lukumäärän.</longdesc>
+                                                                </local_schema>
+                                                        </entry>
+                                                </dir>
+                                                <dir name="wrap_mode">
+                                                        <entry name="wrap_mode">
+                                                                <local_schema short_desc="Rivitystapa">
+                                                                        <longdesc>Määrittää kuinka pitkät rivit rivitetään muokkausalueella. Käytä arvoa ”GTK_WRAP_NONE” jos et halua rivittää, ”GTK_WRAP_WORD” rivittääksesi sanan vaihtuessa, ja ”GTK_WRAP_CHAR” rivittääksesi yksittäisen merkin kohdalta. Huomaa että kirjainkoko merkitsee arvoissa, joten varmista että kirjoitat arvon täsmälleen kuten tässä on neuvottu.</longdesc>
+                                                                </local_schema>
+                                                        </entry>
+                                                </dir>
+                                                <dir name="undo">
+                                                        <entry name="max_undo_actions">
+                                                                <local_schema short_desc="Kumoamistoimintojen enimmäismäärä">
+                                                                        <longdesc>Suurin määrä toimintoja jotka gedit voi kumota tai tehdä uudestaan. Arvo ”-1” tarkoittaa rajatonta määrää.</longdesc>
+                                                                </local_schema>
+                                                        </entry>
+                                                        <entry name="undo_actions_limit">
+                                                                <local_schema short_desc="Kumoamiskertojen enimmäismäärä (VANHENTUNUT)">
+                                                                        <longdesc>Suurin määrä toimintoja jotka gedit voi kumota tai tehdä uudestaan. Arvo ”-1” tarkoittaa rajatonta määrää. Tämä avain on vanhentunut versiosta 2.12.0 alkaen.</longdesc>
+                                                                </local_schema>
+                                                        </entry>
+                                                </dir>
+                                                <dir name="save">
+                                                        <entry name="writable_vfs_schemes">
+                                                                <local_schema short_desc="Kirjoitettavat VFS-mallit">
+                                                                        <longdesc>Luettelo VFS-malleista, joille kirjoitusta gedit tukee. Malli ”file” on kirjoitettavissa oletuksena.</longdesc>
+                                                                </local_schema>
+                                                        </entry>
+                                                        <entry name="auto_save_interval">
+                                                                <local_schema short_desc="Autotallennuksen väli">
+                                                                        <longdesc>Minuuttimäärä, joka jälkeen gedit automaattisesti tallentaa muokatut tiedostot. Tämä on toiminnassa vain jos ”Autotallennus”-valinta on käytössä.</longdesc>
+                                                                </local_schema>
+                                                        </entry>
+                                                        <entry name="auto_save">
+                                                                <local_schema short_desc="Autotallennus">
+                                                                        <longdesc>Tallentaako gedit automaattisesti muokatut tiedostot tietyn ajan jälkeen. Haluttu aikaväli voidaan asettaa ”Autotallennus väli”-valintaan.</longdesc>
+                                                                </local_schema>
+                                                        </entry>
+                                                        <entry name="backup_copy_extension">
+                                                                <local_schema short_desc="Varmuuskopion nimilaajenne">
+                                                                        <longdesc>Varmuuskopioiden tiedostonimiin lisättävä laajennos tai jälkiliite. Tämä on voimassa ainoastaan mikäli asetus ”Luo varmuuskopiot” on päällä.</longdesc>
+                                                                </local_schema>
+                                                        </entry>
+                                                        <entry name="create_backup_copy">
+                                                                <local_schema short_desc="Luo varmuuskopiot">
+                                                                        <longdesc>Määrittää tekeekö gedit tallennettavista tiedostoista varmuuskopiot. Voit asettaa tiedostonimen laajennoksen asetuksella ”Varmuuskopion nimilaajenne”.</longdesc>
+                                                                </local_schema>
+                                                        </entry>
+                                                </dir>
+                                                <dir name="colors">
+                                                        <entry name="scheme">
+                                                                <local_schema short_desc="Tyylimalli">
+                                                                        <longdesc>Tunniste GtkSourceView-tyyliskeemalle, jota käytetään tekstin väritykseen.</longdesc>
+                                                                </local_schema>
+                                                        </entry>
+                                                </dir>
+                                                <dir name="font">
+                                                        <entry name="editor_font">
+                                                                <local_schema short_desc="Muokkaimen kirjasin">
+                                                                </local_schema>
+                                                        </entry>
+                                                        <entry name="use_default_font">
+                                                                <local_schema short_desc="Käytä oletuskirjasinta">
+                                                                        <longdesc>Määrittää käytetäänkö tekstin muokkaukseen järjestelmän oletuskirjasinta geditissä määritellyn kirjasimen sijasta. Jos tämä otetaan pois päältä, käytetään kohdassa ”Muokkaimen kirjasin” määriteltyä kirjasinta.</longdesc>
+                                                                </local_schema>
+                                                        </entry>
+                                                </dir>
+                                        </dir>
+                                </dir>
+                        </dir>
+                </dir>
+        </dir>
+</gconf>

@@ -1,0 +1,177 @@
+<?xml version="1.0"?>
+<gconf>
+        <dir name="schemas">
+                <dir name="apps">
+                        <dir name="gedit-2">
+                                <dir name="preferences">
+                                        <dir name="syntax_highlighting">
+                                                <entry name="enable">
+                                                        <local_schema short_desc="Sintaksis İşıqlandırmasını Fəallaşdır">
+                                                                <longdesc>Sintaksis işıqlandırmasının fəal olması.</longdesc>
+                                                        </local_schema>
+                                                </entry>
+                                        </dir>
+                                        <dir name="encodings">
+                                                <entry name="shown_in_menu">
+                                                        <local_schema short_desc="Menyuda göstərilən kodlamalar">
+                                                        </local_schema>
+                                                </entry>
+                                                <entry name="auto_detected">
+                                                        <local_schema short_desc="Avtomatik Aşkar Edilən Kodlamalar">
+                                                        </local_schema>
+                                                </entry>
+                                        </dir>
+                                        <dir name="print">
+                                                <dir name="fonts">
+                                                        <entry name="print_font_numbers_pango">
+                                                                <local_schema short_desc="Çap Üçün Sətir Nömrəsi Yazı Növü">
+                                                                        <longdesc>Sətir nümrələrinin çap ediləcəyi yazı növünü müəyyən edir. Bu ancaq &quot;Print Line Numbers&quot; qiyməti sıfırdan fərqlidirsə mümkün olacaq.</longdesc>
+                                                                </local_schema>
+                                                        </entry>
+                                                        <entry name="print_font_header_pango">
+                                                                <local_schema short_desc="Çap üçün Başlıq Yazı Növü">
+                                                                        <longdesc>Səhifələrin üst mə&apos;lumatlarının çap ediləcəyi yazı növünü müəyyən edir. Bu ancaq &quot;Print Header&quot; qiyməti seçilidirsə mümkün olacaq.</longdesc>
+                                                                </local_schema>
+                                                        </entry>
+                                                        <entry name="print_font_body_pango">
+                                                                <local_schema short_desc="Çap Üçün Əsas Qismin Yazı Növü">
+                                                                        <longdesc>Sənədin əsas hissəsinin çap ediləcəyi yazı növünü müəyyən edir.</longdesc>
+                                                                </local_schema>
+                                                        </entry>
+                                                </dir>
+                                                <dir name="page">
+                                                        <entry name="print_line_numbers">
+                                                                <local_schema short_desc="Sətir Nömrələrini Çap Et">
+                                                                        <longdesc>Bu qiymət 0 isə, sənəd çap edilərkən sətir nömrələri çap edilməyəcək. Əks halda Gedit sətirləri verilən hər sətirdən sonra çap edəcək.</longdesc>
+                                                                </local_schema>
+                                                        </entry>
+                                                        <entry name="print_wrap_mode">
+                                                                <local_schema short_desc="Sətir Qırma Modu Çap Edilir">
+                                                                        <longdesc>Çap üçün uzun sətirlərin necə qırılacağı. Sətirləri qətiyyən qırmamaq üçün &quot;GTK_WRAP_NONE&quot;, sətirləri söz sonlarında qırmaq üçün &quot;GTK_WRAP_WORD&quot;, sətirləri müəyyən hərflərdən sonra qırmaq üçün &quot;GTK_WRAP_CHAR&quot; istifadə edin.</longdesc>
+                                                                </local_schema>
+                                                        </entry>
+                                                        <entry name="print_header">
+                                                                <local_schema short_desc="Başlığı Çap Et">
+                                                                        <longdesc>Sənədlər çap edilirkən sənədin üst mə&apos;lumatının da çap edilməsi.</longdesc>
+                                                                </local_schema>
+                                                        </entry>
+                                                        <entry name="print_syntax_highlighting">
+                                                                <local_schema short_desc="Sintaksis İşıqlandırmasını Çap Et">
+                                                                        <longdesc>Sənədlər çap edilirkən sintaksis işıqlandırılmasının da çap edilməsi.</longdesc>
+                                                                </local_schema>
+                                                        </entry>
+                                                </dir>
+                                        </dir>
+                                        <dir name="ui">
+                                                <dir name="recents">
+                                                        <entry name="max_recents">
+                                                                <local_schema short_desc="Maksimal Təzəlikçə İşlədilən Fayl">
+                                                                        <longdesc>&quot;Təzəlikçə İşlədilən Fayllar&quot; alt menyusunda göstəriləcək maksimal fayl miqdarını müəyyən edir.</longdesc>
+                                                                </local_schema>
+                                                        </entry>
+                                                </dir>
+                                                <dir name="statusbar">
+                                                        <entry name="statusbar_visible">
+                                                                <local_schema short_desc="Vəziyyət Çubuğu Göstərilsin">
+                                                                        <longdesc>Alttakı vəziyyət çubuğunun göstərilməsi.</longdesc>
+                                                                </local_schema>
+                                                        </entry>
+                                                </dir>
+                                                <dir name="toolbar">
+                                                        <entry name="toolbar_buttons_style">
+                                                                <local_schema short_desc="Vasitə Çubuğu Düymələrinin Tərzi">
+                                                                        <longdesc>Vasitə çubuğu düymələrinin tərzi. Mümkün qiymətlər: &quot;GEDIT_TOOLBAR_SYSTEM&quot; sistemin ön qurğulu tərzini işlətmək üçün, &quot;GEDIT_TOOLBAR_ICONS&quot; ancaq timsalları göstərmək üçün, &quot;GEDIT_TOOLBAR_ICONS_AND_TEXT&quot; timsal və mətnləri göstərmək üçün, və &quot;GEDIT_TOOLBAR_ICONS_BOTH_HORIZ&quot; timsalların yanında daha vacib olan mətnləri göstərmək üçün.</longdesc>
+                                                                </local_schema>
+                                                        </entry>
+                                                        <entry name="toolbar_visible">
+                                                                <local_schema short_desc="Vasitə Çubuğu Göstərilsin">
+                                                                        <longdesc>Vasitə çubuğunun göstərilməsi.</longdesc>
+                                                                </local_schema>
+                                                        </entry>
+                                                </dir>
+                                        </dir>
+                                        <dir name="editor">
+                                                <dir name="right_margin">
+                                                        <entry name="right_margin_position">
+                                                                <local_schema short_desc="Sağ Kənar Mövqeyi">
+                                                                        <longdesc>Sağ kənarın mövqeyini bildir.</longdesc>
+                                                                </local_schema>
+                                                        </entry>
+                                                        <entry name="display_right_margin">
+                                                                <local_schema short_desc="Sağ Kənarı Göstər">
+                                                                        <longdesc>Yazma sahəsində sağ kənarın göstərilməsi.</longdesc>
+                                                                </local_schema>
+                                                        </entry>
+                                                </dir>
+                                                <dir name="line_numbers">
+                                                        <entry name="display_line_numbers">
+                                                                <local_schema short_desc="Sətir Nömrələrini Göstər">
+                                                                        <longdesc>Yazma sahəsində sətir nömrələrinin göstərilməsi.</longdesc>
+                                                                </local_schema>
+                                                        </entry>
+                                                </dir>
+                                                <dir name="auto_indent">
+                                                        <entry name="auto_indent">
+                                                                <local_schema short_desc="Avtomatik çərtmə">
+                                                                        <longdesc>Avtomatik çərtmənin fəal olması.</longdesc>
+                                                                </local_schema>
+                                                        </entry>
+                                                </dir>
+                                                <dir name="tabs">
+                                                        <entry name="insert_spaces">
+                                                                <local_schema short_desc="Boşluqlar daxil et">
+                                                                        <longdesc>Tablar yerinə boşluqların daxil edilməsi.</longdesc>
+                                                                </local_schema>
+                                                        </entry>
+                                                        <entry name="tabs_size">
+                                                                <local_schema short_desc="Səkmə Böyüklüyü">
+                                                                        <longdesc>Tab yerinə göstəriləcək boşluqların miqdarını müəyyən edir.</longdesc>
+                                                                </local_schema>
+                                                        </entry>
+                                                </dir>
+                                                <dir name="wrap_mode">
+                                                        <entry name="wrap_mode">
+                                                                <local_schema short_desc="Sətir Qırma Modu">
+                                                                        <longdesc>Yazma sahəsi üçün uzun sətirlərin necə qırılacağı. Sətirləri qətiyyən qırmamaq üçün &quot;GTK_WRAP_NONE&quot;, sətirləri söz sonlarında qırmaq üçün &quot;GTK_WRAP_WORD&quot;, sətirləri müəyyən hərflərdən sonra qırmaq üçün &quot;GTK_WRAP_CHAR&quot; istifadə edin.</longdesc>
+                                                                </local_schema>
+                                                        </entry>
+                                                </dir>
+                                                <dir name="save">
+                                                        <entry name="auto_save_interval">
+                                                                <local_schema short_desc="Avtomatik Qeyd Aralığı">
+                                                                        <longdesc>Dəyişdirilmiş faylların Gedit tərəfindən avtomatik qeyd edilməsi üçün keçməsi lazım olan dəqiqə. Bu ancaq &quot;Avtomatik Qeyd&quot; seçimi fəaldırsa mümkün olacaq.</longdesc>
+                                                                </local_schema>
+                                                        </entry>
+                                                        <entry name="auto_save">
+                                                                <local_schema short_desc="Avtomatik Qeyd">
+                                                                        <longdesc>Dəyişdirilmiş faylların Gedit tərəfindən avtomatik qeyd edilməsi. Vaxt aralığını &quot;Avtomatik Qeyd Aralığı&quot; qiymətindən seçə bilərsiniz.</longdesc>
+                                                                </local_schema>
+                                                        </entry>
+                                                        <entry name="backup_copy_extension">
+                                                                <local_schema short_desc="Ehtiyat Nüsxəsi Uzantısı">
+                                                                        <longdesc>Ehtiyat faylları üçün işlədiləcək şəkilçi. Bu yalnız&quot;Create Backup Copies&quot; seçimi bağlıdırsa mümkün olacaq.</longdesc>
+                                                                </local_schema>
+                                                        </entry>
+                                                        <entry name="create_backup_copy">
+                                                                <local_schema short_desc="Ehtiyat Nüsxələrini Yarat">
+                                                                        <longdesc>Qeyd edilən faylların Gedit tərəfindən avtomatik ehtiyat nüsxəsinin yaradılması. Bu faylların uzantısını &quot;Ehtiyat Nüsxəsi Uzantısı&quot; qiymətindən seçə bilərsiniz.</longdesc>
+                                                                </local_schema>
+                                                        </entry>
+                                                </dir>
+                                                <dir name="font">
+                                                        <entry name="editor_font">
+                                                                <local_schema short_desc="Editor Yazı Növü">
+                                                                        <longdesc>Yazma sahəsi üçün istifadə ediləcək xüsusi yazı növü. Bu yalnız&quot;Use Default Font&quot; seçimi bağlıdırsa mümkün olacaq.</longdesc>
+                                                                </local_schema>
+                                                        </entry>
+                                                        <entry name="use_default_font">
+                                                                <local_schema short_desc="Ön Qurğulu Yazı Növünü İşlət">
+                                                                </local_schema>
+                                                        </entry>
+                                                </dir>
+                                        </dir>
+                                </dir>
+                        </dir>
+                </dir>
+        </dir>
+</gconf>

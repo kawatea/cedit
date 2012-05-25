@@ -1,0 +1,155 @@
+<?xml version="1.0"?>
+<gconf>
+        <dir name="schemas">
+                <dir name="apps">
+                        <dir name="gedit-2">
+                                <dir name="plugins">
+                                        <entry name="active-plugins">
+                                                <local_schema short_desc="Ajustons actius">
+                                                </local_schema>
+                                        </entry>
+                                </dir>
+                                <dir name="preferences">
+                                        <dir name="encodings">
+                                                <entry name="shown_in_menu">
+                                                        <local_schema>
+                                                        </local_schema>
+                                                </entry>
+                                                <entry name="auto_detected">
+                                                        <local_schema short_desc="Encodatges detectats automaticament">
+                                                        </local_schema>
+                                                </entry>
+                                        </dir>
+                                        <dir name="print">
+                                                <dir name="fonts">
+                                                        <entry name="print_font_numbers_pango">
+                                                                <local_schema short_desc="Poliça del numerò de linha per l&apos;estampatge">
+                                                                        <longdesc>Especifica la poliça d&apos;utilizar per estampar los numeròs de linha. Serà aplicat sonque se l&apos;opcion &quot;Estampar los numeròs de linha&quot; es pas zerò.</longdesc>
+                                                                </local_schema>
+                                                        </entry>
+                                                        <entry name="print_font_header_pango">
+                                                                <local_schema>
+                                                                        <longdesc>Especifica la poliça d&apos;utilizar per estampar los encaps de pagina. Serà aplicat sonque se l&apos;opcion &quot;Estampar l&apos;encap&quot; es activada.</longdesc>
+                                                                </local_schema>
+                                                        </entry>
+                                                        <entry name="print_font_body_pango">
+                                                                <local_schema short_desc="Poliça del còs per l&apos;estampatge">
+                                                                </local_schema>
+                                                        </entry>
+                                                </dir>
+                                                <dir name="page">
+                                                        <entry name="print_line_numbers">
+                                                                <local_schema short_desc="Estampar los numeròs de linha">
+                                                                </local_schema>
+                                                        </entry>
+                                                        <entry name="print_header">
+                                                                <local_schema short_desc="Estampar l&apos;encap">
+                                                                </local_schema>
+                                                        </entry>
+                                                </dir>
+                                        </dir>
+                                        <dir name="ui">
+                                                <dir name="recents">
+                                                        <entry name="max_recents">
+                                                                <local_schema short_desc="Nombre maximum de fichièrs recents">
+                                                                        <longdesc>Especifica lo nombre maximum de fichièrs recentament dobèrts que seràn visualizats dins lo sosmenut &quot;Fichièrs recents&quot;.</longdesc>
+                                                                </local_schema>
+                                                        </entry>
+                                                </dir>
+                                                <dir name="bottom_panel">
+                                                        <entry name="bottom_panel_visible">
+                                                                <local_schema short_desc="Lo panèl inferior es visible">
+                                                                </local_schema>
+                                                        </entry>
+                                                </dir>
+                                                <dir name="statusbar">
+                                                        <entry name="statusbar_visible">
+                                                                <local_schema short_desc="La barra d&apos;estat es visibla">
+                                                                </local_schema>
+                                                        </entry>
+                                                </dir>
+                                                <dir name="toolbar">
+                                                        <entry name="toolbar_buttons_style">
+                                                                <local_schema short_desc="Estil dels botons de la barra d&apos;espleches">
+                                                                </local_schema>
+                                                        </entry>
+                                                        <entry name="toolbar_visible">
+                                                                <local_schema short_desc="La barra d&apos;espleches es visibla">
+                                                                </local_schema>
+                                                        </entry>
+                                                </dir>
+                                        </dir>
+                                        <dir name="editor">
+                                                <dir name="right_margin">
+                                                        <entry name="display_right_margin">
+                                                                <local_schema short_desc="VIsualizar lo marge drèch">
+                                                                        <longdesc>Especifica se gedit deu visualizar lo marge drèch dins la zòna d&apos;edicion.</longdesc>
+                                                                </local_schema>
+                                                        </entry>
+                                                </dir>
+                                                <dir name="line_numbers">
+                                                        <entry name="display_line_numbers">
+                                                                <local_schema short_desc="Visualizar los numeròs de linha">
+                                                                </local_schema>
+                                                        </entry>
+                                                </dir>
+                                                <dir name="auto_indent">
+                                                        <entry name="auto_indent">
+                                                                <local_schema short_desc="Identacion automatica">
+                                                                        <longdesc>Especifica se gedit deu activar l&apos;identacion automatica.</longdesc>
+                                                                </local_schema>
+                                                        </entry>
+                                                </dir>
+                                                <dir name="tabs">
+                                                        <entry name="insert_spaces">
+                                                                <local_schema short_desc="Inserir d&apos;espacis">
+                                                                        <longdesc>Especifica se gedit deu inserir d&apos;espacis al luòc de tabulacions.</longdesc>
+                                                                </local_schema>
+                                                        </entry>
+                                                        <entry name="tabs_size">
+                                                                <local_schema short_desc="Talha de la tabulacion">
+                                                                </local_schema>
+                                                        </entry>
+                                                </dir>
+                                                <dir name="undo">
+                                                        <entry name="max_undo_actions">
+                                                                <local_schema short_desc="Nombre maximum d&apos;accions anullablas">
+                                                                </local_schema>
+                                                        </entry>
+                                                </dir>
+                                                <dir name="save">
+                                                        <entry name="auto_save_interval">
+                                                                <local_schema short_desc="Interval d&apos;enregistrament automatic">
+                                                                        <longdesc>Nombre de minutas abans que gedit enregistre automaticament los fichièrs modificats.  Serà aplicat sonque se l&apos;opcion &quot;Enregistrament automatic&quot; es activada.</longdesc>
+                                                                </local_schema>
+                                                        </entry>
+                                                        <entry name="auto_save">
+                                                                <local_schema short_desc="Enregistrament automatic">
+                                                                </local_schema>
+                                                        </entry>
+                                                        <entry name="backup_copy_extension">
+                                                                <local_schema short_desc="Extension de còpia de salvagarda">
+                                                                </local_schema>
+                                                        </entry>
+                                                        <entry name="create_backup_copy">
+                                                                <local_schema short_desc="Crear de còpia de salvagarda">
+                                                                </local_schema>
+                                                        </entry>
+                                                </dir>
+                                                <dir name="font">
+                                                        <entry name="editor_font">
+                                                                <local_schema short_desc="Poliça del editor">
+                                                                        <longdesc>Una poliça personalizada que serà utilizada per la zòna d&apos;edicion. Serà aplicat sonque se l&apos;opcion &quot;Utilizar la poliça per defaut&quot; es desactivada.</longdesc>
+                                                                </local_schema>
+                                                        </entry>
+                                                        <entry name="use_default_font">
+                                                                <local_schema short_desc="Utilizar la poliça per defaut">
+                                                                </local_schema>
+                                                        </entry>
+                                                </dir>
+                                        </dir>
+                                </dir>
+                        </dir>
+                </dir>
+        </dir>
+</gconf>

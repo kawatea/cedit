@@ -1,0 +1,314 @@
+<?xml version="1.0"?>
+<gconf>
+        <dir name="schemas">
+                <dir name="apps">
+                        <dir name="gedit-2">
+                                <dir name="plugins">
+                                        <entry name="active-plugins">
+                                                <local_schema short_desc="Bổ sung hoạt động">
+                                                        <longdesc>Danh sách các bổ sung còn hoạt động. Nó chứa « Vị trí » của các bổ sung đó. Hãy xem tập tin « .gedit-plugin » để biết vị trí của từng bổ sung.</longdesc>
+                                                </local_schema>
+                                        </entry>
+                                        <dir name="drawspaces">
+                                                <entry name="draw_spaces">
+                                                        <local_schema short_desc="Vẽ dấu cách">
+                                                        </local_schema>
+                                                </entry>
+                                        </dir>
+                                        <dir name="showtabbar">
+                                                <entry name="tabbar_visible">
+                                                        <local_schema short_desc="Hiện thanh Tab">
+                                                                <longdesc>Thanh Tab có nên hiển thị trong cửa sổ soạn thảo hay không.</longdesc>
+                                                        </local_schema>
+                                                </entry>
+                                        </dir>
+                                        <dir name="filebrowser">
+                                                <entry name="filter_pattern">
+                                                        <local_schema short_desc="Mẫu lọc của bộ duyệt tập tin">
+                                                                <longdesc>Mẫu lọc cần dùng để lọc bộ duyệt tập tin. Mẫu lọc này hoạt động bên trên chế độ lọc (« filter_mode »).</longdesc>
+                                                        </local_schema>
+                                                </entry>
+                                                <entry name="filter_mode">
+                                                        <local_schema short_desc="Chế độ lọc của bộ duyệt tập tin">
+                                                                <longdesc>Giá trị này quyết định những tập tin nào được lọc từ bộ duyệt tập tin. Giá trị có thể:
+ • none	(không có)	không lọc gì
+ • hidden				lọc tập tin _bị ẩn_
+ • binary				lọc tập tin _nhị phân_
+ • hidden_and_binary	lọc tập tin cả hai kiểu _bị ẩn và nhị phân_.</longdesc>
+                                                        </local_schema>
+                                                </entry>
+                                                <entry name="open_at_first_doc">
+                                                        <local_schema short_desc="Đặt vị trí là tài liệu thứ nhất">
+                                                                <longdesc>Nếu ĐÚNG, bổ sung duyệt tập tin sẽ xem thư mục của tài liệu đã mở thứ nhất, miễn là chưa dùng bộ duyệt tập tin. (Vì vậy điều kiện này thường áp dụng vào mở tài liệu trên dòng lệnh, hoặc mở nó bằn Nautilus, v.v.)</longdesc>
+                                                        </local_schema>
+                                                </entry>
+                                                <dir name="on_load">
+                                                        <entry name="enable_remote">
+                                                                <local_schema short_desc="Bật phục hồi vị trí ở xa">
+                                                                        <longdesc>Đặt nếu bật khả năng phục hồi vị trí ở xa hay không.</longdesc>
+                                                                </local_schema>
+                                                        </entry>
+                                                        <entry name="virtual_root">
+                                                                <local_schema short_desc="Thư mục gốc ảo của bộ duyệt tập tin">
+                                                                        <longdesc>Thư mục gốc ảo của bộ duyệt tập tin, để dùng khi tải bổ sung duyệt tập tin và khi « onload/tree_view » là ĐÚNG. Gốc ảo luôn luôn phải nằm bên dưới gốc thật.</longdesc>
+                                                                </local_schema>
+                                                        </entry>
+                                                        <entry name="root">
+                                                                <local_schema short_desc="Thư mục gốc của bộ duyệt tập tin">
+                                                                        <longdesc>Thư mục gốc của bộ duyệt tập tin, để dùng khi tải bổ sung duyệt tập tin và khi « onload/tree_view » là ĐÚNG.</longdesc>
+                                                                </local_schema>
+                                                        </entry>
+                                                        <entry name="tree_view">
+                                                                <local_schema short_desc="Mở trong ô xem cây">
+                                                                        <longdesc>Mở ô xem cây khi bổ sung duyệt tập tin được tải, thay cho ô xem Đánh dấu</longdesc>
+                                                                </local_schema>
+                                                        </entry>
+                                                </dir>
+                                        </dir>
+                                </dir>
+                                <dir name="preferences">
+                                        <dir name="syntax_highlighting">
+                                                <entry name="enable">
+                                                        <local_schema short_desc="Bật tô sáng cú pháp">
+                                                                <longdesc>Gedit nên bật tô sáng cú pháp hay không.</longdesc>
+                                                        </local_schema>
+                                                </entry>
+                                        </dir>
+                                        <dir name="encodings">
+                                                <entry name="shown_in_menu">
+                                                        <local_schema short_desc="Bảng mã hiển thị trong trình đơn">
+                                                        </local_schema>
+                                                </entry>
+                                                <entry name="auto_detected">
+                                                        <local_schema>
+                                                        </local_schema>
+                                                </entry>
+                                        </dir>
+                                        <dir name="print">
+                                                <dir name="fonts">
+                                                        <entry name="print_font_numbers_pango">
+                                                                <local_schema short_desc="Phông số hiệu dòng để in">
+                                                                </local_schema>
+                                                        </entry>
+                                                        <entry name="print_font_header_pango">
+                                                                <local_schema short_desc="Phông đầu trang để in">
+                                                                </local_schema>
+                                                        </entry>
+                                                        <entry name="print_font_body_pango">
+                                                                <local_schema short_desc="Phông thân để in">
+                                                                </local_schema>
+                                                        </entry>
+                                                </dir>
+                                                <dir name="page">
+                                                        <entry name="print_line_numbers">
+                                                                <local_schema short_desc="In số hiệu dòng">
+                                                                        <longdesc>Nếu là 0 thì không chèn số hiệu dòng vào tài liệu khi in. Nếu không thì gedit sẽ in số hiệu dòng mỗi (số đó) hàng.</longdesc>
+                                                                </local_schema>
+                                                        </entry>
+                                                        <entry name="print_wrap_mode">
+                                                                <local_schema short_desc="Chế độ ngắt dòng in">
+                                                                        <longdesc>Xác định cuộn dòng dài như thế nào khi in. Dùng &quot;GTK_WRAP_MODE&quot; nếu không cuộn, &quot;GTK_WRAP_WORD&quot; nếu cuốn theo biên từ, và &quot;GTK_WRAP_CHAR&quot; nếu cuộn theo các ký tự. Chú ý các giá trị này cần viết hoa.</longdesc>
+                                                                </local_schema>
+                                                        </entry>
+                                                        <entry name="print_header">
+                                                                <local_schema short_desc="In đầu trang">
+                                                                        <longdesc>Gedit sẽ in đầu trang khi in tài liệu hay không.</longdesc>
+                                                                </local_schema>
+                                                        </entry>
+                                                        <entry name="print_syntax_highlighting">
+                                                                <local_schema short_desc="In tô sáng cú pháp">
+                                                                        <longdesc>Gedit có nên in cú pháp được tô sáng khi in tài liệu hay không.</longdesc>
+                                                                </local_schema>
+                                                        </entry>
+                                                </dir>
+                                        </dir>
+                                        <dir name="ui">
+                                                <dir name="recents">
+                                                        <entry name="max_recents">
+                                                                <local_schema short_desc="Số tối đa tập tin gần đây">
+                                                                        <longdesc>Xác định số tối đa các tập tin được mở gần đây sẽ được hiển thị trong trình đơn con « Các tập tin gần đây ».</longdesc>
+                                                                </local_schema>
+                                                        </entry>
+                                                </dir>
+                                                <dir name="bottom_panel">
+                                                        <entry name="bottom_panel_visible">
+                                                                <local_schema short_desc="Hiện bảng dưới">
+                                                                        <longdesc>Có nên hiển thị bảng dưới ở đáy cửa sổ soạn thảo hay không.</longdesc>
+                                                                </local_schema>
+                                                        </entry>
+                                                </dir>
+                                                <dir name="side_pane">
+                                                        <entry name="side_pane_visible">
+                                                                <local_schema short_desc="Hiện ô bên">
+                                                                </local_schema>
+                                                        </entry>
+                                                </dir>
+                                                <dir name="statusbar">
+                                                        <entry name="statusbar_visible">
+                                                                <local_schema short_desc="Hiện thanh trạng thái">
+                                                                        <longdesc>Có nên hiển thị thanh trạng thái ở đáy cửa sổ soạn thảo hay không.</longdesc>
+                                                                </local_schema>
+                                                        </entry>
+                                                </dir>
+                                                <dir name="toolbar">
+                                                        <entry name="toolbar_buttons_style">
+                                                                <local_schema short_desc="Kiểu nút thanh công cụ">
+                                                                        <longdesc>Kiểu dáng cho nút thanh công cụ. Giá trị có thể là &quot;GEDIT_TOOLBAR_SYSTEM&quot; cho kiểu mặc định của hệ thống, &quot;GEDIT_TOOLBAR_ICONS&quot; nếu chỉ hiện thị các biểu tượng, &quot;GEDIT_TOOLBAR_ICONS_AND_TEXT&quot; nếu hiện cả biểu tượng và chữ. Và &quot;GEDIT_TOOLBAR_ICONS_BOTH_HORIZ&quot; để hiển thị chữ ưu tiên cạnh biểu tượng. Chú ý là phải viết hoa các giá trị để đảm bảo chúng được hiển thị đúng như đã nói.</longdesc>
+                                                                </local_schema>
+                                                        </entry>
+                                                        <entry name="toolbar_visible">
+                                                                <local_schema short_desc="Hiện thanh công cụ">
+                                                                        <longdesc>Có nên hiện thanh công cụ trong cửa sổ biên soạn hay không.</longdesc>
+                                                                </local_schema>
+                                                        </entry>
+                                                </dir>
+                                        </dir>
+                                        <dir name="editor">
+                                                <dir name="search_highlighting">
+                                                        <entry name="enable">
+                                                                <local_schema short_desc="Bật tô sáng tìm kiếm">
+                                                                        <longdesc>Gedit có nên tô sáng mọi lần gặp đoạn đã tìm kiếm hay không.</longdesc>
+                                                                </local_schema>
+                                                        </entry>
+                                                </dir>
+                                                <dir name="cursor_position">
+                                                        <entry name="restore_cursor_position">
+                                                                <local_schema short_desc="Phục hồi vị trí con trỏ trước">
+                                                                        <longdesc>Gedit có nên phục hồi vị trí con trỏ trước khi tập tin được tải hay không.</longdesc>
+                                                                </local_schema>
+                                                        </entry>
+                                                </dir>
+                                                <dir name="smart_home_end">
+                                                        <entry name="smart_home_end">
+                                                                <local_schema short_desc="Home End khéo">
+                                                                        <longdesc>Ghi rõ cách di chuyển của con trỏ khi phím HOME và END được bấm. Đặt giá trị:
+ • DISABLED	để luôn luôn đi tới đầu/cuối dòng
+ • AFTER		để đi tới đầu/cuối dòng lần đầu tiên bấm phím,
+			rồi đi tới đầu/cuối văn bản, cũng bỏ qua khoảng trắng,
+			lần thứ hai bấm phím
+ • BEFORE	để đi tới đầu/cuối văn bản, cũng bỏ qua khoảng trắng,
+			lần đầu tiên bấm phím, rồi đi tới đầu/cuối dòng,			lần thứ hai bấm phím
+ • ALWAYS	để luôn luôn đi tới đầu/cuối văn bản thay cho đầu/cuối dòng.</longdesc>
+                                                                </local_schema>
+                                                        </entry>
+                                                </dir>
+                                                <dir name="right_margin">
+                                                        <entry name="right_margin_position">
+                                                                <local_schema short_desc="Vị trí lề phải">
+                                                                        <longdesc>Xác định vị trí lề phải.</longdesc>
+                                                                </local_schema>
+                                                        </entry>
+                                                        <entry name="display_right_margin">
+                                                                <local_schema short_desc="Hiện lề phải">
+                                                                        <longdesc>Gedit nên hiển thị lề phải trong vùng biên soạn hay không.</longdesc>
+                                                                </local_schema>
+                                                        </entry>
+                                                </dir>
+                                                <dir name="bracket_matching">
+                                                        <entry name="bracket_matching">
+                                                                <local_schema short_desc="Tô sáng ngoặc khớp">
+                                                                </local_schema>
+                                                        </entry>
+                                                </dir>
+                                                <dir name="current_line">
+                                                        <entry name="highlight_current_line">
+                                                                <local_schema short_desc="Tô sáng dòng hiện có">
+                                                                        <longdesc>Gedit có nên tô sáng dòng hiện có hay không.</longdesc>
+                                                                </local_schema>
+                                                        </entry>
+                                                </dir>
+                                                <dir name="line_numbers">
+                                                        <entry name="display_line_numbers">
+                                                                <local_schema short_desc="Hiện số hiệu dòng">
+                                                                        <longdesc>Gedit nên hiển thị số hiệu dòng trong vùng biên soạn hay không.</longdesc>
+                                                                </local_schema>
+                                                        </entry>
+                                                </dir>
+                                                <dir name="auto_indent">
+                                                        <entry name="auto_indent">
+                                                                <local_schema short_desc="Thụt lề tự động">
+                                                                        <longdesc>Cho Gedit bật khả năng thụt lề tự động hay không.</longdesc>
+                                                                </local_schema>
+                                                        </entry>
+                                                </dir>
+                                                <dir name="tabs">
+                                                        <entry name="insert_spaces">
+                                                                <local_schema short_desc="Chèn dấu cách">
+                                                                        <longdesc>Cho Gedit chèn các dấu cách thay cho các tab hay không.</longdesc>
+                                                                </local_schema>
+                                                        </entry>
+                                                        <entry name="tabs_size">
+                                                                <local_schema short_desc="Cỡ tab">
+                                                                        <longdesc>Xác định số khoảng trắng được hiển thị thay vì ký tự Tab.</longdesc>
+                                                                </local_schema>
+                                                        </entry>
+                                                </dir>
+                                                <dir name="wrap_mode">
+                                                        <entry name="wrap_mode">
+                                                                <local_schema short_desc="Chế độ ngắt dòng">
+                                                                        <longdesc>Xác định cuộn dòng dài như thế nào trong vùng biên soạn. Dùng &quot;GTK_WRAP_MODE&quot; nếu không cuộn, &quot;GTK_WRAP_WORD&quot; nếu cuốn theo biên từ, và &quot;GTK_WRAP_CHAR&quot; nếu cuộn theo các ký tự. Chú ý các giá trị này cần viết hoa.</longdesc>
+                                                                </local_schema>
+                                                        </entry>
+                                                </dir>
+                                                <dir name="undo">
+                                                        <entry name="max_undo_actions">
+                                                                <local_schema>
+                                                                        <longdesc>Số tối đa các hành động Hủy bước/Bước lại có thể thực hiện. Dùng « -1 » cho số hành động vô hạn.</longdesc>
+                                                                </local_schema>
+                                                        </entry>
+                                                        <entry name="undo_actions_limit">
+                                                                <local_schema short_desc="Giới hạn hủy bước (BỊ PHẢN ĐỐI)">
+                                                                        <longdesc>Số tối đa các hành động Hủy bước/Bước lại có thể thực hiện. Dùng « -1 » cho số hành động vô hạn. Bị phản đối kể từ phiên bản 2.12.0.</longdesc>
+                                                                </local_schema>
+                                                        </entry>
+                                                </dir>
+                                                <dir name="save">
+                                                        <entry name="writable_vfs_schemes">
+                                                                <local_schema short_desc="Lược đồ VFS ghi được">
+                                                                        <longdesc>Danh sách các lược đồ VFS được trình gedit hỗ trợ trong chế độ ghi. Lược đồ « file » (tập tin) ghi được theo mặc định.</longdesc>
+                                                                </local_schema>
+                                                        </entry>
+                                                        <entry name="auto_save_interval">
+                                                                <local_schema short_desc="Khoảng lưu tự động">
+                                                                        <longdesc>Số phút sau đó gedit lưu tự động các thay đổi trong tập tin. Chỉ có tác dụng nếu bật tùy chọn « Lưu tự động ».</longdesc>
+                                                                </local_schema>
+                                                        </entry>
+                                                        <entry name="auto_save">
+                                                                <local_schema short_desc="Lưu tự động">
+                                                                        <longdesc>Gedit nên tự động lưu các tập tin đã sửa đổi sau mỗi khoảng thời gian. Bạn có thể đặt khoảng thời gian với tùy chọn « Khoảng tự động lưu ».</longdesc>
+                                                                </local_schema>
+                                                        </entry>
+                                                        <entry name="backup_copy_extension">
+                                                                <local_schema short_desc="Phần mở rộng bản sao lưu">
+                                                                        <longdesc>Phần mở rộng hay hậu tố dùng cho tên tập tin sao lưu. Chỉ có tác dụng nếu bật tùy chọn « Tạo bản sao lưu ».</longdesc>
+                                                                </local_schema>
+                                                        </entry>
+                                                        <entry name="create_backup_copy">
+                                                                <local_schema short_desc="Tạo bản sao lưu">
+                                                                        <longdesc>Gedit nên tạo bản sao các tập tin khi lưu. Bạn có thể đặt phần mở rộng tập tin bằng tùy chọn « Phần mở rộng bản sao lưu ».</longdesc>
+                                                                </local_schema>
+                                                        </entry>
+                                                </dir>
+                                                <dir name="colors">
+                                                        <entry name="scheme">
+                                                                <local_schema short_desc="Lược đồ Kiểu dáng">
+                                                                </local_schema>
+                                                        </entry>
+                                                </dir>
+                                                <dir name="font">
+                                                        <entry name="editor_font">
+                                                                <local_schema short_desc="Phông bộ biên soạn">
+                                                                </local_schema>
+                                                        </entry>
+                                                        <entry name="use_default_font">
+                                                                <local_schema short_desc="Dùng phông chữ mặc định">
+                                                                        <longdesc>Có nên dùng phông chữ độ rộng cố định của hệ thống để soạn thảo văn bản thay cho phông chữ nào đặc trưng cho gedit. Nếu tùy chọn này được tắt, phông chữ được xác định trong tùy chọn « Phông bộ soạn thảo » sẽ được dùng thay cho phông chữ hệ thống.</longdesc>
+                                                                </local_schema>
+                                                        </entry>
+                                                </dir>
+                                        </dir>
+                                </dir>
+                        </dir>
+                </dir>
+        </dir>
+</gconf>

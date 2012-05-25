@@ -1,0 +1,290 @@
+<?xml version="1.0"?>
+<gconf>
+        <dir name="schemas">
+                <dir name="apps">
+                        <dir name="gedit-2">
+                                <dir name="plugins">
+                                        <entry name="active-plugins">
+                                                <local_schema short_desc="सक्रिय प्लगइनहरू">
+                                                        <longdesc>सक्रिय प्लगइनहरूको सूची । यसले सक्रिय प्लगइनहरूको &quot;स्थान&quot; समाविष्ट गर्दछ । दिइएको प्लगइनको &quot;स्थान&quot; प्राप्त गर्नका लागि gedit-प्लगइन फाइल ।</longdesc>
+                                                </local_schema>
+                                        </entry>
+                                        <dir name="filebrowser">
+                                                <entry name="filter_pattern">
+                                                        <local_schema short_desc="फाइल ब्राउजर फिल्टर बान्की">
+                                                                <longdesc>यससँग फाइल ब्राउजर फिल्टर गर्न फिल्टर बान्की । यो फिल्टरले फिल्टरमोडको माथि कार्य गर्दछ ।</longdesc>
+                                                        </local_schema>
+                                                </entry>
+                                                <entry name="filter_mode">
+                                                        <local_schema short_desc="फाइल ब्राउजर फिल्टर मोड">
+                                                                <longdesc>यो मानले फाइल ब्राउजरबाट फाइलहरूले के फिल्टर गर्दछ भन्ने निर्धारण गर्दछ । वैध मानहरू हुन: कुनै पनि होइन (केही पनि फिलटर गर्दैन), लुकाइएको (लुकाइएको फाइलहरू फिल्टर गर्दछ), बाइनरी (बाइनरी फाइलहरू फिल्टर गर्दछ) र लुकाइएको र बाइनरी (लुकाइएको र बाइनरी दुवै फाइलहरू फिल्टर गर्दछ)</longdesc>
+                                                        </local_schema>
+                                                </entry>
+                                                <entry name="open_at_first_doc">
+                                                        <local_schema short_desc="पहिलो कागजातमा स्थान सेट गर्नुहोस्">
+                                                                <longdesc>यदि TRUE भए फाइल ब्राउजर प्लगइनले पहिला खोजिएको कागजातको डाइरेक्टरी हेर्नेछ जुन फाइल ब्राउजर अझै सम्म प्रयोग गरिएको छैन । (यसैले यो साधारणतया आदेश रेखाबाट खुला कागजातमा लागु गरिन्छ वा नटिलस आदिसँग यसलाई खोलिन्छ)</longdesc>
+                                                        </local_schema>
+                                                </entry>
+                                                <dir name="on_load">
+                                                        <entry name="enable_remote">
+                                                                <local_schema short_desc="टाढाको स्थानको पुन: भण्डारण सक्षम पार्नुहोस्">
+                                                                        <longdesc>टाढाको स्थानहरूको पुन: भण्डारण सक्षम पार्ने या नपार्ने सेट गर्दछ ।</longdesc>
+                                                                </local_schema>
+                                                        </entry>
+                                                        <entry name="virtual_root">
+                                                                <local_schema short_desc="फाइल ब्राउजर अवास्तविक मूल डाइरेक्टरी">
+                                                                        <longdesc>अनलोड/ट्रि दृश्य TRUE हुँदा फाइल ब्राउजर प्लगइन लोड गरिरहेको बेला प्रयोग गर्नलाई फाइल ब्राउजर अवास्तविक मूल डाइरेक्टरी । अवास्तविक मूल सधैँ वास्तविक मूल भन्दा तल हुनु पर्दछ ।</longdesc>
+                                                                </local_schema>
+                                                        </entry>
+                                                        <entry name="root">
+                                                                <local_schema short_desc="फाइल ब्राउजर मूल डाइरेक्टरी">
+                                                                        <longdesc>फाइल ब्राउजर प्लगइन लोड गर्दा र अनलोड/ट्रि दृश्य TRUE हुँदा प्रयोग गर्नलाई फाइल ब्राउजर मूल डाइरेक्टरी ।</longdesc>
+                                                                </local_schema>
+                                                        </entry>
+                                                        <entry name="tree_view">
+                                                                <local_schema short_desc="ट्रि दृश्यसँग खोल्नुहोस्">
+                                                                        <longdesc>फाइल ब्राउजर प्लगइनले पुस्तकचिनोहरूको दृश्यको सट्टा लोड गरिएको प्राप्त गर्दा ट्रि दृश्य खोल्नुहोस्</longdesc>
+                                                                </local_schema>
+                                                        </entry>
+                                                </dir>
+                                        </dir>
+                                </dir>
+                                <dir name="preferences">
+                                        <dir name="syntax_highlighting">
+                                                <entry name="enable">
+                                                        <local_schema short_desc="वाक्य संरचना हाइलाइटिङ सक्षम पार्नुहोस्">
+                                                                <longdesc>geditले वाक्य संरचना हाइलाइट गर्ने सक्षम पार्नु पर्दछ या पर्दैन ।</longdesc>
+                                                        </local_schema>
+                                                </entry>
+                                        </dir>
+                                        <dir name="encodings">
+                                                <entry name="shown_in_menu">
+                                                        <local_schema short_desc="मेनुमा देखिने सङ्केतन">
+                                                        </local_schema>
+                                                </entry>
+                                                <entry name="auto_detected">
+                                                        <local_schema>
+                                                        </local_schema>
+                                                </entry>
+                                        </dir>
+                                        <dir name="print">
+                                                <dir name="fonts">
+                                                        <entry name="print_font_numbers_pango">
+                                                                <local_schema short_desc="मुद्रणका लागि लाइन नम्बर फन्ट">
+                                                                </local_schema>
+                                                        </entry>
+                                                        <entry name="print_font_header_pango">
+                                                                <local_schema short_desc="मुद्रणका लागि हेडर फन्ट">
+                                                                </local_schema>
+                                                        </entry>
+                                                        <entry name="print_font_body_pango">
+                                                                <local_schema short_desc="मुद्रणका लागि मुख्य फन्ट">
+                                                                </local_schema>
+                                                        </entry>
+                                                </dir>
+                                                <dir name="page">
+                                                        <entry name="print_line_numbers">
+                                                                <local_schema short_desc="लाइन सङ्ख्यामुद्रण गर्नुहोस्">
+                                                                        <longdesc>यदि यो मान ० छ भने कागजात मुद्रण गर्दा कुनै लाइन नम्बर घुसाइने छैन । अन्यथा gedit ले प्रत्येक त्यस्ता लाइनहरू मुद्रण गर्नेछ ।</longdesc>
+                                                                </local_schema>
+                                                        </entry>
+                                                        <entry name="print_wrap_mode">
+                                                                <local_schema short_desc="मुद्रण लाइन बेराइ मोड">
+                                                                        <longdesc>मुद्रणका लागि लामो लाइनहरू कसरी बेहोर्नु पर्दछ निर्दिष्ट गर्दछ । नबेराइका लागि &quot;GTK_WRAP_NONE&quot;, शब्द सिमामा बेर्नका लागि &quot;GTK_WRAP_WORD&quot;, र ब्यक्तिगत क्यारेक्टर सिमामा बेर्नका लागि &quot;GTK_WRAP_CHAR&quot; प्रयोग गर्नुहोस् । याद राख्नुहोस मानहरू केस संवेदनशिल हुन्छन्, त्यसैले तिनीहरू यहाँ उल्लेख गरे जस्तै उस्तै देखिने निश्चित गर्नुहोस् ।</longdesc>
+                                                                </local_schema>
+                                                        </entry>
+                                                        <entry name="print_header">
+                                                                <local_schema short_desc="हेडर मुद्रण गर्नुहोस्">
+                                                                        <longdesc>कागजात मुद्रण गर्दा gedit ले कागजात हेडर समाविष्ट गर्नु पर्दछ या पर्दैन ।</longdesc>
+                                                                </local_schema>
+                                                        </entry>
+                                                        <entry name="print_syntax_highlighting">
+                                                                <local_schema short_desc="वाक्यसंरचना हाइलाइटिङ मुद्रण गर्नुहोस्">
+                                                                        <longdesc>कागजात मुद्रण गर्दा gedit ले वाक्य संरचना हाइलाइट मुद्रण गर्नुपर्दछ या पर्दैन ।</longdesc>
+                                                                </local_schema>
+                                                        </entry>
+                                                </dir>
+                                        </dir>
+                                        <dir name="ui">
+                                                <dir name="recents">
+                                                        <entry name="max_recents">
+                                                                <local_schema short_desc="हालको अधिकतम फाइल">
+                                                                        <longdesc>हालै खोलिएको फाइलहरूको अधिकतम सङ्ख्या निर्दिष्ट गर्दछ जुन &quot;हालको फाइल&quot; सहायक मेनुमा प्रदर्शित हुनेछ ।</longdesc>
+                                                                </local_schema>
+                                                        </entry>
+                                                </dir>
+                                                <dir name="bottom_panel">
+                                                        <entry name="bottom_panel_visible">
+                                                                <local_schema short_desc="बटम प्यानल दृश्यात्मक छ">
+                                                                        <longdesc>सम्पादन सञ्झ्यालको तलतिर बटम प्यानल दृश्यात्मक हुनुपर्दछ या पर्दैन ।</longdesc>
+                                                                </local_schema>
+                                                        </entry>
+                                                </dir>
+                                                <dir name="side_pane">
+                                                        <entry name="side_pane_visible">
+                                                                <local_schema short_desc="छेउ फलक दृश्यात्मक छ">
+                                                                </local_schema>
+                                                        </entry>
+                                                </dir>
+                                                <dir name="statusbar">
+                                                        <entry name="statusbar_visible">
+                                                                <local_schema short_desc="वस्तुस्थिति पट्टी दृश्यात्मक छ">
+                                                                        <longdesc>सम्पादन सञ्झ्यालको तलतिर वस्तुस्थिति पट्टी दृश्यात्मक हुनुपर्दछ या पर्दैन ।</longdesc>
+                                                                </local_schema>
+                                                        </entry>
+                                                </dir>
+                                                <dir name="toolbar">
+                                                        <entry name="toolbar_buttons_style">
+                                                                <local_schema short_desc="उपकरण पट्टी बटन शैली">
+                                                                        <longdesc>उपकरण पट्टी बटनको लागि शैली । प्रणालीको पूर्वनिर्धारित शैली प्रयोग गर्न &quot;GEDIT_TOOLBAR_SYSTEM&quot;, प्रतिमा मात्र प्रदर्शन गर्न &quot;GEDIT_TOOLBAR_ICONS&quot;, प्रतिमा र पाठ दुवै प्रदर्शन गर्न &quot;GEDIT_TOOLBAR_ICONS_AND_TEXT&quot;, र प्रतिमाहरूको अतिरिक्त प्राथमिक पाठ प्रदर्शन गर्न &quot;GEDIT_TOOLBAR_ICONS_BOTH_HORIZ&quot; सम्भावित मानहरू हुन् । याद राख्नुहोस् मानहरू केस सम्वेदनशिल हुन्छन्, त्यसैले तिनिहरू यहाँ उल्लेख गरे जस्तै दुरूस्त रूपमा देखिने निश्चित गर्नुहोस् ।</longdesc>
+                                                                </local_schema>
+                                                        </entry>
+                                                        <entry name="toolbar_visible">
+                                                                <local_schema short_desc="उपकरणपट्टी दृश्यात्मक छ">
+                                                                        <longdesc>सम्पादन सञ्झ्यालमा उपकरणपट्टी दृश्यात्मक हुनुपर्दछ या पर्दैन ।</longdesc>
+                                                                </local_schema>
+                                                        </entry>
+                                                </dir>
+                                        </dir>
+                                        <dir name="editor">
+                                                <dir name="search_highlighting">
+                                                        <entry name="enable">
+                                                                <local_schema short_desc="हाइलाइटिङ खोजी सक्षम पार्नुहोस्">
+                                                                        <longdesc>gedit ले खोजी पाठको सबै घटनाहरू हाइलाइट गर्नु पर्दछ या पर्दैन ।</longdesc>
+                                                                </local_schema>
+                                                        </entry>
+                                                </dir>
+                                                <dir name="cursor_position">
+                                                        <entry name="restore_cursor_position">
+                                                                <local_schema short_desc="अघिल्लो कर्सर स्थिति पुन: भण्डारण गर्नुहोस्">
+                                                                        <longdesc>फाइल लोड गरिएको बेला gedit ले अघिल्लो कर्सर स्थिति पुन: भण्डारण गर्नु पर्दछ या पर्दैन ।</longdesc>
+                                                                </local_schema>
+                                                        </entry>
+                                                </dir>
+                                                <dir name="smart_home_end">
+                                                        <entry name="smart_home_end">
+                                                                <local_schema short_desc="छरितो गृह समाप्ति">
+                                                                        <longdesc>गृह र ञन्त्य कुञ्जी थच्दा कसरी कर्सर सर्दछ भन्ने निर्दिष्ट गर्दछ । Use लाइनको सुरु/अन्त्यमा सार्न सधैँ &quot;DISABLED&quot;, पहिलो पटक कुञ्जी थिच्दा लाइनको सुरु/अन्त्यमा सार्न र दोस्रो पटक कुञ्जी थिच्दा सेतो खालीस्थान उपेक्षित पाठको सुरु/अन्त्यमा सार्न &quot;AFTER&quot;, लाइनको सुरु/अन्त्यमा सार्नु पहिला पाठको सुरु/अन्त्यमा सार्न &quot;BEFORE&quot; र लाइनको सुरु/अन्त्यको सट्टामा पाठको सुरु/अन्त्यमा सार्न &quot;ALWAYS&quot; प्रयोग गर्नुहोस् ।</longdesc>
+                                                                </local_schema>
+                                                        </entry>
+                                                </dir>
+                                                <dir name="right_margin">
+                                                        <entry name="right_margin_position">
+                                                                <local_schema short_desc="दायाँ सीमान्त स्थिति">
+                                                                        <longdesc>दायाँ सीमान्तको स्थिति निर्दिष्ट गर्दछ ।</longdesc>
+                                                                </local_schema>
+                                                        </entry>
+                                                        <entry name="display_right_margin">
+                                                                <local_schema short_desc="दायाँ सीमान्त प्रदर्शन गर्नुहोस्">
+                                                                        <longdesc>gedit ले सम्पादन क्षेत्रमा दायाँ सिमान्त प्रदर्शन गर्नु पर्दछ या पर्दैन ।</longdesc>
+                                                                </local_schema>
+                                                        </entry>
+                                                </dir>
+                                                <dir name="bracket_matching">
+                                                        <entry name="bracket_matching">
+                                                                <local_schema short_desc="मिल्दो कोष्ठक हाइलाइट गर्नुहोस्">
+                                                                </local_schema>
+                                                        </entry>
+                                                </dir>
+                                                <dir name="current_line">
+                                                        <entry name="highlight_current_line">
+                                                                <local_schema short_desc="हालको लाइन हाइलाइट गर्नुहोस्">
+                                                                        <longdesc>gedit ले हालको लाइन हाइलाइट गर्नु पर्दछ या पर्दैन ।</longdesc>
+                                                                </local_schema>
+                                                        </entry>
+                                                </dir>
+                                                <dir name="line_numbers">
+                                                        <entry name="display_line_numbers">
+                                                                <local_schema short_desc="पङ्क्ति सङ्ख्या प्रदर्शन गर्नुहोस्">
+                                                                        <longdesc>gedit ले सम्पादित क्षेत्रमा लाइन सङ्ख्याहरू प्रदर्शन गर्नुपर्दछ या पर्दैन ।</longdesc>
+                                                                </local_schema>
+                                                        </entry>
+                                                </dir>
+                                                <dir name="auto_indent">
+                                                        <entry name="auto_indent">
+                                                                <local_schema short_desc="स्वतः इण्डेन्ट गर्नुहोस्">
+                                                                        <longdesc>gedit ले स्वत: इण्डेटेन्सन सक्षम पार्नु पर्दछ या पर्दैन ।</longdesc>
+                                                                </local_schema>
+                                                        </entry>
+                                                </dir>
+                                                <dir name="tabs">
+                                                        <entry name="insert_spaces">
+                                                                <local_schema short_desc="खालीस्थान घुसाउनुहोस्">
+                                                                        <longdesc>gedit ले ट्याबहरूको सट्टा खालीस्थान घुसाउनु पर्दछ या पर्दैन ।</longdesc>
+                                                                </local_schema>
+                                                        </entry>
+                                                        <entry name="tabs_size">
+                                                                <local_schema short_desc="ट्याब साइज">
+                                                                        <longdesc>ट्याब क्यारेक्टरहरूको सट्टामा प्रदर्शित गरिनु पर्ने खालीस्थानहरूको सङ्ख्या निर्दिष्ट गर्दछ ।</longdesc>
+                                                                </local_schema>
+                                                        </entry>
+                                                </dir>
+                                                <dir name="wrap_mode">
+                                                        <entry name="wrap_mode">
+                                                                <local_schema short_desc="लाइन बेराइ मोड">
+                                                                        <longdesc>सम्पादित क्षेत्रमा लामो लाइनहरू कसरी बेर्ने निश्चित गर्दछ । नबेर्नका लागि &quot;GTK_WRAP_NONE&quot;, शब्द सिमामा बेर्नका लागि &quot;GTK_WRAP_WORD&quot;, र ब्यक्तिगत क्यारेकटर सिमाका लागि &quot;GTK_WRAP_CHAR&quot; प्रयोग गर्नुहोस् । याद राख्नुहोस् मानहरू केस संवेदनशिल छन्, त्यसैले तिनीहरू हयाँ उल्लेख भए जस्तै दुरुस्तै देखिने निश्चित गर्नुहोस् ।</longdesc>
+                                                                </local_schema>
+                                                        </entry>
+                                                </dir>
+                                                <dir name="undo">
+                                                        <entry name="max_undo_actions">
+                                                                <local_schema>
+                                                                        <longdesc>gedit ले पूर्वस्थितिमा फर्काउन वा रिडू गर्न सक्षम हुने कार्यहरूको अधिकतम सङ्ख्या । कार्यहरूको असिमित सङ्ख्याका लागि &quot;-१&quot; प्रयोग गर्नुहोस् ।</longdesc>
+                                                                </local_schema>
+                                                        </entry>
+                                                        <entry name="undo_actions_limit">
+                                                                <local_schema short_desc="कार्य सिमा (ह्रास गरिएको) पूर्वस्थितिमा ल्याउनुहोस्">
+                                                                        <longdesc>gedit ले पूर्वस्थितिमा फर्काउन वा रिडू गर्न सक्षम हुने कार्यहरूको अधिकतम सङ्ख्या । कार्यहरूको असिमित सङ्ख्याका लागि &quot;-1&quot; प्रयोग गर्नुहोस् । २.१२.० देखि ह्रासकट्टी गरिएको छ</longdesc>
+                                                                </local_schema>
+                                                        </entry>
+                                                </dir>
+                                                <dir name="save">
+                                                        <entry name="writable_vfs_schemes">
+                                                                <local_schema short_desc="लेखनयोग्य VFS योजनाहरू">
+                                                                        <longdesc>VFS योजना geditको सूचीले लेखन मोडमा समर्थन गर्दछ । फाइल योजना पूर्वनिर्धारणद्वारा लेखनयोगय छ ।</longdesc>
+                                                                </local_schema>
+                                                        </entry>
+                                                        <entry name="auto_save_interval">
+                                                                <local_schema short_desc="स्वतः बचत अन्तराल">
+                                                                        <longdesc>मिनटको सङ्ख्या जुन पछि gedit ले परिमार्जित फाइलहरू स्वत बचत गर्नेछ । यदि &quot;स्वत बचत&quot;विकल्प खुला छ भने मात्र यसले प्रभाव लिनेछ ।</longdesc>
+                                                                </local_schema>
+                                                        </entry>
+                                                        <entry name="auto_save">
+                                                                <local_schema short_desc="‌स्वत: बचत गर्नुहोस्">
+                                                                        <longdesc>gedit ले एउटा समय अन्तराल पछि परिमार्जित फाइलहरू स्वाचालित रूपमा बचत गर्नुपर्दछ या पर्दैन । तपाईँले समय अन्तराल &quot;स्वत बचत अन्तराल&quot; सँग सेट गर्न सक्नुहुन्छ ।</longdesc>
+                                                                </local_schema>
+                                                        </entry>
+                                                        <entry name="backup_copy_extension">
+                                                                <local_schema short_desc="जगेडा प्रतिलिपि विस्तार">
+                                                                        <longdesc>जगेडा फाइल नामहरूको लागि प्रयोग गर्न विस्तार वा प्रत्यय । यदि &quot;जगेडा प्रतिलिपिहरू सिर्जना गर्नुहोस&quot; विकल्प खोलिएको छ भने मात्र यसले प्रभाव गर्नेछ ।</longdesc>
+                                                                </local_schema>
+                                                        </entry>
+                                                        <entry name="create_backup_copy">
+                                                                <local_schema short_desc="जगेडा प्रतिलिपिहरू सिर्जना गर्नुहोस्">
+                                                                        <longdesc>gedit ले यसले बचत गर्ने फाइलहरूका लागि जगेडा प्रतिलिपि सिर्जना गर्नुपर्दछ या पर्दैन । तपाईँले &quot;जगेडा प्रतिलिपि विस्तार&quot; विकल्पसँग जगेडा फाइल विस्तार सेट गर्न सक्नुहुन्छ ।</longdesc>
+                                                                </local_schema>
+                                                        </entry>
+                                                </dir>
+                                                <dir name="colors">
+                                                        <entry name="scheme">
+                                                                <local_schema short_desc="शैली योजना">
+                                                                </local_schema>
+                                                        </entry>
+                                                </dir>
+                                                <dir name="font">
+                                                        <entry name="editor_font">
+                                                                <local_schema short_desc="सम्पादक फन्ट">
+                                                                </local_schema>
+                                                        </entry>
+                                                        <entry name="use_default_font">
+                                                                <local_schema short_desc="पूर्वनिर्धारित फन्ट प्रयोग गर्नुहोस्">
+                                                                        <longdesc>पाठ सम्पादनका लागि gedit मा निर्दिष्ट फन्टको सट्टामा प्रणालीको पूर्वनिर्धारित स्थिर चौडाइ फन्ट प्रयोग गर्नुपर्दछ या पर्दैन । यदि यो विकल्प बन्द गरिएको छ भने &quot;सम्पादक फन्ट&quot; मा फन्ट नामाकरण विकल्प प्रणाली फन्टको सट्टामा प्रयोग गरिनेछ ।</longdesc>
+                                                                </local_schema>
+                                                        </entry>
+                                                </dir>
+                                        </dir>
+                                </dir>
+                        </dir>
+                </dir>
+        </dir>
+</gconf>

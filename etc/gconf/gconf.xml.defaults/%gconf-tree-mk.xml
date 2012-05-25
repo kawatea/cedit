@@ -1,0 +1,290 @@
+<?xml version="1.0"?>
+<gconf>
+        <dir name="schemas">
+                <dir name="apps">
+                        <dir name="gedit-2">
+                                <dir name="plugins">
+                                        <entry name="active-plugins">
+                                                <local_schema short_desc="Активни додатоци">
+                                                        <longdesc>Листа на активни приклучоци. Ја содржи локацијата на активните приклучоци. Погледнете ја датотеката за приклучоци на „gedit“ за да дојдете до локацијата на одреден додаток.</longdesc>
+                                                </local_schema>
+                                        </entry>
+                                        <dir name="filebrowser">
+                                                <entry name="filter_pattern">
+                                                        <local_schema short_desc="Шема за филтрирање во прелистувачот на датотеки">
+                                                                <longdesc>Шема за филтрирање со која ќе се филтрира пребарувачот на датотеки. Овој филтер работи над filter_mode.</longdesc>
+                                                        </local_schema>
+                                                </entry>
+                                                <entry name="filter_mode">
+                                                        <local_schema short_desc="Режим на филтрирање на пребарувачот на датотеки">
+                                                                <longdesc>Вредноста одредува кои датотеки се филтрираат од пребарувачот на датотеки. Валидни вредности се: none (не филтрирај ништо), hidden (филтрирај ги скриените датотеки), binary (филтрирај ги бинарните датотеки) и hidden_and_binary (филтрирај ги и скриените и бинарните датотеки).</longdesc>
+                                                        </local_schema>
+                                                </entry>
+                                                <entry name="open_at_first_doc">
+                                                        <local_schema short_desc="Постави ја локацијата на првиот документ">
+                                                                <longdesc>Ако е TRUE тогаш приклучокот за прелистувач на датотеки ќе го прегледа директориумот на првоотворениот документ имајќи во предвид дека прелистувачот се уште не е искористен. (Значи ова главно се однесува на отворање на документ од командната линија или отворање во наутилус итн.)</longdesc>
+                                                        </local_schema>
+                                                </entry>
+                                                <dir name="on_load">
+                                                        <entry name="enable_remote">
+                                                                <local_schema short_desc="Овозможи враќање на оддалечените локации">
+                                                                        <longdesc>Поставува дали да овозможи враќање на оддалечени локации.</longdesc>
+                                                                </local_schema>
+                                                        </entry>
+                                                        <entry name="virtual_root">
+                                                                <local_schema short_desc="Виртуелниот главен директориум на прелистувачот на датотеки">
+                                                                        <longdesc>Главниот виртуелен директориум на пребарувачот на датотеки кој што ќе се користи за вчитување на  приклучокот за пребарувач на датотеки и onload/tree_view е TRUE. Главниот виртуелен директориум секогаш мора да биде самиот главен директориум.</longdesc>
+                                                                </local_schema>
+                                                        </entry>
+                                                        <entry name="root">
+                                                                <local_schema short_desc="Главен директориум на прелистувачот на датотеки">
+                                                                        <longdesc>Главниот директориум на пребарувачот на датотеки кој што ќе се користи за вчитување на приклучокот за пребарувач на датотеки и onload/tree_view е TRUE.</longdesc>
+                                                                </local_schema>
+                                                        </entry>
+                                                        <entry name="tree_view">
+                                                                <local_schema short_desc="Отвори со преглед на дрво">
+                                                                        <longdesc>Отвори го прегледот на дрвото кога приклучокот на пребарувачот на датотеки се вчитува наместо прегледот на обележувачите</longdesc>
+                                                                </local_schema>
+                                                        </entry>
+                                                </dir>
+                                        </dir>
+                                </dir>
+                                <dir name="preferences">
+                                        <dir name="syntax_highlighting">
+                                                <entry name="enable">
+                                                        <local_schema short_desc="Овозможи го синтаксното осветлување">
+                                                                <longdesc>Дали gedit треба да овозможи синтаксно осветлување.</longdesc>
+                                                        </local_schema>
+                                                </entry>
+                                        </dir>
+                                        <dir name="encodings">
+                                                <entry name="shown_in_menu">
+                                                        <local_schema short_desc="Енкодирања прикажани во менито">
+                                                        </local_schema>
+                                                </entry>
+                                                <entry name="auto_detected">
+                                                        <local_schema>
+                                                        </local_schema>
+                                                </entry>
+                                        </dir>
+                                        <dir name="print">
+                                                <dir name="fonts">
+                                                        <entry name="print_font_numbers_pango">
+                                                                <local_schema short_desc="Фонт на броевите на страниците за печатење">
+                                                                </local_schema>
+                                                        </entry>
+                                                        <entry name="print_font_header_pango">
+                                                                <local_schema short_desc="Фонт на заглавје за печатење">
+                                                                </local_schema>
+                                                        </entry>
+                                                        <entry name="print_font_body_pango">
+                                                                <local_schema short_desc="Фонт за печатење">
+                                                                </local_schema>
+                                                        </entry>
+                                                </dir>
+                                                <dir name="page">
+                                                        <entry name="print_line_numbers">
+                                                                <local_schema short_desc="Печати броеви на страниците">
+                                                                        <longdesc>Ако оваа вредност е 0 тогаш нема да бидат внесени броеви на страници при печатење на документот. </longdesc>
+                                                                </local_schema>
+                                                        </entry>
+                                                        <entry name="print_wrap_mode">
+                                                                <local_schema short_desc="Начин на префрлување на линии при печатење">
+                                                                        <longdesc>Одредете начин за пренесување на зборови за печатење. Користи &quot;GTK_WRAP_NONE&quot; за да не се пренесуваат., &quot;GTK_WRAP_WORD&quot; за пренесување до границите на зборот, и &quot;GTK_WRAP_CHAR&quot; за пренесување до границите на индивидуалните знаци.</longdesc>
+                                                                </local_schema>
+                                                        </entry>
+                                                        <entry name="print_header">
+                                                                <local_schema short_desc="Печати заглавје">
+                                                                        <longdesc>Дали gedit треба да го вклучи заглавјето на документот при печатење на документите.</longdesc>
+                                                                </local_schema>
+                                                        </entry>
+                                                        <entry name="print_syntax_highlighting">
+                                                                <local_schema short_desc="Печати го синтаксното осветлување">
+                                                                        <longdesc>Дали gedit треба да прави синтаксно осветлување при печатење на документите. </longdesc>
+                                                                </local_schema>
+                                                        </entry>
+                                                </dir>
+                                        </dir>
+                                        <dir name="ui">
+                                                <dir name="recents">
+                                                        <entry name="max_recents">
+                                                                <local_schema short_desc="Максимум на скорешни датотеки">
+                                                                        <longdesc>Го одредува максималниот број на неодамна отворени датотеки што ќе се прикажат во подменито &quot;Претходни датотеки&quot;.</longdesc>
+                                                                </local_schema>
+                                                        </entry>
+                                                </dir>
+                                                <dir name="bottom_panel">
+                                                        <entry name="bottom_panel_visible">
+                                                                <local_schema short_desc="Долната лента е видлива">
+                                                                        <longdesc>Дали статусната лента во дното на прозорот за уредување треба да е видлива.</longdesc>
+                                                                </local_schema>
+                                                        </entry>
+                                                </dir>
+                                                <dir name="side_pane">
+                                                        <entry name="side_pane_visible">
+                                                                <local_schema short_desc="Страничната лента е видлива.">
+                                                                </local_schema>
+                                                        </entry>
+                                                </dir>
+                                                <dir name="statusbar">
+                                                        <entry name="statusbar_visible">
+                                                                <local_schema short_desc="Статусната лента е видлива.">
+                                                                        <longdesc>Дали статусната лента во дното на прозорецот за уредување треба да е видлива.</longdesc>
+                                                                </local_schema>
+                                                        </entry>
+                                                </dir>
+                                                <dir name="toolbar">
+                                                        <entry name="toolbar_buttons_style">
+                                                                <local_schema short_desc="Стил на копчињата од лентата со алатки">
+                                                                        <longdesc>Стил на копчињата од лентата со алатки. Можни вредности се &quot;GEDIT_TOOLBAR_SYSTEM&quot; за употреба на системскиот стандарден стил, &quot;GEDIT_TOOLBAR_ICONS&quot; за приказ само на икони, &quot;GEDIT_TOOLBAR_ICONS_AND_TEXT&quot; за приказ на икони и текст заедно, и &quot;GEDIT_TOOLBAR_ICONS_BOTH_HORIZ&quot; за приказ на текстот покрај иконите. Обрнете внимание дека вредностите се осетливи на големи/мали букви, така што потребно е да ги употребувате точно онака како што се спомнати тука. </longdesc>
+                                                                </local_schema>
+                                                        </entry>
+                                                        <entry name="toolbar_visible">
+                                                                <local_schema short_desc="Лентата со алатки е видлива">
+                                                                        <longdesc>Дали лентата со алатки треба да е видлива во прозорците за уредување.</longdesc>
+                                                                </local_schema>
+                                                        </entry>
+                                                </dir>
+                                        </dir>
+                                        <dir name="editor">
+                                                <dir name="search_highlighting">
+                                                        <entry name="enable">
+                                                                <local_schema short_desc="Овозможи осветлување при пребарување">
+                                                                        <longdesc>Дали gedit треба да прави синтаксно осветлување под сите околности од пребаруванит текст.</longdesc>
+                                                                </local_schema>
+                                                        </entry>
+                                                </dir>
+                                                <dir name="cursor_position">
+                                                        <entry name="restore_cursor_position">
+                                                                <local_schema short_desc="Врати Претходна Курсор Позиција">
+                                                                        <longdesc>Дали gedit треба да ја врати претходната позиција на курсорот кога датотеката е вчитана.</longdesc>
+                                                                </local_schema>
+                                                        </entry>
+                                                </dir>
+                                                <dir name="smart_home_end">
+                                                        <entry name="smart_home_end">
+                                                                <local_schema short_desc="Паметни Home End">
+                                                                        <longdesc>Одредува како се движи стрелката кога се притискаат копчињата HOME и END.Користете „ОНЕВОЗМОЖЕНО“ за стрелката да се движи до почетокот/крајот од линијата, „ПОСЛЕ“ за движење до почетокот/крајот на линијата кога се притискаат за прв пат, а вториотдо почетокот на текстот, игнорирајќи ги празните места, „ПРЕД“за движење до почетокот/крајот на текстот, па после до почетокот/крајот на линијата и „СЕКОГАШ“ за движење до почетокот/крајот на текстот секогаш кога ќе се притиснат овие копчиња.</longdesc>
+                                                                </local_schema>
+                                                        </entry>
+                                                </dir>
+                                                <dir name="right_margin">
+                                                        <entry name="right_margin_position">
+                                                                <local_schema short_desc="Позиција на десната маргина">
+                                                                        <longdesc>Ја одредува позицијата на левата маргина</longdesc>
+                                                                </local_schema>
+                                                        </entry>
+                                                        <entry name="display_right_margin">
+                                                                <local_schema short_desc="Прикажи ја десната маргина">
+                                                                        <longdesc>Дали gedit треба да ја прикаже левата маргина во областа за уредување.</longdesc>
+                                                                </local_schema>
+                                                        </entry>
+                                                </dir>
+                                                <dir name="bracket_matching">
+                                                        <entry name="bracket_matching">
+                                                                <local_schema short_desc="Осветли ја одговарачката заграда">
+                                                                </local_schema>
+                                                        </entry>
+                                                </dir>
+                                                <dir name="current_line">
+                                                        <entry name="highlight_current_line">
+                                                                <local_schema short_desc="Осветли ја тековната линија">
+                                                                        <longdesc>Дали gedit треба да прави синтаксно осветлување на тековна линија.</longdesc>
+                                                                </local_schema>
+                                                        </entry>
+                                                </dir>
+                                                <dir name="line_numbers">
+                                                        <entry name="display_line_numbers">
+                                                                <local_schema short_desc="Прикажи бројки во линија">
+                                                                        <longdesc>Дали gedit треба да ги прикажува бројот на редиците во површината за уредување.</longdesc>
+                                                                </local_schema>
+                                                        </entry>
+                                                </dir>
+                                                <dir name="auto_indent">
+                                                        <entry name="auto_indent">
+                                                                <local_schema short_desc="Автоматско порамнување">
+                                                                        <longdesc>Дали gedit треба да овозможи автоматско порамнување.</longdesc>
+                                                                </local_schema>
+                                                        </entry>
+                                                </dir>
+                                                <dir name="tabs">
+                                                        <entry name="insert_spaces">
+                                                                <local_schema short_desc="Внеси места">
+                                                                        <longdesc>Дали gedit треба да вметнува празни места наместо табови.</longdesc>
+                                                                </local_schema>
+                                                        </entry>
+                                                        <entry name="tabs_size">
+                                                                <local_schema short_desc="Големина на Tab">
+                                                                        <longdesc>Го одредува бројот на празни места што треба да се прикаже наместо Tab знакот.</longdesc>
+                                                                </local_schema>
+                                                        </entry>
+                                                </dir>
+                                                <dir name="wrap_mode">
+                                                        <entry name="wrap_mode">
+                                                                <local_schema short_desc="Режим на пренос на линија">
+                                                                        <longdesc>Одредува како да се поредат долгите линии во просторот за уредување. Употребувајте &quot;GTK_WRAP_NONE&quot; за да не се подредува, &quot;GTK_WRAP_WORD&quot; за подредување по граница на зборот, и &quot;GTK_WRAP_CHAR&quot; за подредување по индивидуални знаци. Обрнете внимание дека вредностите се осетливи на големи/мали букви, па осигурајте се да изгледаат исто како што се наведени тука.</longdesc>
+                                                                </local_schema>
+                                                        </entry>
+                                                </dir>
+                                                <dir name="undo">
+                                                        <entry name="max_undo_actions">
+                                                                <local_schema>
+                                                                        <longdesc>Максимална бројка на дејства кои што gedit може да ги врати и повтори. Користете &quot;-1&quot; за бесконечно.</longdesc>
+                                                                </local_schema>
+                                                        </entry>
+                                                        <entry name="undo_actions_limit">
+                                                                <local_schema short_desc="Максимален број на вратени акции (ЗАОСТАНАТО)">
+                                                                        <longdesc>Максимална бројка на акции кои што gedit може да ги врати и повтори. Користете &quot;-1&quot; за бесконечно. Заостанато од 2.12.0</longdesc>
+                                                                </local_schema>
+                                                        </entry>
+                                                </dir>
+                                                <dir name="save">
+                                                        <entry name="writable_vfs_schemes">
+                                                                <local_schema short_desc="Запишливи VFS шеми">
+                                                                        <longdesc>Листа на VFS шеми кои gedit поддржува во пишувачки режим. Датотечната шема може да се пишува по стандард.</longdesc>
+                                                                </local_schema>
+                                                        </entry>
+                                                        <entry name="auto_save_interval">
+                                                                <local_schema short_desc="Интервал на автоматско зачувување">
+                                                                        <longdesc>Број на минути после кои gedit автоматски ќе ги сними променетите датотеки. Оваа опција е во сила само ако опцијата &quot;Автоматско зачувување&quot; е вклучена.</longdesc>
+                                                                </local_schema>
+                                                        </entry>
+                                                        <entry name="auto_save">
+                                                                <local_schema short_desc="Автоматско зачувување">
+                                                                        <longdesc>Дали gedit треба автоматски да ги зачува променетите датотеки после даден временски интервал. Временскиот интервал  можете да го поставите со опцијата &quot;Интервал на автоматско зачувување&quot;.</longdesc>
+                                                                </local_schema>
+                                                        </entry>
+                                                        <entry name="backup_copy_extension">
+                                                                <local_schema short_desc="Екстензија на сигурносната копија">
+                                                                        <longdesc>Наставка или додаток за користење при именување на сигурностите датотеки. Оваа опција е на сила само ако опцијата &quot;Креирај сигурносни копии&quot; е вклучена.</longdesc>
+                                                                </local_schema>
+                                                        </entry>
+                                                        <entry name="create_backup_copy">
+                                                                <local_schema short_desc="Создај сигурносни копии">
+                                                                        <longdesc>Дали gedit треба да креира сигурносни копии за датотеките што ги зачувува. Наставката за сигурносните копии може да ја поставите со опцијата &quot;Екстензија на сигурносната копија&quot;.</longdesc>
+                                                                </local_schema>
+                                                        </entry>
+                                                </dir>
+                                                <dir name="colors">
+                                                        <entry name="scheme">
+                                                                <local_schema short_desc="Шема за стил">
+                                                                </local_schema>
+                                                        </entry>
+                                                </dir>
+                                                <dir name="font">
+                                                        <entry name="editor_font">
+                                                                <local_schema short_desc="Фонт уредувач">
+                                                                </local_schema>
+                                                        </entry>
+                                                        <entry name="use_default_font">
+                                                                <local_schema short_desc="Употребувај стандарден фонт">
+                                                                        <longdesc>Дали да се користи системскиот фонт со стандардна широчина за уредување на текстот наместо фонтот специфичен за gedit. Ако оваа опција се исклучи, фонтот наведен во опцијата &quot;Фонт на уредувач&quot; ќе се користи наместо системскиот фонт.</longdesc>
+                                                                </local_schema>
+                                                        </entry>
+                                                </dir>
+                                        </dir>
+                                </dir>
+                        </dir>
+                </dir>
+        </dir>
+</gconf>

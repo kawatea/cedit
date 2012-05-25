@@ -1,0 +1,290 @@
+<?xml version="1.0"?>
+<gconf>
+        <dir name="schemas">
+                <dir name="apps">
+                        <dir name="gedit-2">
+                                <dir name="plugins">
+                                        <entry name="active-plugins">
+                                                <local_schema short_desc="𐑨𐑒𐑑𐑦𐑝 𐑐𐑤𐑳𐑜𐑦𐑯𐑟">
+                                                        <longdesc>𐑤𐑦𐑕𐑑 𐑝 𐑨𐑒𐑑𐑦𐑝 𐑐𐑤𐑳𐑜𐑦𐑯𐑟. 𐑦𐑑 𐑒𐑩𐑯𐑑𐑱𐑯𐑟 𐑞 &quot;𐑤𐑴𐑒𐑱𐑖𐑩𐑯&quot; 𐑝 𐑞 𐑨𐑒𐑑𐑦𐑝 𐑐𐑤𐑳𐑜𐑦𐑯𐑟. 𐑕𐑰 𐑞 .gedit-plugin 𐑓𐑲𐑤 𐑓𐑹 𐑪𐑚𐑑𐑱𐑯𐑦𐑙 𐑞 &quot;𐑤𐑴𐑒𐑱𐑖𐑩𐑯&quot; 𐑝 𐑩 𐑜𐑦𐑝𐑩𐑯 𐑐𐑤𐑳𐑜𐑦𐑯.</longdesc>
+                                                </local_schema>
+                                        </entry>
+                                        <dir name="filebrowser">
+                                                <entry name="filter_pattern">
+                                                        <local_schema short_desc="𐑓𐑲𐑤 𐑚𐑮𐑬𐑟𐑼 𐑓𐑦𐑤𐑑𐑼 𐑐𐑨𐑑𐑼𐑯">
+                                                                <longdesc>𐑞 𐑓𐑦𐑤𐑑𐑼 𐑐𐑨𐑑𐑼𐑯 𐑑 𐑓𐑦𐑤𐑑𐑼 𐑞 𐑓𐑲𐑤 𐑚𐑮𐑬𐑟𐑼 𐑢𐑦𐑞. 𐑞𐑦𐑕 𐑓𐑦𐑤𐑑𐑼 𐑢𐑻𐑒𐑕 𐑪𐑯 𐑑𐑪𐑐 𐑝 𐑞 filter_mode.</longdesc>
+                                                        </local_schema>
+                                                </entry>
+                                                <entry name="filter_mode">
+                                                        <local_schema short_desc="𐑓𐑲𐑤 𐑚𐑮𐑬𐑟𐑼 𐑓𐑦𐑤𐑑𐑼 𐑥𐑴𐑛">
+                                                                <longdesc>𐑞𐑦𐑕 𐑝𐑨𐑤𐑿 𐑛𐑦𐑑𐑻𐑥𐑦𐑯𐑟 𐑢𐑪𐑑 𐑓𐑲𐑤𐑟 𐑜𐑧𐑑 𐑓𐑦𐑤𐑑𐑼𐑛 𐑓𐑮𐑪𐑥 𐑞 𐑓𐑲𐑤 𐑚𐑮𐑬𐑟𐑼. 𐑝𐑨𐑤𐑦𐑛 𐑝𐑨𐑤𐑿𐑟 𐑸: none (𐑓𐑦𐑤𐑑𐑼 𐑯𐑳𐑔𐑦𐑙), hidden (𐑓𐑦𐑤𐑑𐑼 𐑣𐑦𐑛𐑩𐑯 𐑓𐑲𐑤𐑟), binary (𐑓𐑦𐑤𐑑𐑼 𐑚𐑲𐑯𐑼𐑦 𐑓𐑲𐑤𐑟) 𐑯 hidden_and_binary (𐑓𐑦𐑤𐑑𐑼 𐑚𐑴𐑔 𐑣𐑦𐑛𐑩𐑯 𐑯 𐑚𐑲𐑯𐑼𐑦 𐑓𐑲𐑤𐑟).</longdesc>
+                                                        </local_schema>
+                                                </entry>
+                                                <entry name="open_at_first_doc">
+                                                        <local_schema short_desc="𐑕𐑧𐑑 𐑤𐑴𐑒𐑱𐑖𐑩𐑯 𐑑 𐑓𐑻𐑕𐑑 𐑛𐑪𐑒𐑿𐑥𐑩𐑯𐑑">
+                                                                <longdesc>𐑦𐑓 𐑑𐑮𐑵 𐑞 𐑓𐑲𐑤 𐑚𐑮𐑬𐑟𐑼 𐑐𐑤𐑳𐑜𐑦𐑯 𐑢𐑦𐑤 𐑝𐑿 𐑞 𐑛𐑲𐑮𐑧𐑒𐑑𐑼𐑦 𐑝 𐑞 𐑓𐑻𐑕𐑑 𐑴𐑐𐑩𐑯𐑛 𐑛𐑪𐑒𐑿𐑥𐑩𐑯𐑑 𐑜𐑦𐑝𐑩𐑯 𐑞𐑨𐑑 𐑞 𐑓𐑲𐑤 𐑚𐑮𐑬𐑟𐑼 𐑣𐑨𐑟𐑯𐑑 𐑚𐑰𐑯 𐑿𐑟𐑛 𐑘𐑧𐑑. (𐑞𐑳𐑕 𐑞𐑦𐑕 𐑡𐑧𐑯𐑼𐑩𐑤𐑦 𐑩𐑐𐑤𐑲𐑟 𐑑 𐑴𐑐𐑩𐑯𐑦𐑙 𐑩 𐑛𐑪𐑒𐑿𐑥𐑩𐑯𐑑 𐑓𐑮𐑪𐑥 𐑞 𐑒𐑩𐑥𐑭𐑯𐑛 𐑤𐑲𐑯 𐑹 𐑴𐑐𐑩𐑯𐑦𐑙 𐑦𐑑 𐑢𐑦𐑞 𐑯𐑪𐑑𐑩𐑤𐑩𐑕 etc)</longdesc>
+                                                        </local_schema>
+                                                </entry>
+                                                <dir name="on_load">
+                                                        <entry name="enable_remote">
+                                                                <local_schema short_desc="𐑦𐑯𐑱𐑚𐑩𐑤 𐑮𐑩𐑕𐑑𐑹 𐑝 𐑮𐑦𐑥𐑴𐑑 𐑤𐑴𐑒𐑱𐑖𐑩𐑯𐑟">
+                                                                        <longdesc>𐑕𐑧𐑑𐑕 𐑢𐑧𐑞𐑼 𐑑 𐑦𐑯𐑱𐑚𐑩𐑤 𐑮𐑩𐑕𐑑𐑹𐑦𐑙 𐑝 𐑮𐑦𐑥𐑴𐑑 𐑤𐑴𐑒𐑱𐑖𐑩𐑯𐑟.</longdesc>
+                                                                </local_schema>
+                                                        </entry>
+                                                        <entry name="virtual_root">
+                                                                <local_schema short_desc="𐑓𐑲𐑤 𐑚𐑮𐑬𐑟𐑼 𐑝𐑻𐑗𐑫𐑩𐑤 𐑮𐑵𐑑 𐑛𐑲𐑮𐑧𐑒𐑑𐑼𐑦">
+                                                                        <longdesc>𐑞 𐑓𐑲𐑤 𐑚𐑮𐑬𐑟𐑼 𐑝𐑻𐑗𐑫𐑩𐑤 𐑮𐑵𐑑 𐑛𐑲𐑮𐑧𐑒𐑑𐑼𐑦 𐑑 𐑿𐑕 𐑢𐑧𐑯 𐑤𐑴𐑛𐑦𐑙 𐑞 𐑓𐑲𐑤 𐑚𐑮𐑬𐑟𐑼 𐑐𐑤𐑳𐑜𐑦𐑯 𐑢𐑧𐑯 onload/tree_view 𐑦𐑟 𐑑𐑮𐑵. 𐑞 𐑝𐑻𐑗𐑫𐑩𐑤 𐑮𐑵𐑑 𐑥𐑳𐑕𐑑 𐑷𐑤𐑢𐑱𐑟 𐑚𐑰 𐑚𐑩𐑤𐑴 𐑞 𐑨𐑒𐑗𐑫𐑩𐑤 𐑮𐑵𐑑.</longdesc>
+                                                                </local_schema>
+                                                        </entry>
+                                                        <entry name="root">
+                                                                <local_schema short_desc="𐑓𐑲𐑤 𐑚𐑮𐑬𐑟𐑼 𐑮𐑵𐑑 𐑛𐑲𐑮𐑧𐑒𐑑𐑼𐑦">
+                                                                        <longdesc>𐑞 𐑓𐑲𐑤 𐑚𐑮𐑬𐑟𐑼 𐑮𐑵𐑑 𐑛𐑲𐑮𐑧𐑒𐑑𐑼𐑦 𐑑 𐑿𐑕 𐑢𐑧𐑯 𐑤𐑴𐑛𐑦𐑙 𐑞 𐑓𐑲𐑤 𐑚𐑮𐑬𐑟𐑼 𐑐𐑤𐑳𐑜𐑦𐑯 𐑯 onload/tree_view 𐑦𐑟 𐑑𐑮𐑵.</longdesc>
+                                                                </local_schema>
+                                                        </entry>
+                                                        <entry name="tree_view">
+                                                                <local_schema short_desc="𐑴𐑐𐑩𐑯 𐑢𐑦𐑞 𐑑𐑮𐑰 𐑝𐑿">
+                                                                        <longdesc>𐑴𐑐𐑩𐑯 𐑞 𐑑𐑮𐑰 𐑝𐑿 𐑢𐑧𐑯 𐑞 𐑓𐑲𐑤 𐑚𐑮𐑬𐑟𐑼 𐑐𐑤𐑳𐑜𐑦𐑯 𐑜𐑧𐑑𐑕 𐑤𐑴𐑛𐑩𐑛 𐑦𐑯𐑕𐑑𐑧𐑛 𐑝 𐑞 𐑚𐑫𐑒𐑥𐑸𐑒𐑕 𐑝𐑿</longdesc>
+                                                                </local_schema>
+                                                        </entry>
+                                                </dir>
+                                        </dir>
+                                </dir>
+                                <dir name="preferences">
+                                        <dir name="syntax_highlighting">
+                                                <entry name="enable">
+                                                        <local_schema short_desc="𐑦𐑯𐑱𐑚𐑩𐑤 𐑕𐑦𐑯𐑑𐑨𐑒𐑕 𐑣𐑲𐑤𐑲𐑑𐑦𐑙">
+                                                                <longdesc>𐑢𐑧𐑞𐑼 ·𐑜𐑧𐑛𐑦𐑑 𐑖𐑫𐑛 𐑦𐑯𐑱𐑚𐑩𐑤 𐑕𐑦𐑯𐑑𐑨𐑒𐑕 𐑣𐑲𐑤𐑲𐑑𐑦𐑙.</longdesc>
+                                                        </local_schema>
+                                                </entry>
+                                        </dir>
+                                        <dir name="encodings">
+                                                <entry name="shown_in_menu">
+                                                        <local_schema short_desc="Encodings 𐑖𐑴𐑯 𐑦𐑯 𐑥𐑧𐑯𐑿">
+                                                        </local_schema>
+                                                </entry>
+                                                <entry name="auto_detected">
+                                                        <local_schema>
+                                                        </local_schema>
+                                                </entry>
+                                        </dir>
+                                        <dir name="print">
+                                                <dir name="fonts">
+                                                        <entry name="print_font_numbers_pango">
+                                                                <local_schema short_desc="𐑤𐑲𐑯 𐑯𐑳𐑥𐑚𐑼 𐑓𐑪𐑯𐑑 𐑓𐑹 𐑐𐑮𐑦𐑯𐑑𐑦𐑙">
+                                                                </local_schema>
+                                                        </entry>
+                                                        <entry name="print_font_header_pango">
+                                                                <local_schema short_desc="𐑣𐑧𐑛𐑼 𐑓𐑪𐑯𐑑 𐑓𐑹 𐑐𐑮𐑦𐑯𐑑𐑦𐑙">
+                                                                </local_schema>
+                                                        </entry>
+                                                        <entry name="print_font_body_pango">
+                                                                <local_schema short_desc="𐑚𐑪𐑛𐑦 𐑓𐑪𐑯𐑑 𐑓𐑹 𐑐𐑮𐑦𐑯𐑑𐑦𐑙">
+                                                                </local_schema>
+                                                        </entry>
+                                                </dir>
+                                                <dir name="page">
+                                                        <entry name="print_line_numbers">
+                                                                <local_schema short_desc="𐑐𐑮𐑦𐑯𐑑 𐑤𐑲𐑯 𐑯𐑳𐑥𐑚𐑼𐑟">
+                                                                        <longdesc>𐑦𐑓 𐑞𐑦𐑕 𐑝𐑨𐑤𐑿 𐑦𐑟 0, 𐑞𐑧𐑯 𐑯𐑴 𐑤𐑲𐑯 𐑯𐑳𐑥𐑚𐑼𐑟 𐑢𐑦𐑤 𐑚𐑰 𐑦𐑯𐑕𐑻𐑑𐑩𐑛 𐑢𐑧𐑯 𐑐𐑮𐑦𐑯𐑑𐑦𐑙 𐑩 𐑛𐑪𐑒𐑿𐑥𐑩𐑯𐑑. 𐑳𐑞𐑼𐑢𐑲𐑟, ·𐑜𐑧𐑛𐑦𐑑 𐑢𐑦𐑤 𐑐𐑮𐑦𐑯𐑑 𐑤𐑲𐑯 𐑯𐑳𐑥𐑚𐑼𐑟 𐑧𐑝𐑮𐑦 𐑕𐑳𐑗 𐑯𐑳𐑥𐑚𐑼 𐑝 𐑤𐑲𐑯𐑟.</longdesc>
+                                                                </local_schema>
+                                                        </entry>
+                                                        <entry name="print_wrap_mode">
+                                                                <local_schema short_desc="𐑐𐑮𐑦𐑯𐑑𐑦𐑙 𐑤𐑲𐑯 𐑮𐑨𐑐𐑦𐑙 𐑥𐑴𐑛">
+                                                                        <longdesc>𐑕𐑐𐑧𐑕𐑦𐑓𐑲𐑟 𐑣𐑬 𐑑 𐑮𐑨𐑐 𐑤𐑪𐑙 𐑤𐑲𐑯𐑟 𐑓𐑹 𐑐𐑮𐑦𐑯𐑑𐑦𐑙. 𐑿𐑟 &quot;GTK_WRAP_NONE&quot; 𐑓𐑹 𐑯𐑴 𐑮𐑨𐑐𐑦𐑙, &quot;GTK_WRAP_WORD&quot; 𐑓𐑹 𐑮𐑨𐑐𐑦𐑙 𐑨𐑑 𐑢𐑻𐑛 𐑚𐑬𐑯𐑛𐑼𐑦𐑟, 𐑯 &quot;GTK_WRAP_CHAR&quot; 𐑓𐑹 𐑮𐑨𐑐𐑦𐑙 𐑨𐑑 𐑦𐑯𐑛𐑦𐑝𐑦𐑛𐑿𐑩𐑤 𐑒𐑨𐑮𐑩𐑒𐑑𐑼 𐑚𐑬𐑯𐑛𐑼𐑦𐑟. 𐑯𐑴𐑑 𐑞𐑨𐑑 𐑞 𐑝𐑨𐑤𐑿𐑟 𐑸 𐑒𐑱𐑕-𐑕𐑧𐑯𐑕𐑦𐑑𐑦𐑝, 𐑕𐑴 𐑥𐑱𐑒 𐑖𐑫𐑼 𐑞𐑱 𐑩𐑐𐑽 𐑦𐑜𐑟𐑨𐑒𐑑𐑤𐑦 𐑨𐑟 𐑥𐑧𐑯𐑖𐑩𐑯𐑛 𐑣𐑽.</longdesc>
+                                                                </local_schema>
+                                                        </entry>
+                                                        <entry name="print_header">
+                                                                <local_schema short_desc="𐑐𐑮𐑦𐑯𐑑 𐑣𐑧𐑛𐑼">
+                                                                        <longdesc>𐑢𐑧𐑞𐑼 ·𐑜𐑧𐑛𐑦𐑑 𐑖𐑫𐑛 𐑦𐑯𐑒𐑤𐑵𐑛 𐑩 𐑛𐑪𐑒𐑿𐑥𐑩𐑯𐑑 𐑣𐑧𐑛𐑼 𐑢𐑧𐑯 𐑐𐑮𐑦𐑯𐑑𐑦𐑙 𐑛𐑪𐑒𐑿𐑥𐑩𐑯𐑑𐑕.</longdesc>
+                                                                </local_schema>
+                                                        </entry>
+                                                        <entry name="print_syntax_highlighting">
+                                                                <local_schema short_desc="𐑐𐑮𐑦𐑯𐑑 𐑕𐑦𐑯𐑑𐑨𐑒𐑕 𐑣𐑲𐑤𐑲𐑑𐑦𐑙">
+                                                                        <longdesc>𐑢𐑧𐑞𐑼 ·𐑜𐑧𐑛𐑦𐑑 𐑖𐑫𐑛 𐑐𐑮𐑦𐑯𐑑 𐑕𐑦𐑯𐑑𐑨𐑒𐑕 𐑣𐑲𐑤𐑲𐑑𐑦𐑙 𐑢𐑧𐑯 𐑐𐑮𐑦𐑯𐑑𐑦𐑙 𐑛𐑪𐑒𐑿𐑥𐑩𐑯𐑑𐑕.</longdesc>
+                                                                </local_schema>
+                                                        </entry>
+                                                </dir>
+                                        </dir>
+                                        <dir name="ui">
+                                                <dir name="recents">
+                                                        <entry name="max_recents">
+                                                                <local_schema short_desc="𐑥𐑨𐑒𐑕𐑦𐑥𐑩𐑥 𐑮𐑰𐑕𐑩𐑯𐑑 𐑓𐑲𐑤𐑟">
+                                                                        <longdesc>𐑕𐑐𐑧𐑕𐑦𐑓𐑲𐑟 𐑞 𐑥𐑨𐑒𐑕𐑦𐑥𐑩𐑥 𐑯𐑳𐑥𐑚𐑼 𐑝 𐑮𐑰𐑕𐑩𐑯𐑑𐑤𐑦 𐑴𐑐𐑩𐑯𐑛 𐑓𐑲𐑤𐑟 𐑞𐑨𐑑 𐑢𐑦𐑤 𐑚𐑰 𐑛𐑩𐑕𐑐𐑤𐑱𐑛 𐑦𐑯 𐑞 &quot;𐑮𐑰𐑕𐑩𐑯𐑑 𐑓𐑲𐑤𐑟&quot; 𐑕𐑳𐑚𐑥𐑧𐑯𐑿.</longdesc>
+                                                                </local_schema>
+                                                        </entry>
+                                                </dir>
+                                                <dir name="bottom_panel">
+                                                        <entry name="bottom_panel_visible">
+                                                                <local_schema short_desc="𐑚𐑪𐑑𐑫𐑥 𐑐𐑨𐑯𐑩𐑤 𐑦𐑟 𐑝𐑦𐑕𐑦𐑚𐑩𐑤">
+                                                                        <longdesc>𐑢𐑧𐑞𐑼 𐑞 𐑚𐑪𐑑𐑫𐑥 𐑐𐑨𐑯𐑩𐑤 𐑨𐑑 𐑞 𐑚𐑪𐑑𐑫𐑥 𐑝 𐑧𐑛𐑦𐑑𐑦𐑙 𐑢𐑦𐑯𐑛𐑴𐑟 𐑖𐑫𐑛 𐑚𐑰 𐑝𐑦𐑕𐑦𐑚𐑩𐑤.</longdesc>
+                                                                </local_schema>
+                                                        </entry>
+                                                </dir>
+                                                <dir name="side_pane">
+                                                        <entry name="side_pane_visible">
+                                                                <local_schema short_desc="𐑕𐑲𐑛 𐑐𐑱𐑯 𐑦𐑟 𐑝𐑦𐑕𐑦𐑚𐑩𐑤">
+                                                                </local_schema>
+                                                        </entry>
+                                                </dir>
+                                                <dir name="statusbar">
+                                                        <entry name="statusbar_visible">
+                                                                <local_schema short_desc="𐑕𐑑𐑱𐑑𐑫𐑕 𐑚𐑸 𐑦𐑟 𐑝𐑦𐑕𐑦𐑚𐑩𐑤">
+                                                                        <longdesc>𐑢𐑧𐑞𐑼 𐑞 𐑕𐑑𐑱𐑑𐑫𐑕 𐑚𐑸 𐑨𐑑 𐑞 𐑚𐑪𐑑𐑫𐑥 𐑝 𐑧𐑛𐑦𐑑𐑦𐑙 𐑢𐑦𐑯𐑛𐑴𐑟 𐑖𐑫𐑛 𐑚𐑰 𐑝𐑦𐑕𐑦𐑚𐑩𐑤.</longdesc>
+                                                                </local_schema>
+                                                        </entry>
+                                                </dir>
+                                                <dir name="toolbar">
+                                                        <entry name="toolbar_buttons_style">
+                                                                <local_schema short_desc="𐑑𐑵𐑤𐑚𐑸 𐑚𐑳𐑑𐑩𐑯𐑟 𐑕𐑑𐑲𐑤">
+                                                                        <longdesc>𐑕𐑑𐑲𐑤 𐑓𐑹 𐑞 𐑑𐑵𐑤𐑚𐑸 𐑚𐑳𐑑𐑩𐑯𐑟. 𐑐𐑪𐑕𐑩𐑚𐑩𐑤 𐑝𐑨𐑤𐑿𐑟 𐑸 &quot;GEDIT_TOOLBAR_SYSTEM&quot; 𐑑 𐑿𐑕 𐑞 𐑕𐑦𐑕𐑑𐑩𐑥&apos;𐑕 𐑛𐑦𐑓𐑷𐑤𐑑 𐑕𐑑𐑲𐑤, &quot;GEDIT_TOOLBAR_ICONS&quot; 𐑑 𐑛𐑦𐑕𐑐𐑤𐑱 𐑲𐑒𐑪𐑯𐑟 𐑴𐑯𐑤𐑦, &quot;GEDIT_TOOLBAR_ICONS_AND_TEXT&quot; 𐑑 𐑛𐑦𐑕𐑐𐑤𐑱 𐑚𐑴𐑔 𐑲𐑒𐑪𐑯𐑟 𐑯 𐑑𐑧𐑒𐑕𐑑, 𐑯 &quot;GEDIT_TOOLBAR_ICONS_BOTH_HORIZ&quot; 𐑑 𐑛𐑦𐑕𐑐𐑤𐑱 𐑐𐑮𐑲𐑪𐑮𐑩𐑑𐑲𐑟𐑛 𐑑𐑧𐑒𐑕𐑑 𐑚𐑦𐑕𐑲𐑛 𐑲𐑒𐑪𐑯𐑟. 𐑯𐑴𐑑 𐑞𐑨𐑑 𐑞 𐑝𐑨𐑤𐑿𐑟 𐑸 𐑒𐑱𐑕-𐑕𐑧𐑯𐑕𐑦𐑑𐑦𐑝, 𐑕𐑴 𐑥𐑱𐑒 𐑖𐑫𐑼 𐑞𐑱 𐑩𐑐𐑽 𐑦𐑜𐑟𐑨𐑒𐑑𐑤𐑦 𐑨𐑟 𐑥𐑧𐑯𐑖𐑩𐑯𐑛 𐑣𐑽.</longdesc>
+                                                                </local_schema>
+                                                        </entry>
+                                                        <entry name="toolbar_visible">
+                                                                <local_schema short_desc="𐑑𐑵𐑤𐑚𐑸 𐑦𐑟 𐑝𐑦𐑕𐑦𐑚𐑩𐑤">
+                                                                        <longdesc>𐑢𐑧𐑞𐑼 𐑞 𐑑𐑵𐑤𐑚𐑸 𐑖𐑫𐑛 𐑚𐑰 𐑝𐑦𐑕𐑦𐑚𐑩𐑤 𐑦𐑯 𐑧𐑛𐑦𐑑𐑦𐑙 𐑢𐑦𐑯𐑛𐑴𐑟.</longdesc>
+                                                                </local_schema>
+                                                        </entry>
+                                                </dir>
+                                        </dir>
+                                        <dir name="editor">
+                                                <dir name="search_highlighting">
+                                                        <entry name="enable">
+                                                                <local_schema short_desc="𐑦𐑯𐑱𐑚𐑩𐑤 𐑕𐑻𐑗 𐑣𐑲𐑤𐑲𐑑𐑦𐑙">
+                                                                        <longdesc>𐑢𐑧𐑞𐑼 ·𐑜𐑧𐑛𐑦𐑑 𐑖𐑫𐑛 𐑣𐑲𐑤𐑲𐑑 𐑷𐑤 𐑞 𐑩𐑒𐑻𐑩𐑯𐑕𐑦𐑟 𐑝 𐑞 𐑕𐑻𐑗𐑑 𐑑𐑧𐑒𐑕𐑑.</longdesc>
+                                                                </local_schema>
+                                                        </entry>
+                                                </dir>
+                                                <dir name="cursor_position">
+                                                        <entry name="restore_cursor_position">
+                                                                <local_schema short_desc="𐑮𐑩𐑕𐑑𐑹 𐑐𐑮𐑰𐑝𐑦𐑩𐑕 𐑒𐑻𐑕𐑼 𐑐𐑩𐑟𐑦𐑖𐑩𐑯">
+                                                                        <longdesc>𐑢𐑧𐑞𐑼 ·𐑜𐑧𐑛𐑦𐑑 𐑖𐑫𐑛 𐑮𐑩𐑕𐑑𐑹 𐑞 𐑐𐑮𐑰𐑝𐑦𐑩𐑕 𐑒𐑻𐑕𐑼 𐑐𐑩𐑟𐑦𐑖𐑩𐑯 𐑢𐑧𐑯 𐑩 𐑓𐑲𐑤 𐑦𐑟 𐑤𐑴𐑛𐑩𐑛.</longdesc>
+                                                                </local_schema>
+                                                        </entry>
+                                                </dir>
+                                                <dir name="smart_home_end">
+                                                        <entry name="smart_home_end">
+                                                                <local_schema short_desc="𐑕𐑥𐑸𐑑 𐑣𐑴𐑥 𐑧𐑯𐑛">
+                                                                        <longdesc>𐑕𐑐𐑧𐑕𐑦𐑓𐑲𐑟 𐑣𐑬 𐑞 𐑒𐑻𐑕𐑼 𐑥𐑵𐑝𐑟 𐑢𐑧𐑯 𐑞 𐑣𐑴𐑥 𐑯 𐑧𐑯𐑛 𐑒𐑰𐑟 𐑸 𐑐𐑮𐑧𐑕𐑑. 𐑿𐑟 &quot;DISABLED&quot; 𐑑 𐑷𐑤𐑢𐑱𐑟 𐑥𐑵𐑝 𐑨𐑑 𐑞 𐑕𐑑𐑸𐑑/𐑧𐑯𐑛 𐑝 𐑞 𐑤𐑲𐑯, &quot;AFTER&quot; 𐑑 𐑥𐑵𐑝 𐑑 𐑞 𐑕𐑑𐑸𐑑/𐑧𐑯𐑛 𐑝 𐑞 𐑤𐑲𐑯 𐑞 𐑓𐑻𐑕𐑑 𐑑𐑲𐑥 𐑞 𐑒𐑰𐑟 𐑸 𐑐𐑮𐑧𐑕𐑑 𐑯 𐑑 𐑞 𐑕𐑑𐑸𐑑/𐑧𐑯𐑛 𐑝 𐑞 𐑑𐑧𐑒𐑕𐑑 𐑦𐑜𐑯𐑹𐑦𐑙 𐑢𐑲𐑑𐑕𐑐𐑱𐑕𐑧𐑟 𐑞 𐑕𐑧𐑒𐑩𐑯𐑛 𐑑𐑲𐑥 𐑞 𐑒𐑰𐑟 𐑸 𐑐𐑮𐑧𐑕𐑑, &quot;BEFORE&quot; 𐑑 𐑥𐑵𐑝 𐑑 𐑞 𐑕𐑑𐑸𐑑/𐑧𐑯𐑛 𐑝 𐑞 𐑑𐑧𐑒𐑕𐑑 𐑚𐑦𐑓𐑹 𐑥𐑵𐑝𐑦𐑙 𐑑 𐑞 𐑕𐑑𐑸𐑑/𐑧𐑯𐑛 𐑝 𐑞 𐑤𐑲𐑯 𐑯 &quot;ALWAYS&quot; 𐑑 𐑷𐑤𐑢𐑱𐑟 𐑥𐑵𐑝 𐑑 𐑞 𐑕𐑑𐑸𐑑/𐑧𐑯𐑛 𐑝 𐑞 𐑑𐑧𐑒𐑕𐑑 𐑦𐑯𐑕𐑑𐑧𐑛 𐑝 𐑞 𐑕𐑑𐑸𐑑/𐑧𐑯𐑛 𐑝 𐑞 𐑤𐑲𐑯.</longdesc>
+                                                                </local_schema>
+                                                        </entry>
+                                                </dir>
+                                                <dir name="right_margin">
+                                                        <entry name="right_margin_position">
+                                                                <local_schema short_desc="𐑮𐑲𐑑 𐑥𐑸𐑡𐑦𐑯 𐑐𐑩𐑟𐑦𐑖𐑩𐑯">
+                                                                        <longdesc>𐑕𐑐𐑧𐑕𐑦𐑓𐑲𐑟 𐑞 𐑐𐑩𐑟𐑦𐑖𐑩𐑯 𐑝 𐑞 𐑮𐑲𐑑 𐑥𐑸𐑡𐑦𐑯.</longdesc>
+                                                                </local_schema>
+                                                        </entry>
+                                                        <entry name="display_right_margin">
+                                                                <local_schema short_desc="𐑛𐑩𐑕𐑐𐑤𐑱 𐑮𐑲𐑑 𐑥𐑸𐑡𐑦𐑯">
+                                                                        <longdesc>𐑢𐑧𐑞𐑼 ·𐑜𐑧𐑛𐑦𐑑 𐑖𐑫𐑛 𐑛𐑦𐑕𐑐𐑤𐑱 𐑞 𐑮𐑲𐑑 𐑥𐑸𐑡𐑦𐑯 𐑦𐑯 𐑞 𐑧𐑛𐑦𐑑𐑦𐑙 𐑺𐑦𐑩.</longdesc>
+                                                                </local_schema>
+                                                        </entry>
+                                                </dir>
+                                                <dir name="bracket_matching">
+                                                        <entry name="bracket_matching">
+                                                                <local_schema short_desc="𐑣𐑲𐑤𐑲𐑑 𐑥𐑨𐑗𐑦𐑙 𐑚𐑮𐑨𐑒𐑩𐑑">
+                                                                </local_schema>
+                                                        </entry>
+                                                </dir>
+                                                <dir name="current_line">
+                                                        <entry name="highlight_current_line">
+                                                                <local_schema short_desc="𐑣𐑲𐑤𐑲𐑑 𐑒𐑳𐑮𐑩𐑯𐑑 𐑤𐑲𐑯">
+                                                                        <longdesc>𐑢𐑧𐑞𐑼 ·𐑜𐑧𐑛𐑦𐑑 𐑖𐑫𐑛 𐑣𐑲𐑤𐑲𐑑 𐑞 𐑒𐑳𐑮𐑩𐑯𐑑 𐑤𐑲𐑯.</longdesc>
+                                                                </local_schema>
+                                                        </entry>
+                                                </dir>
+                                                <dir name="line_numbers">
+                                                        <entry name="display_line_numbers">
+                                                                <local_schema short_desc="𐑛𐑩𐑕𐑐𐑤𐑱 𐑤𐑲𐑯 𐑯𐑳𐑥𐑚𐑼𐑟">
+                                                                        <longdesc>𐑢𐑧𐑞𐑼 ·𐑜𐑧𐑛𐑦𐑑 𐑖𐑫𐑛 𐑛𐑦𐑕𐑐𐑤𐑱 𐑤𐑲𐑯 𐑯𐑳𐑥𐑚𐑼𐑟 𐑦𐑯 𐑞 𐑧𐑛𐑦𐑑𐑦𐑙 𐑺𐑦𐑩.</longdesc>
+                                                                </local_schema>
+                                                        </entry>
+                                                </dir>
+                                                <dir name="auto_indent">
+                                                        <entry name="auto_indent">
+                                                                <local_schema short_desc="𐑷𐑑𐑴 𐑦𐑯𐑛𐑧𐑯𐑑">
+                                                                        <longdesc>𐑢𐑧𐑞𐑼 ·𐑜𐑧𐑛𐑦𐑑 𐑖𐑫𐑛 𐑦𐑯𐑱𐑚𐑩𐑤 𐑷𐑑𐑴 𐑦𐑯𐑛𐑧𐑯𐑑𐑱𐑖𐑩𐑯.</longdesc>
+                                                                </local_schema>
+                                                        </entry>
+                                                </dir>
+                                                <dir name="tabs">
+                                                        <entry name="insert_spaces">
+                                                                <local_schema short_desc="𐑦𐑯𐑕𐑻𐑑 𐑕𐑐𐑱𐑕𐑩𐑟">
+                                                                        <longdesc>𐑢𐑧𐑞𐑼 ·𐑜𐑧𐑛𐑦𐑑 𐑖𐑫𐑛 𐑦𐑯𐑕𐑻𐑑 𐑕𐑐𐑱𐑕𐑩𐑟 𐑦𐑯𐑕𐑑𐑧𐑛 𐑝 𐑑𐑨𐑚𐑟.</longdesc>
+                                                                </local_schema>
+                                                        </entry>
+                                                        <entry name="tabs_size">
+                                                                <local_schema short_desc="𐑑𐑨𐑚 𐑕𐑲𐑟">
+                                                                        <longdesc>𐑕𐑐𐑧𐑕𐑦𐑓𐑲𐑟 𐑞 𐑯𐑳𐑥𐑚𐑼 𐑝 𐑕𐑐𐑱𐑕𐑩𐑟 𐑞𐑨𐑑 𐑖𐑫𐑛 𐑚𐑰 𐑛𐑩𐑕𐑐𐑤𐑱𐑛 𐑦𐑯𐑕𐑑𐑧𐑛 𐑝 𐑑𐑨𐑚 𐑒𐑨𐑮𐑩𐑒𐑑𐑼𐑟.</longdesc>
+                                                                </local_schema>
+                                                        </entry>
+                                                </dir>
+                                                <dir name="wrap_mode">
+                                                        <entry name="wrap_mode">
+                                                                <local_schema short_desc="𐑤𐑲𐑯 𐑮𐑨𐑐𐑦𐑙 𐑥𐑴𐑛">
+                                                                        <longdesc>𐑕𐑐𐑧𐑕𐑦𐑓𐑲𐑟 𐑣𐑬 𐑑 𐑮𐑨𐑐 𐑤𐑪𐑙 𐑤𐑲𐑯𐑟 𐑦𐑯 𐑞 𐑧𐑛𐑦𐑑𐑦𐑙 𐑺𐑦𐑩. 𐑿𐑟 &quot;GTK_WRAP_NONE&quot; 𐑓𐑹 𐑯𐑴 𐑮𐑨𐑐𐑦𐑙, &quot;GTK_WRAP_WORD&quot; 𐑓𐑹 𐑮𐑨𐑐𐑦𐑙 𐑨𐑑 𐑢𐑻𐑛 𐑚𐑬𐑯𐑛𐑼𐑦𐑟, 𐑯 &quot;GTK_WRAP_CHAR&quot; 𐑓𐑹 𐑮𐑨𐑐𐑦𐑙 𐑨𐑑 𐑦𐑯𐑛𐑦𐑝𐑦𐑛𐑿𐑩𐑤 𐑒𐑨𐑮𐑩𐑒𐑑𐑼 𐑚𐑬𐑯𐑛𐑼𐑦𐑟. 𐑯𐑴𐑑 𐑞𐑨𐑑 𐑞 𐑝𐑨𐑤𐑿𐑟 𐑸 𐑒𐑱𐑕-𐑕𐑧𐑯𐑕𐑦𐑑𐑦𐑝, 𐑕𐑴 𐑥𐑱𐑒 𐑖𐑫𐑼 𐑞𐑱 𐑩𐑐𐑽 𐑦𐑜𐑟𐑨𐑒𐑑𐑤𐑦 𐑨𐑟 𐑥𐑧𐑯𐑖𐑩𐑯𐑛 𐑣𐑽.</longdesc>
+                                                                </local_schema>
+                                                        </entry>
+                                                </dir>
+                                                <dir name="undo">
+                                                        <entry name="max_undo_actions">
+                                                                <local_schema>
+                                                                        <longdesc>𐑥𐑨𐑒𐑕𐑦𐑥𐑩𐑥 𐑯𐑳𐑥𐑚𐑼 𐑝 𐑨𐑒𐑖𐑩𐑯𐑟 𐑞𐑨𐑑 ·𐑜𐑧𐑛𐑦𐑑 𐑢𐑦𐑤 𐑚𐑰 𐑱𐑚𐑩𐑤 𐑑 𐑳𐑯𐑛𐑵 𐑹 𐑮𐑰𐑛𐑵. 𐑿𐑟 &quot;-1&quot; 𐑓𐑹 𐑩𐑯𐑤𐑦𐑥𐑩𐑑𐑩𐑛 𐑯𐑳𐑥𐑚𐑼 𐑝 𐑨𐑒𐑖𐑩𐑯𐑟.</longdesc>
+                                                                </local_schema>
+                                                        </entry>
+                                                        <entry name="undo_actions_limit">
+                                                                <local_schema short_desc="𐑳𐑯𐑛𐑵 𐑨𐑒𐑖𐑩𐑯𐑟 𐑤𐑦𐑥𐑦𐑑 (𐑛𐑧𐑐𐑮𐑩𐑒𐑱𐑑𐑩𐑛)">
+                                                                        <longdesc>𐑥𐑨𐑒𐑕𐑦𐑥𐑩𐑥 𐑯𐑳𐑥𐑚𐑼 𐑝 𐑨𐑒𐑖𐑩𐑯𐑟 𐑞𐑨𐑑 ·𐑜𐑧𐑛𐑦𐑑 𐑢𐑦𐑤 𐑚𐑰 𐑱𐑚𐑩𐑤 𐑑 𐑳𐑯𐑛𐑵 𐑹 𐑮𐑰𐑛𐑵. 𐑿𐑟 &quot;-1&quot; 𐑓𐑹 𐑩𐑯𐑤𐑦𐑥𐑩𐑑𐑩𐑛 𐑯𐑳𐑥𐑚𐑼 𐑝 𐑨𐑒𐑖𐑩𐑯𐑟. 𐑛𐑧𐑐𐑮𐑩𐑒𐑱𐑑𐑩𐑛 𐑕𐑦𐑯𐑕 2.12.0</longdesc>
+                                                                </local_schema>
+                                                        </entry>
+                                                </dir>
+                                                <dir name="save">
+                                                        <entry name="writable_vfs_schemes">
+                                                                <local_schema short_desc="𐑮𐑲𐑑𐑩𐑚𐑩𐑤 VFS 𐑕𐑒𐑰𐑥𐑟">
+                                                                        <longdesc>𐑤𐑦𐑕𐑑 𐑝 VFS 𐑕𐑒𐑰𐑥𐑟 ·𐑜𐑧𐑛𐑦𐑑 𐑕𐑩𐑐𐑹𐑑𐑕 𐑦𐑯 𐑮𐑲𐑑 𐑥𐑴𐑛. 𐑞 &apos;file&apos; 𐑕𐑒𐑰𐑥 𐑦𐑟 𐑮𐑲𐑑𐑩𐑚𐑩𐑤 𐑚𐑲 𐑛𐑦𐑓𐑷𐑤𐑑.</longdesc>
+                                                                </local_schema>
+                                                        </entry>
+                                                        <entry name="auto_save_interval">
+                                                                <local_schema short_desc="𐑷𐑑𐑴 𐑕𐑱𐑝 𐑦𐑯𐑑𐑼𐑝𐑩𐑤">
+                                                                        <longdesc>𐑯𐑳𐑥𐑚𐑼 𐑝 𐑥𐑦𐑯𐑦𐑑𐑕 𐑭𐑓𐑑𐑼 𐑢𐑦𐑗 ·𐑜𐑧𐑛𐑦𐑑 𐑢𐑦𐑤 𐑷𐑑𐑩𐑥𐑨𐑑𐑦𐑒𐑤𐑦 𐑕𐑱𐑝 𐑥𐑪𐑛𐑦𐑓𐑲𐑛 𐑓𐑲𐑤𐑟. 𐑞𐑦𐑕 𐑢𐑦𐑤 𐑴𐑯𐑤𐑦 𐑑𐑱𐑒 𐑦𐑓𐑧𐑒𐑑 𐑦𐑓 𐑞 &quot;𐑷𐑑𐑴 𐑕𐑱𐑝&quot; 𐑪𐑐𐑖𐑩𐑯 𐑦𐑟 𐑑𐑻𐑯𐑛 𐑪𐑯.</longdesc>
+                                                                </local_schema>
+                                                        </entry>
+                                                        <entry name="auto_save">
+                                                                <local_schema short_desc="𐑷𐑑𐑴 𐑕𐑱𐑝">
+                                                                        <longdesc>𐑢𐑧𐑞𐑼 ·𐑜𐑧𐑛𐑦𐑑 𐑖𐑫𐑛 𐑷𐑑𐑩𐑥𐑨𐑑𐑦𐑒𐑤𐑦 𐑕𐑱𐑝 𐑥𐑪𐑛𐑦𐑓𐑲𐑛 𐑓𐑲𐑤𐑟 𐑭𐑓𐑑𐑼 𐑩 𐑑𐑲𐑥 𐑦𐑯𐑑𐑼𐑝𐑩𐑤. 𐑿 𐑒𐑨𐑯 𐑕𐑧𐑑 𐑞 𐑑𐑲𐑥 𐑦𐑯𐑑𐑼𐑝𐑩𐑤 𐑢𐑦𐑞 𐑞 &quot;𐑷𐑑𐑴 𐑕𐑱𐑝 𐑦𐑯𐑑𐑼𐑝𐑩𐑤&quot; 𐑪𐑐𐑖𐑩𐑯.</longdesc>
+                                                                </local_schema>
+                                                        </entry>
+                                                        <entry name="backup_copy_extension">
+                                                                <local_schema short_desc="𐑚𐑨𐑒𐑳𐑐 𐑒𐑪𐑐𐑦 𐑩𐑒𐑕𐑑𐑧𐑯𐑖𐑩𐑯">
+                                                                        <longdesc>𐑩𐑒𐑕𐑑𐑧𐑯𐑖𐑩𐑯 𐑹 𐑕𐑳𐑓𐑦𐑒𐑕 𐑑 𐑿𐑕 𐑓𐑹 𐑚𐑨𐑒𐑳𐑐 𐑓𐑲𐑤 𐑯𐑱𐑥𐑟. 𐑞𐑦𐑕 𐑢𐑦𐑤 𐑴𐑯𐑤𐑦 𐑑𐑱𐑒 𐑦𐑓𐑧𐑒𐑑 𐑦𐑓 𐑞 &quot;𐑒𐑮𐑦𐑱𐑑 𐑚𐑨𐑒𐑳𐑐 𐑒𐑪𐑐𐑦𐑟&quot; 𐑪𐑐𐑖𐑩𐑯 𐑦𐑟 𐑑𐑻𐑯𐑛 𐑪𐑯.</longdesc>
+                                                                </local_schema>
+                                                        </entry>
+                                                        <entry name="create_backup_copy">
+                                                                <local_schema short_desc="𐑒𐑮𐑦𐑱𐑑 𐑚𐑨𐑒𐑳𐑐 𐑒𐑪𐑐𐑦𐑟">
+                                                                        <longdesc>𐑢𐑧𐑞𐑼 ·𐑜𐑧𐑛𐑦𐑑 𐑖𐑫𐑛 𐑒𐑮𐑦𐑱𐑑 𐑚𐑨𐑒𐑳𐑐 𐑒𐑪𐑐𐑦𐑟 𐑓𐑹 𐑞 𐑓𐑲𐑤𐑟 𐑦𐑑 𐑕𐑱𐑝𐑟. 𐑿 𐑒𐑨𐑯 𐑕𐑧𐑑 𐑞 𐑚𐑨𐑒𐑳𐑐 𐑓𐑲𐑤 𐑩𐑒𐑕𐑑𐑧𐑯𐑖𐑩𐑯 𐑢𐑦𐑞 𐑞 &quot;𐑚𐑨𐑒𐑳𐑐 𐑒𐑪𐑐𐑦 𐑩𐑒𐑕𐑑𐑧𐑯𐑖𐑩𐑯&quot; 𐑪𐑐𐑖𐑩𐑯.</longdesc>
+                                                                </local_schema>
+                                                        </entry>
+                                                </dir>
+                                                <dir name="colors">
+                                                        <entry name="scheme">
+                                                                <local_schema short_desc="𐑕𐑑𐑲𐑤 𐑕𐑒𐑰𐑥">
+                                                                </local_schema>
+                                                        </entry>
+                                                </dir>
+                                                <dir name="font">
+                                                        <entry name="editor_font">
+                                                                <local_schema short_desc="𐑧𐑛𐑦𐑑𐑼 𐑓𐑪𐑯𐑑">
+                                                                </local_schema>
+                                                        </entry>
+                                                        <entry name="use_default_font">
+                                                                <local_schema short_desc="𐑿𐑟 𐑛𐑦𐑓𐑷𐑤𐑑 𐑓𐑪𐑯𐑑">
+                                                                        <longdesc>𐑢𐑧𐑞𐑼 𐑑 𐑿𐑕 𐑞 𐑕𐑦𐑕𐑑𐑩𐑥&apos;𐑕 𐑛𐑦𐑓𐑷𐑤𐑑 𐑓𐑦𐑒𐑕𐑑 𐑢𐑦𐑛𐑔 𐑓𐑪𐑯𐑑 𐑓𐑹 𐑧𐑛𐑦𐑑𐑦𐑙 𐑑𐑧𐑒𐑕𐑑 𐑦𐑯𐑕𐑑𐑧𐑛 𐑝 𐑩 𐑓𐑪𐑯𐑑 𐑕𐑐𐑩𐑕𐑦𐑓𐑦𐑒 𐑑 ·𐑜𐑧𐑛𐑦𐑑. 𐑦𐑓 𐑞𐑦𐑕 𐑪𐑐𐑖𐑩𐑯 𐑦𐑟 𐑑𐑻𐑯𐑛 𐑪𐑓, 𐑞𐑧𐑯 𐑞 𐑓𐑪𐑯𐑑 𐑯𐑱𐑥𐑛 𐑦𐑯 𐑞 &quot;𐑧𐑛𐑦𐑑𐑼 𐑓𐑪𐑯𐑑&quot; 𐑪𐑐𐑖𐑩𐑯 𐑢𐑦𐑤 𐑚𐑰 𐑿𐑟𐑛 𐑦𐑯𐑕𐑑𐑧𐑛 𐑝 𐑞 𐑕𐑦𐑕𐑑𐑩𐑥 𐑓𐑪𐑯𐑑.</longdesc>
+                                                                </local_schema>
+                                                        </entry>
+                                                </dir>
+                                        </dir>
+                                </dir>
+                        </dir>
+                </dir>
+        </dir>
+</gconf>

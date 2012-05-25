@@ -1,0 +1,303 @@
+<?xml version="1.0"?>
+<gconf>
+        <dir name="schemas">
+                <dir name="apps">
+                        <dir name="gedit-2">
+                                <dir name="plugins">
+                                        <entry name="active-plugins">
+                                                <local_schema short_desc="प्लगीन्स कार्यान्वीत करा">
+                                                        <longdesc>कार्यान्वित प्लगीन्सची यादी. यात कार्यान्वित प्लगीन्सचे &quot;ठिकाण&quot; आहे. दिलेल्या प्लगीनचे &quot;ठिकाण&quot; मिळवण्यासाठी gedit-plugin ही फाइल पहा.</longdesc>
+                                                </local_schema>
+                                        </entry>
+                                        <dir name="drawspaces">
+                                                <entry name="draw_spaces">
+                                                        <local_schema short_desc="मोकळी जागा बनवा">
+                                                        </local_schema>
+                                                </entry>
+                                        </dir>
+                                        <dir name="showtabbar">
+                                                <entry name="tabbar_visible">
+                                                        <local_schema short_desc="टॅबपट्टी दृष्यास्पद आहे">
+                                                                <longdesc>खिडकी संपादीत करण्याकरीता टॅबपट्टी दृष्यास्पद असावी का.</longdesc>
+                                                        </local_schema>
+                                                </entry>
+                                        </dir>
+                                        <dir name="filebrowser">
+                                                <entry name="filter_pattern">
+                                                        <local_schema short_desc="फाइल ब्राजर फिल्टर रचना">
+                                                                <longdesc>फाइल ब्राउजर ब्राउज करण्याकरीता फिल्टर रचना. हे फिल्टर फिल्टर_पध्दतीच्या वर कार्यरत असते.</longdesc>
+                                                        </local_schema>
+                                                </entry>
+                                                <entry name="filter_mode">
+                                                        <local_schema short_desc="फाइल ब्राजर फिल्टर पध्दती">
+                                                                <longdesc>फाइल ब्राउजर पासून कुठले फाइल फिल्टर करायचे हे मुल्य निश्चित करते. वैध मुल्य खालिल प्रकारे आहे: काहीच नाही (काहीच फिल्टर करू नका), लपविलेले (लपविलेले फाइल), बायनरी (बायनरी फाइल फिल्टर करा) व लपविलेले_व_बायनरी (दोन्ही लपविलेले व बायनरी फाइल फिल्टर करा).</longdesc>
+                                                        </local_schema>
+                                                </entry>
+                                                <entry name="open_at_first_doc">
+                                                        <local_schema short_desc="पहिल्या दस्तऐवजावर ठिकाण निर्धारित करा">
+                                                                <longdesc>फाइल ब्राउजर अजून न वापरल्यास फाइल ब्राउजर प्लगइन पहिले उघडलेल्या दस्तऐवजाचे दृश्य पहेल. (या करीता आदेश ओळपासून दस्तऐवज उघडायचे किंवा नॉटिलस सह उघडण्यचे असे दिसून येते)</longdesc>
+                                                        </local_schema>
+                                                </entry>
+                                                <dir name="on_load">
+                                                        <entry name="enable_remote">
+                                                                <local_schema short_desc="दूरस्थ ठिकाणांचे पुनर्स्थापन सक्षम करा">
+                                                                        <longdesc>दूरस्थ स्थळ पुन्हसंचयन कार्यान्वीत करायचे का त्याचे निश्चयन केले जाते.</longdesc>
+                                                                </local_schema>
+                                                        </entry>
+                                                        <entry name="virtual_root">
+                                                                <local_schema short_desc="फाइल ब्राउजर आभासी रूट संचयीका">
+                                                                        <longdesc>दाखल/वृक्ष_दृश्य खरे असल्यास फाइल ब्राउजर प्लगइन दाखल करतेवेळी वापरण्याकरीताचे फाइल ब्राउजर आभासी रूट संचयीका. आभासी रूट नेहमी वास्तवीक रूट च्या खाली दर्शविले पाहिजे.</longdesc>
+                                                                </local_schema>
+                                                        </entry>
+                                                        <entry name="root">
+                                                                <local_schema short_desc="फाइल ब्राउजर रूट संचयीका">
+                                                                        <longdesc>फाइल ब्राउजर प्लगइन व दाखल करतेवेळी/वृक्ष_दृश्य खरे असल्यास दाखलनवेळी वापरण्याकरीताचे फाइल ब्राउजर रूट संचयीका.</longdesc>
+                                                                </local_schema>
+                                                        </entry>
+                                                        <entry name="tree_view">
+                                                                <local_schema short_desc="वृक्ष दृश्यासह उघडा">
+                                                                        <longdesc>ओळखचिन्ह दृश्य ऐवजी जेव्हा फाइल ब्राउजर प्लगइन दाखल होते तेव्हा वृक्ष दाखवा</longdesc>
+                                                                </local_schema>
+                                                        </entry>
+                                                </dir>
+                                        </dir>
+                                </dir>
+                                <dir name="preferences">
+                                        <dir name="syntax_highlighting">
+                                                <entry name="enable">
+                                                        <local_schema short_desc="सिटॅक्स उठावदारीकरण कार्यान्वीत करा">
+                                                                <longdesc>जिएडीटने सिंटॅक्स उठावदारीकरण कार्यान्वीत करावे कि नाही.</longdesc>
+                                                        </local_schema>
+                                                </entry>
+                                        </dir>
+                                        <dir name="encodings">
+                                                <entry name="shown_in_menu">
+                                                        <local_schema short_desc="मेनूमध्ये दाखवलेल्या एनकोडींग">
+                                                        </local_schema>
+                                                </entry>
+                                                <entry name="auto_detected">
+                                                        <local_schema>
+                                                        </local_schema>
+                                                </entry>
+                                        </dir>
+                                        <dir name="print">
+                                                <dir name="fonts">
+                                                        <entry name="print_font_numbers_pango">
+                                                                <local_schema short_desc="छपाई करताना ओळ क्रमांक दाखवण्यासाठी फॉन्ट ">
+                                                                </local_schema>
+                                                        </entry>
+                                                        <entry name="print_font_header_pango">
+                                                                <local_schema short_desc="छपाईसाठी शिर्षक फॉन्ट">
+                                                                </local_schema>
+                                                        </entry>
+                                                        <entry name="print_font_body_pango">
+                                                                <local_schema short_desc="छपाइसाठीचा अंतर्गत फॉन्ट">
+                                                                </local_schema>
+                                                        </entry>
+                                                </dir>
+                                                <dir name="page">
+                                                        <entry name="print_line_numbers">
+                                                                <local_schema short_desc="ओळ क्रमांक छापा">
+                                                                        <longdesc>जर हे मूल्य 0 असेल तर छपाई करताना ओळ क्रमांक छापले जाणार नाहीत. अन्यथा जिएडीट प्रत्येकवेळी ओळ क्रमांकही छापेल.</longdesc>
+                                                                </local_schema>
+                                                        </entry>
+                                                        <entry name="print_wrap_mode">
+                                                                <local_schema short_desc="मुद्रित ओळीतील शेषभाग खाली घेणे ">
+                                                                        <longdesc>लांबलचक ओळी मुद्रित करताना योग्य स्थळी पुढील शब्दभाग खालच्या ओळीत घेण्याची सूचना .।हे न करण्यासाठी &quot;GTK_WRAP_NONE&quot; वापरा,शब्दाच्या सीमेवर वाक्य तोडण्यासाठी &quot;GTK_WRAP_WORD&quot;वापरा आणि अक्षरांवर वाक्य तोडण्यासाठी &quot;GTK_WRAP_CHAR&quot;वापरा . लक्षात असुद्या की ही नावे जशी लिहिली आहेत तशीच वापरायला हवीत (मोठ्या लिपीत).</longdesc>
+                                                                </local_schema>
+                                                        </entry>
+                                                        <entry name="print_header">
+                                                                <local_schema short_desc="छपाई शिर्षक">
+                                                                        <longdesc>छपाई दस्तऐवजाची छपाई करतेवेळी gedit ने दस्तऐवज हेड्डर समाविष्ट केले पाहिजे का.</longdesc>
+                                                                </local_schema>
+                                                        </entry>
+                                                        <entry name="print_syntax_highlighting">
+                                                                <local_schema short_desc="सिंटॅक्स उठाविकरण छापा">
+                                                                        <longdesc>एखादा दस्तऐवज छापताना जिएडीटने सिंटॅक्स उठावदारी छापावी की नाही.</longdesc>
+                                                                </local_schema>
+                                                        </entry>
+                                                </dir>
+                                        </dir>
+                                        <dir name="ui">
+                                                <dir name="recents">
+                                                        <entry name="max_recents">
+                                                                <local_schema short_desc="फाइलची सर्वात नवीन प्रत">
+                                                                        <longdesc>नुकत्याच वापरलेल्या किती फाइल &quot;अलिकडील फाइल&quot; या उपयादीत दाखवायच्या हे ठरवते.</longdesc>
+                                                                </local_schema>
+                                                        </entry>
+                                                </dir>
+                                                <dir name="bottom_panel">
+                                                        <entry name="bottom_panel_visible">
+                                                                <local_schema short_desc="तळ पटल दृश्यनीय आहे">
+                                                                        <longdesc>संपादन क्षेत्राच्या तळाशी असलेली स्थितीदर्शक पट्टी दिसावी की नाही.</longdesc>
+                                                                </local_schema>
+                                                        </entry>
+                                                </dir>
+                                                <dir name="side_pane">
+                                                        <entry name="side_pane_visible">
+                                                                <local_schema short_desc="बाजूचे पटल दृश्यमय आहे">
+                                                                </local_schema>
+                                                        </entry>
+                                                </dir>
+                                                <dir name="statusbar">
+                                                        <entry name="statusbar_visible">
+                                                                <local_schema short_desc="स्थितीदर्शक पट्टी दिसत आहे">
+                                                                        <longdesc>संपादन क्षेत्राच्या तळाशी असलेली स्थितीदर्शक पट्टी दिसावी की नाही.</longdesc>
+                                                                </local_schema>
+                                                        </entry>
+                                                </dir>
+                                                <dir name="toolbar">
+                                                        <entry name="toolbar_buttons_style">
+                                                                <local_schema short_desc="साधन पट्टीच्या बटणांची शैली">
+                                                                        <longdesc>साधन पट्टीच्या बटणाची शैली. पुढील मूल्ये वापरता येतील:&quot;GEDIT_TOOLBAR_SYSTEM&quot;सिस्टिमची सर्वसाधारण शैली वापरण्यासाठी &quot;GEDIT_TOOLBAR_ICONS&quot;केवळ चिन्हे(icons) दाखवण्यासाठीGEDIT_TOOLBAR_ICONS_AND_TEXT&quot; चिन्हे (icons)आणि पाठ्य दोन्ही दाखवण्यासाठी आणि &quot;GEDIT_TOOLBAR_ICONS_BOTH_HORIZ&quot; चिन्हांच्या बाजुला प्राधान्यक्रमाने येणारे पाठ्य दाखवण्यासाठी. कृपया याची नोंद घ्या की वरील नावे जशी आहेत (मोठी,लिपी) तशीच लिहायची आहेत.</longdesc>
+                                                                </local_schema>
+                                                        </entry>
+                                                        <entry name="toolbar_visible">
+                                                                <local_schema short_desc="साधन पट्टी दिसत आहे ">
+                                                                        <longdesc>संपादन क्षेत्रात साधनांची पट्टी दिसावी की नाही.</longdesc>
+                                                                </local_schema>
+                                                        </entry>
+                                                </dir>
+                                        </dir>
+                                        <dir name="editor">
+                                                <dir name="search_highlighting">
+                                                        <entry name="enable">
+                                                                <local_schema short_desc="उठावदार शोध कार्यान्वीत करा">
+                                                                        <longdesc>gedit ने शोध पाठ्यतील सर्व घटना उठावदार करावी कि नाही.</longdesc>
+                                                                </local_schema>
+                                                        </entry>
+                                                </dir>
+                                                <dir name="cursor_position">
+                                                        <entry name="restore_cursor_position">
+                                                                <local_schema short_desc="मागील कर्सर स्थिती पुनर्स्थापित करा">
+                                                                        <longdesc>gedit ने संपादन क्षेत्रात उजवा समास दाखवावा की नाही.</longdesc>
+                                                                </local_schema>
+                                                        </entry>
+                                                </dir>
+                                                <dir name="smart_home_end">
+                                                        <entry name="smart_home_end">
+                                                                <local_schema short_desc="सुरेख Home End">
+                                                                        <longdesc>HOME व END किल्ली जेव्हा दाबले जाते तेव्हा कर्सरच्या हालचाली निश्चित करतो. नेहमी ओळीच्या सुरवातीस/शेवटास हलविण्याकरीता &quot;अकार्यान्वीत&quot; वापरा, पहिल्यावेळी कळ दाबल्यावर ओळीच्या सुरवातीस/शेवटास हलविण्याकरीता व दुसऱ्यावेळी कळ दाबल्यावर पाठ्यच्या सुरवातीस/शेवटास तेही वाईटस्पेटला वगळता हलविण्याकरीता &quot;नंतर&quot; वापरा, ओळीच्या सुरवातीस/शेवटास हलविण्यापूर्वी पाठ्यच्या सुरवातीस/शेवटास हलवविण्याकीरता &quot;पूर्वी&quot; वापरा. ओळीच्या सुरवातीस/शेवटास ऐवजी पाठ्यच्या सुरवातीस/शेवटास हलविण्याकरीता &quot;नेहमी&quot; वापरा.</longdesc>
+                                                                </local_schema>
+                                                        </entry>
+                                                </dir>
+                                                <dir name="right_margin">
+                                                        <entry name="right_margin_position">
+                                                                <local_schema short_desc="उजव्या समासाची स्थिती">
+                                                                        <longdesc>उजव्या समासाची स्थिती दाखवते.</longdesc>
+                                                                </local_schema>
+                                                        </entry>
+                                                        <entry name="display_right_margin">
+                                                                <local_schema short_desc="उजवा समास दाखवा">
+                                                                        <longdesc>geditने संपादन क्षेत्रात उजवा समास दाखवावा की नाही.</longdesc>
+                                                                </local_schema>
+                                                        </entry>
+                                                </dir>
+                                                <dir name="bracket_matching">
+                                                        <entry name="bracket_matching">
+                                                                <local_schema short_desc="जुळणारे कंस उठावदार करा">
+                                                                </local_schema>
+                                                        </entry>
+                                                </dir>
+                                                <dir name="current_line">
+                                                        <entry name="highlight_current_line">
+                                                                <local_schema short_desc="चालू ओळ उठावदार करा">
+                                                                        <longdesc>geditने चालू ओऴ उठावदार करावी कि नाही.</longdesc>
+                                                                </local_schema>
+                                                        </entry>
+                                                </dir>
+                                                <dir name="line_numbers">
+                                                        <entry name="display_line_numbers">
+                                                                <local_schema short_desc="ओळ क्रमांक दाखवा">
+                                                                        <longdesc>संपादन क्षेत्रात ओळ क्रमांक दाखवावेत की नाही.</longdesc>
+                                                                </local_schema>
+                                                        </entry>
+                                                </dir>
+                                                <dir name="auto_indent">
+                                                        <entry name="auto_indent">
+                                                                <local_schema short_desc="स्वयंक्रम होतो">
+                                                                        <longdesc>जिएडीट द्वारा आपोआप व्यवस्थित करावे की नाही.</longdesc>
+                                                                </local_schema>
+                                                        </entry>
+                                                </dir>
+                                                <dir name="tabs">
+                                                        <entry name="insert_spaces">
+                                                                <local_schema short_desc="रिक्त जागा सोडा">
+                                                                        <longdesc>जिएडीट टॅब ऐवजी रिकाम्या जागा भराव्यात की नाही.</longdesc>
+                                                                </local_schema>
+                                                        </entry>
+                                                        <entry name="tabs_size">
+                                                                <local_schema short_desc="टॅबचा आकार">
+                                                                        <longdesc>टॅबच्या जागी किती अक्षरांची जागा सोडायची हे ठरवते.</longdesc>
+                                                                </local_schema>
+                                                        </entry>
+                                                </dir>
+                                                <dir name="wrap_mode">
+                                                        <entry name="wrap_mode">
+                                                                <local_schema short_desc="ओळ गुंडाळणे पद्धती">
+                                                                        <longdesc>(संपादना प्रसंगी) लांबलचक ओळी मुद्रित करताना योग्य स्थळी पुढील शब्दभाग खालच्या ओळीत घेण्याची सूचना. हे न करण्यासाठी &quot;GTK_WRAP_NONE&quot; वापरा,शब्दाच्या सीमेवर वाक्य तोडण्यासाठी &quot;GTK_WRAP_WORD&quot; वापराआणि अक्षरांवर वाक्य तोडण्यासाठी &quot;GTK_WRAP_CHAR&quot; वापरा. लक्षात असुद्या की ही नावे जशी लिहीली आहेत तशीच वापरायला हवीत (मोठ्या लिपीत).</longdesc>
+                                                                </local_schema>
+                                                        </entry>
+                                                </dir>
+                                                <dir name="undo">
+                                                        <entry name="max_undo_actions">
+                                                                <local_schema>
+                                                                        <longdesc>जिएडीट जास्तीत जास्त एवढ्या क्रिया रद्द करु शकतो किंवा पुन्हा करु शकतो. अमर्यादित क्रियांसाठी  &quot;-1&quot; वापरा.</longdesc>
+                                                                </local_schema>
+                                                        </entry>
+                                                        <entry name="undo_actions_limit">
+                                                                <local_schema short_desc="रद्दिकरण प्रक्रियेची मर्यादा (DEPRECATED)">
+                                                                        <longdesc>जिएडीट जास्तीत जास्त एवढ्या क्रिया रद्द करु शकतो किंवा पुन्हा करु शकतो. अमर्यादित क्रियांसाठी  &quot;-1&quot; वापरा. 2.12.0 पासून नापसंत</longdesc>
+                                                                </local_schema>
+                                                        </entry>
+                                                </dir>
+                                                <dir name="save">
+                                                        <entry name="writable_vfs_schemes">
+                                                                <local_schema short_desc="लिहिण्याजोग्या VFS योजना">
+                                                                        <longdesc>gedit द्वारे लेखन पध्दतीत समर्थीत VFS सुत्रयोजनाची यादी. &apos;फाइल&apos; सुत्रयोजना मुलभूतरित्या लेखनजोगी आहे.</longdesc>
+                                                                </local_schema>
+                                                        </entry>
+                                                        <entry name="auto_save_interval">
+                                                                <local_schema short_desc="स्वयंरक्षित करण्यासाठीचा कालावधी">
+                                                                        <longdesc>एवढ्या मिनिटांनंतर जिएडीट बदललेल्या फाइल आपोआप संचयीत केलयाचा परिणाम तेव्हाच जाणवेल जेव्हा&quot;आपोआप संचयीत करा&quot;हा पर्याय निवडलेला असेल.</longdesc>
+                                                                </local_schema>
+                                                        </entry>
+                                                        <entry name="auto_save">
+                                                                <local_schema short_desc="स्वयंरक्षित करा">
+                                                                        <longdesc>काही कालावधी नंतर जिएडीटने बदलेल्या फाइल स्वयं रक्षित कराव्यात की नाही।&quot;स्वयं रक्षण कालावधी&quot;या पर्यायाचा वापर करुन तुम्ही हा कालावधी ठरवू शकता.</longdesc>
+                                                                </local_schema>
+                                                        </entry>
+                                                        <entry name="backup_copy_extension">
+                                                                <local_schema short_desc="सुरक्षित प्रतीचे अतिरिक्त नाव">
+                                                                        <longdesc>सुरक्षित प्रतीसाठी वापरले जाणारे अतिरिक्त नाव.याचा परिणाम तेव्हाच जाणवेल जेव्हा&quot;सुरक्षित प्रत तयार करा&quot; हा पर्याय निवडलेला असेल.</longdesc>
+                                                                </local_schema>
+                                                        </entry>
+                                                        <entry name="create_backup_copy">
+                                                                <local_schema short_desc="सुरक्षित प्रती तयार करा">
+                                                                        <longdesc>जिएडीट संचयीत करत असलेल्या फाइलची मूळ प्रत राखून ठेवावी की नाही।या राखीव प्रतीचे नाव तुम्ही&quot;राखीव प्रतीचे नाव&quot;या पर्यायाचा वापर करुन ठरवू शकता.</longdesc>
+                                                                </local_schema>
+                                                        </entry>
+                                                </dir>
+                                                <dir name="colors">
+                                                        <entry name="scheme">
+                                                                <local_schema short_desc="शैली योजना">
+                                                                </local_schema>
+                                                        </entry>
+                                                </dir>
+                                                <dir name="font">
+                                                        <entry name="editor_font">
+                                                                <local_schema short_desc="संपादकीय फॉन्ट">
+                                                                </local_schema>
+                                                        </entry>
+                                                        <entry name="use_default_font">
+                                                                <local_schema short_desc="सर्वसाधारण फॉन्ट वापरा">
+                                                                        <longdesc>जिएडीटशी संबंधीत विशेष फॉन्टऐवजी सिस्टिमचा सर्वसाधरण फॉन्टसंपादन क्षेत्रासाठी वापरावा की नाही . जर ह पर्याय निवडलेला नसेल तर सिस्टिम फॉन्ट ऐवजी &quot;संपादकाचा फॉन्ट&quot; या पर्यायात दिलेला फॉन्ट वापरला जाईल.</longdesc>
+                                                                </local_schema>
+                                                        </entry>
+                                                </dir>
+                                        </dir>
+                                </dir>
+                        </dir>
+                </dir>
+        </dir>
+</gconf>

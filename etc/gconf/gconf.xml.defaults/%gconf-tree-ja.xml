@@ -1,0 +1,303 @@
+<?xml version="1.0"?>
+<gconf>
+        <dir name="schemas">
+                <dir name="apps">
+                        <dir name="gedit-2">
+                                <dir name="plugins">
+                                        <entry name="active-plugins">
+                                                <local_schema short_desc="利用可能なプラグイン">
+                                                        <longdesc>利用可能なプラグインの一覧です。プラグインの &quot;場所&quot; が含まれます。指定したプラグインの &quot;場所&quot; を得るには .gedit-plugin ファイルを参照して下さい。</longdesc>
+                                                </local_schema>
+                                        </entry>
+                                        <dir name="drawspaces">
+                                                <entry name="draw_spaces">
+                                                        <local_schema short_desc="空白文字の表示">
+                                                        </local_schema>
+                                                </entry>
+                                        </dir>
+                                        <dir name="showtabbar">
+                                                <entry name="tabbar_visible">
+                                                        <local_schema short_desc="タブバーを表示可能にする">
+                                                                <longdesc>編集ウィンドウでタブバーの表示を選択可能にします。</longdesc>
+                                                        </local_schema>
+                                                </entry>
+                                        </dir>
+                                        <dir name="filebrowser">
+                                                <entry name="filter_pattern">
+                                                        <local_schema short_desc="ファイル参照ペインのフィルタ (パターン)">
+                                                                <longdesc>ファイル参照ペインでフィルタするパターンです。これはフィルタ・モードの先頭で機能します。</longdesc>
+                                                        </local_schema>
+                                                </entry>
+                                                <entry name="filter_mode">
+                                                        <local_schema short_desc="ファイル参照ペインのフィルタ (モード)">
+                                                                <longdesc>ファイル参照ペインでフィルタして表示しないファイルを指定します。指定可能な値: none (フィルタしない)、hidden (隠しファイルをフィルタする)、binary (バイナリ・ファイルをフィルタする)、hidden_and_binary (隠しファイルとバイナリの両方をフィルタする)</longdesc>
+                                                        </local_schema>
+                                                </entry>
+                                                <entry name="open_at_first_doc">
+                                                        <local_schema short_desc="初めて開くドキュメントの場所を表示する">
+                                                                <longdesc>TRUE にすると、初めて開いたドキュメントがあるフォルダを表示します (未だファイル参照ペインを使用していなければ)。すなわち、この機能は一般的にコマンドラインからドキュメントを開く場合や Nautilus などからドキュメントを開く際に動作します。</longdesc>
+                                                        </local_schema>
+                                                </entry>
+                                                <dir name="on_load">
+                                                        <entry name="enable_remote">
+                                                                <local_schema short_desc="リモートの場所のリストアを可能にする">
+                                                                        <longdesc>リモートの場所でのリストア機能を有効にするかどうかです。</longdesc>
+                                                                </local_schema>
+                                                        </entry>
+                                                        <entry name="virtual_root">
+                                                                <local_schema short_desc="ファイル参照ペインの仮想的なルート・フォルダ">
+                                                                        <longdesc>ファイル参照プラグインを読み込んでツリー表示する際に参照する仮想的なルート・フォルダを指定します。この仮想フォルダは必ず実際のルートよりも下層にあるフォルダを指定して下さい。</longdesc>
+                                                                </local_schema>
+                                                        </entry>
+                                                        <entry name="root">
+                                                                <local_schema short_desc="ファイル参照ペインのルート・フォルダ">
+                                                                        <longdesc>ファイル参照プラグインを読み込んでツリー表示する際に参照するルート・フォルダを指定します。</longdesc>
+                                                                </local_schema>
+                                                        </entry>
+                                                        <entry name="tree_view">
+                                                                <local_schema short_desc="ツリー表示で開く">
+                                                                        <longdesc>ファイル参照プラグインを読み込んだ際に、ブックマーク表示ではなくツリー表示で開きます。</longdesc>
+                                                                </local_schema>
+                                                        </entry>
+                                                </dir>
+                                        </dir>
+                                </dir>
+                                <dir name="preferences">
+                                        <dir name="syntax_highlighting">
+                                                <entry name="enable">
+                                                        <local_schema short_desc="構文の強調表示を有効にする">
+                                                                <longdesc>構文の強調表示を有効にするかどうかを指定します。</longdesc>
+                                                        </local_schema>
+                                                </entry>
+                                        </dir>
+                                        <dir name="encodings">
+                                                <entry name="shown_in_menu">
+                                                        <local_schema short_desc="メニューに表示するエンコーディング">
+                                                        </local_schema>
+                                                </entry>
+                                                <entry name="auto_detected">
+                                                        <local_schema>
+                                                        </local_schema>
+                                                </entry>
+                                        </dir>
+                                        <dir name="print">
+                                                <dir name="fonts">
+                                                        <entry name="print_font_numbers_pango">
+                                                                <local_schema short_desc="印刷時の行番号に使用するフォント">
+                                                                </local_schema>
+                                                        </entry>
+                                                        <entry name="print_font_header_pango">
+                                                                <local_schema short_desc="印刷時のヘッダに使用するフォント">
+                                                                </local_schema>
+                                                        </entry>
+                                                        <entry name="print_font_body_pango">
+                                                                <local_schema short_desc="印刷時の本文に使われるフォント">
+                                                                </local_schema>
+                                                        </entry>
+                                                </dir>
+                                                <dir name="page">
+                                                        <entry name="print_line_numbers">
+                                                                <local_schema short_desc="行番号の印刷">
+                                                                        <longdesc>この値が 0 の場合はドキュメントを印刷する時に行番号を挿入しません。それ以外の場合は gedit は行番号を印刷します。</longdesc>
+                                                                </local_schema>
+                                                        </entry>
+                                                        <entry name="print_wrap_mode">
+                                                                <local_schema short_desc="印刷時の行の折り返しモード">
+                                                                        <longdesc>印刷する際に長い行をどのように折り返すかを指定します。折り返さない場合は &quot;GTK_WRAP_NONE&quot;、単語の境界で折り返す場合は &quot;GTK_WRAP_WORD&quot;、そして文字の境界で折り返す場合は &quot;GTK_WRAP_CHAR&quot; を使います。値は大文字小文字を区別することに注意して下さい。そしてここで記述したとおりに印刷されるか確認して下さい。</longdesc>
+                                                                </local_schema>
+                                                        </entry>
+                                                        <entry name="print_header">
+                                                                <local_schema short_desc="ヘッダの印刷">
+                                                                        <longdesc>ドキュメントを印刷する際にヘッダを含めるかどうかを指定します。</longdesc>
+                                                                </local_schema>
+                                                        </entry>
+                                                        <entry name="print_syntax_highlighting">
+                                                                <local_schema short_desc="強調表示の印刷">
+                                                                        <longdesc>ドキュメントを印刷する際に構文の強調表示も印刷するかどうかを指定します。</longdesc>
+                                                                </local_schema>
+                                                        </entry>
+                                                </dir>
+                                        </dir>
+                                        <dir name="ui">
+                                                <dir name="recents">
+                                                        <entry name="max_recents">
+                                                                <local_schema short_desc="&quot;最近使ったファイル&quot; に表示する数 (最大値)">
+                                                                        <longdesc>&quot;最近使ったファイル&quot; のサブメニューに表示するエントリの最大数を指定します。</longdesc>
+                                                                </local_schema>
+                                                        </entry>
+                                                </dir>
+                                                <dir name="bottom_panel">
+                                                        <entry name="bottom_panel_visible">
+                                                                <local_schema short_desc="ボトム・ペインの表示可否">
+                                                                        <longdesc>編集ウインドウの下側にボトム・ペインを表示するかどうかを指定します。</longdesc>
+                                                                </local_schema>
+                                                        </entry>
+                                                </dir>
+                                                <dir name="side_pane">
+                                                        <entry name="side_pane_visible">
+                                                                <local_schema short_desc="サイド・ペインの表示可否">
+                                                                </local_schema>
+                                                        </entry>
+                                                </dir>
+                                                <dir name="statusbar">
+                                                        <entry name="statusbar_visible">
+                                                                <local_schema short_desc="ステータスバーの表示">
+                                                                        <longdesc>編集ウィンドウの下側にステータスバーを表示するかどうかを指定します。</longdesc>
+                                                                </local_schema>
+                                                        </entry>
+                                                </dir>
+                                                <dir name="toolbar">
+                                                        <entry name="toolbar_buttons_style">
+                                                                <local_schema short_desc="ツールバーボタンのスタイル">
+                                                                        <longdesc>ツールバー・ボタンのスタイルを指定します。可能な値はシステムのデフォルト・スタイルを使う &quot;GEDIT_TOOLBAR_SYSTEM&quot; とアイコンのみを表示する &quot;GEDIT_TOOLBAR_ICONS&quot;、アイコンとテキスト両方を表示する &quot;GEDIT_TOOLBAR_ICONS_AND_TEXT&quot;、そしてアイコンのそばに優先的なテキストを表示する &quot;GEDIT_TOOLBAR_ICONS_BOTH_HORIZ&quot; があります。値は大文字小文字を区別することに注意して下さい。そしてここで記述したとおりに表示されるか確認して下さい。</longdesc>
+                                                                </local_schema>
+                                                        </entry>
+                                                        <entry name="toolbar_visible">
+                                                                <local_schema short_desc="ツールバーの表示可否">
+                                                                        <longdesc>編集ウィンドウの中にツールバーを表示するかどうかを指定します。</longdesc>
+                                                                </local_schema>
+                                                        </entry>
+                                                </dir>
+                                        </dir>
+                                        <dir name="editor">
+                                                <dir name="search_highlighting">
+                                                        <entry name="enable">
+                                                                <local_schema short_desc="検索時の強調表示を有効にする">
+                                                                        <longdesc>検索する時に一致した文字列を全て強調表示するかどうかを指定します。</longdesc>
+                                                                </local_schema>
+                                                        </entry>
+                                                </dir>
+                                                <dir name="cursor_position">
+                                                        <entry name="restore_cursor_position">
+                                                                <local_schema short_desc="以前あったカーソル位置に戻す">
+                                                                        <longdesc>ファイルを読み込んだ時に記憶していたカーソル位置に戻すかどうか指定します。</longdesc>
+                                                                </local_schema>
+                                                        </entry>
+                                                </dir>
+                                                <dir name="smart_home_end">
+                                                        <entry name="smart_home_end">
+                                                                <local_schema short_desc="スマート [Home]/[End]">
+                                                                        <longdesc>[Home]/[End] キーを押下した時のカーソルの動きを指定します。&quot;DISABLED&quot; を指定すると常に行の先頭/末尾にカーソルを移動し、&quot;AFTER&quot; を指定するとキーを初めて押下した時は行の先頭/末尾に移動し二回目に押下したらホワイトスペースを除く文字列の先頭/終端にカーソルを移動し、&quot;BEFORE&quot; を指定すると行の先頭/末尾に移動する前に一旦文字列の先頭/終端にカーソルを移動し、&quot;ALWAYS&quot; を指定すると行の先頭/末尾ではなく常に文字列の先頭/終端にカーソルを移動します。</longdesc>
+                                                                </local_schema>
+                                                        </entry>
+                                                </dir>
+                                                <dir name="right_margin">
+                                                        <entry name="right_margin_position">
+                                                                <local_schema short_desc="右マージンの位置">
+                                                                        <longdesc>右マージンの位置を指定します。</longdesc>
+                                                                </local_schema>
+                                                        </entry>
+                                                        <entry name="display_right_margin">
+                                                                <local_schema short_desc="右マージンを表示">
+                                                                        <longdesc>編集領域に右マージンを表示するかどうかを指定します。</longdesc>
+                                                                </local_schema>
+                                                        </entry>
+                                                </dir>
+                                                <dir name="bracket_matching">
+                                                        <entry name="bracket_matching">
+                                                                <local_schema short_desc="対応するカッコの強調表示">
+                                                                </local_schema>
+                                                        </entry>
+                                                </dir>
+                                                <dir name="current_line">
+                                                        <entry name="highlight_current_line">
+                                                                <local_schema short_desc="現在の行の強調表示">
+                                                                        <longdesc>カーソル行を強調表示するかどうかを指定します。</longdesc>
+                                                                </local_schema>
+                                                        </entry>
+                                                </dir>
+                                                <dir name="line_numbers">
+                                                        <entry name="display_line_numbers">
+                                                                <local_schema short_desc="行番号の表示">
+                                                                        <longdesc>編集領域に行番号を表示するかどうかを指定します。</longdesc>
+                                                                </local_schema>
+                                                        </entry>
+                                                </dir>
+                                                <dir name="auto_indent">
+                                                        <entry name="auto_indent">
+                                                                <local_schema short_desc="自動インデント">
+                                                                        <longdesc>自動インデントを有効にするかどうかを指定します。</longdesc>
+                                                                </local_schema>
+                                                        </entry>
+                                                </dir>
+                                                <dir name="tabs">
+                                                        <entry name="insert_spaces">
+                                                                <local_schema short_desc="空白の挿入">
+                                                                        <longdesc>タブ文字の代わりに空白文字を使うかどうかを指定します。</longdesc>
+                                                                </local_schema>
+                                                        </entry>
+                                                        <entry name="tabs_size">
+                                                                <local_schema short_desc="タブのサイズ">
+                                                                        <longdesc>タブ文字の代わりに表示されるスペースの数を指定します。</longdesc>
+                                                                </local_schema>
+                                                        </entry>
+                                                </dir>
+                                                <dir name="wrap_mode">
+                                                        <entry name="wrap_mode">
+                                                                <local_schema short_desc="行の折り返しモード">
+                                                                        <longdesc>編集領域内の長い行をどのように折り返すかを指定します。折り返さない場合は &quot;GTK_WRAP_NONE&quot;、単語の境界で折り返す場合は &quot;GTK_WRAP_WORD&quot;、そして文字の境界で折り返す場合は &quot;GTK_WRAP_CHAR&quot; を使います。値は大文字小文字を区別することに注意して下さい。そしてここで記述したとおりに表示されるか確認して下さい。</longdesc>
+                                                                </local_schema>
+                                                        </entry>
+                                                </dir>
+                                                <dir name="undo">
+                                                        <entry name="max_undo_actions">
+                                                                <local_schema>
+                                                                        <longdesc>gEdit で &quot;元に戻す&quot; または &quot;やり直す&quot; ことができる動作の回数を最大値で指定します (無制限にする場合は &quot;-1&quot;)。</longdesc>
+                                                                </local_schema>
+                                                        </entry>
+                                                        <entry name="undo_actions_limit">
+                                                                <local_schema short_desc="&quot;元に戻す&quot; 動作の限度 (破棄)">
+                                                                        <longdesc>gEdit で &quot;元に戻す&quot; や &quot;やり直す&quot; ことができる動作の最大数を指定します (無制限にする場合は &quot;-1&quot;) (このキーは GNOME 2.12.0 から廃止になりました)。</longdesc>
+                                                                </local_schema>
+                                                        </entry>
+                                                </dir>
+                                                <dir name="save">
+                                                        <entry name="writable_vfs_schemes">
+                                                                <local_schema short_desc="書き込み可能な VFS スキーム">
+                                                                        <longdesc>gedit が書き込みモードでサポートする VFS の並びです。&apos;file&apos; のスキームはデフォルトで書き込み可能です。</longdesc>
+                                                                </local_schema>
+                                                        </entry>
+                                                        <entry name="auto_save_interval">
+                                                                <local_schema short_desc="自動保存の間隔">
+                                                                        <longdesc>変更したファイルを gedit が自動的に保存するまでの時間を指定します。これは &quot;自動保存&quot; オプションが有効の場合のみ効果があります。</longdesc>
+                                                                </local_schema>
+                                                        </entry>
+                                                        <entry name="auto_save">
+                                                                <local_schema short_desc="自動保存">
+                                                                        <longdesc>指定時間後に変更されたファイルを gedit が自動的に保存するかどうかを指定します。&quot;自動保存の間隔&quot; オプションで時間を設定できます。</longdesc>
+                                                                </local_schema>
+                                                        </entry>
+                                                        <entry name="backup_copy_extension">
+                                                                <local_schema short_desc="バックアップ・コピーの拡張子">
+                                                                        <longdesc>バックアップ・ファイル名に使われる拡張子を指定します。これは &quot;バックアップコピーの作成&quot; オプションが有効になっている場合のみ効果があります。</longdesc>
+                                                                </local_schema>
+                                                        </entry>
+                                                        <entry name="create_backup_copy">
+                                                                <local_schema short_desc="パックアップコピーの作成">
+                                                                        <longdesc>ファイルを保存する時にバックアップ・コピーを作成するかどうかを指定します．&quot;バックアップ・コピーの拡張子&quot; オプションでバックアップ・ファイルの拡張子を設定することができます。</longdesc>
+                                                                </local_schema>
+                                                        </entry>
+                                                </dir>
+                                                <dir name="colors">
+                                                        <entry name="scheme">
+                                                                <local_schema short_desc="スタイルのスキーム">
+                                                                </local_schema>
+                                                        </entry>
+                                                </dir>
+                                                <dir name="font">
+                                                        <entry name="editor_font">
+                                                                <local_schema short_desc="エディタのフォント">
+                                                                </local_schema>
+                                                        </entry>
+                                                        <entry name="use_default_font">
+                                                                <local_schema short_desc="デフォルトのフォントを使う">
+                                                                        <longdesc>gedit で指定したフォントの代わりにシステムのデフォルト・フォントを編集で使用するかどうかを指定します。このオプションを無効にした場合は、システム・フォントではなく &quot;エディタのフォント&quot; オプションで指定したフォントが使用されます。</longdesc>
+                                                                </local_schema>
+                                                        </entry>
+                                                </dir>
+                                        </dir>
+                                </dir>
+                        </dir>
+                </dir>
+        </dir>
+</gconf>
