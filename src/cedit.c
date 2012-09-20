@@ -33,9 +33,9 @@ void read_file(void)
     if ((fp = fopen(file_name, "r")) != NULL) {
         gtk_source_buffer_begin_not_undoable_action(buffer);
         
+        gtk_text_buffer_get_end_iter(GTK_TEXT_BUFFER(buffer), &end);
+        
         while (fgets(buf, 5000, fp) != NULL) {
-            gtk_text_buffer_get_end_iter(GTK_TEXT_BUFFER(buffer), &end);
-            
             gtk_text_buffer_insert(GTK_TEXT_BUFFER(buffer), &end, buf, strlen(buf));
         }
         
@@ -347,10 +347,13 @@ void cut_text(void)
 void copy_text(void)
 {
     GtkClipboard *clipboard;
+    GtkTextIter start, end;
     
     clipboard = gtk_widget_get_clipboard(view, GDK_SELECTION_CLIPBOARD);
     
-    gtk_text_buffer_copy_clipboard(GTK_TEXT_BUFFER(buffer), clipboard);
+    gtk_text_buffer_get_selection_bounds(GTK_TEXT_BUFFER(buffer), &start, &end);
+    
+    gtk_clipboard_set_text(clipboard, gtk_text_buffer_get_text(GTK_TEXT_BUFFER(buffer), &start, &end, TRUE), -1);
 }
 
 void paste_text(void)
