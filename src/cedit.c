@@ -386,6 +386,10 @@ void kill_line(void)
     end = start;
     gtk_text_iter_forward_line(&end);
     
+    if (!gtk_text_iter_starts_line(&start) && !gtk_text_iter_ends_line(&start) && !gtk_text_iter_is_end(&end)) {
+        gtk_text_iter_backward_char(&end);
+    }
+    
     strcat(buf, gtk_text_buffer_get_text(GTK_TEXT_BUFFER(buffer), &start, &end, TRUE));
     
     if (buf[0] != '\0') delete_flag = 1;
