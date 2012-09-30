@@ -386,7 +386,7 @@ void kill_line(void)
     end = start;
     gtk_text_iter_forward_line(&end);
     
-    if (!gtk_text_iter_starts_line(&start) && !gtk_text_iter_ends_line(&start) && !gtk_text_iter_is_end(&end)) {
+    if (!gtk_text_iter_starts_line(&start) && !gtk_text_iter_ends_line(&start) && !gtk_text_iter_is_end(&end) && kill_flag == 0) {
         gtk_text_iter_backward_char(&end);
     }
     
