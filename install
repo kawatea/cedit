@@ -3,12 +3,6 @@
 dir="${HOME}/cedit"
 path="${HOME}/cedit/bin"
 
-if [ "${OS}" == "Windows_NT" ] ; then
-cp src/cedit.exe bin/
-else
-cp src/cedit bin/
-fi
-
 if [ "${PWD}" != "${dir}" ] ; then
 rm -rf ${dir}
 mkdir ${dir}
