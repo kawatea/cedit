@@ -314,12 +314,12 @@ void print_file(void)
     gtk_print_operation_run(op, GTK_PRINT_OPERATION_ACTION_PRINT_DIALOG, NULL, NULL);
 }
 
-void quit(void)
+gboolean quit(void)
 {
     if (change_flag == 1) {
         save_check();
         
-        if (change_flag == 1) return;
+        if (change_flag == 1) return TRUE;
     }
     
     gtk_main_quit();
@@ -338,10 +338,15 @@ void redo_action(void)
 void cut_text(void)
 {
     GtkClipboard *clipboard;
+    GtkTextIter start, end;
     
     clipboard = gtk_widget_get_clipboard(view, GDK_SELECTION_CLIPBOARD);
     
-    gtk_text_buffer_cut_clipboard(GTK_TEXT_BUFFER(buffer), clipboard, TRUE);
+    gtk_text_buffer_get_selection_bounds(GTK_TEXT_BUFFER(buffer), &start, &end);
+    
+    gtk_clipboard_set_text(clipboard, gtk_text_buffer_get_text(GTK_TEXT_BUFFER(buffer), &start, &end, TRUE), -1);
+    
+    gtk_text_buffer_delete(GTK_TEXT_BUFFER(buffer), &start, &end);
 }
 
 void copy_text(void)
