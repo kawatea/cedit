@@ -27,6 +27,7 @@ void change_cursor(void);
 
 void read_file(void)
 {
+    int n;
     FILE *fp;
     GtkTextIter end;
     
@@ -35,8 +36,8 @@ void read_file(void)
         
         gtk_text_buffer_get_end_iter(GTK_TEXT_BUFFER(buffer), &end);
         
-        while (fgets(buf, 5000, fp) != NULL) {
-            gtk_text_buffer_insert(GTK_TEXT_BUFFER(buffer), &end, buf, strlen(buf));
+        while (n = fread(buf, sizeof(char), sizeof(buf), fp)) {
+            gtk_text_buffer_insert(GTK_TEXT_BUFFER(buffer), &end, buf, n);
         }
         
         fclose(fp);
