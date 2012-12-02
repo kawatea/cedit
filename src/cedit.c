@@ -131,21 +131,103 @@ void set_style(void)
     free(s[0]);
 }
 
-void clear_highlight(void)
+void clear_highlight(int flag)
 {
     GtkTextIter start, end;
-    GtkTextTag *tag;
+    GtkTextTagTable *table;
     
-    if (highlight_flag == 1) {
-        tag = gtk_text_buffer_create_tag(GTK_TEXT_BUFFER(buffer), NULL, "background", "#FFFFFF", NULL);
-        
+    if (highlight_flag & 1) {
         gtk_text_buffer_get_start_iter(GTK_TEXT_BUFFER(buffer), &start);
         gtk_text_buffer_get_end_iter(GTK_TEXT_BUFFER(buffer), &end);
         
-        gtk_text_buffer_apply_tag(GTK_TEXT_BUFFER(buffer), tag, &start, &end);
+        gtk_text_buffer_remove_tag_by_name(GTK_TEXT_BUFFER(buffer), "find", &start, &end);
+        
+        table = gtk_text_buffer_get_tag_table(GTK_TEXT_BUFFER(buffer));
+        gtk_text_tag_table_remove(table, gtk_text_tag_table_lookup(table, "find"));
+        
+        highlight_flag ^= 1;
+    }
+    
+    if (highlight_flag == 2 && flag == 1) {
+        gtk_text_buffer_get_start_iter(GTK_TEXT_BUFFER(buffer), &start);
+        gtk_text_buffer_get_end_iter(GTK_TEXT_BUFFER(buffer), &end);
+        
+        gtk_text_buffer_remove_tag_by_name(GTK_TEXT_BUFFER(buffer), "error", &start, &end);
+        
+        table = gtk_text_buffer_get_tag_table(GTK_TEXT_BUFFER(buffer));
+        gtk_text_tag_table_remove(table, gtk_text_tag_table_lookup(table, "error"));
         
         highlight_flag = 0;
-    }    
+    }
+}
+
+void flymake(void)
+{
+    int i;
+    char s[1000];
+    FILE *fp;
+    GtkTextIter start, end;
+    GtkTextTag *tag;
+    
+    clear_highlight(1);
+    
+    strcpy(s, gtk_source_language_get_name(gtk_source_buffer_get_language(buffer)));
+    
+    if (strcmp(s, "C") == 0 || strcmp(s, "C++") == 0) {
+        if (strcmp(s, "C") == 0) {
+            strcpy(s, getenv("HOME"));
+            strcat(s, "/cedit/flymake/c_flymake");
+        } else {
+            strcpy(s, getenv("HOME"));
+            strcat(s, "/cedit/flymake/cpp_flymake");
+        }
+        
+        if ((fp = fopen(s, "r")) != NULL) {
+            fgets(buf, 1000, fp);
+            
+            fclose(fp);
+            
+            strcpy(s, buf);
+            s[strlen(s) - 1] = ' ';
+            strcat(s, file_name);
+            strcat(s, " 2>&1");
+            
+            if ((fp = popen(s, "r")) != NULL) {
+                strcpy(s, file_name);
+                
+                tag = gtk_text_buffer_create_tag(GTK_TEXT_BUFFER(buffer), "error", "background", "#FFBBBB", NULL);
+                
+                highlight_flag |= 2;
+                
+                while (fgets(buf, 10000, fp) != NULL) {
+                    if (strncmp(s, buf, strlen(s)) == 0 && buf[strlen(s) + 1] != ' ') {
+                        int x = 0;
+                        
+                        for (i = strlen(s) + 1; ; i++) {
+                            if (buf[i] >= '0' && buf[i] <= '9') {
+                                x *= 10;
+                                x += buf[i] - '0';
+                            } else {
+                                break;
+                            }
+                        }
+                        
+                        x--;
+                        
+                        gtk_text_buffer_get_iter_at_line(GTK_TEXT_BUFFER(buffer), &start, x);
+                        end = start;
+                        gtk_text_iter_forward_line(&end);
+                        
+                        while (gtk_text_iter_get_char(&start) == ' ' || gtk_text_iter_get_char(&start) == '\t') gtk_text_iter_forward_char(&start);
+                        
+                        gtk_text_buffer_apply_tag(GTK_TEXT_BUFFER(buffer), tag, &start, &end);
+                    }
+                }
+                
+                pclose(fp);
+            }
+        }
+    }
 }
 
 void new_file(void)
@@ -222,6 +304,8 @@ void save_file(void)
     if (!g_signal_handler_is_connected(G_OBJECT(buffer), text_id)) {
         text_id = g_signal_connect(G_OBJECT(buffer), "changed", G_CALLBACK(change_text), NULL);
     }
+    
+    flymake();
 }
 
 void save_file_another(void)
@@ -251,6 +335,8 @@ void save_file_another(void)
         if (!g_signal_handler_is_connected(G_OBJECT(buffer), text_id)) {
             text_id = g_signal_connect(G_OBJECT(buffer), "changed", G_CALLBACK(change_text), NULL);
         }
+        
+        flymake();
     }
     
     gtk_widget_destroy(save_dialog);
@@ -288,7 +374,7 @@ void save_check(void)
 void begin_print(GtkPrintOperation *operation, GtkPrintContext *context, GtkSourcePrintCompositor *compositor)
 {
     while (!gtk_source_print_compositor_paginate(compositor, context)) ;
-
+    
     gtk_print_operation_set_n_pages(operation, gtk_source_print_compositor_get_n_pages(compositor));
 }
 
@@ -301,17 +387,17 @@ void print_file(void)
 {
     GtkPrintOperation *op;
     GtkSourcePrintCompositor *compositor;
-
+    
     op = gtk_print_operation_new();
     gtk_print_operation_set_print_settings(op, gtk_print_settings_new());
     
     compositor = gtk_source_print_compositor_new(buffer);
     gtk_source_print_compositor_set_wrap_mode(compositor, GTK_WRAP_CHAR);
     gtk_source_print_compositor_set_print_line_numbers(compositor, 1);
-
+    
     g_signal_connect(op, "begin_print", G_CALLBACK(begin_print), compositor);
     g_signal_connect(op, "draw_page", G_CALLBACK(draw_page), compositor);
-
+    
     gtk_print_operation_run(op, GTK_PRINT_OPERATION_ACTION_PRINT_DIALOG, NULL, NULL);
 }
 
@@ -438,7 +524,7 @@ void search_text_start(GtkWidget *entry, int case_flag, int back_flag, int wrap_
     GtkTextIter cursor, start, end;
     GtkTextTag *tag;
     
-    clear_highlight();
+    clear_highlight(0);
     
     gtk_text_buffer_get_iter_at_mark(GTK_TEXT_BUFFER(buffer), &cursor, gtk_text_buffer_get_insert(GTK_TEXT_BUFFER(buffer)));
     
@@ -473,13 +559,13 @@ void search_text_start(GtkWidget *entry, int case_flag, int back_flag, int wrap_
             gtk_text_buffer_place_cursor(GTK_TEXT_BUFFER(buffer), &start);
         }
         
-        tag = gtk_text_buffer_create_tag(GTK_TEXT_BUFFER(buffer), NULL, "background", "#FFFF00", NULL);
+        tag = gtk_text_buffer_create_tag(GTK_TEXT_BUFFER(buffer), "find", "background", "#FFFF00", NULL);
         
         gtk_text_buffer_apply_tag(GTK_TEXT_BUFFER(buffer), tag, &start, &end);
         
         gtk_text_view_scroll_to_iter(GTK_TEXT_VIEW(view), &start, 0, FALSE, 0, 0);
         
-        highlight_flag = 1;
+        highlight_flag |= 1;
     } else {
         GdkColor color[] = {{0, 0xFFFF, 0xB600, 0xC100}};
         
@@ -544,7 +630,7 @@ void replace_text_start(GtkWidget *search_entry, GtkWidget *replace_entry, int c
     GtkTextIter now, start, end;
     GtkTextTag *tag;
     
-    clear_highlight();
+    clear_highlight(0);
     
     g_signal_handler_disconnect(G_OBJECT(buffer), cursor_id);
     
@@ -556,7 +642,7 @@ void replace_text_start(GtkWidget *search_entry, GtkWidget *replace_entry, int c
         gtk_text_buffer_get_iter_at_mark(GTK_TEXT_BUFFER(buffer), &now, gtk_text_buffer_get_insert(GTK_TEXT_BUFFER(buffer)));
     }
     
-    tag = gtk_text_buffer_create_tag(GTK_TEXT_BUFFER(buffer), NULL, "background", "#FFFF00", NULL);
+    tag = gtk_text_buffer_create_tag(GTK_TEXT_BUFFER(buffer), "find", "background", "#FFFF00", NULL);
     
     strcpy(buf, gtk_entry_get_text(GTK_ENTRY(search_entry)));
     
@@ -591,7 +677,7 @@ void replace_text_start(GtkWidget *search_entry, GtkWidget *replace_entry, int c
         gtk_text_buffer_place_cursor(GTK_TEXT_BUFFER(buffer), &now);
         gtk_text_view_scroll_to_iter(GTK_TEXT_VIEW(view), &now, 0, FALSE, 0, 0);
         
-        highlight_flag = 1;
+        highlight_flag |= 1;
     } else {
         GdkColor color[] = {{0, 0xFFFF, 0xB600, 0xC100}};
         
@@ -842,23 +928,12 @@ void set_delete_hungry(void)
     }
 }
 
-void help(void)
-{
-    GtkWidget *help_dialog;
-    
-    help_dialog = gtk_message_dialog_new(GTK_WINDOW(main_window), GTK_DIALOG_MODAL | GTK_DIALOG_DESTROY_WITH_PARENT, GTK_MESSAGE_OTHER, GTK_BUTTONS_CLOSE, "一行削除について\n　カーソルから行末までを削除する\n　連続で消去したものはバッファに追加されまとめて貼り付けできる\n\n置換について\n　カーソルから文末までを検索して置換する\n　ただし選択された範囲があればその中だけを検索して置換する\n\nインデントについて\n　C(C++)の形式でインデントする\n　オートインデントの場合改行すると自動的にインデントを行う\n　Tabを押すとカーソルのある行のインデントを行う\n　範囲を選択してTabを押すとその中のすべての行のインデントを行う\n");
-    
-    gtk_dialog_run(GTK_DIALOG(help_dialog));
-    
-    gtk_widget_destroy(help_dialog);
-}
-
 void version(void)
 {
     strcpy(buf, getenv("HOME"));
     strcat(buf, "/cedit/icon/logo.png");
     
-    gtk_show_about_dialog(GTK_WINDOW(main_window), "name", "cedit", "version", "1.0", "copyright", "(C) 2012 kawatea", "logo", gdk_pixbuf_new_from_file(buf, NULL), NULL);
+    gtk_show_about_dialog(GTK_WINDOW(main_window), "program_name", "cedit", "version", "1.1", "copyright", "(C) 2012 kawatea", "logo", gdk_pixbuf_new_from_file(buf, NULL), NULL);
 }
 
 void highlight_bracket_backward(GtkTextIter now)
@@ -912,7 +987,7 @@ void highlight_bracket_backward(GtkTextIter now)
             
             continue;
         }
-
+        
         if (c == '}' || c == ')' || c == ']') {
             s[num++] = c;
         } else if (c == '{') {
@@ -945,7 +1020,7 @@ void highlight_bracket_backward(GtkTextIter now)
     }
     
     if (find_flag == 1) {
-        tag = gtk_text_buffer_create_tag(GTK_TEXT_BUFFER(buffer), NULL, "background", "#40E0D0", NULL);
+        tag = gtk_text_buffer_create_tag(GTK_TEXT_BUFFER(buffer), "find", "background", "#40E0D0", NULL);
         
         end = start;
         
@@ -959,7 +1034,7 @@ void highlight_bracket_backward(GtkTextIter now)
         
         gtk_text_buffer_apply_tag(GTK_TEXT_BUFFER(buffer), tag, &start, &end);
     } else {
-        tag = gtk_text_buffer_create_tag(GTK_TEXT_BUFFER(buffer), NULL, "background", "#A020F0", NULL);
+        tag = gtk_text_buffer_create_tag(GTK_TEXT_BUFFER(buffer), "find", "background", "#A020F0", NULL);
         
         start = end = now;
         
@@ -986,7 +1061,7 @@ void highlight_bracket_forward(GtkTextIter now)
             
             continue;
         }
-
+        
         if (c == '"' || c == '\'') {
             while (1) {
                 if (!gtk_text_iter_forward_char(&start)) break;
@@ -1002,7 +1077,7 @@ void highlight_bracket_forward(GtkTextIter now)
             
             continue;
         }
-
+        
         if (c == '{' || c == '(' || c == '[') {
             s[num++] = c;
         } else if (c == '}') {
@@ -1035,7 +1110,7 @@ void highlight_bracket_forward(GtkTextIter now)
     }
     
     if (find_flag == 1) {
-        tag = gtk_text_buffer_create_tag(GTK_TEXT_BUFFER(buffer), NULL, "background", "#40E0D0", NULL);
+        tag = gtk_text_buffer_create_tag(GTK_TEXT_BUFFER(buffer), "find", "background", "#40E0D0", NULL);
         
         end = start;
         
@@ -1049,7 +1124,7 @@ void highlight_bracket_forward(GtkTextIter now)
         
         gtk_text_buffer_apply_tag(GTK_TEXT_BUFFER(buffer), tag, &start, &end);
     } else {
-        tag = gtk_text_buffer_create_tag(GTK_TEXT_BUFFER(buffer), NULL, "background", "#A020F0", NULL);
+        tag = gtk_text_buffer_create_tag(GTK_TEXT_BUFFER(buffer), "find", "background", "#A020F0", NULL);
         
         start = end = now;
         
@@ -1064,7 +1139,7 @@ void highlight_bracket(void)
     gunichar c;
     GtkTextIter start, end;
     
-    clear_highlight();
+    clear_highlight(0);
     
     gtk_text_buffer_get_iter_at_mark(GTK_TEXT_BUFFER(buffer), &start, gtk_text_buffer_get_insert(GTK_TEXT_BUFFER(buffer)));
     
@@ -1077,7 +1152,7 @@ void highlight_bracket(void)
     if (c == '}' || c == ')' || c == ']') {
         highlight_bracket_backward(start);
         
-        highlight_flag = 1;
+        highlight_flag |= 1;
         
         return;
     }
@@ -1087,7 +1162,7 @@ void highlight_bracket(void)
     if (c == '{' || c == '(' || c == '[') {
         highlight_bracket_forward(end);
         
-        highlight_flag = 1;
+        highlight_flag |= 1;
     }
 }
 
@@ -1454,7 +1529,6 @@ const gchar *menu_info =
 "      <menuitem name='Hungry' action='Hungry'/>"
 "    </menu>"
 "    <menu name='About' action='About'>"
-"      <menuitem name='Help' action='Help'/>"
 "      <menuitem name='Version' action='Version'/>"
 "    </menu>"
 "  </menubar>"
@@ -1475,7 +1549,7 @@ const gchar *menu_info =
 "</ui>";
 
 GtkActionEntry entries[] =
-{{"File", NULL, "ファイル(_F)"}, {"New", GTK_STOCK_NEW, "新規作成(_N)", "<control>N", "ファイルを新規作成する", G_CALLBACK(new_file)}, {"Open", GTK_STOCK_OPEN, "開く(_O)", "<control>O", "ファイルを開く", G_CALLBACK(open_file)}, {"Save", GTK_STOCK_SAVE, "上書き保存(_S)", "<control>S", "ファイルを上書き保存する", G_CALLBACK(save_file)}, {"Another", GTK_STOCK_SAVE_AS, "名前をつけて保存(_A)", "<shift><control>S", "ファイルを名前をつけて保存する", G_CALLBACK(save_file_another)}, {"Print", GTK_STOCK_PRINT, "印刷(_P)", "<control>P", "ファイルを印刷する", G_CALLBACK(print_file)}, {"Quit", GTK_STOCK_QUIT, "ceditの終了(_Q)", "<control>Q", NULL, G_CALLBACK(quit)}, {"Edit", NULL, "編集(_E)"}, {"Undo", GTK_STOCK_UNDO, "元に戻す(_U)", "<control>Z", "元に戻す", G_CALLBACK(undo_action)}, {"Redo", GTK_STOCK_REDO, "やり直し(_R)", "<control>Y", "やり直し", G_CALLBACK(redo_action)}, {"Cut", GTK_STOCK_CUT, "切り取り(_X)", "<control>X", "切り取り", G_CALLBACK(cut_text)}, {"Copy", GTK_STOCK_COPY, "コピー(_C)", "<control>C", "コピー", G_CALLBACK(copy_text)}, {"Paste", GTK_STOCK_PASTE, "貼り付け(_V)", "<control>V", "貼り付け", G_CALLBACK(paste_text)}, {"Delete", GTK_STOCK_DELETE, "削除(_D)", "<control>D", NULL, G_CALLBACK(delete_text)}, {"Kill", GTK_STOCK_CANCEL, "一行削除(_K)", "<control>K", NULL, G_CALLBACK(kill_line)}, {"Select", GTK_STOCK_SELECT_ALL, "全て選択(_A)", "<control>A", NULL, G_CALLBACK(select_all)}, {"Search", NULL, "検索(_S)"}, {"Find", GTK_STOCK_FIND, "検索(_F)", "<control>F", "文字列を検索する", G_CALLBACK(search_text)}, {"Replace", GTK_STOCK_FIND_AND_REPLACE, "置換(_R)", "<control>H", "文字列を置換する", G_CALLBACK(replace_text)}, {"Move", NULL, "移動(_M)"}, {"Jump", GTK_STOCK_JUMP_TO, "指定行に移動(_J)", "<control>G", NULL, G_CALLBACK(jump_line)}, {"Up", GTK_STOCK_GOTO_TOP, "ファイルの先頭に移動(_U)", "<control>Up", NULL, G_CALLBACK(jump_up)}, {"Down", GTK_STOCK_GOTO_BOTTOM, "ファイルの末尾に移動(_D)", "<control>Down", NULL, G_CALLBACK(jump_down)}, {"Left", GTK_STOCK_GOTO_FIRST, "行頭に移動(_L)", "<control>Left", NULL, G_CALLBACK(jump_left)}, {"Right", GTK_STOCK_GOTO_LAST, "行末に移動(_R)", "<control>Right", NULL, G_CALLBACK(jump_right)}, {"Option", NULL, "オプション(_O)"}, {"Font", GTK_STOCK_SELECT_FONT, "フォント(_F)", NULL, NULL, G_CALLBACK(set_font)}, {"Tab", GTK_STOCK_INDENT, "タブ幅の変更(_T)", NULL, NULL, G_CALLBACK(set_tab_width)}, {"About", NULL, "ヘルプ(_H)"}, {"Help", GTK_STOCK_HELP, "ヘルプ(_H)", "F1", NULL, G_CALLBACK(help)}, {"Version", GTK_STOCK_ABOUT, "ヴァージョン情報(_V)", NULL, NULL, G_CALLBACK(version)}};
+{{"File", NULL, "ファイル(_F)"}, {"New", GTK_STOCK_NEW, "新規作成(_N)", "<control>N", "ファイルを新規作成する", G_CALLBACK(new_file)}, {"Open", GTK_STOCK_OPEN, "開く(_O)", "<control>O", "ファイルを開く", G_CALLBACK(open_file)}, {"Save", GTK_STOCK_SAVE, "上書き保存(_S)", "<control>S", "ファイルを上書き保存する", G_CALLBACK(save_file)}, {"Another", GTK_STOCK_SAVE_AS, "名前をつけて保存(_A)", "<shift><control>S", "ファイルを名前をつけて保存する", G_CALLBACK(save_file_another)}, {"Print", GTK_STOCK_PRINT, "印刷(_P)", "<control>P", "ファイルを印刷する", G_CALLBACK(print_file)}, {"Quit", GTK_STOCK_QUIT, "ceditの終了(_Q)", "<control>Q", NULL, G_CALLBACK(quit)}, {"Edit", NULL, "編集(_E)"}, {"Undo", GTK_STOCK_UNDO, "元に戻す(_U)", "<control>Z", "元に戻す", G_CALLBACK(undo_action)}, {"Redo", GTK_STOCK_REDO, "やり直し(_R)", "<control>Y", "やり直し", G_CALLBACK(redo_action)}, {"Cut", GTK_STOCK_CUT, "切り取り(_X)", "<control>X", "切り取り", G_CALLBACK(cut_text)}, {"Copy", GTK_STOCK_COPY, "コピー(_C)", "<control>C", "コピー", G_CALLBACK(copy_text)}, {"Paste", GTK_STOCK_PASTE, "貼り付け(_V)", "<control>V", "貼り付け", G_CALLBACK(paste_text)}, {"Delete", GTK_STOCK_DELETE, "削除(_D)", "<control>D", NULL, G_CALLBACK(delete_text)}, {"Kill", GTK_STOCK_CANCEL, "一行削除(_K)", "<control>K", NULL, G_CALLBACK(kill_line)}, {"Select", GTK_STOCK_SELECT_ALL, "全て選択(_A)", "<control>A", NULL, G_CALLBACK(select_all)}, {"Search", NULL, "検索(_S)"}, {"Find", GTK_STOCK_FIND, "検索(_F)", "<control>F", "文字列を検索する", G_CALLBACK(search_text)}, {"Replace", GTK_STOCK_FIND_AND_REPLACE, "置換(_R)", "<control>H", "文字列を置換する", G_CALLBACK(replace_text)}, {"Move", NULL, "移動(_M)"}, {"Jump", GTK_STOCK_JUMP_TO, "指定行に移動(_J)", "<control>G", NULL, G_CALLBACK(jump_line)}, {"Up", GTK_STOCK_GOTO_TOP, "ファイルの先頭に移動(_U)", "<control>Up", NULL, G_CALLBACK(jump_up)}, {"Down", GTK_STOCK_GOTO_BOTTOM, "ファイルの末尾に移動(_D)", "<control>Down", NULL, G_CALLBACK(jump_down)}, {"Left", GTK_STOCK_GOTO_FIRST, "行頭に移動(_L)", "<control>Left", NULL, G_CALLBACK(jump_left)}, {"Right", GTK_STOCK_GOTO_LAST, "行末に移動(_R)", "<control>Right", NULL, G_CALLBACK(jump_right)}, {"Option", NULL, "オプション(_O)"}, {"Font", GTK_STOCK_SELECT_FONT, "フォント(_F)", NULL, NULL, G_CALLBACK(set_font)}, {"Tab", GTK_STOCK_INDENT, "タブ幅の変更(_T)", NULL, NULL, G_CALLBACK(set_tab_width)}, {"About", NULL, "ヘルプ(_H)"}, {"Version", GTK_STOCK_ABOUT, "ヴァージョン情報(_V)", NULL, NULL, G_CALLBACK(version)}};
 
 GtkToggleActionEntry toggle_entries[] =
 {{"Wrap", NULL, "右端で折り返す", NULL, NULL, G_CALLBACK(set_wrap_line), TRUE}, {"Line", NULL, "行番号を表示する", NULL, NULL, G_CALLBACK(set_display_line_number), TRUE}, {"Indent", NULL, "オートインデント", NULL, NULL, G_CALLBACK(set_auto_indent), TRUE}, {"Highlight", NULL, "カーソル行をハイライト", NULL, NULL, G_CALLBACK(set_highlight_line), TRUE}, {"Space", NULL, "タブの代わりにスペースを挿入", NULL, NULL, G_CALLBACK(set_insert_space), TRUE}, {"Hungry", NULL, "空白をまとめて消去", NULL, NULL, G_CALLBACK(set_delete_hungry), TRUE}};
