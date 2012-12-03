@@ -9,14 +9,18 @@ void highlight_bracket_backward(GtkTextIter now)
     
     start = now;
     
-    while (!gtk_text_iter_is_start(&start)) {
+    while (1) {
         gunichar c = gtk_text_iter_get_char(&start);
         
         if (c == '"' || c == '\'') {
-            int count = 0;
+            int count = 0, flag = 0;
             
             while (1) {
-                if (!gtk_text_iter_backward_char(&start)) break;
+                if (!gtk_text_iter_backward_char(&start)) {
+                    flag = 1;
+                    
+                    break;
+                }
                 
                 if (gtk_text_iter_get_char(&start) == '\\') {
                     count++;
@@ -24,6 +28,8 @@ void highlight_bracket_backward(GtkTextIter now)
                     break;
                 }
             }
+            
+            if (flag == 1) break;
             
             if (count % 2 == 1) continue;
             
