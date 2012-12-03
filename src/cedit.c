@@ -36,9 +36,27 @@ void read_file(void)
         
         gtk_text_buffer_get_end_iter(GTK_TEXT_BUFFER(buffer), &end);
         
-        while (n = fread(buf, sizeof(char), sizeof(buf), fp)) {
-            gtk_text_buffer_insert(GTK_TEXT_BUFFER(buffer), &end, buf, n);
+        char c;
+        n = 0;
+        
+        while ((c = fgetc(fp)) != EOF) {
+            if (((c >> 7) & 1) == 0) {
+                buf[n++] = c;
+            } else if (((c >> 5) & 1) == 0) {
+                buf[n++] = c;
+                buf[n++] = fgetc(fp);
+            } else {
+                buf[n++] = c;
+                buf[n++] = fgetc(fp);
+                buf[n++] = fgetc(fp);
+            }
+            
+            if (n > 5000) {
+                gtk_text_buffer_insert(GTK_TEXT_BUFFER(buffer), &end, buf, n);
+                n = 0;
+            }
         }
+        if (n > 0) gtk_text_buffer_insert(GTK_TEXT_BUFFER(buffer), &end, buf, n);
         
         fclose(fp);
         
@@ -166,12 +184,17 @@ void flymake(void)
     int i;
     char s[1000];
     FILE *fp;
+    GtkSourceLanguage *language;
     GtkTextIter start, end;
     GtkTextTag *tag;
     
     clear_highlight(1);
     
-    strcpy(s, gtk_source_language_get_name(gtk_source_buffer_get_language(buffer)));
+    language = gtk_source_buffer_get_language(buffer);
+    
+    if (language == NULL) return;
+    
+    strcpy(s, gtk_source_language_get_name(language));
     
     if (strcmp(s, "C") == 0 || strcmp(s, "C++") == 0) {
         if (strcmp(s, "C") == 0) {
