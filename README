@@ -5,3 +5,5 @@ source ./installを実行するかフォルダをHOME以下に移すと使用可
 
 Windowsではそのままで使用できる
 Linuxではgtk-2.0やgtksourceview-2.0を入れる必要がある
+
+文字コードはUTF-8
