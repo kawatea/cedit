@@ -1,17 +1,14 @@
 CC = gcc
-LD = gcc
-CCFLAGS = -O3 -mms-bitfields `pkg-config --cflags gtk+-2.0 gtksourceview-2.0`
-LDFLAGS = `pkg-config --libs gtk+-2.0 gtksourceview-2.0`
+CCFLAGS = -O3 -mms-bitfields `pkg-config --cflags --libs gtk+-2.0 gtksourceview-2.0` -Wl,--subsystem,windows
+
+SOURCES = util.c file.c language.c style.c action.c menu_file.c menu_edit.c menu_search.c menu_move.c menu_option.c menu_help.c tag.c highlight_bracket.c indent.c delete_hungry.c key.c flymake.c ui.c init.c cedit.c
 
 all : cedit
 
-cedit : cedit.o
-	$(LD) -o $@ $^ $(LDFLAGS)
-
-cedit.o : cedit.c
-	$(CC) $(CCFLAGS) -c -o $@ $^
+cedit : cedit.c
+	$(CC) -o $@ $(SOURCES) $(CCFLAGS)
 
 clean :
-	rm -f *.o cedit
+	rm -f cedit
 
 .PHONY : all clean
