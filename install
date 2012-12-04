@@ -2,21 +2,36 @@
 
 dir="${HOME}/cedit"
 path="${HOME}/cedit/bin"
+loaders="${HOME}/cedit/etc/gtk-2.0/gdk-pixbuf.loaders"
+immodules="${HOME}/cedit/etc/gtk-2.0/gtk.immodules"
+modules="${HOME}/cedit/etc/pango/pango.modules"
 
-if [ "${PWD}" != "${dir}" ] ; then
-rm -rf ${dir}
-mkdir ${dir}
-cp -r * ${dir}
+if [ "${PWD}" != "${dir}" ]
+then
+  rm -rf ${dir}
+  mkdir ${dir}
+  cp -r * ${dir}
 fi
 
-if [ ! `echo ${PATH} | grep -e ${path}` ] ; then
-echo 'export PATH=${PATH}:'"${path}" >> ${HOME}/.bashrc
-. ${HOME}/.bashrc
+sed -i -e "s?HOME?${HOME}?g" ${loaders}
+sed -i -e "s?HOME?${HOME}?g" ${immodules}
+sed -i -e "s?HOME?${HOME}?g" ${modules}
+
+if [ "{$OS}" == "Windows_NT" ]
+then
+  ${path}/setting.exe
+else
+  ${path}/setting
 fi
 
-if [ "${OS}" == "Windows_NT" ] ; then
-if [! `alias | grep -e cedit` ] ; then
-echo "alias cedit='cedit.exe'" >> ${HOME}/.bashrc
-. ${HOME}/.bashrc
+if [ ! `echo ${PATH} | grep -e ${path}` ]
+then
+  echo 'export PATH=${PATH}:'"${path}" >> ${HOME}/.bashrc
+  . ${HOME}/.bashrc
 fi
+
+if [ "${OS}" == "Windows_NT" ] && [ ! `alias | grep -e cedit` ]
+then
+  echo "alias cedit='cedit.exe'" >> ${HOME}/.bashrc
+  . ${HOME}/.bashrc
 fi
