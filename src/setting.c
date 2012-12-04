@@ -18,6 +18,10 @@ int main()
     
     strcpy(home, getenv("HOME"));
     
+    for (i = 0; i < strlen(home); i++) {
+        if (home[i] == '\\') home[i] = '/';
+    }
+    
     for (i = 0; i < 3; i++) {
         char target[1000];
         
