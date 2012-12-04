@@ -2,9 +2,6 @@
 
 dir="${HOME}/cedit"
 path="${HOME}/cedit/bin"
-loaders="${HOME}/cedit/etc/gtk-2.0/gdk-pixbuf.loaders"
-immodules="${HOME}/cedit/etc/gtk-2.0/gtk.immodules"
-modules="${HOME}/cedit/etc/pango/pango.modules"
 
 if [ "${PWD}" != "${dir}" ]
 then
@@ -13,11 +10,7 @@ then
   cp -r * ${dir}
 fi
 
-sed -i -e "s?HOME?${HOME}?g" ${loaders}
-sed -i -e "s?HOME?${HOME}?g" ${immodules}
-sed -i -e "s?HOME?${HOME}?g" ${modules}
-
-if [ "{$OS}" == "Windows_NT" ]
+if [ "${OS}" = "Windows_NT" ]
 then
   ${path}/setting.exe
 else
@@ -30,7 +23,7 @@ then
   . ${HOME}/.bashrc
 fi
 
-if [ "${OS}" == "Windows_NT" ] && [ ! `alias | grep -e cedit` ]
+if [ "${OS}" = "Windows_NT" ] && [ ! `alias | grep -e cedit` ]
 then
   echo "alias cedit='cedit.exe'" >> ${HOME}/.bashrc
   . ${HOME}/.bashrc

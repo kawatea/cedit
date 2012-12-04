@@ -15,6 +15,7 @@ void redo_action(void)
 void cut_text(void)
 {
     GtkClipboard *clipboard;
+    GtkTextIter start, end;
     
     clipboard = gtk_widget_get_clipboard(view, GDK_SELECTION_CLIPBOARD);
     
@@ -28,6 +29,7 @@ void cut_text(void)
 void copy_text(void)
 {
     GtkClipboard *clipboard;
+    GtkTextIter start, end;
     
     clipboard = gtk_widget_get_clipboard(view, GDK_SELECTION_CLIPBOARD);
     
@@ -39,6 +41,7 @@ void copy_text(void)
 void paste_text(void)
 {
     GtkClipboard *clipboard;
+    GtkTextIter start, end;
     
     clipboard = gtk_widget_get_clipboard(view, GDK_SELECTION_CLIPBOARD);
     
@@ -55,6 +58,7 @@ void kill_line(void)
     int delete_flag = 0;
     char buf[100000];
     GtkClipboard *clipboard;
+    GtkTextIter start, end;
     
     clipboard = gtk_widget_get_clipboard(view, GDK_SELECTION_CLIPBOARD);
     
@@ -83,7 +87,9 @@ void kill_line(void)
 
 void select_all(void)
 {
-    set_start_end_iter();
+    GtkTextIter start, end;
+    
+    set_start_end_iter(&start, &end);
     
     gtk_text_buffer_select_range(GTK_TEXT_BUFFER(buffer), &start, &end);
 }

@@ -6,6 +6,7 @@ void highlight_bracket_backward(GtkTextIter now)
 {
     int num = 0, find_flag = 0;
     char s[1000];
+    GtkTextIter start, end;
     
     start = now;
     
@@ -114,6 +115,7 @@ void highlight_bracket_forward(GtkTextIter now)
 {
     int num = 0, find_flag = 0;
     char s[1000];
+    GtkTextIter start, end;
     
     start = now;
     
@@ -197,6 +199,7 @@ void highlight_bracket_forward(GtkTextIter now)
 void highlight_bracket(void)
 {
     gunichar c;
+    GtkTextIter start, end;
     
     delete_tag(0);
     

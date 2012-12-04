@@ -5,6 +5,7 @@ int get_indent_depth(int line)
 {
     int num = 0, len, flag = 0, i;
     char s[100000];
+    GtkTextIter start, end;
     
     if (line < 0) return 0;
     
@@ -70,6 +71,7 @@ void set_indent_depth(int line, int depth)
 {
     int len, flag = 0, i;
     char s[100000];
+    GtkTextIter start, end;
     
     gtk_text_buffer_get_iter_at_line(GTK_TEXT_BUFFER(buffer), &start, line);
     
@@ -157,6 +159,7 @@ void set_indent(void)
 void set_indent_all(void)
 {
     int line_start, line_end, i;
+    GtkTextIter start, end;
     
     gtk_text_buffer_get_selection_bounds(GTK_TEXT_BUFFER(buffer), &start, &end);
     

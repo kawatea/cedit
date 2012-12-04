@@ -11,7 +11,9 @@ void init_tag(void)
 
 void delete_tag(int flag)
 {
-    set_start_end_iter();
+    GtkTextIter start, end;
+    
+    set_start_end_iter(&start, &end);
     
     gtk_text_buffer_remove_tag(GTK_TEXT_BUFFER(buffer), search_tag, &start, &end);
     gtk_text_buffer_remove_tag(GTK_TEXT_BUFFER(buffer), match_tag, &start, &end);

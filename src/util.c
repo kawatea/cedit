@@ -2,10 +2,10 @@
 #include "file.h"
 #include "action.h"
 
-void set_start_end_iter(void)
+void set_start_end_iter(GtkTextIter *start, GtkTextIter *end)
 {
-    gtk_text_buffer_get_start_iter(GTK_TEXT_BUFFER(buffer), &start);
-    gtk_text_buffer_get_end_iter(GTK_TEXT_BUFFER(buffer), &end);
+    gtk_text_buffer_get_start_iter(GTK_TEXT_BUFFER(buffer), start);
+    gtk_text_buffer_get_end_iter(GTK_TEXT_BUFFER(buffer), end);
 }
 
 void change_text(void)

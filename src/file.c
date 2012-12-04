@@ -38,10 +38,11 @@ void read_file(void)
     if ((fp = fopen(get_file_name_full(), "r")) != NULL) {
         int num = 0;
         char buf[10010];
+        GtkTextIter start, end;
         
         gtk_source_buffer_begin_not_undoable_action(buffer);
         
-        set_start_end_iter();
+        set_start_end_iter(&start, &end);
         
         while (1) {
             char c = fgetc(fp);
@@ -76,9 +77,11 @@ void read_file(void)
 
 void write_file(void)
 {
+    GtkTextIter start, end;
+    
     fp = fopen(get_file_name_full(), "w");
     
-    set_start_end_iter();
+    set_start_end_iter(&start, &end);
     
     fprintf(fp, "%s", gtk_text_buffer_get_text(GTK_TEXT_BUFFER(buffer), &start, &end, TRUE));
     
@@ -87,11 +90,13 @@ void write_file(void)
 
 void delete_file(void)
 {
+    GtkTextIter start, end;
+    
     set_file_name("");
     
     gtk_source_buffer_begin_not_undoable_action(buffer);
     
-    set_start_end_iter();
+    set_start_end_iter(&start, &end);
     
     gtk_text_buffer_delete(GTK_TEXT_BUFFER(buffer), &start, &end);
     

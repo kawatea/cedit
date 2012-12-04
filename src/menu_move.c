@@ -7,6 +7,7 @@ void jump_line(void)
     GtkWidget *jump_hbox;
     GtkWidget *jump_label;
     GtkWidget *jump_button;
+    GtkTextIter start;
     
     jump_dialog = gtk_dialog_new_with_buttons("移動", GTK_WINDOW(main_window), GTK_DIALOG_MODAL | GTK_DIALOG_DESTROY_WITH_PARENT, GTK_STOCK_OK, GTK_RESPONSE_OK, NULL);
     jump_hbox = gtk_hbox_new(FALSE, 2);
@@ -34,7 +35,9 @@ void jump_line(void)
 
 void jump_up(void)
 {
-    set_start_end_iter();
+    GtkTextIter start, end;
+    
+    set_start_end_iter(&start, &end);
     
     gtk_text_buffer_place_cursor(GTK_TEXT_BUFFER(buffer), &start);
     gtk_text_view_scroll_to_iter(GTK_TEXT_VIEW(view), &start, 0, FALSE, 0, 0);
@@ -42,7 +45,9 @@ void jump_up(void)
 
 void jump_down(void)
 {
-    set_start_end_iter();
+    GtkTextIter start, end;
+    
+    set_start_end_iter(&start, &end);
     
     gtk_text_buffer_place_cursor(GTK_TEXT_BUFFER(buffer), &end);
     gtk_text_view_scroll_to_iter(GTK_TEXT_VIEW(view), &end, 0, FALSE, 0, 0);
@@ -51,6 +56,7 @@ void jump_down(void)
 void jump_left(void)
 {
     int line;
+    GtkTextIter start;
     
     gtk_text_buffer_get_iter_at_mark(GTK_TEXT_BUFFER(buffer), &start, gtk_text_buffer_get_insert(GTK_TEXT_BUFFER(buffer)));
     
@@ -64,6 +70,7 @@ void jump_left(void)
 void jump_right(void)
 {
     int line;
+    GtkTextIter end;
     
     gtk_text_buffer_get_iter_at_mark(GTK_TEXT_BUFFER(buffer), &end, gtk_text_buffer_get_insert(GTK_TEXT_BUFFER(buffer)));
     

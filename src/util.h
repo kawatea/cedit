@@ -16,7 +16,6 @@
 GtkWidget *main_window;
 GtkSourceBuffer *buffer;
 GtkWidget *view;
-GtkTextIter start, end;
 GtkWidget *name_label;
 FILE *fp;
 int change_flag;
@@ -24,7 +23,7 @@ int kill_flag;
 int tab_width;
 int text_id;
 
-void set_start_end_iter(void);
+void set_start_end_iter(GtkTextIter *start, GtkTextIter *end);
 void change_text(void);
 void change_text_connect(void);
 

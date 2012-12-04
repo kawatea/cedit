@@ -9,6 +9,7 @@ void flymake(void)
     int i;
     char s[1000];
     char buf[10000];
+    GtkTextIter start, end;
     
     delete_tag(1);
     

@@ -4,6 +4,7 @@
 int delete_hungry_backward(void)
 {
     gunichar c;
+    GtkTextIter start, end;
     
     gtk_text_buffer_get_iter_at_mark(GTK_TEXT_BUFFER(buffer), &start, gtk_text_buffer_get_insert(GTK_TEXT_BUFFER(buffer)));
     
@@ -35,6 +36,7 @@ int delete_hungry_backward(void)
 int delete_hungry_forward(void)
 {
     gunichar c;
+    GtkTextIter start, end;
     
     gtk_text_buffer_get_iter_at_mark(GTK_TEXT_BUFFER(buffer), &start, gtk_text_buffer_get_insert(GTK_TEXT_BUFFER(buffer)));
     

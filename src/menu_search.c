@@ -23,7 +23,7 @@ void search_text_start(GtkWidget *entry, int case_flag, int back_flag, int wrap_
 {
     int find_flag = 0;
     char s[1000];
-    GtkTextIter cursor;
+    GtkTextIter cursor, start, end;
     
     delete_tag(0);
     
@@ -125,7 +125,7 @@ void replace_text_start(GtkWidget *search_entry, GtkWidget *replace_entry, int c
 {
     int select_flag = 0, find_flag = 0;
     char s[1000];
-    GtkTextIter now;
+    GtkTextIter now, start, end;
     
     delete_tag(0);
     
