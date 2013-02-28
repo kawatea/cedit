@@ -1,9 +1,14 @@
 C言語によるC言語のためのエディタ
 
-source ./installを実行するかフォルダをHOME以下に移すと使用可能
-実行ファイルはbin以下に存在する
-
-Windowsではそのままで使用できる
-Linuxではgtk-2.0やgtksourceview-2.0を入れる必要がある
+Windowsではインストーラを使うだけで使用可能
+Linuxは現在調整中
 
 文字コードはUTF-8
+
+
+＊主な機能
+auto indent
+syntax highlight
+kill line
+highlight bracket
+flymake

@@ -14,6 +14,7 @@
 #include <gdk/gdkkeysyms.h>
 
 GtkWidget *main_window;
+GtkWidget *scroll_window;
 GtkSourceBuffer *buffer;
 GtkWidget *view;
 GtkWidget *name_label;

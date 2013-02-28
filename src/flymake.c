@@ -17,11 +17,11 @@ void flymake(void)
     
     if (strcmp(s, "C") == 0 || strcmp(s, "C++") == 0) {
         if (strcmp(s, "C") == 0) {
-            strcpy(s, getenv("HOME"));
-            strcat(s, "/cedit/flymake/c_flymake");
+            strcpy(s, getenv("CEDIT"));
+            strcat(s, "/flymake/c_flymake");
         } else {
-            strcpy(s, getenv("HOME"));
-            strcat(s, "/cedit/flymake/cpp_flymake");
+            strcpy(s, getenv("CEDIT"));
+            strcat(s, "/flymake/cpp_flymake");
         }
         
         if ((fp = fopen(s, "r")) != NULL) {
@@ -32,6 +32,8 @@ void flymake(void)
             s[strlen(s) - 1] = ' ';
             strcat(s, get_file_name_full());
             strcat(s, " 2>&1");
+            
+            putenv("LANG=C");
             
             if ((fp = popen(s, "r")) != NULL) {
                 strcpy(s, get_file_name_full());
@@ -49,6 +51,8 @@ void flymake(void)
                             }
                         }
                         
+                        while (buf[i++] != ' ') ;
+                        
                         line--;
                         
                         gtk_text_buffer_get_iter_at_line(GTK_TEXT_BUFFER(buffer), &start, line);
@@ -57,7 +61,7 @@ void flymake(void)
                         
                         while (gtk_text_iter_get_char(&start) == ' ' || gtk_text_iter_get_char(&start) == '\t') gtk_text_iter_forward_char(&start);
                         
-                        gtk_text_buffer_apply_tag(GTK_TEXT_BUFFER(buffer), error_tag, &start, &end);
+                        gtk_text_buffer_apply_tag(GTK_TEXT_BUFFER(buffer), add_error_tag(&buf[i]), &start, &end);
                     }
                 }
                 

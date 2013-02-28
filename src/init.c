@@ -18,7 +18,6 @@
 void init_view(GtkWidget *box)
 {
     GtkWidget *notebook;
-    GtkWidget *scroll_window;
     
     notebook = gtk_notebook_new();
     scroll_window = gtk_scrolled_window_new(NULL, NULL);
@@ -41,6 +40,7 @@ void init_view(GtkWidget *box)
     gtk_source_view_set_show_line_numbers(GTK_SOURCE_VIEW(view), TRUE);
     gtk_source_view_set_highlight_current_line(GTK_SOURCE_VIEW(view), TRUE);
     gtk_source_view_set_insert_spaces_instead_of_tabs(GTK_SOURCE_VIEW(view), TRUE);
+    gtk_widget_set_has_tooltip(view, TRUE);
     
     set_style();
     
@@ -54,8 +54,8 @@ void init_editor(void)
     
     main_window = gtk_window_new(GTK_WINDOW_TOPLEVEL);
     gtk_window_set_title(GTK_WINDOW(main_window), "cedit");
-    strcpy(s, getenv("HOME"));
-    strcat(s, "/cedit/icon/icon.png");
+    strcpy(s, getenv("CEDIT"));
+    strcat(s, "/icon/icon.png");
     gtk_window_set_icon(GTK_WINDOW(main_window), gdk_pixbuf_new_from_file(s, NULL));
     gtk_window_set_position(GTK_WINDOW(main_window), GTK_WIN_POS_CENTER);
     gtk_window_set_default_size(GTK_WINDOW(main_window), 600, 700);
@@ -81,6 +81,7 @@ void init_editor(void)
     g_signal_connect(G_OBJECT(buffer), "notify::can-undo", G_CALLBACK(change_undo), NULL);
     g_signal_connect(G_OBJECT(buffer), "notify::can-redo", G_CALLBACK(change_redo), NULL);
     g_signal_connect(G_OBJECT(buffer), "notify::has-selection", G_CALLBACK(change_selection), NULL);
+    g_signal_connect(G_OBJECT(view), "query-tooltip", G_CALLBACK(popup), NULL);
     g_signal_connect(G_OBJECT(main_window), "key-press-event", G_CALLBACK(key_press), NULL);
     g_signal_connect(G_OBJECT(main_window), "key-release-event", G_CALLBACK(key_release), NULL);    
     g_signal_connect(G_OBJECT(main_window), "delete-event", G_CALLBACK(quit), NULL);

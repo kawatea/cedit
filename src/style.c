@@ -7,8 +7,8 @@ void set_style(void)
     char *s[] = {NULL, NULL};
     
     s[0] = malloc(1000);
-    strcpy(s[0], getenv("HOME"));
-    strcat(s[0], "/cedit/style/");
+    strcpy(s[0], getenv("CEDIT"));
+    strcat(s[0], "/style/");
     
     manager = gtk_source_style_scheme_manager_new();
     gtk_source_style_scheme_manager_set_search_path(manager, s);
