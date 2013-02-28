@@ -22,7 +22,7 @@ int get_indent_depth(int line)
         if (s[i] == ' ') {
             num++;
         } else if (s[i] == '\t') {
-            num += tab_width;
+            num += state & width_mask;
         } else {
             break;
         }
@@ -60,7 +60,7 @@ int get_indent_depth(int line)
         }
     }
     
-    if (flag > 0) num += tab_width;
+    if (flag > 0) num += state & width_mask;
     
     if (num < 0) num = 0;
     
@@ -110,7 +110,7 @@ void set_indent_depth(int line, int depth)
             flag++;
         } else if (s[i] == '}') {
             if (flag == 0) {
-                depth -= tab_width;
+                depth -= state & width_mask;
             } else {
                 flag--;
             }
@@ -129,14 +129,14 @@ void set_indent_depth(int line, int depth)
     
     gtk_text_buffer_delete(GTK_TEXT_BUFFER(buffer), &start, &end);
     
-    if (tab_flag == 1) {
-        depth /= tab_width;
-        
-        for (i = 0; i < depth; i++) s[i] = '\t';
+    if (state & space_mask) {
+        for (i = 0; i < depth; i++) s[i] = ' ';
         
         gtk_text_buffer_insert(GTK_TEXT_BUFFER(buffer), &start, s, depth);
     } else {
-        for (i = 0; i < depth; i++) s[i] = ' ';
+        depth /= state & width_mask;
+        
+        for (i = 0; i < depth; i++) s[i] = '\t';
         
         gtk_text_buffer_insert(GTK_TEXT_BUFFER(buffer), &start, s, depth);
     }

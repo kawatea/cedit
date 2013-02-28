@@ -13,9 +13,9 @@ gboolean key_press(GtkWidget *widget, GdkEventKey *event)
         }
         
         return TRUE;
-    } else if (event->keyval == GDK_BackSpace && delete_flag == 1) {
+    } else if (event->keyval == GDK_BackSpace && (state & delete_mask)) {
         if (delete_hungry_backward()) return TRUE;
-    } else if (event->keyval == GDK_Delete && delete_flag == 1) {
+    } else if (event->keyval == GDK_Delete && (state & delete_mask)) {
         if (delete_hungry_forward()) return TRUE;
     }
     
@@ -26,7 +26,7 @@ gboolean key_release(GtkWidget *widget, GdkEventKey *event)
 {
     if (event->keyval == GDK_braceright && (event->state & GDK_SHIFT_MASK)) {
         set_indent();
-    } else if (event->keyval == GDK_Return && auto_flag == 1) {
+    } else if (event->keyval == GDK_Return && (state & auto_mask)) {
         set_indent();
     }
     

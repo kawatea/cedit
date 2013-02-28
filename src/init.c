@@ -29,17 +29,31 @@ void init_view(GtkWidget *box)
     gtk_container_add(GTK_CONTAINER(scroll_window), view);
     gtk_notebook_append_page(GTK_NOTEBOOK(notebook), scroll_window, name_label);
     
-    tab_width = 4;
-    auto_flag = 1;
-    delete_flag = 1;    
-    
     gtk_source_buffer_set_highlight_matching_brackets(buffer, FALSE);
-    gtk_widget_modify_font(view, pango_font_description_from_string("Inconsolata 11"));
-    gtk_source_view_set_tab_width(GTK_SOURCE_VIEW(view), tab_width);
-    gtk_text_view_set_wrap_mode(GTK_TEXT_VIEW(view), GTK_WRAP_CHAR);
-    gtk_source_view_set_show_line_numbers(GTK_SOURCE_VIEW(view), TRUE);
-    gtk_source_view_set_highlight_current_line(GTK_SOURCE_VIEW(view), TRUE);
-    gtk_source_view_set_insert_spaces_instead_of_tabs(GTK_SOURCE_VIEW(view), TRUE);
+    gtk_widget_modify_font(view, pango_font_description_from_string(font_name));
+    gtk_source_view_set_tab_width(GTK_SOURCE_VIEW(view), state & width_mask);
+    
+    if (state & wrap_mask) {
+        gtk_text_view_set_wrap_mode(GTK_TEXT_VIEW(view), GTK_WRAP_CHAR);
+    } else {
+        gtk_text_view_set_wrap_mode(GTK_TEXT_VIEW(view), GTK_WRAP_NONE);
+    }
+    if (state & line_mask) {
+        gtk_source_view_set_show_line_numbers(GTK_SOURCE_VIEW(view), TRUE);
+    } else {
+        gtk_source_view_set_show_line_numbers(GTK_SOURCE_VIEW(view), FALSE);
+    }
+    if (state & highlight_mask) {
+        gtk_source_view_set_highlight_current_line(GTK_SOURCE_VIEW(view), TRUE);
+    } else {
+        gtk_source_view_set_highlight_current_line(GTK_SOURCE_VIEW(view), FALSE);
+    }
+    if (state & space_mask) {
+        gtk_source_view_set_insert_spaces_instead_of_tabs(GTK_SOURCE_VIEW(view), TRUE);
+    } else {
+        gtk_source_view_set_insert_spaces_instead_of_tabs(GTK_SOURCE_VIEW(view), FALSE);
+    }
+    
     gtk_widget_set_has_tooltip(view, TRUE);
     
     set_style();
@@ -52,13 +66,19 @@ void init_editor(void)
     char s[1000];
     GtkWidget *main_vbox;
     
+    load_setting();
+    
     main_window = gtk_window_new(GTK_WINDOW_TOPLEVEL);
     gtk_window_set_title(GTK_WINDOW(main_window), "cedit");
     strcpy(s, getenv("CEDIT"));
     strcat(s, "/icon/icon.png");
     gtk_window_set_icon(GTK_WINDOW(main_window), gdk_pixbuf_new_from_file(s, NULL));
-    gtk_window_set_position(GTK_WINDOW(main_window), GTK_WIN_POS_CENTER);
-    gtk_window_set_default_size(GTK_WINDOW(main_window), 600, 700);
+    if (window_x == -1) {
+        gtk_window_set_position(GTK_WINDOW(main_window), GTK_WIN_POS_CENTER);
+    } else {
+        gtk_window_move(GTK_WINDOW(main_window), window_x, window_y);
+    }
+    gtk_window_set_default_size(GTK_WINDOW(main_window), window_width, window_height);
     
     main_vbox = gtk_vbox_new(FALSE, 3);
     gtk_container_add(GTK_CONTAINER(main_window), main_vbox);
@@ -82,6 +102,7 @@ void init_editor(void)
     g_signal_connect(G_OBJECT(buffer), "notify::can-redo", G_CALLBACK(change_redo), NULL);
     g_signal_connect(G_OBJECT(buffer), "notify::has-selection", G_CALLBACK(change_selection), NULL);
     g_signal_connect(G_OBJECT(view), "query-tooltip", G_CALLBACK(popup), NULL);
+    g_signal_connect(G_OBJECT(main_window), "configure-event", G_CALLBACK(change_window), NULL);
     g_signal_connect(G_OBJECT(main_window), "key-press-event", G_CALLBACK(key_press), NULL);
     g_signal_connect(G_OBJECT(main_window), "key-release-event", G_CALLBACK(key_release), NULL);    
     g_signal_connect(G_OBJECT(main_window), "delete-event", G_CALLBACK(quit), NULL);

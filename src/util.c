@@ -33,3 +33,42 @@ void change_text_connect(void)
         text_id = g_signal_connect(G_OBJECT(buffer), "changed", G_CALLBACK(change_text), NULL);
     }    
 }
+
+void change_window(void)
+{
+    gtk_window_get_size(GTK_WINDOW(main_window), &window_width, &window_height);
+    gtk_window_get_position(GTK_WINDOW(main_window), &window_x, &window_y);
+}
+
+void load_setting(void)
+{
+    char s[1000];
+    FILE *fp;
+    
+    strcpy(s, getenv("CEDIT"));
+    strcat(s, "/setting");
+    
+    fp = fopen(s, "r");
+    
+    fgets(font_name, 100, fp);
+    font_name[strlen(font_name) - 1] = '\0';
+    fscanf(fp, "%d %d %d %d %d", &window_width, &window_height, &window_x, &window_y, &state);
+    
+    fclose(fp);
+}
+
+void save_setting(void)
+{
+    char s[1000];
+    FILE *fp;
+    
+    strcpy(s, getenv("CEDIT"));
+    strcat(s, "/setting");
+    
+    fp = fopen(s, "w");
+    
+    fprintf(fp, "%s\n", font_name);
+    fprintf(fp, "%d %d %d %d %d\n", window_width, window_height, window_x, window_y, state);
+    
+    fclose(fp);
+}

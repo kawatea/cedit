@@ -145,5 +145,7 @@ gboolean quit(void)
     
     if (change_flag == 1) return TRUE;
     
+    save_setting();
+    
     gtk_main_quit();
 }
