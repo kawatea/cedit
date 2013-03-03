@@ -88,6 +88,7 @@ gboolean popup(GtkWidget *widget, int x, int y, gboolean keyboard_mode, GtkToolt
     
     gtk_text_view_window_to_buffer_coords(GTK_TEXT_VIEW(view), GTK_TEXT_WINDOW_TEXT, x, y, &nx, &ny);
     
+    nx += gtk_adjustment_get_value(gtk_scrolled_window_get_hadjustment(GTK_SCROLLED_WINDOW(scroll_window)));
     ny += gtk_adjustment_get_value(gtk_scrolled_window_get_vadjustment(GTK_SCROLLED_WINDOW(scroll_window)));
     
     gtk_text_view_get_iter_at_position(GTK_TEXT_VIEW(view), &cursor, &trail, x, y);

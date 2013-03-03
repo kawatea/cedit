@@ -18,7 +18,7 @@ GtkWidget *scroll_window;
 GtkSourceBuffer *buffer;
 GtkWidget *view;
 GtkWidget *name_label;
-FILE *fp;
+GtkActionGroup *actions;
 char font_name[100];
 int window_width, window_height;
 int window_x, window_y;
@@ -33,7 +33,9 @@ static const int delete_mask = 1 << 10;
 int change_flag;
 int kill_flag;
 int text_id;
+FILE *fp;
 
+void set_action(char *name, gboolean flag);
 void set_start_end_iter(GtkTextIter *start, GtkTextIter *end);
 void change_text(void);
 void change_text_connect(void);

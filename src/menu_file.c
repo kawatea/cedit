@@ -1,6 +1,6 @@
 #include "util.h"
 #include "file.h"
-#include "language.h"
+#include "style.h"
 #include "flymake.h"
 #include "menu_file.h"
 

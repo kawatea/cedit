@@ -1,5 +1,4 @@
 #include "util.h"
-#include "action.h"
 #include "indent.h"
 #include "key.h"
 #include "menu_option.h"

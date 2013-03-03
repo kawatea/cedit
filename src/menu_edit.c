@@ -1,5 +1,4 @@
 #include "util.h"
-#include "action.h"
 #include "menu_edit.h"
 
 void undo_action(void)

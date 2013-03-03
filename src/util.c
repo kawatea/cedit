@@ -1,6 +1,10 @@
 #include "util.h"
 #include "file.h"
-#include "action.h"
+
+void set_action(char *name, gboolean flag)
+{
+    gtk_action_set_sensitive(gtk_action_group_get_action(actions, name), flag);
+}
 
 void set_start_end_iter(GtkTextIter *start, GtkTextIter *end)
 {
@@ -43,7 +47,6 @@ void change_window(void)
 void load_setting(void)
 {
     char s[1000];
-    FILE *fp;
     
     strcpy(s, getenv("CEDIT"));
     strcat(s, "/setting");
@@ -60,7 +63,6 @@ void load_setting(void)
 void save_setting(void)
 {
     char s[1000];
-    FILE *fp;
     
     strcpy(s, getenv("CEDIT"));
     strcat(s, "/setting");

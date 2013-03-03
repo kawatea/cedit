@@ -1,6 +1,5 @@
 #include "util.h"
-#include "language.h"
-#include "action.h"
+#include "style.h"
 #include "file.h"
 
 char file_name[1000];

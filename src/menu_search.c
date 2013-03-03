@@ -3,7 +3,7 @@
 #include "highlight_bracket.h"
 #include "menu_search.h"
 
-void change_entry(GtkWidget *entry, GObject *object, gpointer button)
+void change_find_entry(GtkWidget *entry, GObject *object, gpointer button)
 {
     char s[1000];
     GdkColor color[] = {{0, 0xFFFF, 0xFFFF, 0xFFFF}};
@@ -104,7 +104,7 @@ void search_text(void)
     gtk_toggle_button_set_active(GTK_TOGGLE_BUTTON(wrap_button), TRUE);
     gtk_widget_set_sensitive(find_button, FALSE);
     
-    g_signal_connect(G_OBJECT(search_entry), "notify::text", G_CALLBACK(change_entry), (gpointer)find_button);
+    g_signal_connect(G_OBJECT(search_entry), "notify::text", G_CALLBACK(change_find_entry), (gpointer)find_button);
     
     gtk_widget_show_all(search_dialog);
     
@@ -217,7 +217,7 @@ void replace_text(void)
     
     gtk_widget_set_sensitive(replace_button, FALSE);
     
-    g_signal_connect(G_OBJECT(search_entry), "notify::text", G_CALLBACK(change_entry), (gpointer)replace_button);
+    g_signal_connect(G_OBJECT(search_entry), "notify::text", G_CALLBACK(change_find_entry), (gpointer)replace_button);
     
     gtk_widget_show_all(replace_dialog);
     

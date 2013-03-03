@@ -1,11 +1,11 @@
 #include "util.h"
 #include "file.h"
 #include "style.h"
-#include "action.h"
 #include "menu_file.h"
 #include "menu_edit.h"
 #include "menu_search.h"
 #include "menu_move.h"
+#include "menu_library.h"
 #include "menu_option.h"
 #include "menu_help.h"
 #include "tag.h"
@@ -55,6 +55,7 @@ void init_view(GtkWidget *box)
     }
     
     gtk_widget_set_has_tooltip(view, TRUE);
+    gtk_widget_grab_focus(view);
     
     set_style();
     
@@ -73,11 +74,7 @@ void init_editor(void)
     strcpy(s, getenv("CEDIT"));
     strcat(s, "/icon/icon.png");
     gtk_window_set_icon(GTK_WINDOW(main_window), gdk_pixbuf_new_from_file(s, NULL));
-    if (window_x == -1) {
-        gtk_window_set_position(GTK_WINDOW(main_window), GTK_WIN_POS_CENTER);
-    } else {
-        gtk_window_move(GTK_WINDOW(main_window), window_x, window_y);
-    }
+    gtk_window_move(GTK_WINDOW(main_window), window_x, window_y);
     gtk_window_set_default_size(GTK_WINDOW(main_window), window_width, window_height);
     
     main_vbox = gtk_vbox_new(FALSE, 3);
@@ -87,6 +84,7 @@ void init_editor(void)
     init_view(main_vbox);
     
     init_tag();
+    init_library();
     
     set_action("New", FALSE);
     set_action("Save", FALSE);
