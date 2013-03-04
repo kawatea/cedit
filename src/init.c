@@ -64,16 +64,15 @@ void init_view(GtkWidget *box)
 
 void init_editor(void)
 {
-    char s[1000];
     GtkWidget *main_vbox;
     
     load_setting();
     
     main_window = gtk_window_new(GTK_WINDOW_TOPLEVEL);
     gtk_window_set_title(GTK_WINDOW(main_window), "cedit");
-    strcpy(s, getenv("CEDIT"));
-    strcat(s, "/icon/icon.png");
-    gtk_window_set_icon(GTK_WINDOW(main_window), gdk_pixbuf_new_from_file(s, NULL));
+    strcpy(buf, getenv("CEDIT"));
+    strcat(buf, "/icon/icon.png");
+    gtk_window_set_icon(GTK_WINDOW(main_window), gdk_pixbuf_new_from_file(buf, NULL));
     gtk_window_move(GTK_WINDOW(main_window), window_x, window_y);
     gtk_window_set_default_size(GTK_WINDOW(main_window), window_width, window_height);
     

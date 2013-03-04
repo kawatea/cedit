@@ -36,7 +36,6 @@ void read_file(void)
 {
     if ((fp = fopen(get_file_name_full(), "r")) != NULL) {
         int num = 0;
-        char buf[10010];
         GtkTextIter start, end;
         
         gtk_source_buffer_begin_not_undoable_action(buffer);
@@ -59,7 +58,7 @@ void read_file(void)
                 buf[num++] = fgetc(fp);
             }
             
-            if (num > 10000) {
+            if (num > 100000) {
                 gtk_text_buffer_insert(GTK_TEXT_BUFFER(buffer), &end, buf, num);
 
                 num = 0;

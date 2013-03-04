@@ -55,7 +55,6 @@ void delete_text(void)
 void kill_line(void)
 {
     int delete_flag = 0;
-    char buf[100000];
     GtkClipboard *clipboard;
     GtkTextIter start, end;
     

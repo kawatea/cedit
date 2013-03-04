@@ -9,9 +9,7 @@ GtkTreeIter iter;
 
 void change_library_entry(GtkWidget *entry, GObject *object, gpointer button)
 {
-    char s[1000];
-    
-    strcpy(s, gtk_entry_get_text(GTK_ENTRY(entry)));
+    strcpy(buf, gtk_entry_get_text(GTK_ENTRY(entry)));
     
     if (gtk_tree_model_get_iter_first(GTK_TREE_MODEL(library_list), &iter)) {
         while (1) {
@@ -19,7 +17,7 @@ void change_library_entry(GtkWidget *entry, GObject *object, gpointer button)
             
             gtk_tree_model_get(GTK_TREE_MODEL(library_list), &iter, 0, &name, -1);
             
-            if (strcmp(s, name) == 0) {
+            if (strcmp(buf, name) == 0) {
                 gtk_widget_set_sensitive((GtkWidget *)button, TRUE);
                 
                 return;
@@ -45,17 +43,16 @@ void select_library(GtkTreeView *treeview, GtkTreePath *path, GtkTreeViewColumn 
 
 void init_library(void)
 {
-    char s[1000];
     DIR *directory;
     struct dirent *now;
     
     library_list = gtk_list_store_new(1, G_TYPE_STRING);
     gtk_tree_sortable_set_sort_column_id(GTK_TREE_SORTABLE(library_list), 0, GTK_SORT_ASCENDING);
     
-    strcpy(s, getenv("CEDIT"));
-    strcat(s, "/library");
+    strcpy(buf, getenv("CEDIT"));
+    strcat(buf, "/library");
     
-    if ((directory = opendir(s)) != NULL) {
+    if ((directory = opendir(buf)) != NULL) {
         while ((now = readdir(directory)) != NULL) {
             if (now->d_name[0] == '.') continue;
             
@@ -120,15 +117,12 @@ void call_library(void)
     gtk_widget_show_all(call_dialog);
     
     while (gtk_dialog_run(GTK_DIALOG(call_dialog)) == GTK_RESPONSE_OK) {
-        char s[1000];
+        strcpy(buf, getenv("CEDIT"));
+        strcat(buf, "/library/");
+        strcat(buf, gtk_entry_get_text(GTK_ENTRY(call_entry)));
         
-        strcpy(s, getenv("CEDIT"));
-        strcat(s, "/library/");
-        strcat(s, gtk_entry_get_text(GTK_ENTRY(call_entry)));
-        
-        if ((fp = fopen(s, "r")) != NULL) {
+        if ((fp = fopen(buf, "r")) != NULL) {
             int num = 0;
-            char buf[10010];
             GtkTextIter cursor;
             
             gtk_text_buffer_get_iter_at_mark(GTK_TEXT_BUFFER(buffer), &cursor, gtk_text_buffer_get_insert(GTK_TEXT_BUFFER(buffer)));
@@ -149,7 +143,7 @@ void call_library(void)
                     buf[num++] = fgetc(fp);
                 }
                 
-                if (num > 10000) {
+                if (num > 100000) {
                     gtk_text_buffer_insert(GTK_TEXT_BUFFER(buffer), &cursor, buf, num);
                     
                     num = 0;
@@ -195,10 +189,9 @@ void add_library(void)
     
     while (gtk_dialog_run(GTK_DIALOG(add_dialog)) == GTK_RESPONSE_OK) {
         int flag = 0;
-        char s[1000];
         GtkTextIter start, end;
         
-        strcpy(s, gtk_entry_get_text(GTK_ENTRY(add_entry)));
+        strcpy(buf, gtk_entry_get_text(GTK_ENTRY(add_entry)));
         
         if (gtk_tree_model_get_iter_first(GTK_TREE_MODEL(library_list), &iter)) {
             while (1) {
@@ -206,7 +199,7 @@ void add_library(void)
                 
                 gtk_tree_model_get(GTK_TREE_MODEL(library_list), &iter, 0, &name, -1);
                 
-                if (strcmp(s, name) == 0) {
+                if (strcmp(buf, name) == 0) {
                     flag = 1;
                     
                     break;
@@ -234,18 +227,16 @@ void add_library(void)
             gtk_widget_destroy(check_dialog);
             
             if (flag == 2) continue;
-        }
-        
-        if (flag == 0) {
+        } else if (flag == 0) {
             gtk_list_store_append(library_list, &iter);
-            gtk_list_store_set(library_list, &iter, 0, s, -1);
+            gtk_list_store_set(library_list, &iter, 0, buf, -1);
         }
         
-        strcpy(s, getenv("CEDIT"));
-        strcat(s, "/library/");
-        strcat(s, gtk_entry_get_text(GTK_ENTRY(add_entry)));
+        strcpy(buf, getenv("CEDIT"));
+        strcat(buf, "/library/");
+        strcat(buf, gtk_entry_get_text(GTK_ENTRY(add_entry)));
         
-        fp = fopen(s, "w");
+        fp = fopen(buf, "w");
         
         set_start_end_iter(&start, &end);
         
@@ -308,9 +299,7 @@ void remove_library(void)
     gtk_widget_show_all(remove_dialog);
     
     while (gtk_dialog_run(GTK_DIALOG(remove_dialog)) == GTK_RESPONSE_OK) {
-        char s[1000];
-        
-        strcpy(s, gtk_entry_get_text(GTK_ENTRY(remove_entry)));
+        strcpy(buf, gtk_entry_get_text(GTK_ENTRY(remove_entry)));
         
         if (gtk_tree_model_get_iter_first(GTK_TREE_MODEL(library_list), &iter)) {
             while (1) {
@@ -318,7 +307,7 @@ void remove_library(void)
                 
                 gtk_tree_model_get(GTK_TREE_MODEL(library_list), &iter, 0, &name, -1);
                 
-                if (strcmp(s, name) == 0) {
+                if (strcmp(buf, name) == 0) {
                     gtk_list_store_remove(library_list, &iter);
                     
                     break;
@@ -328,11 +317,11 @@ void remove_library(void)
             }
         }
         
-        strcpy(s, getenv("CEDIT"));
-        strcat(s, "/library/");
-        strcat(s, gtk_entry_get_text(GTK_ENTRY(remove_entry)));
+        strcpy(buf, getenv("CEDIT"));
+        strcat(buf, "/library/");
+        strcat(buf, gtk_entry_get_text(GTK_ENTRY(remove_entry)));
         
-        remove(s);
+        remove(buf);
     }
     
     gtk_widget_destroy(remove_dialog);

@@ -6,7 +6,6 @@
 
 void set_flymake(void)
 {
-    char s[1000];
     GtkWidget *set_dialog;
     GtkWidget *c_hbox;
     GtkWidget *c_label;
@@ -23,24 +22,24 @@ void set_flymake(void)
     cpp_label = gtk_label_new("C++のコマンド : ");
     cpp_entry = gtk_entry_new();
     
-    strcpy(s, getenv("CEDIT"));
-    strcat(s, "/flymake/c_flymake");
+    strcpy(buf, getenv("CEDIT"));
+    strcat(buf, "/flymake/c_flymake");
     
-    if ((fp = fopen(s, "r")) != NULL) {
-        fgets(s, 1000, fp);
+    if ((fp = fopen(buf, "r")) != NULL) {
+        fgets(buf, 100000, fp);
         
-        gtk_entry_set_text(GTK_ENTRY(c_entry), s);
+        gtk_entry_set_text(GTK_ENTRY(c_entry), buf);
         
         fclose(fp);
     }
     
-    strcpy(s, getenv("CEDIT"));
-    strcat(s, "/flymake/cpp_flymake");
+    strcpy(buf, getenv("CEDIT"));
+    strcat(buf, "/flymake/cpp_flymake");
     
-    if ((fp = fopen(s, "r")) != NULL) {
-        fgets(s, 1000, fp);
+    if ((fp = fopen(buf, "r")) != NULL) {
+        fgets(buf, 100000, fp);
         
-        gtk_entry_set_text(GTK_ENTRY(cpp_entry), s);
+        gtk_entry_set_text(GTK_ENTRY(cpp_entry), buf);
         
         fclose(fp);
     }
@@ -59,19 +58,19 @@ void set_flymake(void)
     gtk_widget_show_all(set_dialog);
     
     if (gtk_dialog_run(GTK_DIALOG(set_dialog)) == GTK_RESPONSE_OK) {
-        strcpy(s, getenv("CEDIT"));
-        strcat(s, "/flymake/c_flymake");
+        strcpy(buf, getenv("CEDIT"));
+        strcat(buf, "/flymake/c_flymake");
         
-        fp = fopen(s, "w");
+        fp = fopen(buf, "w");
         
         fprintf(fp, "%s", gtk_entry_get_text(GTK_ENTRY(c_entry)));
         
         fclose(fp);
 
-        strcpy(s, getenv("CEDIT"));
-        strcat(s, "/flymake/cpp_flymake");
+        strcpy(buf, getenv("CEDIT"));
+        strcat(buf, "/flymake/cpp_flymake");
         
-        fp = fopen(s, "w");
+        fp = fopen(buf, "w");
         
         fprintf(fp, "%s", gtk_entry_get_text(GTK_ENTRY(cpp_entry)));
         
@@ -84,42 +83,41 @@ void set_flymake(void)
 void flymake(void)
 {
     int i;
-    char s[1000];
-    char buf[10000];
+    char path[1000];
     GtkTextIter start, end;
     
     delete_tag(1);
     
-    strcpy(s, get_language());
+    strcpy(buf, get_language());
     
-    if (strcmp(s, "C") == 0 || strcmp(s, "C++") == 0) {
-        if (strcmp(s, "C") == 0) {
-            strcpy(s, getenv("CEDIT"));
-            strcat(s, "/flymake/c_flymake");
+    if (strcmp(buf, "C") == 0 || strcmp(buf, "C++") == 0) {
+        if (strcmp(buf, "C") == 0) {
+            strcpy(buf, getenv("CEDIT"));
+            strcat(buf, "/flymake/c_flymake");
         } else {
-            strcpy(s, getenv("CEDIT"));
-            strcat(s, "/flymake/cpp_flymake");
+            strcpy(buf, getenv("CEDIT"));
+            strcat(buf, "/flymake/cpp_flymake");
         }
         
-        if ((fp = fopen(s, "r")) != NULL) {
-            fgets(s, 1000, fp);
+        if ((fp = fopen(buf, "r")) != NULL) {
+            fgets(buf, 100000, fp);
             
             fclose(fp);
             
-            s[strlen(s) - 1] = ' ';
-            strcat(s, get_file_name_full());
-            strcat(s, " 2>&1");
+            buf[strlen(buf) - 1] = ' ';
+            strcat(buf, get_file_name_full());
+            strcat(buf, " 2>&1");
             
             putenv("LANG=C");
             
-            if ((fp = popen(s, "r")) != NULL) {
-                strcpy(s, get_file_name_full());
+            if ((fp = popen(buf, "r")) != NULL) {
+                strcpy(path, get_file_name_full());
                 
-                while (fgets(buf, 10000, fp) != NULL) {
-                    if (strncmp(s, buf, strlen(s)) == 0 && buf[strlen(s) + 1] != ' ') {
+                while (fgets(buf, 100000, fp) != NULL) {
+                    if (strncmp(path, buf, strlen(path)) == 0 && buf[strlen(path) + 1] != ' ') {
                         int line = 0;
                         
-                        for (i = strlen(s) + 1; ; i++) {
+                        for (i = strlen(path) + 1; ; i++) {
                             if (buf[i] >= '0' && buf[i] <= '9') {
                                 line *= 10;
                                 line += buf[i] - '0';

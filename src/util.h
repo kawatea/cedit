@@ -33,6 +33,7 @@ static const int delete_mask = 1 << 10;
 int change_flag;
 int kill_flag;
 int text_id;
+char buf[100010];
 FILE *fp;
 
 void set_action(char *name, gboolean flag);

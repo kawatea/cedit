@@ -4,7 +4,6 @@
 int get_indent_depth(int line)
 {
     int num = 0, len, flag = 0, i;
-    char s[100000];
     GtkTextIter start, end;
     
     if (line < 0) return 0;
@@ -12,16 +11,16 @@ int get_indent_depth(int line)
     gtk_text_buffer_get_iter_at_line(GTK_TEXT_BUFFER(buffer), &start, line);
     gtk_text_buffer_get_iter_at_line(GTK_TEXT_BUFFER(buffer), &end, line + 1);
     
-    strcpy(s, gtk_text_buffer_get_text(GTK_TEXT_BUFFER(buffer), &start, &end, TRUE));
+    strcpy(buf, gtk_text_buffer_get_text(GTK_TEXT_BUFFER(buffer), &start, &end, TRUE));
     
-    len = strlen(s) - 1;
+    len = strlen(buf) - 1;
     
     if (len == 0) return get_indent_depth(line - 1);
     
     for (i = 0; i < len; i++) {
-        if (s[i] == ' ') {
+        if (buf[i] == ' ') {
             num++;
-        } else if (s[i] == '\t') {
+        } else if (buf[i] == '\t') {
             num += state & width_mask;
         } else {
             break;
@@ -29,31 +28,31 @@ int get_indent_depth(int line)
     }
     
     for (i = 0; i < len; i++) {
-        if (s[i] == '\\') {
+        if (buf[i] == '\\') {
             i++;
             
             continue;
         }
         
-        if (s[i] == '"' || s[i] == '\'') {
-            char c = s[i];
+        if (buf[i] == '"' || buf[i] == '\'') {
+            char c = buf[i];
             
             for (i++; i < len; i++) {
-                if (s[i] == '\\') {
+                if (buf[i] == '\\') {
                     i++;
                     
                     continue;
                 }
                 
-                if (s[i] == c) break;
+                if (buf[i] == c) break;
             }
             
             continue;
         }
         
-        if (s[i] == '{') {
+        if (buf[i] == '{') {
             flag++;
-        } else if (s[i] == '}') {
+        } else if (buf[i] == '}') {
             flag--;
             
             if (flag < 0) flag = 0;
@@ -70,7 +69,6 @@ int get_indent_depth(int line)
 void set_indent_depth(int line, int depth)
 {
     int len, flag = 0, i;
-    char s[100000];
     GtkTextIter start, end;
     
     gtk_text_buffer_get_iter_at_line(GTK_TEXT_BUFFER(buffer), &start, line);
@@ -79,36 +77,36 @@ void set_indent_depth(int line, int depth)
     
     gtk_text_iter_forward_line(&end);
     
-    strcpy(s, gtk_text_buffer_get_text(GTK_TEXT_BUFFER(buffer), &start, &end, TRUE));
+    strcpy(buf, gtk_text_buffer_get_text(GTK_TEXT_BUFFER(buffer), &start, &end, TRUE));
     
-    len = strlen(s);
+    len = strlen(buf);
     
     for (i = 0; i < len; i++) {
-        if (s[i] == '\\') {
+        if (buf[i] == '\\') {
             i++;
             
             continue;
         }
         
-        if (s[i] == '"' || s[i] == '\'') {
-            char c = s[i];
+        if (buf[i] == '"' || buf[i] == '\'') {
+            char c = buf[i];
             
             for (i++; i < len; i++) {
-                if (s[i] == '\\') {
+                if (buf[i] == '\\') {
                     i++;
                     
                     continue;
                 }
                 
-                if (s[i] == c) break;
+                if (buf[i] == c) break;
             }
             
             continue;
         }
         
-        if (s[i] == '{') {
+        if (buf[i] == '{') {
             flag++;
-        } else if (s[i] == '}') {
+        } else if (buf[i] == '}') {
             if (flag == 0) {
                 depth -= state & width_mask;
             } else {
@@ -120,7 +118,7 @@ void set_indent_depth(int line, int depth)
     if (depth < 0) depth = 0;
     
     for (i = 0; i < len; i++) {
-        if (s[i] != ' ' && s[i] != '\t') break;
+        if (buf[i] != ' ' && buf[i] != '\t') break;
     }
     
     end = start;
@@ -130,15 +128,15 @@ void set_indent_depth(int line, int depth)
     gtk_text_buffer_delete(GTK_TEXT_BUFFER(buffer), &start, &end);
     
     if (state & space_mask) {
-        for (i = 0; i < depth; i++) s[i] = ' ';
+        for (i = 0; i < depth; i++) buf[i] = ' ';
         
-        gtk_text_buffer_insert(GTK_TEXT_BUFFER(buffer), &start, s, depth);
+        gtk_text_buffer_insert(GTK_TEXT_BUFFER(buffer), &start, buf, depth);
     } else {
         depth /= state & width_mask;
         
-        for (i = 0; i < depth; i++) s[i] = '\t';
+        for (i = 0; i < depth; i++) buf[i] = '\t';
         
-        gtk_text_buffer_insert(GTK_TEXT_BUFFER(buffer), &start, s, depth);
+        gtk_text_buffer_insert(GTK_TEXT_BUFFER(buffer), &start, buf, depth);
     }
 }
 

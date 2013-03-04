@@ -14,12 +14,10 @@ void set_start_end_iter(GtkTextIter *start, GtkTextIter *end)
 
 void change_text(void)
 {
-    char s[1000];
+    strcpy(buf, "* ");
+    strcat(buf, gtk_label_get_text(GTK_LABEL(name_label)));
     
-    strcpy(s, "* ");
-    strcat(s, gtk_label_get_text(GTK_LABEL(name_label)));
-    
-    gtk_label_set_text(GTK_LABEL(name_label), s);
+    gtk_label_set_text(GTK_LABEL(name_label), buf);
     
     change_flag = 1;
     kill_flag = 0;
@@ -46,12 +44,10 @@ void change_window(void)
 
 void load_setting(void)
 {
-    char s[1000];
+    strcpy(buf, getenv("CEDIT"));
+    strcat(buf, "/setting");
     
-    strcpy(s, getenv("CEDIT"));
-    strcat(s, "/setting");
-    
-    fp = fopen(s, "r");
+    fp = fopen(buf, "r");
     
     fgets(font_name, 100, fp);
     font_name[strlen(font_name) - 1] = '\0';
@@ -62,12 +58,10 @@ void load_setting(void)
 
 void save_setting(void)
 {
-    char s[1000];
+    strcpy(buf, getenv("CEDIT"));
+    strcat(buf, "/setting");
     
-    strcpy(s, getenv("CEDIT"));
-    strcat(s, "/setting");
-    
-    fp = fopen(s, "w");
+    fp = fopen(buf, "w");
     
     fprintf(fp, "%s\n", font_name);
     fprintf(fp, "%d %d %d %d %d\n", window_width, window_height, window_x, window_y, state);

@@ -5,7 +5,7 @@
 
 gboolean key_press(GtkWidget *widget, GdkEventKey *event)
 {
-    if (event->keyval == GDK_Tab) {
+    if (event->keyval == GDK_Tab && (state & auto_mask)) {
         if (gtk_text_buffer_get_has_selection(GTK_TEXT_BUFFER(buffer))) {
             set_indent_all();
         } else {
@@ -24,7 +24,7 @@ gboolean key_press(GtkWidget *widget, GdkEventKey *event)
 
 gboolean key_release(GtkWidget *widget, GdkEventKey *event)
 {
-    if (event->keyval == GDK_braceright && (event->state & GDK_SHIFT_MASK)) {
+    if (event->keyval == GDK_braceright && (event->state & GDK_SHIFT_MASK) && (state & auto_mask)) {
         set_indent();
     } else if (event->keyval == GDK_Return && (state & auto_mask)) {
         set_indent();

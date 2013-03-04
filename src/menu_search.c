@@ -5,12 +5,11 @@
 
 void change_find_entry(GtkWidget *entry, GObject *object, gpointer button)
 {
-    char s[1000];
     GdkColor color[] = {{0, 0xFFFF, 0xFFFF, 0xFFFF}};
     
-    strcpy(s, gtk_entry_get_text(GTK_ENTRY(entry)));
+    strcpy(buf, gtk_entry_get_text(GTK_ENTRY(entry)));
     
-    if (s[0] != '\0') {
+    if (buf[0] != '\0') {
         gtk_widget_set_sensitive((GtkWidget *)button, TRUE);
     } else {
         gtk_widget_set_sensitive((GtkWidget *)button, FALSE);
@@ -29,23 +28,23 @@ void search_text_start(GtkWidget *entry, int case_flag, int back_flag, int wrap_
     
     gtk_text_buffer_get_iter_at_mark(GTK_TEXT_BUFFER(buffer), &cursor, gtk_text_buffer_get_insert(GTK_TEXT_BUFFER(buffer)));
     
-    strcpy(s, gtk_entry_get_text(GTK_ENTRY(entry)));
+    strcpy(buf, gtk_entry_get_text(GTK_ENTRY(entry)));
     
     if (back_flag == 0) {
-        find_flag = gtk_source_iter_forward_search(&cursor, s, case_flag, &start, &end, NULL);
+        find_flag = gtk_source_iter_forward_search(&cursor, buf, case_flag, &start, &end, NULL);
     } else {
-        find_flag = gtk_source_iter_backward_search(&cursor, s, case_flag, &start, &end, NULL);
+        find_flag = gtk_source_iter_backward_search(&cursor, buf, case_flag, &start, &end, NULL);
     }
     
     if (find_flag == 0 && wrap_flag == 1) {
         if (back_flag == 0) {
             gtk_text_buffer_get_start_iter(GTK_TEXT_BUFFER(buffer), &cursor);
             
-            find_flag = gtk_source_iter_forward_search(&cursor, s, case_flag, &start, &end, NULL);
+            find_flag = gtk_source_iter_forward_search(&cursor, buf, case_flag, &start, &end, NULL);
         } else {
             gtk_text_buffer_get_end_iter(GTK_TEXT_BUFFER(buffer), &cursor);
             
-            find_flag = gtk_source_iter_backward_search(&cursor, s, case_flag, &start, &end, NULL);
+            find_flag = gtk_source_iter_backward_search(&cursor, buf, case_flag, &start, &end, NULL);
         }
     }
     
@@ -124,7 +123,6 @@ void search_text(void)
 void replace_text_start(GtkWidget *search_entry, GtkWidget *replace_entry, int case_flag)
 {
     int select_flag = 0, find_flag = 0;
-    char s[1000];
     GtkTextIter now, start, end;
     
     delete_tag(0);
@@ -139,12 +137,12 @@ void replace_text_start(GtkWidget *search_entry, GtkWidget *replace_entry, int c
         gtk_text_buffer_get_iter_at_mark(GTK_TEXT_BUFFER(buffer), &now, gtk_text_buffer_get_insert(GTK_TEXT_BUFFER(buffer)));
     }
     
-    strcpy(s, gtk_entry_get_text(GTK_ENTRY(search_entry)));
+    strcpy(buf, gtk_entry_get_text(GTK_ENTRY(search_entry)));
     
     while (1) {
         GtkTextIter match_start, match_end;
         
-        if (!gtk_source_iter_forward_search(&now, s, case_flag, &match_start, &match_end, NULL)) break;
+        if (!gtk_source_iter_forward_search(&now, buf, case_flag, &match_start, &match_end, NULL)) break;
         
         if (select_flag == 1) {
             gtk_text_buffer_get_selection_bounds(GTK_TEXT_BUFFER(buffer), &start, &end);

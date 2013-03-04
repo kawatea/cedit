@@ -94,6 +94,12 @@ void set_highlight_line(void)
 
 void set_insert_space(void)
 {
+    if (state & space_mask) {
+        gtk_source_view_set_insert_spaces_instead_of_tabs(GTK_SOURCE_VIEW(view), FALSE);
+    } else {
+        gtk_source_view_set_insert_spaces_instead_of_tabs(GTK_SOURCE_VIEW(view), TRUE);
+    }
+    
     state ^= space_mask;
 }
 
