@@ -175,13 +175,21 @@ void flymake(void)
             
             strcpy(path, get_file_name_full());
             
-            for (i = 0; i < len; i++) {
+            for (i = 0; i < len; ) {
+                int next = len;
+                
                 for (j = i; j < len; j++) {
                     if (buf[j] == '\r') {
                         buf[j] = buf[j + 1] = '\0';
                         
+                        next = j + 2;
+                        
                         break;
-                    } else if (buf[j] == '\0') {
+                    } else if (buf[j] == '\n' || buf[j] == '\0') {
+                        buf[j] = '\0';
+                        
+                        next = j + 1;
+                        
                         break;
                     }
                 }
@@ -211,7 +219,7 @@ void flymake(void)
                     gtk_text_buffer_apply_tag(GTK_TEXT_BUFFER(buffer), add_error_tag(&buf[i + j]), &start, &end);
                 }
                 
-                while (buf[i++] != '\0') ;
+                i = next;
             }
         }
     }
