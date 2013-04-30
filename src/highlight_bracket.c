@@ -226,5 +226,7 @@ void change_cursor(void)
 {
     kill_flag = 0;
     
+    gtk_text_view_scroll_mark_onscreen(GTK_TEXT_VIEW(view), gtk_text_buffer_get_insert(GTK_TEXT_BUFFER(buffer)));
+    
     highlight_bracket();
 }

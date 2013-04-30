@@ -67,6 +67,10 @@ void read_file(void)
         
         gtk_text_buffer_insert(GTK_TEXT_BUFFER(buffer), &end, buf, num);
         
+        set_start_end_iter(&start, &end);
+        
+        gtk_text_buffer_place_cursor(GTK_TEXT_BUFFER(buffer), &start);
+        
         fclose(fp);
         
         gtk_source_buffer_end_not_undoable_action(buffer);
