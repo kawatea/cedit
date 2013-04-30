@@ -4,6 +4,68 @@
 #include "tag.h"
 #include "flymake.h"
 
+#ifdef _WIN32
+#include <windows.h>
+#endif
+
+int get_message(void)
+{
+    #ifdef _WIN32
+    HANDLE read, write;
+    SECURITY_ATTRIBUTES sa;
+    STARTUPINFO si;
+    PROCESS_INFORMATION pi;
+    DWORD len = 0;
+    
+    sa.nLength = sizeof(sa);
+    sa.lpSecurityDescriptor = 0;
+    sa.bInheritHandle = TRUE;
+    
+    if (!CreatePipe(&read, &write, &sa, 0)) return 0;
+    
+    memset(&si, 0, sizeof(si));
+    si.cb = sizeof(si);
+    si.dwFlags = STARTF_USESTDHANDLES;
+    si.wShowWindow = SW_HIDE;
+    si.hStdError = write;
+    
+    do {
+        if (!CreateProcess(NULL, buf, NULL, NULL, TRUE, CREATE_NO_WINDOW, NULL, NULL, &si, &pi)) break;
+        
+        WaitForInputIdle(pi.hProcess, INFINITE);
+        WaitForSingleObject(pi.hProcess, INFINITE);
+        
+        CloseHandle(pi.hThread);
+        CloseHandle(pi.hProcess);
+        
+        if (!PeekNamedPipe(read, NULL, 0, NULL, &len, NULL)) break;
+        
+        if (len > 0) ReadFile(read, buf, 100000, &len, NULL);
+    } while (0);
+    
+    CloseHandle(read);
+    CloseHandle(write);
+    
+    buf[len] = '\0';
+    
+    return len;
+    #else
+    int len;
+    
+    strcat(buf, " 2>&1");
+    
+    if ((fp = popen(buf, "r")) == NULL) return 0;
+    
+    len = fread(buf, sizeof(char), 100000, fp);
+    
+    pclose(fp);
+    
+    buf[len] = '\0';
+    
+    return len;
+    #endif
+}
+
 void set_flymake(void)
 {
     GtkWidget *set_dialog;
@@ -82,10 +144,6 @@ void set_flymake(void)
 
 void flymake(void)
 {
-    int i;
-    char path[1000];
-    GtkTextIter start, end;
-    
     delete_tag(1);
     
     strcpy(buf, get_language());
@@ -100,47 +158,60 @@ void flymake(void)
         }
         
         if ((fp = fopen(buf, "r")) != NULL) {
+            int len, i, j;
+            char path[1000];
+            GtkTextIter start, end;
+            
             fgets(buf, 100000, fp);
             
             fclose(fp);
             
             buf[strlen(buf) - 1] = ' ';
             strcat(buf, get_file_name_full());
-            strcat(buf, " 2>&1");
             
             putenv("LANG=C");
             
-            if ((fp = popen(buf, "r")) != NULL) {
-                strcpy(path, get_file_name_full());
-                
-                while (fgets(buf, 100000, fp) != NULL) {
-                    if (strncmp(path, buf, strlen(path)) == 0 && buf[strlen(path) + 1] != ' ') {
-                        int line = 0;
+            len = get_message();
+            
+            strcpy(path, get_file_name_full());
+            
+            for (i = 0; i < len; i++) {
+                for (j = i; j < len; j++) {
+                    if (buf[j] == '\r') {
+                        buf[j] = buf[j + 1] = '\0';
                         
-                        for (i = strlen(path) + 1; ; i++) {
-                            if (buf[i] >= '0' && buf[i] <= '9') {
-                                line *= 10;
-                                line += buf[i] - '0';
-                            } else {
-                                break;
-                            }
-                        }
-                        
-                        while (buf[i++] != ' ') ;
-                        
-                        line--;
-                        
-                        gtk_text_buffer_get_iter_at_line(GTK_TEXT_BUFFER(buffer), &start, line);
-                        end = start;
-                        gtk_text_iter_forward_line(&end);
-                        
-                        while (gtk_text_iter_get_char(&start) == ' ' || gtk_text_iter_get_char(&start) == '\t') gtk_text_iter_forward_char(&start);
-                        
-                        gtk_text_buffer_apply_tag(GTK_TEXT_BUFFER(buffer), add_error_tag(&buf[i]), &start, &end);
+                        break;
+                    } else if (buf[j] == '\0') {
+                        break;
                     }
                 }
                 
-                pclose(fp);
+                if (strncmp(path, buf + i, strlen(path)) == 0 && buf[i + strlen(path) + 1] != ' ') {
+                    int line = 0;
+                    
+                    for (j = strlen(path) + 1; ; j++) {
+                        if (buf[i + j] >= '0' && buf[i + j] <= '9') {
+                            line *= 10;
+                            line += buf[i + j] - '0';
+                        } else {
+                            break;
+                        }
+                    }
+                    
+                    while (buf[i + j++] != ' ') ;
+                    
+                    line--;
+                    
+                    gtk_text_buffer_get_iter_at_line(GTK_TEXT_BUFFER(buffer), &start, line);
+                    end = start;
+                    gtk_text_iter_forward_line(&end);
+                    
+                    while (gtk_text_iter_get_char(&start) == ' ' || gtk_text_iter_get_char(&start) == '\t') gtk_text_iter_forward_char(&start);
+                    
+                    gtk_text_buffer_apply_tag(GTK_TEXT_BUFFER(buffer), add_error_tag(&buf[i + j]), &start, &end);
+                }
+                
+                while (buf[i++] != '\0') ;
             }
         }
     }
