@@ -149,3 +149,16 @@ gboolean quit(void)
     
     gtk_main_quit();
 }
+
+void receive(GtkWidget *widget, GdkDragContext *context, gint x, gint y, GtkSelectionData *data, guint info, guint time, gpointer user_data)
+{
+    gchar *name = g_filename_from_uri(*g_uri_list_extract_uris(data->data), NULL, NULL);
+    
+    if (change_flag == 1) save_check();
+    
+    if (change_flag == 1) return;
+    
+    delete_file();
+    
+    start_file(name);
+}

@@ -3,6 +3,8 @@
 #include "delete_hungry.h"
 #include "key.h"
 
+int press_brace;
+
 gboolean key_press(GtkWidget *widget, GdkEventKey *event)
 {
     if (event->keyval == GDK_Tab && (state & auto_mask)) {
@@ -19,12 +21,16 @@ gboolean key_press(GtkWidget *widget, GdkEventKey *event)
         if (delete_hungry_forward()) return TRUE;
     }
     
+    if (event->keyval == GDK_braceright && (state & auto_mask)) press_brace = 1;
+    
     return FALSE;
 }
 
 gboolean key_release(GtkWidget *widget, GdkEventKey *event)
 {
-    if (event->keyval == GDK_braceright && (event->state & GDK_SHIFT_MASK) && (state & auto_mask)) {
+    if ((event->keyval == GDK_braceright || (event->keyval == GDK_bracketright && press_brace == 1)) && (state & auto_mask)) {
+        press_brace = 0;
+        
         set_indent();
     } else if (event->keyval == GDK_Return && (state & auto_mask)) {
         set_indent();

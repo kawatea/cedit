@@ -65,6 +65,7 @@ void init_view(GtkWidget *box)
 void init_editor(void)
 {
     GtkWidget *main_vbox;
+    static GtkTargetEntry target[] = {{"text/uri-list",  0, 10}};
     
     load_setting();
     
@@ -93,12 +94,17 @@ void init_editor(void)
     set_action("Copy", FALSE);
     set_action("Delete", FALSE);
     
+    gtk_drag_dest_set(view, GTK_DEST_DEFAULT_ALL, target, 1, GDK_ACTION_COPY);
+    gtk_drag_dest_set(main_window, GTK_DEST_DEFAULT_ALL, target, 1, GDK_ACTION_COPY);
+    
     text_id = g_signal_connect(G_OBJECT(buffer), "changed", G_CALLBACK(change_text), NULL);
     cursor_id = g_signal_connect(G_OBJECT(buffer), "notify::cursor-position", G_CALLBACK(change_cursor), NULL);
     g_signal_connect(G_OBJECT(buffer), "notify::can-undo", G_CALLBACK(change_undo), NULL);
     g_signal_connect(G_OBJECT(buffer), "notify::can-redo", G_CALLBACK(change_redo), NULL);
     g_signal_connect(G_OBJECT(buffer), "notify::has-selection", G_CALLBACK(change_selection), NULL);
     g_signal_connect(G_OBJECT(view), "query-tooltip", G_CALLBACK(popup), NULL);
+    g_signal_connect(G_OBJECT(view), "drag-data-received", G_CALLBACK(receive), NULL);
+    g_signal_connect(G_OBJECT(main_window), "drag-data-received", G_CALLBACK(receive), NULL);
     g_signal_connect(G_OBJECT(main_window), "configure-event", G_CALLBACK(change_window), NULL);
     g_signal_connect(G_OBJECT(main_window), "key-press-event", G_CALLBACK(key_press), NULL);
     g_signal_connect(G_OBJECT(main_window), "key-release-event", G_CALLBACK(key_release), NULL);    
