@@ -40,6 +40,8 @@ void change_window(void)
 {
     gtk_window_get_size(GTK_WINDOW(main_window), &window_width, &window_height);
     gtk_window_get_position(GTK_WINDOW(main_window), &window_x, &window_y);
+    
+    gtk_container_resize_children(GTK_CONTAINER(main_window));
 }
 
 void load_setting(void)

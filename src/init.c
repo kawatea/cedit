@@ -103,10 +103,12 @@ void init_editor(void)
     g_signal_connect(G_OBJECT(buffer), "notify::can-redo", G_CALLBACK(change_redo), NULL);
     g_signal_connect(G_OBJECT(buffer), "notify::has-selection", G_CALLBACK(change_selection), NULL);
     g_signal_connect(G_OBJECT(view), "query-tooltip", G_CALLBACK(popup), NULL);
+    g_signal_connect(G_OBJECT(view), "button_press_event", G_CALLBACK(right_click), NULL);
     g_signal_connect(G_OBJECT(view), "drag-data-received", G_CALLBACK(receive), NULL);
     g_signal_connect(G_OBJECT(main_window), "drag-data-received", G_CALLBACK(receive), NULL);
     g_signal_connect(G_OBJECT(main_window), "configure-event", G_CALLBACK(change_window), NULL);
     g_signal_connect(G_OBJECT(main_window), "key-press-event", G_CALLBACK(key_press), NULL);
     g_signal_connect(G_OBJECT(main_window), "key-release-event", G_CALLBACK(key_release), NULL);    
     g_signal_connect(G_OBJECT(main_window), "delete-event", G_CALLBACK(quit), NULL);
+    
 }

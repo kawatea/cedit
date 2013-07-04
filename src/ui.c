@@ -82,6 +82,18 @@ const gchar *menu_info =
 "      <toolitem name='Replace' action='Replace'/>"
 "      <toolitem name='Call' action='Call'/>"
 "  </toolbar>"
+"  <popup name='Popup'>"
+"      <menuitem name='Undo' action='Undo'/>"
+"      <menuitem name='Redo' action='Redo'/>"
+"      <separator/>"
+"      <menuitem name='Cut' action='Cut'/>"
+"      <menuitem name='Copy' action='Copy'/>"
+"      <menuitem name='Paste' action='Paste'/>"
+"      <separator/>"
+"      <menuitem name='Select' action='Select'/>"
+"      <separator/>"
+"      <menuitem name='Call' action='Call'/>"
+"  </popup>"
 "</ui>";
 
 GtkActionEntry entries[] =
@@ -89,6 +101,17 @@ GtkActionEntry entries[] =
 
 GtkToggleActionEntry toggle_entries[] =
 {{"Wrap", NULL, "右端で折り返す", NULL, NULL, G_CALLBACK(set_wrap_line), FALSE}, {"Line", NULL, "行番号を表示する", NULL, NULL, G_CALLBACK(set_display_line_number), FALSE}, {"Indent", NULL, "オートインデント", NULL, NULL, G_CALLBACK(set_auto_indent), FALSE}, {"Highlight", NULL, "カーソル行をハイライト", NULL, NULL, G_CALLBACK(set_highlight_line), FALSE}, {"Space", NULL, "タブの代わりにスペースを挿入", NULL, NULL, G_CALLBACK(set_insert_space), FALSE}, {"Hungry", NULL, "空白をまとめて消去", NULL, NULL, G_CALLBACK(set_delete_hungry), FALSE}};
+
+gboolean right_click(GtkWidget *widget, GdkEventButton *event)
+{
+    if (event->button == 3) {
+        gtk_menu_popup(GTK_MENU(popup_menu), NULL, NULL, NULL, NULL, 0, event->time);
+        
+        return TRUE;
+    } else {
+        return FALSE;
+    }
+}
 
 void init_ui(GtkWidget *box)
 {
@@ -114,6 +137,7 @@ void init_ui(GtkWidget *box)
     
     menubar = gtk_ui_manager_get_widget(ui, "/Menubar");
     toolbar = gtk_ui_manager_get_widget(ui, "/Toolbar");
+    popup_menu = gtk_ui_manager_get_widget(ui, "/Popup");
     
     gtk_toolbar_set_style(GTK_TOOLBAR(toolbar), GTK_TOOLBAR_ICONS);
     gtk_toolbar_set_icon_size(GTK_TOOLBAR(toolbar), GTK_ICON_SIZE_LARGE_TOOLBAR);

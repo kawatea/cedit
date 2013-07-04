@@ -18,6 +18,7 @@ GtkWidget *scroll_window;
 GtkSourceBuffer *buffer;
 GtkWidget *view;
 GtkWidget *name_label;
+GtkWidget *popup_menu;
 GtkActionGroup *actions;
 char font_name[100];
 int window_width, window_height;
