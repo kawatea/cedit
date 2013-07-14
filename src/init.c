@@ -69,6 +69,8 @@ void init_editor(void)
     
     load_setting();
     
+    encoding = UTF8;
+    
     main_window = gtk_window_new(GTK_WINDOW_TOPLEVEL);
     gtk_window_set_title(GTK_WINDOW(main_window), "cedit");
     strcpy(buf, getenv("CEDIT"));

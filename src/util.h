@@ -4,6 +4,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
+#include <iconv.h>
 #include <gtk/gtk.h>
 #include <gtksourceview/gtksourceview.h>
 #include <gtksourceview/gtksourcebuffer.h>
@@ -13,6 +14,8 @@
 #include <gtksourceview/gtksourcestyleschememanager.h>
 #include <gdk/gdkkeysyms.h>
 
+#define BUF_SIZE 100010
+
 GtkWidget *main_window;
 GtkWidget *scroll_window;
 GtkSourceBuffer *buffer;
@@ -21,6 +24,7 @@ GtkWidget *name_label;
 GtkWidget *popup_menu;
 GtkActionGroup *actions;
 char font_name[100];
+int encoding;
 int window_width, window_height;
 int window_x, window_y;
 int state;
@@ -34,10 +38,12 @@ static const int delete_mask = 1 << 10;
 int change_flag;
 int kill_flag;
 int text_id;
-char buf[100010];
+char buf[BUF_SIZE];
+char cbuf[BUF_SIZE];
 FILE *fp;
 
 void set_action(char *name, gboolean flag);
+void set_ragio_action(void);
 void set_start_end_iter(GtkTextIter *start, GtkTextIter *end);
 void change_text(void);
 void change_text_connect(void);

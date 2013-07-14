@@ -6,6 +6,21 @@ void set_action(char *name, gboolean flag)
     gtk_action_set_sensitive(gtk_action_group_get_action(actions, name), flag);
 }
 
+void set_radio_action(void)
+{
+    if (encoding == JIS) {
+        strcpy(buf, "JIS");
+    } else if (encoding == SJIS) {
+        strcpy(buf, "SJIS");
+    } else if (encoding == EUC) {
+        strcpy(buf, "EUC");
+    } else {
+        strcpy(buf, "UTF8");
+    }
+    
+    gtk_radio_action_set_current_value(GTK_RADIO_ACTION(gtk_action_group_get_action(actions, buf)), encoding);
+}
+
 void set_start_end_iter(GtkTextIter *start, GtkTextIter *end)
 {
     gtk_text_buffer_get_start_iter(GTK_TEXT_BUFFER(buffer), start);

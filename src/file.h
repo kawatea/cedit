@@ -1,6 +1,13 @@
 #ifndef FILE
 #define FILE
 
+enum {
+    JIS,
+    SJIS,
+    EUC,
+    UTF8
+};
+
 int empty_file_name(void);
 const char *get_file_name(void);
 const char *get_file_name_full(void);
