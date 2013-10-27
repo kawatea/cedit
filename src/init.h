@@ -1,6 +1,6 @@
-#ifndef INIT
-#define INTI
+#ifndef __INIT_H__
+#define __INIT_H__
 
-void init_editor(void);
+void init_window(void);
 
 #endif

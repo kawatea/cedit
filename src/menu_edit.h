@@ -1,5 +1,5 @@
-#ifndef MENU_EDIT
-#define MENU_EDIT
+#ifndef __MENU_EDIT_H__
+#define __MENU_EDIT_H__
 
 void undo_action(void);
 void redo_action(void);

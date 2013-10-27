@@ -1,7 +1,6 @@
-#ifndef UI
-#define UI
+#ifndef __UI_H__
+#define __UI_H__
 
-void init_ui(GtkWidget *box);
-gboolean right_click(GtkWidget *widget, GdkEventButton *event);
+void init_bar(GtkWidget *box);
 
 #endif

@@ -6,7 +6,7 @@ int main(int argc, char *argv[])
 {
     gtk_init(&argc, &argv);
     
-    init_editor();
+    init_window();
     
     if (argc != 1) start_file(argv[1]);
     

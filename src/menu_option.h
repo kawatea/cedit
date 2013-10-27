@@ -1,5 +1,5 @@
-#ifndef MENU_OPTION
-#define MENU_OPTION
+#ifndef __MENU_OPTION_H__
+#define __MENU_OPTION_H__
 
 void set_font(void);
 void set_tab_width(void);

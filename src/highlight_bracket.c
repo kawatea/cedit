@@ -12,6 +12,7 @@ void highlight_bracket_backward(GtkTextIter now)
     while (1) {
         gunichar c = gtk_text_iter_get_char(&start);
         
+        //文字列をスキップ
         if (c == '"' || c == '\'') {
             int count = 0, flag = 0;
             
@@ -58,6 +59,7 @@ void highlight_bracket_backward(GtkTextIter now)
             continue;
         }
         
+        //スタックでかっこの対応を調べる
         if (c == '}' || c == ')' || c == ']') {
             buf[num++] = c;
         } else if (c == '{') {
@@ -89,23 +91,18 @@ void highlight_bracket_backward(GtkTextIter now)
         if (!gtk_text_iter_backward_char(&start)) break;
     }
     
+    //タグの更新
     if (find_flag == 1) {
         end = start;
-        
         gtk_text_iter_forward_char(&end);
-        
         gtk_text_buffer_apply_tag(GTK_TEXT_BUFFER(buffer), match_tag, &start, &end);
         
         start = end = now;
-        
         gtk_text_iter_forward_char(&end);
-        
         gtk_text_buffer_apply_tag(GTK_TEXT_BUFFER(buffer), match_tag, &start, &end);
     } else {
         start = end = now;
-        
         gtk_text_iter_forward_char(&end);
-        
         gtk_text_buffer_apply_tag(GTK_TEXT_BUFFER(buffer), unmatch_tag, &start, &end);
     }
 }
@@ -126,6 +123,7 @@ void highlight_bracket_forward(GtkTextIter now)
             continue;
         }
         
+        //文字列をスキップ
         if (c == '"' || c == '\'') {
             while (1) {
                 if (!gtk_text_iter_forward_char(&start)) break;
@@ -142,6 +140,7 @@ void highlight_bracket_forward(GtkTextIter now)
             continue;
         }
         
+        //スタックでかっこの対応を調べる
         if (c == '{' || c == '(' || c == '[') {
             buf[num++] = c;
         } else if (c == '}') {
@@ -173,27 +172,23 @@ void highlight_bracket_forward(GtkTextIter now)
         if (!gtk_text_iter_forward_char(&start)) break;
     }
     
+    //タグの更新
     if (find_flag == 1) {
         end = start;
-        
         gtk_text_iter_forward_char(&end);
-        
         gtk_text_buffer_apply_tag(GTK_TEXT_BUFFER(buffer), match_tag, &start, &end);
         
         start = end = now;
-        
         gtk_text_iter_forward_char(&end);
-        
         gtk_text_buffer_apply_tag(GTK_TEXT_BUFFER(buffer), match_tag, &start, &end);
     } else {
         start = end = now;
-        
         gtk_text_iter_forward_char(&end);
-        
         gtk_text_buffer_apply_tag(GTK_TEXT_BUFFER(buffer), unmatch_tag, &start, &end);
     }
 }
 
+//かっこの対応をハイライトする
 void highlight_bracket(void)
 {
     gunichar c;
@@ -201,18 +196,18 @@ void highlight_bracket(void)
     
     delete_tag(0);
     
+    //閉じかっこを優先する
     gtk_text_buffer_get_iter_at_mark(GTK_TEXT_BUFFER(buffer), &start, gtk_text_buffer_get_insert(GTK_TEXT_BUFFER(buffer)));
-    
     end = start;
     
-    gtk_text_iter_backward_char(&start);
-    
-    c = gtk_text_iter_get_char(&start);
-    
-    if (c == '}' || c == ')' || c == ']') {
-        highlight_bracket_backward(start);
+    if (gtk_text_iter_backward_char(&start)) {
+        c = gtk_text_iter_get_char(&start);
         
-        return;
+        if (c == '}' || c == ')' || c == ']') {
+            highlight_bracket_backward(start);
+            
+            return;
+        }
     }
     
     c = gtk_text_iter_get_char(&end);
@@ -222,6 +217,7 @@ void highlight_bracket(void)
     }
 }
 
+//カーソルの位置が変わったときに動作する
 void change_cursor(void)
 {
     kill_flag = 0;

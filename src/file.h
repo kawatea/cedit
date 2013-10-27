@@ -1,5 +1,5 @@
-#ifndef FILE
-#define FILE
+#ifndef __FILE_H__
+#define __FILE_H__
 
 enum {
     JIS,
@@ -8,13 +8,9 @@ enum {
     UTF8
 };
 
-int empty_file_name(void);
-const char *get_file_name(void);
-const char *get_file_name_full(void);
-void set_file_name(char *name);
 void read_file(void);
 void write_file(void);
 void delete_file(void);
-void start_file(char *name);
+void start_file(const char *name);
 
 #endif

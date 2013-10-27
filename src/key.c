@@ -5,6 +5,7 @@
 
 int press_brace;
 
+//特定のキーが押された時に動作する
 gboolean key_press(GtkWidget *widget, GdkEventKey *event)
 {
     if (event->keyval == GDK_Tab && (state & auto_mask)) {
@@ -15,9 +16,9 @@ gboolean key_press(GtkWidget *widget, GdkEventKey *event)
         }
         
         return TRUE;
-    } else if (event->keyval == GDK_BackSpace && (state & delete_mask)) {
+    } else if (event->keyval == GDK_BackSpace && (state & delete_mask) && !gtk_text_buffer_get_has_selection(GTK_TEXT_BUFFER(buffer))) {
         if (delete_hungry_backward()) return TRUE;
-    } else if (event->keyval == GDK_Delete && (state & delete_mask)) {
+    } else if (event->keyval == GDK_Delete && (state & delete_mask) && !gtk_text_buffer_get_has_selection(GTK_TEXT_BUFFER(buffer))) {
         if (delete_hungry_forward()) return TRUE;
     }
     
@@ -26,6 +27,7 @@ gboolean key_press(GtkWidget *widget, GdkEventKey *event)
     return FALSE;
 }
 
+//特定のキーから離れたときに動作する
 gboolean key_release(GtkWidget *widget, GdkEventKey *event)
 {
     if ((event->keyval == GDK_braceright || (event->keyval == GDK_bracketright && press_brace == 1)) && (state & auto_mask)) {

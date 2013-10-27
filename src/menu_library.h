@@ -1,5 +1,5 @@
-#ifndef MENU_LIBRARY
-#define MENU_LIBRARY
+#ifndef __MENU_LIBRARY_H__
+#define __MENU_LIBRARY_H__
 
 void init_library(void);
 void call_library(void);

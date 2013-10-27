@@ -1,5 +1,5 @@
-#ifndef MENU_SEARCH
-#define MENU_SEARCH
+#ifndef __MENU_SEARCH_H__
+#define __MENU_SEARCH_H__
 
 int cursor_id;
 

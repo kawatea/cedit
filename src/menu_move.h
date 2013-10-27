@@ -1,5 +1,5 @@
-#ifndef MENU_MOVE
-#define MENU_MOVE
+#ifndef __MENU_MOVE_H__
+#define __MENU_MOVE_H__
 
 void jump_line(void);
 void jump_up(void);

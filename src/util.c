@@ -1,87 +1,165 @@
 #include "util.h"
 #include "file.h"
 
-void set_action(char *name, gboolean flag)
+char file_name[1000];
+
+//ファイル名が空かどうかチェックする
+int empty_file_name(void)
 {
-    gtk_action_set_sensitive(gtk_action_group_get_action(actions, name), flag);
+    return file_name[0] == '\0';
 }
 
-void set_radio_action(void)
+//ファイル名を返す
+const char *get_file_name(void)
 {
-    if (encoding == JIS) {
-        strcpy(buf, "JIS");
-    } else if (encoding == SJIS) {
-        strcpy(buf, "SJIS");
-    } else if (encoding == EUC) {
-        strcpy(buf, "EUC");
-    } else {
-        strcpy(buf, "UTF8");
+    int i;
+    
+    for (i = strlen(file_name) - 1; i >= 0; i--) {
+        if (file_name[i] == '/' || file_name[i] == '\\') break;
     }
     
-    gtk_radio_action_set_current_value(GTK_RADIO_ACTION(gtk_action_group_get_action(actions, buf)), encoding);
+    return &file_name[i + 1];
 }
 
-void set_start_end_iter(GtkTextIter *start, GtkTextIter *end)
+//ディレクトリを含めたファイル名を返す
+const char *get_file_name_full(void)
 {
-    gtk_text_buffer_get_start_iter(GTK_TEXT_BUFFER(buffer), start);
-    gtk_text_buffer_get_end_iter(GTK_TEXT_BUFFER(buffer), end);
+    return file_name;
 }
 
-void change_text(void)
+//ファイル名を変更する
+void set_file_name(const char *name)
 {
-    strcpy(buf, "* ");
-    strcat(buf, gtk_label_get_text(GTK_LABEL(name_label)));
-    
-    gtk_label_set_text(GTK_LABEL(name_label), buf);
-    
-    change_flag = 1;
-    kill_flag = 0;
-    
-    set_action("New", TRUE);
-    
-    if (!empty_file_name()) set_action("Save", TRUE);
-    
-    g_signal_handler_disconnect(G_OBJECT(buffer), text_id);
+    strcpy(file_name, name);
 }
 
-void change_text_connect(void)
+//与えられたファイルのパスを返す
+//メモリを解放すること
+char *get_path(const char *file)
 {
-    if (!g_signal_handler_is_connected(G_OBJECT(buffer), text_id)) {
-        text_id = g_signal_connect(G_OBJECT(buffer), "changed", G_CALLBACK(change_text), NULL);
-    }    
-}
-
-void change_window(void)
-{
-    gtk_window_get_size(GTK_WINDOW(main_window), &window_width, &window_height);
-    gtk_window_get_position(GTK_WINDOW(main_window), &window_x, &window_y);
+    char *path = malloc(1000);
     
-    gtk_container_resize_children(GTK_CONTAINER(main_window));
+    strcpy(path, getenv("CEDIT"));
+    strcat(path, file);
+    
+    return path;
 }
 
+//与えられたファイルにあるアイコンを返す
+GdkPixbuf *get_icon(const char *file)
+{
+    char *path = get_path("/icon/");
+    
+    strcat(path, file);
+    
+    GdkPixbuf *icon = gdk_pixbuf_new_from_file(path, NULL);
+    
+    free(path);
+    
+    return icon;
+}
+
+//設定ファイルを読み込む
 void load_setting(void)
 {
-    strcpy(buf, getenv("CEDIT"));
-    strcat(buf, "/setting");
-    
-    fp = fopen(buf, "r");
+    char *path = get_path("/setting");
+    FILE *fp = fopen(path, "r");
     
     fgets(font_name, 100, fp);
     font_name[strlen(font_name) - 1] = '\0';
     fscanf(fp, "%d %d %d %d %d", &window_width, &window_height, &window_x, &window_y, &state);
     
     fclose(fp);
+    free(path);
+    
+    path = get_path("/flymake/c_flymake");
+    fp = fopen(path, "r");
+    
+    fgets(c_flymake, 1000, fp);
+    c_flymake[strlen(c_flymake) - 1] = '\0';
+    
+    fclose(fp);
+    free(path);
+    
+    path = get_path("/flymake/cpp_flymake");
+    fp = fopen(path, "r");
+    
+    fgets(cpp_flymake, 1000, fp);
+    cpp_flymake[strlen(cpp_flymake) - 1] = '\0';
+    
+    fclose(fp);
+    free(path);
 }
 
+//設定ファイルを保存する
 void save_setting(void)
 {
-    strcpy(buf, getenv("CEDIT"));
-    strcat(buf, "/setting");
-    
-    fp = fopen(buf, "w");
+    char *path = get_path("/setting");
+    FILE *fp = fopen(path, "w");
     
     fprintf(fp, "%s\n", font_name);
     fprintf(fp, "%d %d %d %d %d\n", window_width, window_height, window_x, window_y, state);
     
     fclose(fp);
+    free(path);
+    
+    path = get_path("/flymake/c_flymake");
+    fp = fopen(path, "w");
+    
+    fprintf(fp, "%s\n", c_flymake);
+    
+    fclose(fp);
+    free(path);
+    
+    path = get_path("/flymake/cpp_flymake");
+    fp = fopen(path, "w");
+    
+    fprintf(fp, "%s\n", cpp_flymake);
+    
+    fclose(fp);
+    free(path);
+}
+
+//現在設定されている言語を返す
+const char *get_language(void)
+{
+    GtkSourceLanguage *language = gtk_source_buffer_get_language(buffer);
+    
+    if (language == NULL) return "";
+    
+    return gtk_source_language_get_name(language);
+}
+
+//現在のファイルの言語を設定する
+void set_language(void)
+{
+    char *path[] = {NULL, NULL};
+    GtkSourceLanguageManager *manager = gtk_source_language_manager_new();
+    
+    path[0] = get_path("/language/");
+    
+    gtk_source_language_manager_set_search_path(manager, path);
+    gtk_source_buffer_set_language(buffer, gtk_source_language_manager_guess_language(manager, get_file_name_full(), NULL));
+    
+    free(path[0]);
+}
+
+//ファイルのスタイルを設定する
+void set_style(void)
+{
+    char *path[] = {NULL, NULL};
+    GtkSourceStyleSchemeManager *manager = gtk_source_style_scheme_manager_new();
+    
+    path[0] = get_path("/style/");
+    
+    gtk_source_style_scheme_manager_set_search_path(manager, path);
+    gtk_source_buffer_set_style_scheme(buffer, gtk_source_style_scheme_manager_get_scheme(manager, "mystyle"));
+    
+    free(path[0]);
+}
+
+//与えられた動作のアイコンの状態を変える
+void set_action(const char *name, gboolean flag)
+{
+    gtk_action_set_sensitive(gtk_action_group_get_action(actions, name), flag);
 }

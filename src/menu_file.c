@@ -1,19 +1,17 @@
 #include "util.h"
+#include "callback.h"
 #include "file.h"
-#include "style.h"
 #include "flymake.h"
 #include "menu_file.h"
 
+//ファイルを新規作成する
 void new_file(void)
 {
     if (change_flag == 1) save_check();
-    
     if (change_flag == 1) return;
     
     delete_file();
-    
     gtk_label_set_text(GTK_LABEL(name_label), "編集中のファイル");
-    
     change_flag = kill_flag = 0;
     
     set_action("New", FALSE);
@@ -22,33 +20,32 @@ void new_file(void)
     change_text_connect();
 }
 
+//ファイルを開く
 void open_file(void)
 {
-    GtkWidget *open_dialog;
-    
     if (change_flag == 1) save_check();
-    
     if (change_flag == 1) return;
     
-    open_dialog = gtk_file_chooser_dialog_new("開く", GTK_WINDOW(main_window), GTK_FILE_CHOOSER_ACTION_OPEN, GTK_STOCK_OPEN, GTK_RESPONSE_ACCEPT, GTK_STOCK_CANCEL, GTK_RESPONSE_CANCEL, NULL);
-    
+    GtkWidget *open_dialog = gtk_file_chooser_dialog_new("開く", GTK_WINDOW(main_window), GTK_FILE_CHOOSER_ACTION_OPEN, GTK_STOCK_OPEN, GTK_RESPONSE_ACCEPT, GTK_STOCK_CANCEL, GTK_RESPONSE_CANCEL, NULL);
     gtk_dialog_set_default_response(GTK_DIALOG(open_dialog), GTK_RESPONSE_ACCEPT);
     
     if (gtk_dialog_run(GTK_DIALOG(open_dialog)) == GTK_RESPONSE_ACCEPT) {
-        delete_file();
+        char *name = gtk_file_chooser_get_filename(GTK_FILE_CHOOSER(open_dialog));
         
-        start_file(gtk_file_chooser_get_filename(GTK_FILE_CHOOSER(open_dialog)));
+        delete_file();
+        start_file(name);
+        
+        free(name);
     }
     
     gtk_widget_destroy(open_dialog);
 }
 
+//ファイルを保存する
 void save_file(void)
 {
     write_file();
-    
     gtk_label_set_text(GTK_LABEL(name_label), get_file_name());
-    
     change_flag = kill_flag = 0;
     
     set_action("New", TRUE);
@@ -59,42 +56,36 @@ void save_file(void)
     flymake();
 }
 
+//ファイルを別名で保存する
 void save_file_another(void)
 {
-    GtkWidget *save_dialog;
-    
-    save_dialog = gtk_file_chooser_dialog_new("名前をつけて保存", GTK_WINDOW(main_window), GTK_FILE_CHOOSER_ACTION_SAVE, GTK_STOCK_SAVE, GTK_RESPONSE_ACCEPT, GTK_STOCK_CANCEL, GTK_RESPONSE_CANCEL, NULL);
-    
+    GtkWidget *save_dialog = gtk_file_chooser_dialog_new("名前をつけて保存", GTK_WINDOW(main_window), GTK_FILE_CHOOSER_ACTION_SAVE, GTK_STOCK_SAVE, GTK_RESPONSE_ACCEPT, GTK_STOCK_CANCEL, GTK_RESPONSE_CANCEL, NULL);
     gtk_dialog_set_default_response(GTK_DIALOG(save_dialog), GTK_RESPONSE_ACCEPT);
-    
     gtk_widget_show_all(save_dialog);
     
     if (gtk_dialog_run(GTK_DIALOG(save_dialog)) == GTK_RESPONSE_ACCEPT) {
-        set_file_name(gtk_file_chooser_get_filename(GTK_FILE_CHOOSER(save_dialog)));
+        char *name = gtk_file_chooser_get_filename(GTK_FILE_CHOOSER(save_dialog));
         
+        set_file_name(name);
         set_language();
-        
         save_file();
+        
+        free(name);
     }
     
     gtk_widget_destroy(save_dialog);
 }
 
+//ファイルを保存するか調べる
 void save_check(void)
 {
-    GtkWidget *save_check_dialog;
-    GtkWidget *save_check_label;
-    gint response;
-    
-    save_check_dialog = gtk_dialog_new_with_buttons("保存", GTK_WINDOW(main_window), GTK_DIALOG_MODAL | GTK_DIALOG_DESTROY_WITH_PARENT, GTK_STOCK_YES, GTK_RESPONSE_YES, GTK_STOCK_NO, GTK_RESPONSE_NO, GTK_STOCK_CANCEL, GTK_RESPONSE_CANCEL, NULL);
-    save_check_label = gtk_label_new("編集中のファイルを保存しますか？");
+    GtkWidget *save_check_dialog = gtk_dialog_new_with_buttons("保存", GTK_WINDOW(main_window), GTK_DIALOG_MODAL | GTK_DIALOG_DESTROY_WITH_PARENT, GTK_STOCK_YES, GTK_RESPONSE_YES, GTK_STOCK_NO, GTK_RESPONSE_NO, GTK_STOCK_CANCEL, GTK_RESPONSE_CANCEL, NULL);
+    GtkWidget *save_check_label = gtk_label_new("編集中のファイルを保存しますか？");
     gtk_box_pack_start(GTK_BOX(GTK_DIALOG(save_check_dialog)->vbox), save_check_label, FALSE, FALSE, 0);
-    
     gtk_dialog_set_default_response(GTK_DIALOG(save_check_dialog), GTK_RESPONSE_YES);
-    
     gtk_widget_show_all(save_check_dialog);
     
-    response = gtk_dialog_run(GTK_DIALOG(save_check_dialog));
+    int response = gtk_dialog_run(GTK_DIALOG(save_check_dialog));
     
     if (response == GTK_RESPONSE_YES) {
         if (!empty_file_name()) {
@@ -109,6 +100,7 @@ void save_check(void)
     gtk_widget_destroy(save_check_dialog);
 }
 
+//印刷を開始する
 void begin_print(GtkPrintOperation *operation, GtkPrintContext *context, GtkSourcePrintCompositor *compositor)
 {
     while (!gtk_source_print_compositor_paginate(compositor, context)) ;
@@ -116,20 +108,18 @@ void begin_print(GtkPrintOperation *operation, GtkPrintContext *context, GtkSour
     gtk_print_operation_set_n_pages(operation, gtk_source_print_compositor_get_n_pages(compositor));
 }
 
+//印刷プレビューを表示する
 void draw_page(GtkPrintOperation *operation, GtkPrintContext *context, int page_nr, GtkSourcePrintCompositor *compositor)
 {
     gtk_source_print_compositor_draw_page(compositor, context, page_nr);
 }
 
+//ファイルを印刷する
 void print_file(void)
 {
-    GtkPrintOperation *op;
-    GtkSourcePrintCompositor *compositor;
-    
-    op = gtk_print_operation_new();
+    GtkPrintOperation *op = gtk_print_operation_new();
     gtk_print_operation_set_print_settings(op, gtk_print_settings_new());
-    
-    compositor = gtk_source_print_compositor_new(buffer);
+    GtkSourcePrintCompositor *compositor = gtk_source_print_compositor_new(buffer);
     gtk_source_print_compositor_set_wrap_mode(compositor, GTK_WRAP_CHAR);
     gtk_source_print_compositor_set_print_line_numbers(compositor, 1);
     
@@ -139,10 +129,10 @@ void print_file(void)
     gtk_print_operation_run(op, GTK_PRINT_OPERATION_ACTION_PRINT_DIALOG, NULL, NULL);
 }
 
+//ceditを終了する
 gboolean quit(void)
 {
     if (change_flag == 1) save_check();
-    
     if (change_flag == 1) return TRUE;
     
     save_setting();
@@ -150,15 +140,12 @@ gboolean quit(void)
     gtk_main_quit();
 }
 
-void receive(GtkWidget *widget, GdkDragContext *context, gint x, gint y, GtkSelectionData *data, guint info, guint time, gpointer user_data)
+//ドラッグアンドドロップで受け取ったファイルを開く
+void drop_receive(GtkWidget *widget, GdkDragContext *context, gint x, gint y, GtkSelectionData *data, guint info, guint time, gpointer user_data)
 {
-    gchar *name = g_filename_from_uri(*g_uri_list_extract_uris(data->data), NULL, NULL);
-    
     if (change_flag == 1) save_check();
-    
     if (change_flag == 1) return;
     
     delete_file();
-    
-    start_file(name);
+    start_file(g_filename_from_uri(*g_uri_list_extract_uris(data->data), NULL, NULL));
 }
