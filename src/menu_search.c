@@ -17,6 +17,15 @@ void change_find_entry(GtkWidget *entry, GObject *object, gpointer button)
     gtk_widget_modify_base(entry, GTK_STATE_NORMAL, color);
 }
 
+//ダイアログを右上に移動する
+void move_dialog(GtkWidget *widget, GtkRequisition *requisition, gpointer dialog)
+{
+    int width;
+    
+    gtk_window_get_size(GTK_WINDOW(dialog), &width, NULL);
+    gtk_window_move(GTK_WINDOW(dialog), window_x + window_width - width, window_y);
+}
+
 void search_text_start(GtkWidget *entry, int case_flag, int back_flag, int wrap_flag)
 {
     int find_flag = 0;
@@ -89,6 +98,7 @@ void search_text(void)
     gtk_toggle_button_set_active(GTK_TOGGLE_BUTTON(wrap_button), TRUE);
     gtk_widget_set_sensitive(find_button, FALSE);
     g_signal_connect(G_OBJECT(search_entry), "notify::text", G_CALLBACK(change_find_entry), (gpointer)find_button);
+    g_signal_connect(G_OBJECT(search_dialog), "size-request", G_CALLBACK(move_dialog), (gpointer)search_dialog);
     gtk_widget_show_all(search_dialog);
     
     while (gtk_dialog_run(GTK_DIALOG(search_dialog)) == GTK_RESPONSE_OK) {
@@ -178,6 +188,7 @@ void replace_text(void)
     gtk_dialog_set_default_response(GTK_DIALOG(replace_dialog), GTK_RESPONSE_OK);
     gtk_widget_set_sensitive(replace_button, FALSE);
     g_signal_connect(G_OBJECT(search_entry), "notify::text", G_CALLBACK(change_find_entry), (gpointer)replace_button);
+    g_signal_connect(G_OBJECT(replace_dialog), "size-request", G_CALLBACK(move_dialog), (gpointer)replace_dialog);
     gtk_widget_show_all(replace_dialog);
     
     while (gtk_dialog_run(GTK_DIALOG(replace_dialog)) == GTK_RESPONSE_OK) {
