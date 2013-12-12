@@ -39,7 +39,12 @@ char *get_path(const char *file)
 {
     char *path = malloc(1000);
     
+    #ifdef _WIN32
     strcpy(path, getenv("CEDIT"));
+    #else
+    strcpy(path, getenv("HOME"));
+    strcat(path, "/.cedit");
+    #endif
     strcat(path, file);
     
     return path;

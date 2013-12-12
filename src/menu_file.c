@@ -26,6 +26,8 @@ void open_file(void)
     if (change_flag == 1) save_check();
     if (change_flag == 1) return;
     
+    if (change_flag == 2) change_flag = 1;
+    
     GtkWidget *open_dialog = gtk_file_chooser_dialog_new("開く", GTK_WINDOW(main_window), GTK_FILE_CHOOSER_ACTION_OPEN, GTK_STOCK_OPEN, GTK_RESPONSE_ACCEPT, GTK_STOCK_CANCEL, GTK_RESPONSE_CANCEL, NULL);
     gtk_dialog_set_default_response(GTK_DIALOG(open_dialog), GTK_RESPONSE_ACCEPT);
     
@@ -94,7 +96,7 @@ void save_check(void)
             save_file_another();
         }
     } else if (response == GTK_RESPONSE_NO) {
-        change_flag = 0;
+        change_flag = 2;
     }
     
     gtk_widget_destroy(save_check_dialog);
