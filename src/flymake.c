@@ -4,6 +4,7 @@
 
 #ifdef _WIN32
 #include <windows.h>
+#include <tlhelp32.h>
 #endif
 
 //flymakeのコマンドを設定する
@@ -63,7 +64,23 @@ int get_message(char *command)
         if (!CreateProcess(NULL, command, NULL, NULL, TRUE, CREATE_NO_WINDOW, NULL, NULL, &si, &pi)) break;
         
         WaitForInputIdle(pi.hProcess, INFINITE);
-        WaitForSingleObject(pi.hProcess, INFINITE);
+        if (WaitForSingleObject(pi.hProcess, 1000) == WAIT_TIMEOUT) {
+            HANDLE snapshot = CreateToolhelp32Snapshot(TH32CS_SNAPPROCESS, 0);
+            PROCESSENTRY32 entry;
+            
+            entry.dwSize = sizeof(PROCESSENTRY32);
+            Process32First(snapshot, &entry);
+            
+            do {
+                if (entry.th32ParentProcessID == pi.dwProcessId) {
+                    HANDLE process = OpenProcess(PROCESS_ALL_ACCESS, FALSE, entry.th32ProcessID);
+                    TerminateProcess(process, 0);
+                    CloseHandle(process);
+                }
+            } while (Process32Next(snapshot, &entry));
+            
+            TerminateProcess(pi.hProcess, 0);
+        }
         
         CloseHandle(pi.hThread);
         CloseHandle(pi.hProcess);

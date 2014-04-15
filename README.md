@@ -8,10 +8,10 @@ Windowsベースのコマンドで使いやすさを重視
 
 ダウンロード
 ------------
-_Version 1.3.1_
+_Version 1.3.2_
 
-Windowsの方は[こちら](http://sourceforge.jp/downloads/users/3/3037/cedit-1.3.1.msi/)  
-Linux/Macの方は[こちら](http://sourceforge.jp/downloads/users/3/3036/cedit-1.3.1.tar.gz/)
+Windowsの方は[こちら](http://sourceforge.jp/downloads/users/3/3887/cedit-1.3.2.msi/)  
+Linux/Macの方は[こちら](http://sourceforge.jp/downloads/users/3/3886/cedit-1.3.2.tar.gz/)
 
 インストール
 ------------
@@ -44,4 +44,4 @@ ceditをインストールしたフォルダの下にある`etc/pango/pango.alia
 
 コピーライト
 ------------
-Copyright (c) 2012-2013 kawatea
+Copyright (c) 2012-2014 kawatea
